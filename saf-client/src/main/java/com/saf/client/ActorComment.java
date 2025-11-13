@@ -1,7 +1,7 @@
 package com.saf.client;
 import java.util.Scanner;
-import com.saf.core1.*;
-import com.saf.core1.*;
+import com.saf.*;
+
 
 public class ActorComment implements Actor{
     private String comment;

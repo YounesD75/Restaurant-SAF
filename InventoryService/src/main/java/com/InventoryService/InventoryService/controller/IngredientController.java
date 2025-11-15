@@ -40,5 +40,10 @@ public class IngredientController {
     ) {
         return service.updateQuantity(id, request.getNewQuantity());
     }
+
+    @DeleteMapping("/{id}")
+    public void delete(@PathVariable Long id) {
+        service.delete(id);
+    }
 }
 

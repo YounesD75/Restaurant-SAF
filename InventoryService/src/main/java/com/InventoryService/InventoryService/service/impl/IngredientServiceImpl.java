@@ -52,11 +52,21 @@ public class IngredientServiceImpl implements IngredientService {
     public IngredientResponse updateQuantity(Long id, Integer newQuantity) {
         Ingredient ing = repo.findById(id)
                 .orElseThrow(() -> new RuntimeException("Ingredient not found"));
+        if (newQuantity == null || newQuantity < 0) {
+            throw new IllegalArgumentException("Quantity must be >= 0");
+        }
 
         ing.setQuantity(newQuantity);
         Ingredient saved = repo.save(ing);
 
         return mapToResponse(saved);
+    }
+
+    @Override
+    public void delete(Long id) {
+        Ingredient ing = repo.findById(id)
+                .orElseThrow(() -> new RuntimeException("Ingredient not found"));
+        repo.delete(ing);
     }
 
     // ====================

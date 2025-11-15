@@ -14,4 +14,6 @@ public interface IngredientService {
     IngredientResponse getById(Long id);
 
     IngredientResponse updateQuantity(Long id, Integer newQuantity);
+
+    void delete(Long id);
 }

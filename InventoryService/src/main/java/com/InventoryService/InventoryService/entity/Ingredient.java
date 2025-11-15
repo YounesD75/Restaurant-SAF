@@ -2,6 +2,7 @@ package com.InventoryService.InventoryService.entity;
 
 import java.math.BigDecimal;
 import jakarta.persistence.*;
+import jakarta.persistence.Version;
 import lombok.*;
 import java.time.Instant;
 
@@ -22,6 +23,9 @@ public class Ingredient {
 
     private Instant createdAt;
     private Instant updatedAt;
+
+    @Version
+    private Long version;
 
     @PrePersist
     void prePersist() {

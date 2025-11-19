@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: saf-restaurant
+  datasource:
+    url: jdbc:postgresql://localhost:5432/saf_restaurant
+    username: postgres
+    password: postgres
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        format_sql: true
+  sql:
+    init:
+      mode: never
+
+server:
+  port: 8081

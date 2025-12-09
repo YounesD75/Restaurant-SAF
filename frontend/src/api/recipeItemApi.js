@@ -1,7 +1,9 @@
-import axios from "axios";
+import { inventoryAxios } from './axiosConfig';
 
-const BASE = "http://localhost:8083/api/recipes/items";
-
-export const addRecipeItem = (data) => axios.post(BASE, data);
-export const getRecipeItems = (recipeId) =>
-  axios.get(`${BASE}/${recipeId}`);
+export const recipeItemApi = {
+  // Ajouter un ingrédient à une recette
+  addItem: (data) => inventoryAxios.post('/recipes/items', data),
+  
+  // Récupérer les ingrédients d'une recette
+  getItemsByRecipe: (recipeId) => inventoryAxios.get(`/recipes/items/${recipeId}`),
+};

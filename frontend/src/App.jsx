@@ -1,23 +1,26 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import NavBarAdmin from "./components/NavBarAdmin";
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import NavBar from './components/NavBar';
+import Dashboard from './pages/admin/Dashboard';
+import Ingredients from './pages/admin/Ingredients';
+import Recipes from './pages/admin/Recipes';
+import Orders from './pages/admin/Orders';
 
-import AdminDashboard from "./pages/admin/AdminDashboard";
-import IngredientsAdmin from "./pages/admin/IngredientsAdmin";
-import RecipesAdmin from "./pages/admin/RecipesAdmin";
-import RecipeItemsAdmin from "./pages/admin/RecipeItemsAdmin";
-import OrdersAdmin from "./pages/admin/OrdersAdmin";
 
-export default function App() {
+function App() {
   return (
     <BrowserRouter>
-      <NavBarAdmin />
-      <Routes>
-        <Route path="/admin" element={<AdminDashboard />} />
-        <Route path="/admin/ingredients" element={<IngredientsAdmin />} />
-        <Route path="/admin/recipes" element={<RecipesAdmin />} />
-        <Route path="/admin/recipe-items" element={<RecipeItemsAdmin />} />
-        <Route path="/admin/orders" element={<OrdersAdmin />} />
-      </Routes>
+      <div className="app-container">
+        <NavBar />
+        <Routes>
+          <Route path="/" element={<Dashboard />} />
+          <Route path="/admin" element={<Dashboard />} />
+          <Route path="/admin/ingredients" element={<Ingredients />} />
+          <Route path="/admin/recipes" element={<Recipes />} />
+          <Route path="/admin/orders" element={<Orders />} />
+        </Routes>
+      </div>
     </BrowserRouter>
   );
 }
+
+export default App;

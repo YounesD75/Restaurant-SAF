@@ -22,7 +22,11 @@
     </properties>
 
     <modules>
-        </modules>
+        <module>saf-core1</module>
+        <module>saf-restaurant</module>
+        <module>saf-client</module>
+        <module>InventoryService</module>
+    </modules>
 
     <dependencyManagement>
         <dependencies>

@@ -97,7 +97,7 @@ public class LocalActorSystem implements ActorSystem {
                 } catch (Throwable t) {
                     // Notifie le superviseur si présent
                     if (supervisorRef != null) {
-                        supervisorRef.tell(new Messages.ActorError(id, t));
+                        supervisorRef.tell(new SystemMessages.ActorError(id, t));
                     }
                     // Applique la stratégie de supervision
                     if (strategy == SupervisionStrategy.RESTART) {

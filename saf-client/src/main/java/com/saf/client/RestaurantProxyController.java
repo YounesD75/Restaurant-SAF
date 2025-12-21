@@ -25,7 +25,7 @@ public class RestaurantProxyController {
     private final String restaurantBaseUrl;
 
     public RestaurantProxyController(RestTemplate restTemplate,
-                                     @Value("${saf.restaurant.url:http://localhost:8080}") String restaurantBaseUrl) {
+                                     @Value("${saf.restaurant.url:http://saf-restaurant}") String restaurantBaseUrl) {
         this.restTemplate = restTemplate;
         this.restaurantBaseUrl = restaurantBaseUrl;
     }

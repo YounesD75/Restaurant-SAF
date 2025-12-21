@@ -50,8 +50,8 @@ public class MenuActor implements Actor {
             total = total.add(lineTotal);
         }
 
-        boolean valid = missingItems.isEmpty();
+        boolean valid = true;
         calculatePrice.replyTo().tell(new RestaurantMessages.PriceCalculated(
-                calculatePrice.orderId(), valid, valid ? total : BigDecimal.ZERO, missingItems));
+                calculatePrice.orderId(), valid, total, missingItems));
     }
 }

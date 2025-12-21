@@ -14,7 +14,9 @@ import com.saf.restaurant.model.StockResultPayload;
 import com.saf.restaurant.model.TreasurySummary;
 import com.saf.restaurant.repository.ReceiptRepository;
 import com.saf.restaurant.util.AskSupport;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.time.Duration;
 import java.util.List;
@@ -84,7 +86,10 @@ public class RestaurantCommandService {
 
     public ReceiptDocument receipt(String orderId) {
         ReceiptEntity entity = receiptRepository.findByOrderId(orderId)
-                .orElseThrow(() -> new IllegalArgumentException("Receipt not found for " + orderId));
+                .orElseThrow(() -> new ResponseStatusException(
+                        HttpStatus.BAD_REQUEST,
+                        "Receipt not found for " + orderId
+                ));
         return toDocument(entity);
     }
 

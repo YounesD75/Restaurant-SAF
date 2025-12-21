@@ -45,7 +45,7 @@ public class RestaurantActor implements Actor {
 
     private void handleOrderPlaced(ActorContext ctx, RestaurantMessages.OrderPlaced orderPlaced) {
         log.info("Received order {} from {}", orderPlaced.orderId(), orderPlaced.order().clientName());
-        pendingOrders.put(orderPlaced.orderId(), new PendingOrder(orderPlaced.orderId(), orderPlaced.order(), orderPlaced.clientSession(), null));
+        pendingOrders.put(orderPlaced.orderId(), new PendingOrder(orderPlaced.orderId(), orderPlaced.order(), orderPlaced.clientSession(), null, List.of()));
         menuActor.tell(new RestaurantMessages.CalculatePrice(orderPlaced.orderId(), orderPlaced.order(), ctx.self()));
     }
 
@@ -62,11 +62,16 @@ public class RestaurantActor implements Actor {
             return;
         }
 
-        PendingOrder updated = order.withTotal(priceCalculated.total());
+        PendingOrder updated = order.withPricing(priceCalculated.total(), priceCalculated.missingItems());
         pendingOrders.put(priceCalculated.orderId(), updated);
 
+        String message = "Commande validée. Vérification du stock en cours.";
+        if (priceCalculated.missingItems() != null && !priceCalculated.missingItems().isEmpty()) {
+            message = "Commande en attente: articles inconnus (" + missingToString(priceCalculated.missingItems()) + ").";
+        }
+
         sendAcknowledgement(updated, OrderStatus.PENDING_STOCK,
-                "Commande validée. Vérification du stock en cours.",
+                message,
                 priceCalculated.total(),
                 null);
     }
@@ -75,6 +80,13 @@ public class RestaurantActor implements Actor {
         PendingOrder order = pendingOrders.get(stockResult.orderId());
         if (order == null) {
             log.warn("Stock result received for unknown order {}", stockResult.orderId());
+            return;
+        }
+
+        if (order.hasMissingItems()) {
+            String message = "Articles inconnus: " + missingToString(order.missingItems());
+            sendAcknowledgement(order, OrderStatus.REJECTED, message, order.total(), null);
+            pendingOrders.remove(stockResult.orderId());
             return;
         }
 
@@ -120,9 +132,15 @@ public class RestaurantActor implements Actor {
         return (missingItems == null || missingItems.isEmpty()) ? "items demandés" : String.join(", ", missingItems);
     }
 
-    private record PendingOrder(String orderId, OrderRequest order, ActorRef clientSession, BigDecimal total) {
-        PendingOrder withTotal(BigDecimal newTotal) {
-            return new PendingOrder(orderId, order, clientSession, newTotal);
+    private record PendingOrder(String orderId, OrderRequest order, ActorRef clientSession, BigDecimal total,
+                                List<String> missingItems) {
+        PendingOrder withPricing(BigDecimal newTotal, List<String> newMissingItems) {
+            List<String> safeMissing = newMissingItems == null ? List.of() : newMissingItems;
+            return new PendingOrder(orderId, order, clientSession, newTotal, safeMissing);
+        }
+
+        boolean hasMissingItems() {
+            return missingItems != null && !missingItems.isEmpty();
         }
     }
 }

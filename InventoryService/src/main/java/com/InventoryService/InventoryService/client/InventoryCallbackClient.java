@@ -15,7 +15,7 @@ public class InventoryCallbackClient {
     private final String callbackUrl;
 
     public InventoryCallbackClient(RestTemplate restTemplate,
-                                   @Value("${saf.restaurant.url:http://localhost:8080}") String restaurantBaseUrl,
+                                   @Value("${saf.restaurant.url:http://saf-restaurant}") String restaurantBaseUrl,
                                    @Value("${saf.restaurant.stock-callback-path:/events/stock-result}") String callbackPath) {
         this.restTemplate = restTemplate;
         this.callbackUrl = restaurantBaseUrl + callbackPath;

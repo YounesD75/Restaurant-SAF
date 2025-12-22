@@ -22,7 +22,7 @@ public class RestaurantActor implements Actor {
     private final ActorRef menuActor;
     private final ActorRef treasuryActor;
     private final ActorRef receiptActor;
-    private final Map<String, PendingOrder> pendingOrders = new HashMap<>();
+    private final Map<Long, PendingOrder> pendingOrders = new HashMap<>();
 
     public RestaurantActor(ActorRef menuActor, ActorRef treasuryActor, ActorRef receiptActor) {
         this.menuActor = menuActor;
@@ -132,7 +132,7 @@ public class RestaurantActor implements Actor {
         return (missingItems == null || missingItems.isEmpty()) ? "items demandés" : String.join(", ", missingItems);
     }
 
-    private record PendingOrder(String orderId, OrderRequest order, ActorRef clientSession, BigDecimal total,
+    private record PendingOrder(Long orderId, OrderRequest order, ActorRef clientSession, BigDecimal total,
                                 List<String> missingItems) {
         PendingOrder withPricing(BigDecimal newTotal, List<String> newMissingItems) {
             List<String> safeMissing = newMissingItems == null ? List.of() : newMissingItems;

@@ -16,7 +16,7 @@ import com.saf.restaurant.repository.TreasuryRepository;
 
 import java.math.BigDecimal;
 import java.util.List;
-import java.util.UUID;
+import java.util.concurrent.atomic.AtomicLong;
 import java.util.concurrent.CompletableFuture;
 
 public class RestaurantActorRegistry {
@@ -26,6 +26,7 @@ public class RestaurantActorRegistry {
     private final ActorRef treasuryActor;
     private final ActorRef receiptActor;
     private final ActorRef restaurantActor;
+    private final AtomicLong orderSequence = new AtomicLong(System.currentTimeMillis());
 
     public RestaurantActorRegistry(LocalActorSystem actorSystem,
                                    ReceiptRepository receiptRepository,
@@ -55,7 +56,7 @@ public class RestaurantActorRegistry {
         return actorSystem;
     }
 
-    public ActorRef spawnClientSession(String orderId,
+    public ActorRef spawnClientSession(Long orderId,
                                        OrderRequest order,
                                        CompletableFuture<OrderAcknowledgement> future) {
         ActorRef ref = actorSystem.spawn("client-" + orderId,
@@ -65,8 +66,8 @@ public class RestaurantActorRegistry {
         return ref;
     }
 
-    public String nextOrderId() {
-        return UUID.randomUUID().toString();
+    public Long nextOrderId() {
+        return orderSequence.incrementAndGet();
     }
 
     private List<MenuItem> defaultMenu() {

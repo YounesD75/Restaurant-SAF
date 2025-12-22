@@ -7,6 +7,6 @@ import java.util.List;
 import java.util.Optional;
 
 public interface ReceiptRepository extends JpaRepository<ReceiptEntity, Long> {
-    Optional<ReceiptEntity> findByOrderId(String orderId);
+    Optional<ReceiptEntity> findByOrderId(Long orderId);
     List<ReceiptEntity> findAllByOrderByIssuedAtDesc();
 }

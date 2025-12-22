@@ -17,7 +17,7 @@ public class MenuActor implements Actor {
     private final Map<String, MenuItem> catalog = new LinkedHashMap<>();
 
     public MenuActor(List<MenuItem> initialItems) {
-        initialItems.forEach(item -> catalog.put(item.sku(), item));
+        initialItems.forEach(item -> catalog.put(item.dishName(), item));
     }
 
     @Override
@@ -41,9 +41,9 @@ public class MenuActor implements Actor {
         BigDecimal total = BigDecimal.ZERO;
 
         for (OrderItem item : orderItems) {
-            MenuItem menuItem = catalog.get(item.sku());
+            MenuItem menuItem = catalog.get(item.dishName());
             if (menuItem == null) {
-                missingItems.add(item.sku());
+                missingItems.add(item.dishName());
                 continue;
             }
             BigDecimal lineTotal = menuItem.price().multiply(BigDecimal.valueOf(item.quantity()));

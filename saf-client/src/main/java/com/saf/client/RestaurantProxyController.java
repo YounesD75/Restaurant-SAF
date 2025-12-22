@@ -3,6 +3,8 @@ package com.saf.client;
 import com.saf.client.dto.MenuItemDto;
 import com.saf.client.dto.OrderAcknowledgementDto;
 import com.saf.client.dto.OrderRequestDto;
+import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
+import io.github.resilience4j.retry.annotation.Retry;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpEntity;
@@ -31,6 +33,8 @@ public class RestaurantProxyController {
     }
 
     @GetMapping("/menu")
+    @CircuitBreaker(name = "restaurant", fallbackMethod = "menuFallback")
+    @Retry(name = "restaurant")
     public List<MenuItemDto> listMenu() {
         ResponseEntity<List<MenuItemDto>> response = restTemplate.exchange(
                 restaurantBaseUrl + "/menu",
@@ -42,11 +46,27 @@ public class RestaurantProxyController {
     }
 
     @PostMapping("/orders")
+    @CircuitBreaker(name = "restaurant", fallbackMethod = "orderFallback")
+    @Retry(name = "restaurant")
     public OrderAcknowledgementDto placeOrder(@RequestBody OrderRequestDto request) {
         return restTemplate.postForObject(
                 restaurantBaseUrl + "/orders",
                 new HttpEntity<>(request),
                 OrderAcknowledgementDto.class
+        );
+    }
+
+    private List<MenuItemDto> menuFallback(Throwable cause) {
+        return List.of();
+    }
+
+    private OrderAcknowledgementDto orderFallback(OrderRequestDto request, Throwable cause) {
+        return new OrderAcknowledgementDto(
+                null,
+                "SERVICE_UNAVAILABLE",
+                "Restaurant indisponible, réessaie plus tard.",
+                null,
+                null
         );
     }
 }

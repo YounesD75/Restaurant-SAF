@@ -19,7 +19,7 @@ public class TreasuryEntryEntity {
     private Long id;
 
     @Column(name = "order_id", nullable = false, unique = true)
-    private String orderId;
+    private Long orderId;
 
     @Column(name = "amount", precision = 19, scale = 2, nullable = false)
     private BigDecimal amount;
@@ -31,11 +31,11 @@ public class TreasuryEntryEntity {
         return id;
     }
 
-    public String getOrderId() {
+    public Long getOrderId() {
         return orderId;
     }
 
-    public void setOrderId(String orderId) {
+    public void setOrderId(Long orderId) {
         this.orderId = orderId;
     }
 

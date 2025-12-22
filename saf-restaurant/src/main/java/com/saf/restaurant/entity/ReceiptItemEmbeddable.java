@@ -6,8 +6,8 @@ import jakarta.persistence.Embeddable;
 @Embeddable
 public class ReceiptItemEmbeddable {
 
-    @Column(name = "sku", nullable = false)
-    private String sku;
+    @Column(name = "dish_name", nullable = false)
+    private String dishName;
 
     @Column(name = "quantity")
     private int quantity;
@@ -16,21 +16,21 @@ public class ReceiptItemEmbeddable {
         // for JPA
     }
 
-    public ReceiptItemEmbeddable(String sku, int quantity) {
-        this.sku = sku;
+    public ReceiptItemEmbeddable(String dishName, int quantity) {
+        this.dishName = dishName;
         this.quantity = quantity;
     }
 
-    public String getSku() {
-        return sku;
+    public String getDishName() {
+        return dishName;
     }
 
     public int getQuantity() {
         return quantity;
     }
 
-    public void setSku(String sku) {
-        this.sku = sku;
+    public void setDishName(String dishName) {
+        this.dishName = dishName;
     }
 
     public void setQuantity(int quantity) {

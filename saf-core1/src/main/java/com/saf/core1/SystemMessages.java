@@ -13,4 +13,20 @@ public final class SystemMessages {
         @Override
         public Object payload() { return error; }
     }
+
+    public record ActorRestarted(String actorId, int attempts, int maxAttempts) implements Message {
+        @Override
+        public String type() { return "ActorRestarted"; }
+
+        @Override
+        public Object payload() { return actorId; }
+    }
+
+    public record ActorStopped(String actorId, String reason) implements Message {
+        @Override
+        public String type() { return "ActorStopped"; }
+
+        @Override
+        public Object payload() { return reason; }
+    }
 }

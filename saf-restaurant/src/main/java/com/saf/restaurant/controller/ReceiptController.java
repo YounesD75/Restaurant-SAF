@@ -25,7 +25,7 @@ public class ReceiptController {
     }
 
     @GetMapping("/{orderId}")
-    public ReceiptDocument byOrderId(@PathVariable String orderId) {
+    public ReceiptDocument byOrderId(@PathVariable Long orderId) {
         return service.receipt(orderId);
     }
 }

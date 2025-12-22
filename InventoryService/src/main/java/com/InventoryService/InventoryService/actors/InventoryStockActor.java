@@ -7,8 +7,12 @@ import com.InventoryService.InventoryService.service.InventoryCheckService;
 import com.saf.core1.Actor;
 import com.saf.core1.ActorContext;
 import com.saf.core1.Message;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class InventoryStockActor implements Actor {
+
+    private static final Logger log = LoggerFactory.getLogger(InventoryStockActor.class);
 
     private final InventoryCheckService checkService;
     private final InventoryCallbackClient callbackClient;
@@ -27,7 +31,10 @@ public class InventoryStockActor implements Actor {
     }
 
     private void handleVerify(StockCheckRequest request) {
+        log.info("Stock check start: orderId={} items={}", request.getOrderId(), request.getItems());
         StockCheckResponse result = checkService.verifyAndConsumeStock(request);
+        log.info("Stock check result: orderId={} success={} message={}",
+                result.getOrderId(), result.isSuccess(), result.getMessage());
         callbackClient.sendStockResult(result);
     }
 }

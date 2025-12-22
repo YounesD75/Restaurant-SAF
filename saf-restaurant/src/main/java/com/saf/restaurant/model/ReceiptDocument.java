@@ -5,7 +5,7 @@ import java.time.Instant;
 import java.util.List;
 
 public record ReceiptDocument(
-        String orderId,
+        Long orderId,
         String clientName,
         String tableNumber,
         BigDecimal total,

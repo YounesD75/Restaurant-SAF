@@ -25,14 +25,14 @@ public class ClientSessionActor implements Actor {
         }
     }
 
-    private final String orderId;
+    private final Long orderId;
     private final OrderRequest orderRequest;
     private final ActorRef restaurantActor;
     private final CompletableFuture<OrderAcknowledgement> responseFuture;
     private final AtomicBoolean started = new AtomicBoolean(false);
     private final AtomicBoolean acknowledged = new AtomicBoolean(false);
 
-    public ClientSessionActor(String orderId,
+    public ClientSessionActor(Long orderId,
                               OrderRequest orderRequest,
                               ActorRef restaurantActor,
                               CompletableFuture<OrderAcknowledgement> responseFuture) {

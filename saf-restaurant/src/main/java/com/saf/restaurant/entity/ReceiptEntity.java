@@ -24,7 +24,7 @@ public class ReceiptEntity {
     private Long id;
 
     @Column(name = "order_id", nullable = false, unique = true)
-    private String orderId;
+    private Long orderId;
 
     @Column(name = "client_name")
     private String clientName;
@@ -49,11 +49,11 @@ public class ReceiptEntity {
         return id;
     }
 
-    public String getOrderId() {
+    public Long getOrderId() {
         return orderId;
     }
 
-    public void setOrderId(String orderId) {
+    public void setOrderId(Long orderId) {
         this.orderId = orderId;
     }
 

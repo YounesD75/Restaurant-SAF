@@ -9,7 +9,7 @@ import java.util.Optional;
 
 public interface TreasuryRepository extends JpaRepository<TreasuryEntryEntity, Long> {
 
-    Optional<TreasuryEntryEntity> findByOrderId(String orderId);
+    Optional<TreasuryEntryEntity> findByOrderId(Long orderId);
 
     @Query("select coalesce(sum(t.amount), 0) from TreasuryEntryEntity t")
     BigDecimal totalRevenue();

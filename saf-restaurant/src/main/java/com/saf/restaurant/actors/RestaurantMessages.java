@@ -14,7 +14,7 @@ public final class RestaurantMessages {
     private RestaurantMessages() {
     }
 
-    public record OrderPlaced(String orderId, OrderRequest order, ActorRef clientSession) implements Message {
+    public record OrderPlaced(Long orderId, OrderRequest order, ActorRef clientSession) implements Message {
         @Override
         public String type() {
             return "OrderPlaced";
@@ -62,7 +62,7 @@ public final class RestaurantMessages {
         }
     }
 
-    public record CalculatePrice(String orderId, OrderRequest order, ActorRef replyTo) implements Message {
+    public record CalculatePrice(Long orderId, OrderRequest order, ActorRef replyTo) implements Message {
         @Override
         public String type() {
             return "CalculatePrice";
@@ -74,7 +74,7 @@ public final class RestaurantMessages {
         }
     }
 
-    public record PriceCalculated(String orderId, boolean valid, BigDecimal total, List<String> missingItems) implements Message {
+    public record PriceCalculated(Long orderId, boolean valid, BigDecimal total, List<String> missingItems) implements Message {
         @Override
         public String type() {
             return "PriceCalculated";
@@ -86,7 +86,7 @@ public final class RestaurantMessages {
         }
     }
 
-    public record StockResult(String orderId, boolean available, List<String> missingItems) implements Message {
+    public record StockResult(Long orderId, boolean available, List<String> missingItems) implements Message {
         @Override
         public String type() {
             return "StockResult";
@@ -98,7 +98,7 @@ public final class RestaurantMessages {
         }
     }
 
-    public record RecordPayment(String orderId, BigDecimal amount) implements Message {
+    public record RecordPayment(Long orderId, BigDecimal amount) implements Message {
         @Override
         public String type() {
             return "RecordPayment";
@@ -134,7 +134,7 @@ public final class RestaurantMessages {
         }
     }
 
-    public record GenerateReceipt(String orderId, OrderRequest order, BigDecimal total, ActorRef replyTo) implements Message {
+    public record GenerateReceipt(Long orderId, OrderRequest order, BigDecimal total, ActorRef replyTo) implements Message {
         @Override
         public String type() {
             return "GenerateReceipt";
@@ -146,7 +146,7 @@ public final class RestaurantMessages {
         }
     }
 
-    public record ReceiptReady(String orderId, ReceiptDocument document) implements Message {
+    public record ReceiptReady(Long orderId, ReceiptDocument document) implements Message {
         @Override
         public String type() {
             return "ReceiptReady";

@@ -38,7 +38,7 @@ public class RestaurantCommandService {
     }
 
     public OrderAcknowledgement placeOrder(OrderRequest request) {
-        String orderId = registry.nextOrderId();
+        Long orderId = registry.nextOrderId();
         CompletableFuture<OrderAcknowledgement> future = new CompletableFuture<>();
         registry.spawnClientSession(orderId, request, future);
 
@@ -84,7 +84,7 @@ public class RestaurantCommandService {
                 .collect(Collectors.toList());
     }
 
-    public ReceiptDocument receipt(String orderId) {
+    public ReceiptDocument receipt(Long orderId) {
         ReceiptEntity entity = receiptRepository.findByOrderId(orderId)
                 .orElseThrow(() -> new ResponseStatusException(
                         HttpStatus.BAD_REQUEST,
@@ -110,6 +110,6 @@ public class RestaurantCommandService {
     }
 
     private OrderItem toOrderItem(ReceiptItemEmbeddable embeddable) {
-        return new OrderItem(embeddable.getSku(), embeddable.getQuantity());
+        return new OrderItem(embeddable.getDishName(), embeddable.getQuantity());
     }
 }

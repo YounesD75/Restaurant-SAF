@@ -67,7 +67,7 @@ public class ReceiptActor implements Actor {
         );
     }
 
-    private void persist(String orderId, ReceiptDocument document) {
+    private void persist(Long orderId, ReceiptDocument document) {
         ReceiptEntity entity = receiptRepository.findByOrderId(orderId).orElseGet(ReceiptEntity::new);
         entity.setOrderId(orderId);
         entity.setClientName(document.clientName());
@@ -81,12 +81,12 @@ public class ReceiptActor implements Actor {
     }
 
     private String formatItem(OrderItem item) {
-        return "- %s x %d".formatted(item.sku(), item.quantity());
+        return "- %s x %d".formatted(item.dishName(), item.quantity());
     }
 
     private List<ReceiptItemEmbeddable> toEmbeddables(List<OrderItem> items) {
         return items.stream()
-                .map(item -> new ReceiptItemEmbeddable(item.sku(), item.quantity()))
+                .map(item -> new ReceiptItemEmbeddable(item.dishName(), item.quantity()))
                 .collect(Collectors.toList());
     }
 

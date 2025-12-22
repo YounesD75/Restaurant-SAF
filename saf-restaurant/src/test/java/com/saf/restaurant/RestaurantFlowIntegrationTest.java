@@ -72,7 +72,7 @@ class RestaurantFlowIntegrationTest {
         assertThat(receipt.items()).isNotEmpty();
     }
 
-    private ReceiptDocument waitForReceipt(String orderId) throws InterruptedException {
+    private ReceiptDocument waitForReceipt(Long orderId) throws InterruptedException {
         for (int i = 0; i < 10; i++) {
             ResponseEntity<ReceiptDocument> resp = restTemplate.getForEntity(
                     baseUrl + "/receipts/" + orderId,

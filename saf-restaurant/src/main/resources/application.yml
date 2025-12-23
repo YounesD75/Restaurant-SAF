@@ -22,3 +22,15 @@ eureka:
   client:
     service-url:
       defaultZone: http://localhost:8761/eureka
+
+logging:
+  file:
+    name: logs/restaurant.log  # Le fichier où les logs s'écriront
+  level:
+    root: INFO
+    com.saf.core1: DEBUG       # IMPORTANT: Active les logs de ton framework (ton package)
+  pattern:
+    # Le pattern magique qui récupère l'ID de l'acteur (%X{actorId})
+    # Attention aux guillemets "" obligatoires en YAML à cause des caractères spéciaux
+    file: "%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level [Actor:%X{actorId}] - %msg%n"
+    console: "%d{yyyy-MM-dd HH:mm:ss.SSS} %-5level [Actor:%X{actorId}] - %msg%n"

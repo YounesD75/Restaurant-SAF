@@ -1,8 +1,10 @@
 package com.saf.restaurant.service;
 
+import com.saf.core1.Actor;
 import com.saf.core1.ActorRef;
 import com.saf.core1.LocalActorSystem;
 import com.saf.core1.SupervisionStrategy;
+import com.saf.core1.router.RoundRobinPool; // <--- IMPORTANT : Import du Router
 import com.saf.restaurant.actors.ClientSessionActor;
 import com.saf.restaurant.actors.MenuActor;
 import com.saf.restaurant.actors.ReceiptActor;
@@ -16,13 +18,14 @@ import com.saf.restaurant.repository.TreasuryRepository;
 
 import java.math.BigDecimal;
 import java.util.List;
-import java.util.concurrent.atomic.AtomicLong;
 import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.atomic.AtomicLong;
+import java.util.function.Supplier;
 
 public class RestaurantActorRegistry {
 
     private final LocalActorSystem actorSystem;
-    private final ActorRef menuActor;
+    private final ActorRef menuActor; // C'est maintenant une référence vers le Router
     private final ActorRef treasuryActor;
     private final ActorRef receiptActor;
     private final ActorRef restaurantActor;
@@ -32,9 +35,24 @@ public class RestaurantActorRegistry {
                                    ReceiptRepository receiptRepository,
                                    TreasuryRepository treasuryRepository) {
         this.actorSystem = actorSystem;
-        this.menuActor = actorSystem.spawn("menu", () -> new MenuActor(defaultMenu()), SupervisionStrategy.RESTART);
+
+        // --- SCALABILITÉ IMPLÉMENTÉE ICI ---
+        
+        // 1. On définit la "recette" pour créer un travailleur MenuActor
+        Supplier<Actor> menuWorkerFactory = () -> new MenuActor(defaultMenu());
+
+        // 2. On lance le Router (Pool) avec 3 travailleurs au démarrage
+        // Le nom "menu-router" remplace l'ancien "menu"
+        this.menuActor = actorSystem.spawn("menu-router", 
+                () -> new RoundRobinPool(menuWorkerFactory, 3), 
+                SupervisionStrategy.RESTART);
+
+        // -----------------------------------
+
         this.treasuryActor = actorSystem.spawn("treasury", () -> new TreasuryActor(treasuryRepository), SupervisionStrategy.RESTART);
         this.receiptActor = actorSystem.spawn("receipt", () -> new ReceiptActor(receiptRepository), SupervisionStrategy.RESTART);
+        
+        // Le RestaurantActor reçoit la référence du Router (menuActor), c'est transparent pour lui.
         this.restaurantActor = actorSystem.spawn("restaurant",
                 () -> new RestaurantActor(menuActor, treasuryActor, receiptActor),
                 SupervisionStrategy.RESTART);
@@ -44,6 +62,8 @@ public class RestaurantActorRegistry {
         return restaurantActor;
     }
 
+    // Cette méthode retourne maintenant le Router.
+    // C'est utile pour ton ScalabilityController qui voudra envoyer des messages ScaleUp/ScaleDown.
     public ActorRef menuActor() {
         return menuActor;
     }

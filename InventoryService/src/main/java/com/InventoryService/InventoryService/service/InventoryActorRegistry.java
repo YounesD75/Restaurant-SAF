@@ -5,23 +5,34 @@ import com.InventoryService.InventoryService.client.InventoryCallbackClient;
 import com.saf.core1.ActorRef;
 import com.saf.core1.LocalActorSystem;
 import com.saf.core1.SupervisionStrategy;
+import com.saf.core1.router.RoundRobinPool;
+
+import java.util.function.Supplier;
 
 public class InventoryActorRegistry {
 
     private final LocalActorSystem actorSystem;
-    private final ActorRef stockActor;
+    private final ActorRef stockRouter;
 
     public InventoryActorRegistry(LocalActorSystem actorSystem,
                                   InventoryCheckService checkService,
                                   InventoryCallbackClient callbackClient) {
         this.actorSystem = actorSystem;
-        this.stockActor = actorSystem.spawn("stock",
-                () -> new InventoryStockActor(checkService, callbackClient),
-                SupervisionStrategy.RESTART);
+        Supplier<com.saf.core1.Actor> workerFactory =
+                () -> new InventoryStockActor(checkService, callbackClient);
+        this.stockRouter = actorSystem.spawn(
+                "stock-router",
+                () -> new RoundRobinPool(workerFactory, 3),
+                SupervisionStrategy.RESTART
+        );
     }
 
     public ActorRef stockActor() {
-        return stockActor;
+        return stockRouter;
+    }
+
+    public ActorRef stockRouter() {
+        return stockRouter;
     }
 
     public LocalActorSystem actorSystem() {

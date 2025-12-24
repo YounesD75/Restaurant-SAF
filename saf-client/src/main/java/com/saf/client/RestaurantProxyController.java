@@ -18,6 +18,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
+import com.saf.core1.ActorRef;
+import org.springframework.beans.factory.annotation.Qualifier;
 
 import java.util.List;
 
@@ -27,17 +29,21 @@ public class RestaurantProxyController {
 
     private final RestTemplate restTemplate;
     private final String restaurantBaseUrl;
+    private final ActorRef clientRouter;
 
     public RestaurantProxyController(RestTemplate restTemplate,
-                                     @Value("${saf.restaurant.url:http://saf-restaurant}") String restaurantBaseUrl) {
+                                     @Value("${saf.restaurant.url:http://saf-restaurant}") String restaurantBaseUrl,
+                                     @Qualifier("clientRouter") ActorRef clientRouter) {
         this.restTemplate = restTemplate;
         this.restaurantBaseUrl = restaurantBaseUrl;
+        this.clientRouter = clientRouter;
     }
 
     @GetMapping("/menu")
     @CircuitBreaker(name = "restaurant", fallbackMethod = "menuFallback")
     @Retry(name = "restaurant")
     public List<MenuItemDto> listMenu() {
+        clientRouter.tell(new ClientMessages.ProxyCall("GET", "/client/menu"));
         ResponseEntity<List<MenuItemDto>> response = restTemplate.exchange(
                 restaurantBaseUrl + "/menu",
                 HttpMethod.GET,
@@ -51,6 +57,7 @@ public class RestaurantProxyController {
     @CircuitBreaker(name = "restaurant", fallbackMethod = "orderFallback")
     @Retry(name = "restaurant")
     public OrderAcknowledgementDto placeOrder(@RequestBody OrderRequestDto request) {
+        clientRouter.tell(new ClientMessages.ProxyCall("POST", "/client/orders"));
         return restTemplate.postForObject(
                 restaurantBaseUrl + "/orders",
                 new HttpEntity<>(request),
@@ -62,6 +69,7 @@ public class RestaurantProxyController {
     @CircuitBreaker(name = "restaurant", fallbackMethod = "receiptFallback")
     @Retry(name = "restaurant")
     public ReceiptDto getReceipt(@PathVariable Long orderId) {
+        clientRouter.tell(new ClientMessages.ProxyCall("GET", "/client/receipts/" + orderId));
         return restTemplate.getForObject(
                 restaurantBaseUrl + "/receipts/" + orderId,
                 ReceiptDto.class

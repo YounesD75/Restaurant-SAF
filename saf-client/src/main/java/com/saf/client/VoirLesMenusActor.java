@@ -4,6 +4,8 @@ import com.saf.core1.Actor;
 import com.saf.core1.ActorContext;
 import com.saf.core1.ActorRef;
 import com.saf.core1.Message;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.List;
 
@@ -11,6 +13,8 @@ import java.util.List;
  * Acteur dédié à la consultation des menus.
  */
 public class VoirLesMenusActor implements Actor {
+
+    private static final Logger log = LoggerFactory.getLogger(VoirLesMenusActor.class);
 
     private final ActorRef restaurantRef;
 
@@ -29,9 +33,9 @@ public class VoirLesMenusActor implements Actor {
     public void onReceive(ActorContext ctx, Message msg) {
         if (msg instanceof ClientMessages.MenuDisponible menu) {
             List<String> plats = menu.plats();
-            System.out.printf("[VoirLesMenusActor] menu reçu: %s%n", plats);
+            log.info("Menu recu: {}", plats);
         } else {
-            System.out.printf("[VoirLesMenusActor] message ignoré: %s%n", msg.type());
+            log.debug("Message ignore: {}", msg.type());
         }
     }
 }

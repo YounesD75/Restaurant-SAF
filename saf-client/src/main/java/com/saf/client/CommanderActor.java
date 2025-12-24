@@ -4,6 +4,8 @@ import com.saf.core1.Actor;
 import com.saf.core1.ActorContext;
 import com.saf.core1.ActorRef;
 import com.saf.core1.Message;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.UUID;
 
@@ -12,18 +14,19 @@ import java.util.UUID;
  */
 public class CommanderActor implements Actor {
 
+    private static final Logger log = LoggerFactory.getLogger(CommanderActor.class);
+
     @Override
     public void onReceive(ActorContext ctx, Message msg) {
         if (msg instanceof ClientMessages.Commander commander) {
             String numero = UUID.randomUUID().toString();
-            System.out.printf("[CommanderActor] Commande envoyée: %s -> numéro %s%n",
-                    commander.payload(), numero);
+            log.info("Commande envoyee: {} -> numero {}", commander.payload(), numero);
             ActorRef replyTo = commander.replyTo();
             if (replyTo != null) {
                 replyTo.tell(new ClientMessages.CommandeConfirmee(numero));
             }
         } else {
-            System.out.printf("[CommanderActor] message ignoré: %s%n", msg.type());
+            log.debug("Message ignore: {}", msg.type());
         }
     }
 }

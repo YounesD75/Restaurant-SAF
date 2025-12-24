@@ -46,4 +46,9 @@ public final class ClientMessages {
         @Override public String type() { return "Avis"; }
         @Override public Object payload() { return commentaire; }
     }
+
+    public record ProxyCall(String method, String path) implements Message {
+        @Override public String type() { return "ProxyCall"; }
+        @Override public Object payload() { return method + " " + path; }
+    }
 }

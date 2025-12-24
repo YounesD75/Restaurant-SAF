@@ -4,6 +4,7 @@ import com.saf.core1.Actor;
 import com.saf.core1.ActorContext;
 import com.saf.core1.ActorRef;
 import com.saf.core1.Message;
+import com.saf.restaurant.client.InventoryClient;
 import com.saf.restaurant.model.OrderAcknowledgement;
 import com.saf.restaurant.model.OrderRequest;
 import com.saf.restaurant.model.OrderStatus;
@@ -22,12 +23,17 @@ public class RestaurantActor implements Actor {
     private final ActorRef menuActor;
     private final ActorRef treasuryActor;
     private final ActorRef receiptActor;
+    private final InventoryClient inventoryClient;
     private final Map<Long, PendingOrder> pendingOrders = new HashMap<>();
 
-    public RestaurantActor(ActorRef menuActor, ActorRef treasuryActor, ActorRef receiptActor) {
+    public RestaurantActor(ActorRef menuActor,
+                           ActorRef treasuryActor,
+                           ActorRef receiptActor,
+                           InventoryClient inventoryClient) {
         this.menuActor = menuActor;
         this.treasuryActor = treasuryActor;
         this.receiptActor = receiptActor;
+        this.inventoryClient = inventoryClient;
     }
 
     @Override
@@ -74,6 +80,8 @@ public class RestaurantActor implements Actor {
                 message,
                 priceCalculated.total(),
                 null);
+
+        inventoryClient.requestStockCheck(updated.orderId(), updated.order());
     }
 
     private void handleStockResult(ActorContext ctx, RestaurantMessages.StockResult stockResult) {

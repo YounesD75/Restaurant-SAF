@@ -9,6 +9,7 @@ import com.saf.restaurant.actors.MenuActor;
 import com.saf.restaurant.actors.ReceiptActor;
 import com.saf.restaurant.actors.RestaurantActor;
 import com.saf.restaurant.actors.TreasuryActor;
+import com.saf.restaurant.client.InventoryClient;
 import com.saf.restaurant.model.MenuItem;
 import com.saf.restaurant.repository.ReceiptRepository;
 import com.saf.restaurant.repository.TreasuryRepository;
@@ -33,9 +34,11 @@ public class ActorSystemConfiguration {
     @Bean(name = "menuActorRef")
     public ActorRef menuActorRef(LocalActorSystem system) {
         List<MenuItem> initialMenu = List.of(
-            new MenuItem("1", "Pizza Margherita", BigDecimal.valueOf(12.50), "Tomate, Mozza, Basilic"),
-            new MenuItem("2", "Burger Classique", BigDecimal.valueOf(15.00), "Boeuf, Cheddar, Oignons"),
-            new MenuItem("3", "Salade César", BigDecimal.valueOf(10.00), "Poulet, Parmesan, Croutons")
+            new MenuItem("burger", "Burger maison", BigDecimal.valueOf(12.50), "Pain brioché, boeuf, cheddar"),
+            new MenuItem("salad", "Salade fraîcheur", BigDecimal.valueOf(9.90), "Légumes croquants"),
+            new MenuItem("dessert", "Mousse au chocolat", BigDecimal.valueOf(6.50), "Chocolat noir 70%"),
+            new MenuItem("drink", "Limonade artisanale", BigDecimal.valueOf(4.00), "Citron, menthe"),
+            new MenuItem("coffee", "Expresso", BigDecimal.valueOf(2.50), "Arabica torréfié")
         );
 
         Supplier<Actor> menuFactory = () -> new MenuActor(initialMenu);
@@ -68,9 +71,10 @@ public class ActorSystemConfiguration {
     public ActorRef restaurantActorRef(LocalActorSystem system,
                                        ActorRef menuActorRef,
                                        ActorRef treasuryActorRef,
-                                       ActorRef receiptActorRef) {
+                                       ActorRef receiptActorRef,
+                                       InventoryClient inventoryClient) {
         return system.spawn("restaurant",
-                () -> new RestaurantActor(menuActorRef, treasuryActorRef, receiptActorRef),
+                () -> new RestaurantActor(menuActorRef, treasuryActorRef, receiptActorRef, inventoryClient),
                 SupervisionStrategy.RESTART);
     }
 

@@ -46,12 +46,15 @@ public class RestaurantActor implements Actor {
             handleStockResult(ctx, stockResult);
         } else if (msg instanceof RestaurantMessages.ReceiptReady receiptReady) {
             handleReceiptReady(receiptReady);
+        } else if (msg instanceof RestaurantMessages.PurgeStaleOrders purge) {
+            handlePurge(purge);
         }
     }
 
     private void handleOrderPlaced(ActorContext ctx, RestaurantMessages.OrderPlaced orderPlaced) {
         log.info("Received order {} from {}", orderPlaced.orderId(), orderPlaced.order().clientName());
-        pendingOrders.put(orderPlaced.orderId(), new PendingOrder(orderPlaced.orderId(), orderPlaced.order(), orderPlaced.clientSession(), null, List.of()));
+        pendingOrders.put(orderPlaced.orderId(), new PendingOrder(orderPlaced.orderId(), orderPlaced.order(),
+                orderPlaced.clientSession(), null, List.of(), System.currentTimeMillis()));
         menuActor.tell(new RestaurantMessages.CalculatePrice(orderPlaced.orderId(), orderPlaced.order(), ctx.self()));
     }
 
@@ -121,6 +124,23 @@ public class RestaurantActor implements Actor {
                 receiptReady.document().content());
     }
 
+    private void handlePurge(RestaurantMessages.PurgeStaleOrders purge) {
+        long cutoff = purge.cutoffEpochMillis();
+        if (pendingOrders.isEmpty()) {
+            return;
+        }
+        pendingOrders.values().removeIf(order -> {
+            if (order.createdAt() >= cutoff) {
+                return false;
+            }
+            sendAcknowledgement(order, OrderStatus.REJECTED,
+                    "Timeout stock : commande expirée.",
+                    order.total(),
+                    null);
+            return true;
+        });
+    }
+
     private void sendAcknowledgement(PendingOrder order,
                                      OrderStatus status,
                                      String message,
@@ -141,10 +161,10 @@ public class RestaurantActor implements Actor {
     }
 
     private record PendingOrder(Long orderId, OrderRequest order, ActorRef clientSession, BigDecimal total,
-                                List<String> missingItems) {
+                                List<String> missingItems, long createdAt) {
         PendingOrder withPricing(BigDecimal newTotal, List<String> newMissingItems) {
             List<String> safeMissing = newMissingItems == null ? List.of() : newMissingItems;
-            return new PendingOrder(orderId, order, clientSession, newTotal, safeMissing);
+            return new PendingOrder(orderId, order, clientSession, newTotal, safeMissing, createdAt);
         }
 
         boolean hasMissingItems() {

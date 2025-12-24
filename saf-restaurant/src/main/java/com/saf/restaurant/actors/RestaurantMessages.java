@@ -157,4 +157,16 @@ public final class RestaurantMessages {
             return document;
         }
     }
+
+    public record PurgeStaleOrders(long cutoffEpochMillis) implements Message {
+        @Override
+        public String type() {
+            return "PurgeStaleOrders";
+        }
+
+        @Override
+        public Object payload() {
+            return cutoffEpochMillis;
+        }
+    }
 }

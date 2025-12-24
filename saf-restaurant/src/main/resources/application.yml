@@ -28,6 +28,9 @@ saf:
     url: http://inventory-service
     check-path: /api/inventory/check
     enabled: true
+  restaurant:
+    pending-timeout: 30s
+    pending-scan-interval: 5000
 
 logging:
   file:

@@ -1744,3 +1744,677 @@ com.netflix.discovery.shared.transport.TransportException: Cannot execute reques
 	at org.springframework.boot.SpringApplicationShutdownHook.run(SpringApplicationShutdownHook.java:114)
 	at java.base/java.lang.Thread.run(Thread.java:1583)
 2025-12-24 14:05:14.210 [SpringApplicationShutdownHook] INFO  [Actor:] - Completed shut down of DiscoveryClient
+2025-12-24 14:19:26.580 [main] INFO  [Actor:] - Starting SafRestaurantApplication using Java 21.0.7 with PID 85804 (/home/cytech/Restaurant-SAF/saf-restaurant/target/classes started by cytech in /home/cytech/Restaurant-SAF/saf-restaurant)
+2025-12-24 14:19:26.581 [main] INFO  [Actor:] - No active profile set, falling back to 1 default profile: "default"
+2025-12-24 14:19:27.193 [main] INFO  [Actor:] - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-12-24 14:19:27.308 [main] INFO  [Actor:] - Finished Spring Data repository scanning in 108 ms. Found 2 JPA repository interfaces.
+2025-12-24 14:19:27.509 [main] INFO  [Actor:] - BeanFactory id=bdc0a7fd-7a7c-3bbc-b06b-76c4d0050c36
+2025-12-24 14:19:27.811 [main] INFO  [Actor:] - Tomcat initialized with port 8081 (http)
+2025-12-24 14:19:27.823 [main] INFO  [Actor:] - Starting service [Tomcat]
+2025-12-24 14:19:27.823 [main] INFO  [Actor:] - Starting Servlet engine: [Apache Tomcat/10.1.18]
+2025-12-24 14:19:27.872 [main] INFO  [Actor:] - Initializing Spring embedded WebApplicationContext
+2025-12-24 14:19:27.872 [main] INFO  [Actor:] - Root WebApplicationContext: initialization completed in 1254 ms
+2025-12-24 14:19:28.011 [main] INFO  [Actor:] - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-12-24 14:19:28.053 [main] INFO  [Actor:] - HHH000412: Hibernate ORM core version 6.4.1.Final
+2025-12-24 14:19:28.081 [main] INFO  [Actor:] - HHH000026: Second-level cache disabled
+2025-12-24 14:19:28.272 [main] INFO  [Actor:] - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-12-24 14:19:28.295 [main] INFO  [Actor:] - HikariPool-1 - Starting...
+2025-12-24 14:19:28.563 [main] INFO  [Actor:] - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@23c05889
+2025-12-24 14:19:28.564 [main] INFO  [Actor:] - HikariPool-1 - Start completed.
+2025-12-24 14:19:29.390 [main] INFO  [Actor:] - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-12-24 14:19:29.450 [main] WARN  [Actor:] - SQL Warning Code: 0, SQLState: 00000
+2025-12-24 14:19:29.451 [main] WARN  [Actor:] - la contrainte « uk_oq3k6lov98v737betmc0gna0f » de la relation « receipts » n'existe pas, ignore
+2025-12-24 14:19:29.455 [main] WARN  [Actor:] - SQL Warning Code: 0, SQLState: 00000
+2025-12-24 14:19:29.455 [main] WARN  [Actor:] - la contrainte « uk_604j9lgnslnhffkb9atk5van2 » de la relation « treasury_entries » n'existe pas, ignore
+2025-12-24 14:19:29.463 [main] INFO  [Actor:] - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-12-24 14:19:29.512 [main] INFO  [Actor:] - SAF ActorSystem started with 12 threads.
+2025-12-24 14:19:29.517 [main] DEBUG [Actor:menu-router-c56bd49f-360a-4224-adfb-d2843f0c5cf0] - Starting actor...
+2025-12-24 14:19:29.517 [main] INFO  [Actor:menu-router-c56bd49f-360a-4224-adfb-d2843f0c5cf0] - Starting Router Pool with 3 initial workers.
+2025-12-24 14:19:29.712 [main] INFO  [Actor:] - Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-12-24 14:19:30.144 [main] DEBUG [Actor:treasury-7ba18368-7577-484a-b892-0c6d01eac310] - Starting actor...
+2025-12-24 14:19:30.200 [main] DEBUG [Actor:receipt-9031aaab-5d7f-4beb-a8e3-290fb3b4ed39] - Starting actor...
+2025-12-24 14:19:30.203 [main] DEBUG [Actor:restaurant-1b52535d-9d0a-4329-864e-59c16580f7c1] - Starting actor...
+2025-12-24 14:19:30.223 [main] WARN  [Actor:] - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'pendingOrderPurgeScheduler' defined in file [/home/cytech/Restaurant-SAF/saf-restaurant/target/classes/com/saf/restaurant/service/PendingOrderPurgeScheduler.class]: Encountered invalid @Scheduled method 'purgeStaleOrders': Invalid fixedDelayString value "5s" - cannot parse into long
+2025-12-24 14:19:30.223 [main] INFO  [Actor:] - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-12-24 14:19:30.225 [main] INFO  [Actor:] - HikariPool-1 - Shutdown initiated...
+2025-12-24 14:19:30.232 [main] INFO  [Actor:] - HikariPool-1 - Shutdown completed.
+2025-12-24 14:19:30.236 [main] INFO  [Actor:] - Stopping service [Tomcat]
+2025-12-24 14:19:30.257 [main] INFO  [Actor:] - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-12-24 14:19:30.278 [main] ERROR [Actor:] - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'pendingOrderPurgeScheduler' defined in file [/home/cytech/Restaurant-SAF/saf-restaurant/target/classes/com/saf/restaurant/service/PendingOrderPurgeScheduler.class]: Encountered invalid @Scheduled method 'purgeStaleOrders': Invalid fixedDelayString value "5s" - cannot parse into long
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:606)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:521)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:975)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:959)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:624)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:334)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343)
+	at com.saf.restaurant.SafRestaurantApplication.main(SafRestaurantApplication.java:12)
+Caused by: java.lang.IllegalStateException: Encountered invalid @Scheduled method 'purgeStaleOrders': Invalid fixedDelayString value "5s" - cannot parse into long
+	at org.springframework.scheduling.annotation.ScheduledAnnotationBeanPostProcessor.processScheduledTask(ScheduledAnnotationBeanPostProcessor.java:513)
+	at org.springframework.scheduling.annotation.ScheduledAnnotationBeanPostProcessor.processScheduledSync(ScheduledAnnotationBeanPostProcessor.java:352)
+	at org.springframework.scheduling.annotation.ScheduledAnnotationBeanPostProcessor.processScheduled(ScheduledAnnotationBeanPostProcessor.java:331)
+	at org.springframework.scheduling.annotation.ScheduledAnnotationBeanPostProcessor.lambda$postProcessAfterInitialization$1(ScheduledAnnotationBeanPostProcessor.java:303)
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75)
+	at org.springframework.scheduling.annotation.ScheduledAnnotationBeanPostProcessor.lambda$postProcessAfterInitialization$2(ScheduledAnnotationBeanPostProcessor.java:303)
+	at java.base/java.util.LinkedHashMap.forEach(LinkedHashMap.java:986)
+	at org.springframework.scheduling.annotation.ScheduledAnnotationBeanPostProcessor.postProcessAfterInitialization(ScheduledAnnotationBeanPostProcessor.java:302)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsAfterInitialization(AbstractAutowireCapableBeanFactory.java:437)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1776)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:599)
+	... 15 common frames omitted
+2025-12-24 14:22:09.471 [main] INFO  [Actor:] - Starting SafRestaurantApplication using Java 21.0.7 with PID 87770 (/home/cytech/Restaurant-SAF/saf-restaurant/target/classes started by cytech in /home/cytech/Restaurant-SAF/saf-restaurant)
+2025-12-24 14:22:09.473 [main] INFO  [Actor:] - No active profile set, falling back to 1 default profile: "default"
+2025-12-24 14:22:10.078 [main] INFO  [Actor:] - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-12-24 14:22:10.191 [main] INFO  [Actor:] - Finished Spring Data repository scanning in 105 ms. Found 2 JPA repository interfaces.
+2025-12-24 14:22:10.401 [main] INFO  [Actor:] - BeanFactory id=bdc0a7fd-7a7c-3bbc-b06b-76c4d0050c36
+2025-12-24 14:22:10.717 [main] INFO  [Actor:] - Tomcat initialized with port 8081 (http)
+2025-12-24 14:22:10.731 [main] INFO  [Actor:] - Starting service [Tomcat]
+2025-12-24 14:22:10.731 [main] INFO  [Actor:] - Starting Servlet engine: [Apache Tomcat/10.1.18]
+2025-12-24 14:22:10.778 [main] INFO  [Actor:] - Initializing Spring embedded WebApplicationContext
+2025-12-24 14:22:10.778 [main] INFO  [Actor:] - Root WebApplicationContext: initialization completed in 1266 ms
+2025-12-24 14:22:10.927 [main] INFO  [Actor:] - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-12-24 14:22:10.971 [main] INFO  [Actor:] - HHH000412: Hibernate ORM core version 6.4.1.Final
+2025-12-24 14:22:10.997 [main] INFO  [Actor:] - HHH000026: Second-level cache disabled
+2025-12-24 14:22:11.195 [main] INFO  [Actor:] - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-12-24 14:22:11.218 [main] INFO  [Actor:] - HikariPool-1 - Starting...
+2025-12-24 14:22:11.488 [main] INFO  [Actor:] - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@30c8c6ab
+2025-12-24 14:22:11.489 [main] INFO  [Actor:] - HikariPool-1 - Start completed.
+2025-12-24 14:22:12.384 [main] INFO  [Actor:] - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-12-24 14:22:12.531 [main] INFO  [Actor:] - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-12-24 14:22:12.571 [main] INFO  [Actor:] - SAF ActorSystem started with 12 threads.
+2025-12-24 14:22:12.577 [main] DEBUG [Actor:menu-router-89015d45-e3b6-435c-a5c2-5bd1ca8e0d44] - Starting actor...
+2025-12-24 14:22:12.577 [main] INFO  [Actor:menu-router-89015d45-e3b6-435c-a5c2-5bd1ca8e0d44] - Starting Router Pool with 3 initial workers.
+2025-12-24 14:22:12.773 [main] INFO  [Actor:] - Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-12-24 14:22:13.189 [main] DEBUG [Actor:treasury-c5d8d8eb-8029-4ebd-aff6-518b4511be60] - Starting actor...
+2025-12-24 14:22:13.224 [main] DEBUG [Actor:receipt-1fb0d2cc-5b69-4dad-8860-6e670eaba1c2] - Starting actor...
+2025-12-24 14:22:13.227 [main] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - Starting actor...
+2025-12-24 14:22:13.289 [main] WARN  [Actor:] - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-12-24 14:22:13.774 [main] INFO  [Actor:] - Eureka HTTP Client uses RestTemplate.
+2025-12-24 14:22:13.808 [main] WARN  [Actor:] - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-12-24 14:22:13.828 [main] INFO  [Actor:] - Setting initial instance status as: STARTING
+2025-12-24 14:22:13.850 [main] INFO  [Actor:] - Initializing Eureka in region us-east-1
+2025-12-24 14:22:13.853 [main] INFO  [Actor:] - Resolving eureka endpoints via configuration
+2025-12-24 14:22:13.859 [main] INFO  [Actor:] - Disable delta property : false
+2025-12-24 14:22:13.859 [main] INFO  [Actor:] - Single vip registry refresh property : null
+2025-12-24 14:22:13.859 [main] INFO  [Actor:] - Force full registry fetch : false
+2025-12-24 14:22:13.860 [main] INFO  [Actor:] - Application is null : false
+2025-12-24 14:22:13.860 [main] INFO  [Actor:] - Registered Applications size is zero : true
+2025-12-24 14:22:13.860 [main] INFO  [Actor:] - Application version is -1: true
+2025-12-24 14:22:13.860 [main] INFO  [Actor:] - Getting all instance registry info from the eureka server
+2025-12-24 14:22:14.236 [main] INFO  [Actor:] - The response status is 200
+2025-12-24 14:22:14.238 [main] INFO  [Actor:] - Starting heartbeat executor: renew interval is: 30
+2025-12-24 14:22:14.240 [main] INFO  [Actor:] - InstanceInfoReplicator onDemand update allowed rate per min is 4
+2025-12-24 14:22:14.242 [main] INFO  [Actor:] - Discovery Client initialized at timestamp 1766582534241 with initial instances count: 0
+2025-12-24 14:22:14.247 [main] INFO  [Actor:] - Registering application SAF-RESTAURANT with eureka with status UP
+2025-12-24 14:22:14.248 [main] INFO  [Actor:] - Saw local status change event StatusChangeEvent [timestamp=1766582534248, current=UP, previous=STARTING]
+2025-12-24 14:22:14.251 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  [Actor:] - DiscoveryClient_SAF-RESTAURANT/student-laptop.home:saf-restaurant:8081: registering service...
+2025-12-24 14:22:14.273 [main] INFO  [Actor:] - Tomcat started on port 8081 (http) with context path ''
+2025-12-24 14:22:14.274 [main] INFO  [Actor:] - Updating port to 8081
+2025-12-24 14:22:14.297 [main] INFO  [Actor:] - Started SafRestaurantApplication in 5.267 seconds (process running for 5.578)
+2025-12-24 14:22:14.298 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766582504297
+2025-12-24 14:22:14.300 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 1223 µs
+2025-12-24 14:22:14.427 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  [Actor:] - DiscoveryClient_SAF-RESTAURANT/student-laptop.home:saf-restaurant:8081 - registration status: 204
+2025-12-24 14:22:19.299 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766582509299
+2025-12-24 14:22:19.299 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 4 µs
+2025-12-24 14:22:24.299 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766582514299
+2025-12-24 14:22:24.300 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 5 µs
+2025-12-24 14:22:29.299 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766582519299
+2025-12-24 14:22:29.300 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 3 µs
+2025-12-24 14:22:34.300 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766582524300
+2025-12-24 14:22:34.301 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 5 µs
+2025-12-24 14:22:39.301 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766582529300
+2025-12-24 14:22:39.301 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 9 µs
+2025-12-24 14:22:44.239 [DiscoveryClient-CacheRefreshExecutor-%d] INFO  [Actor:] - Disable delta property : false
+2025-12-24 14:22:44.239 [DiscoveryClient-CacheRefreshExecutor-%d] INFO  [Actor:] - Single vip registry refresh property : null
+2025-12-24 14:22:44.239 [DiscoveryClient-CacheRefreshExecutor-%d] INFO  [Actor:] - Force full registry fetch : false
+2025-12-24 14:22:44.239 [DiscoveryClient-CacheRefreshExecutor-%d] INFO  [Actor:] - Application is null : false
+2025-12-24 14:22:44.239 [DiscoveryClient-CacheRefreshExecutor-%d] INFO  [Actor:] - Registered Applications size is zero : true
+2025-12-24 14:22:44.239 [DiscoveryClient-CacheRefreshExecutor-%d] INFO  [Actor:] - Application version is -1: false
+2025-12-24 14:22:44.239 [DiscoveryClient-CacheRefreshExecutor-%d] INFO  [Actor:] - Getting all instance registry info from the eureka server
+2025-12-24 14:22:44.277 [DiscoveryClient-CacheRefreshExecutor-%d] INFO  [Actor:] - The response status is 200
+2025-12-24 14:22:44.301 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766582534301
+2025-12-24 14:22:44.301 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 5 µs
+2025-12-24 14:22:49.301 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766582539301
+2025-12-24 14:22:49.302 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 7 µs
+2025-12-24 14:22:54.302 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766582544302
+2025-12-24 14:22:54.303 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 7 µs
+2025-12-24 14:22:59.303 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766582549302
+2025-12-24 14:22:59.303 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 6 µs
+2025-12-24 14:23:04.303 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766582554303
+2025-12-24 14:23:04.303 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 3 µs
+2025-12-24 14:23:05.400 [http-nio-8081-exec-1] INFO  [Actor:] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-12-24 14:23:05.401 [http-nio-8081-exec-1] INFO  [Actor:] - Initializing Servlet 'dispatcherServlet'
+2025-12-24 14:23:05.402 [http-nio-8081-exec-1] INFO  [Actor:] - Completed initialization in 1 ms
+2025-12-24 14:23:05.437 [http-nio-8081-exec-1] DEBUG [Actor:ask-a62f89c1-ca4b-456c-8497-a61ae3a30ac8-8b520cdd-019a-47c7-8a00-00a95a16be6a] - Starting actor...
+2025-12-24 14:23:05.438 [pool-2-thread-2] INFO  [Actor:treasury-c5d8d8eb-8029-4ebd-aff6-518b4511be60] - RECEIVED message [TreasurySnapshotRequest] Payload: ActorRef(ask-a62f89c1-ca4b-456c-8497-a61ae3a30ac8-8b520cdd-019a-47c7-8a00-00a95a16be6a)
+2025-12-24 14:23:05.560 [pool-2-thread-2] DEBUG [Actor:treasury-c5d8d8eb-8029-4ebd-aff6-518b4511be60] - PROCESSED message [TreasurySnapshotRequest] in 121721 µs
+2025-12-24 14:23:05.560 [pool-2-thread-5] INFO  [Actor:ask-a62f89c1-ca4b-456c-8497-a61ae3a30ac8-8b520cdd-019a-47c7-8a00-00a95a16be6a] - RECEIVED message [TreasurySnapshot] Payload: TreasurySnapshot[totalRevenue=0, ordersSettled=0]
+2025-12-24 14:23:05.562 [pool-2-thread-5] DEBUG [Actor:ask-a62f89c1-ca4b-456c-8497-a61ae3a30ac8-8b520cdd-019a-47c7-8a00-00a95a16be6a] - Stopping actor...
+2025-12-24 14:23:05.563 [pool-2-thread-5] DEBUG [Actor:] - PROCESSED message [TreasurySnapshot] in 221 µs
+2025-12-24 14:23:09.303 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766582559303
+2025-12-24 14:23:09.304 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 7 µs
+2025-12-24 14:23:14.304 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766582564304
+2025-12-24 14:23:14.305 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 8 µs
+2025-12-24 14:23:19.304 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766582569304
+2025-12-24 14:23:19.305 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 7 µs
+2025-12-24 14:23:24.305 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766582574305
+2025-12-24 14:23:24.305 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 3 µs
+2025-12-24 14:23:29.305 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766582579305
+2025-12-24 14:23:29.306 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 5 µs
+2025-12-24 14:23:34.306 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766582584305
+2025-12-24 14:23:34.306 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 6 µs
+2025-12-24 14:23:39.306 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766582589306
+2025-12-24 14:23:39.307 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 8 µs
+2025-12-24 14:23:44.306 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766582594306
+2025-12-24 14:23:44.307 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 6 µs
+2025-12-24 14:23:48.999 [http-nio-8081-exec-3] DEBUG [Actor:ask-27ffcbbe-824a-42d8-98a9-c02d39ea2d98-796bae13-a493-42a7-a4ca-e62e8cb3ae9f] - Starting actor...
+2025-12-24 14:23:49.000 [pool-2-thread-1] INFO  [Actor:menu-router-89015d45-e3b6-435c-a5c2-5bd1ca8e0d44] - RECEIVED message [ListMenu] Payload: ActorRef(ask-27ffcbbe-824a-42d8-98a9-c02d39ea2d98-796bae13-a493-42a7-a4ca-e62e8cb3ae9f)
+2025-12-24 14:23:49.002 [pool-2-thread-1] DEBUG [Actor:worker-0-ed034405-55a6-4bfe-9125-d6f9a32c8531] - Starting actor...
+2025-12-24 14:23:49.002 [pool-2-thread-1] DEBUG [Actor:worker-1-1aadf142-138f-4612-a767-0665df64b913] - Starting actor...
+2025-12-24 14:23:49.003 [pool-2-thread-1] DEBUG [Actor:worker-2-d81d2f90-ae23-4987-9403-839b3bd2880d] - Starting actor...
+2025-12-24 14:23:49.003 [pool-2-thread-1] INFO  [Actor:] - Pool size is now: 3
+2025-12-24 14:23:49.004 [pool-2-thread-1] DEBUG [Actor:] - Routing message [ListMenu] to worker worker-0-ed034405-55a6-4bfe-9125-d6f9a32c8531
+2025-12-24 14:23:49.004 [pool-2-thread-1] DEBUG [Actor:] - PROCESSED message [ListMenu] in 3877 µs
+2025-12-24 14:23:49.004 [pool-2-thread-7] INFO  [Actor:worker-0-ed034405-55a6-4bfe-9125-d6f9a32c8531] - RECEIVED message [ListMenu] Payload: ActorRef(ask-27ffcbbe-824a-42d8-98a9-c02d39ea2d98-796bae13-a493-42a7-a4ca-e62e8cb3ae9f)
+2025-12-24 14:23:49.005 [pool-2-thread-7] DEBUG [Actor:worker-0-ed034405-55a6-4bfe-9125-d6f9a32c8531] - PROCESSED message [ListMenu] in 186 µs
+2025-12-24 14:23:49.005 [pool-2-thread-6] INFO  [Actor:ask-27ffcbbe-824a-42d8-98a9-c02d39ea2d98-796bae13-a493-42a7-a4ca-e62e8cb3ae9f] - RECEIVED message [MenuListed] Payload: [MenuItem[dishName=burger, name=Burger maison, price=12.5, description=Pain brioché, boeuf, cheddar], MenuItem[dishName=salad, name=Salade fraîcheur, price=9.9, description=Légumes croquants], MenuItem[dishName=dessert, name=Mousse au chocolat, price=6.5, description=Chocolat noir 70%], MenuItem[dishName=drink, name=Limonade artisanale, price=4.0, description=Citron, menthe], MenuItem[dishName=coffee, name=Expresso, price=2.5, description=Arabica torréfié]]
+2025-12-24 14:23:49.009 [pool-2-thread-6] DEBUG [Actor:ask-27ffcbbe-824a-42d8-98a9-c02d39ea2d98-796bae13-a493-42a7-a4ca-e62e8cb3ae9f] - Stopping actor...
+2025-12-24 14:23:49.009 [pool-2-thread-6] DEBUG [Actor:] - PROCESSED message [MenuListed] in 231 µs
+2025-12-24 14:23:49.307 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766582599307
+2025-12-24 14:23:49.307 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 7 µs
+2025-12-24 14:23:54.308 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766582604307
+2025-12-24 14:23:54.308 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 8 µs
+2025-12-24 14:23:59.308 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766582609308
+2025-12-24 14:23:59.308 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 6 µs
+2025-12-24 14:24:04.308 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766582614308
+2025-12-24 14:24:04.309 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 7 µs
+2025-12-24 14:24:09.309 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766582619309
+2025-12-24 14:24:09.310 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 7 µs
+2025-12-24 14:24:14.310 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766582624309
+2025-12-24 14:24:14.310 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 6 µs
+2025-12-24 14:24:19.310 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766582629310
+2025-12-24 14:24:19.310 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 4 µs
+2025-12-24 14:24:24.311 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766582634310
+2025-12-24 14:24:24.311 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 7 µs
+2025-12-24 14:24:24.630 [http-nio-8081-exec-7] DEBUG [Actor:ask-6fbd1bed-626f-477a-b243-2a14ecde0b3a-4bc8c1a1-399e-459f-a012-fc2b26e1a709] - Starting actor...
+2025-12-24 14:24:24.631 [pool-2-thread-1] INFO  [Actor:] - RECEIVED message [ListMenu] Payload: ActorRef(ask-6fbd1bed-626f-477a-b243-2a14ecde0b3a-4bc8c1a1-399e-459f-a012-fc2b26e1a709)
+2025-12-24 14:24:24.631 [pool-2-thread-1] DEBUG [Actor:] - Routing message [ListMenu] to worker worker-1-1aadf142-138f-4612-a767-0665df64b913
+2025-12-24 14:24:24.632 [pool-2-thread-1] DEBUG [Actor:] - PROCESSED message [ListMenu] in 48 µs
+2025-12-24 14:24:24.632 [pool-2-thread-8] INFO  [Actor:worker-1-1aadf142-138f-4612-a767-0665df64b913] - RECEIVED message [ListMenu] Payload: ActorRef(ask-6fbd1bed-626f-477a-b243-2a14ecde0b3a-4bc8c1a1-399e-459f-a012-fc2b26e1a709)
+2025-12-24 14:24:24.632 [pool-2-thread-8] DEBUG [Actor:worker-1-1aadf142-138f-4612-a767-0665df64b913] - PROCESSED message [ListMenu] in 25 µs
+2025-12-24 14:24:24.632 [pool-2-thread-10] INFO  [Actor:ask-6fbd1bed-626f-477a-b243-2a14ecde0b3a-4bc8c1a1-399e-459f-a012-fc2b26e1a709] - RECEIVED message [MenuListed] Payload: [MenuItem[dishName=burger, name=Burger maison, price=12.5, description=Pain brioché, boeuf, cheddar], MenuItem[dishName=salad, name=Salade fraîcheur, price=9.9, description=Légumes croquants], MenuItem[dishName=dessert, name=Mousse au chocolat, price=6.5, description=Chocolat noir 70%], MenuItem[dishName=drink, name=Limonade artisanale, price=4.0, description=Citron, menthe], MenuItem[dishName=coffee, name=Expresso, price=2.5, description=Arabica torréfié]]
+2025-12-24 14:24:24.632 [pool-2-thread-10] DEBUG [Actor:ask-6fbd1bed-626f-477a-b243-2a14ecde0b3a-4bc8c1a1-399e-459f-a012-fc2b26e1a709] - Stopping actor...
+2025-12-24 14:24:24.632 [pool-2-thread-10] DEBUG [Actor:] - PROCESSED message [MenuListed] in 42 µs
+2025-12-24 14:24:29.311 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766582639311
+2025-12-24 14:24:29.311 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 7 µs
+2025-12-24 14:24:34.311 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766582644311
+2025-12-24 14:24:34.312 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 6 µs
+2025-12-24 14:24:39.312 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766582649312
+2025-12-24 14:24:39.313 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 9 µs
+2025-12-24 14:24:44.312 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766582654312
+2025-12-24 14:24:44.313 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 5 µs
+2025-12-24 14:24:49.313 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766582659313
+2025-12-24 14:24:49.313 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 5 µs
+2025-12-24 14:24:54.313 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766582664313
+2025-12-24 14:24:54.314 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 7 µs
+2025-12-24 14:24:59.314 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766582669313
+2025-12-24 14:24:59.314 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 7 µs
+2025-12-24 14:25:00.103 [http-nio-8081-exec-8] DEBUG [Actor:client-1766582533231-2fe3ddca-e52b-4da8-a5d8-5af47c18bb8b] - Starting actor...
+2025-12-24 14:25:00.104 [pool-2-thread-11] INFO  [Actor:client-1766582533231-2fe3ddca-e52b-4da8-a5d8-5af47c18bb8b] - RECEIVED message [BeginOrder] Payload: BeginOrder[]
+2025-12-24 14:25:00.105 [pool-2-thread-11] DEBUG [Actor:client-1766582533231-2fe3ddca-e52b-4da8-a5d8-5af47c18bb8b] - PROCESSED message [BeginOrder] in 123 µs
+2025-12-24 14:25:00.105 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [OrderPlaced] Payload: OrderRequest[clientName=Alice, tableNumber=12, instructions=sans oignons, items=[OrderItem[dishName=burger, quantity=2], OrderItem[dishName=drink, quantity=2]]]
+2025-12-24 14:25:00.106 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - Received order 1766582533231 from Alice
+2025-12-24 14:25:00.106 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [OrderPlaced] in 714 µs
+2025-12-24 14:25:00.106 [pool-2-thread-1] INFO  [Actor:] - RECEIVED message [CalculatePrice] Payload: OrderRequest[clientName=Alice, tableNumber=12, instructions=sans oignons, items=[OrderItem[dishName=burger, quantity=2], OrderItem[dishName=drink, quantity=2]]]
+2025-12-24 14:25:00.107 [pool-2-thread-1] DEBUG [Actor:] - Routing message [CalculatePrice] to worker worker-2-d81d2f90-ae23-4987-9403-839b3bd2880d
+2025-12-24 14:25:00.107 [pool-2-thread-1] DEBUG [Actor:] - PROCESSED message [CalculatePrice] in 140 µs
+2025-12-24 14:25:00.107 [pool-2-thread-9] INFO  [Actor:worker-2-d81d2f90-ae23-4987-9403-839b3bd2880d] - RECEIVED message [CalculatePrice] Payload: OrderRequest[clientName=Alice, tableNumber=12, instructions=sans oignons, items=[OrderItem[dishName=burger, quantity=2], OrderItem[dishName=drink, quantity=2]]]
+2025-12-24 14:25:00.107 [pool-2-thread-9] DEBUG [Actor:worker-2-d81d2f90-ae23-4987-9403-839b3bd2880d] - PROCESSED message [CalculatePrice] in 184 µs
+2025-12-24 14:25:00.107 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PriceCalculated] Payload: PriceCalculated[orderId=1766582533231, valid=true, total=33.0, missingItems=[]]
+2025-12-24 14:25:00.111 [pool-2-thread-11] INFO  [Actor:client-1766582533231-2fe3ddca-e52b-4da8-a5d8-5af47c18bb8b] - RECEIVED message [AcknowledgeOrder] Payload: OrderAcknowledgement[orderId=1766582533231, status=PENDING_STOCK, message=Commande validée. Vérification du stock en cours., estimatedTotal=33.0, receipt=null]
+2025-12-24 14:25:00.115 [pool-2-thread-11] DEBUG [Actor:client-1766582533231-2fe3ddca-e52b-4da8-a5d8-5af47c18bb8b] - PROCESSED message [AcknowledgeOrder] in 52 µs
+2025-12-24 14:25:00.312 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - Stock check request sent to inventory for order 1766582533231
+2025-12-24 14:25:00.312 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PriceCalculated] in 201702 µs
+2025-12-24 14:25:00.607 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [StockResult] Payload: StockResult[orderId=1766582533231, available=true, missingItems=[]]
+2025-12-24 14:25:00.611 [pool-2-thread-2] INFO  [Actor:treasury-c5d8d8eb-8029-4ebd-aff6-518b4511be60] - RECEIVED message [RecordPayment] Payload: 33.0
+2025-12-24 14:25:00.611 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [StockResult] in 529 µs
+2025-12-24 14:25:00.611 [pool-2-thread-3] INFO  [Actor:receipt-1fb0d2cc-5b69-4dad-8860-6e670eaba1c2] - RECEIVED message [GenerateReceipt] Payload: OrderRequest[clientName=Alice, tableNumber=12, instructions=sans oignons, items=[OrderItem[dishName=burger, quantity=2], OrderItem[dishName=drink, quantity=2]]]
+2025-12-24 14:25:00.686 [pool-2-thread-2] DEBUG [Actor:treasury-c5d8d8eb-8029-4ebd-aff6-518b4511be60] - PROCESSED message [RecordPayment] in 75570 µs
+2025-12-24 14:25:00.693 [pool-2-thread-3] DEBUG [Actor:receipt-1fb0d2cc-5b69-4dad-8860-6e670eaba1c2] - PROCESSED message [GenerateReceipt] in 81886 µs
+2025-12-24 14:25:00.693 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [ReceiptReady] Payload: ReceiptDocument[orderId=1766582533231, clientName=Alice, tableNumber=12, total=33.0, items=[OrderItem[dishName=burger, quantity=2], OrderItem[dishName=drink, quantity=2]], issuedAt=2025-12-24T13:25:00.612503053Z, content==== SAF RESTAURANT RECEIPT ===
+Client: Alice
+Table: 12
+Total: 33.0 €
+Items:
+- burger x 2
+- drink x 2
+]
+2025-12-24 14:25:00.698 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [ReceiptReady] in 48 µs
+2025-12-24 14:25:00.698 [pool-2-thread-11] INFO  [Actor:client-1766582533231-2fe3ddca-e52b-4da8-a5d8-5af47c18bb8b] - RECEIVED message [AcknowledgeOrder] Payload: OrderAcknowledgement[orderId=1766582533231, status=COMPLETED, message=Commande servie et ticket généré., estimatedTotal=33.0, receipt==== SAF RESTAURANT RECEIPT ===
+Client: Alice
+Table: 12
+Total: 33.0 €
+Items:
+- burger x 2
+- drink x 2
+]
+2025-12-24 14:25:00.698 [pool-2-thread-11] DEBUG [Actor:client-1766582533231-2fe3ddca-e52b-4da8-a5d8-5af47c18bb8b] - Stopping actor...
+2025-12-24 14:25:00.698 [pool-2-thread-11] DEBUG [Actor:] - PROCESSED message [AcknowledgeOrder] in 73 µs
+2025-12-24 14:25:04.314 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766582674314
+2025-12-24 14:25:04.314 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 4 µs
+2025-12-24 14:25:09.314 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766582679314
+2025-12-24 14:25:09.315 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 5 µs
+2025-12-24 14:25:14.315 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766582684315
+2025-12-24 14:25:14.315 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 4 µs
+2025-12-24 14:25:19.315 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766582689315
+2025-12-24 14:25:19.315 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 4 µs
+2025-12-24 14:25:24.315 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766582694315
+2025-12-24 14:25:24.316 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 5 µs
+2025-12-24 14:25:29.316 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766582699316
+2025-12-24 14:25:29.316 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 4 µs
+2025-12-24 14:25:34.316 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766582704316
+2025-12-24 14:25:34.316 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 4 µs
+2025-12-24 14:25:39.317 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766582709316
+2025-12-24 14:25:39.317 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 6 µs
+2025-12-24 14:25:44.317 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766582714317
+2025-12-24 14:25:44.317 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 4 µs
+2025-12-24 14:25:49.318 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766582719317
+2025-12-24 14:25:49.318 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 7 µs
+2025-12-24 14:25:54.318 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766582724318
+2025-12-24 14:25:54.318 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 4 µs
+2025-12-24 14:25:59.318 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766582729318
+2025-12-24 14:25:59.319 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 5 µs
+2025-12-24 14:26:04.319 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766582734319
+2025-12-24 14:26:04.319 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 7 µs
+2025-12-24 14:26:09.319 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766582739319
+2025-12-24 14:26:09.320 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 8 µs
+2025-12-24 14:26:14.320 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766582744320
+2025-12-24 14:26:14.320 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 7 µs
+2025-12-24 14:26:19.320 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766582749320
+2025-12-24 14:26:19.321 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 9 µs
+2025-12-24 14:26:24.321 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766582754321
+2025-12-24 14:26:24.321 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 6 µs
+2025-12-24 14:26:29.321 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766582759321
+2025-12-24 14:26:29.321 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 5 µs
+2025-12-24 14:26:34.322 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766582764321
+2025-12-24 14:26:34.322 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 8 µs
+2025-12-24 14:26:39.322 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766582769322
+2025-12-24 14:26:39.323 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 8 µs
+2025-12-24 14:26:44.322 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766582774322
+2025-12-24 14:26:44.323 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 6 µs
+2025-12-24 14:26:49.323 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766582779323
+2025-12-24 14:26:49.323 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 3 µs
+2025-12-24 14:26:54.323 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766582784323
+2025-12-24 14:26:54.324 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 8 µs
+2025-12-24 14:26:59.324 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766582789323
+2025-12-24 14:26:59.324 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 7 µs
+2025-12-24 14:27:04.324 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766582794324
+2025-12-24 14:27:04.324 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 7 µs
+2025-12-24 14:27:09.324 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766582799324
+2025-12-24 14:27:09.325 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 7 µs
+2025-12-24 14:27:13.862 [AsyncResolver-bootstrap-executor-%d] INFO  [Actor:] - Resolving eureka endpoints via configuration
+2025-12-24 14:27:14.325 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766582804325
+2025-12-24 14:27:14.325 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 6 µs
+2025-12-24 14:27:19.325 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766582809325
+2025-12-24 14:27:19.326 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 3 µs
+2025-12-24 14:27:24.326 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766582814326
+2025-12-24 14:27:24.327 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 8 µs
+2025-12-24 14:27:29.326 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766582819326
+2025-12-24 14:27:29.327 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 3 µs
+2025-12-24 14:27:34.327 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766582824327
+2025-12-24 14:27:34.327 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 6 µs
+2025-12-24 14:27:39.327 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766582829327
+2025-12-24 14:27:39.327 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 5 µs
+2025-12-24 14:27:44.328 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766582834327
+2025-12-24 14:27:44.328 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 5 µs
+2025-12-24 14:27:49.328 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766582839328
+2025-12-24 14:27:49.328 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 4 µs
+2025-12-24 14:27:54.329 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766582844328
+2025-12-24 14:27:54.329 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 37 µs
+2025-12-24 14:27:59.329 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766582849329
+2025-12-24 14:27:59.329 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 5 µs
+2025-12-24 14:28:04.329 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766582854329
+2025-12-24 14:28:04.330 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 8 µs
+2025-12-24 14:28:06.549 [http-nio-8081-exec-3] DEBUG [Actor:ask-8a435680-2e4e-43c1-9434-37366dc9eead-b27e6caf-169b-4607-bc68-03c1ae39b823] - Starting actor...
+2025-12-24 14:28:06.550 [pool-2-thread-2] INFO  [Actor:treasury-c5d8d8eb-8029-4ebd-aff6-518b4511be60] - RECEIVED message [TreasurySnapshotRequest] Payload: ActorRef(ask-8a435680-2e4e-43c1-9434-37366dc9eead-b27e6caf-169b-4607-bc68-03c1ae39b823)
+2025-12-24 14:28:06.560 [pool-2-thread-2] DEBUG [Actor:treasury-c5d8d8eb-8029-4ebd-aff6-518b4511be60] - PROCESSED message [TreasurySnapshotRequest] in 9523 µs
+2025-12-24 14:28:06.560 [pool-2-thread-12] INFO  [Actor:ask-8a435680-2e4e-43c1-9434-37366dc9eead-b27e6caf-169b-4607-bc68-03c1ae39b823] - RECEIVED message [TreasurySnapshot] Payload: TreasurySnapshot[totalRevenue=33.00, ordersSettled=1]
+2025-12-24 14:28:06.560 [pool-2-thread-12] DEBUG [Actor:ask-8a435680-2e4e-43c1-9434-37366dc9eead-b27e6caf-169b-4607-bc68-03c1ae39b823] - Stopping actor...
+2025-12-24 14:28:06.560 [pool-2-thread-12] DEBUG [Actor:] - PROCESSED message [TreasurySnapshot] in 103 µs
+2025-12-24 14:28:09.330 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766582859330
+2025-12-24 14:28:09.330 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 8 µs
+2025-12-24 14:28:14.330 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766582864330
+2025-12-24 14:28:14.331 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 6 µs
+2025-12-24 14:28:19.331 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766582869331
+2025-12-24 14:28:19.331 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 3 µs
+2025-12-24 14:28:24.331 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766582874331
+2025-12-24 14:28:24.331 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 7 µs
+2025-12-24 14:28:29.332 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766582879331
+2025-12-24 14:28:29.332 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 4 µs
+2025-12-24 14:28:34.332 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766582884332
+2025-12-24 14:28:34.332 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 7 µs
+2025-12-24 14:28:39.332 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766582889332
+2025-12-24 14:28:39.333 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 7 µs
+2025-12-24 14:28:44.333 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766582894333
+2025-12-24 14:28:44.333 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 6 µs
+2025-12-24 14:28:49.333 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766582899333
+2025-12-24 14:28:49.333 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 5 µs
+2025-12-24 14:28:54.333 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766582904333
+2025-12-24 14:28:54.334 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 7 µs
+2025-12-24 14:28:59.334 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766582909333
+2025-12-24 14:28:59.334 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 3 µs
+2025-12-24 14:29:04.334 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766582914334
+2025-12-24 14:29:04.334 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 6 µs
+2025-12-24 14:29:09.334 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766582919334
+2025-12-24 14:29:09.335 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 8 µs
+2025-12-24 14:29:14.335 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766582924335
+2025-12-24 14:29:14.335 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 8 µs
+2025-12-24 14:29:19.335 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766582929335
+2025-12-24 14:29:19.336 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 7 µs
+2025-12-24 14:29:24.336 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766582934336
+2025-12-24 14:29:24.336 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 8 µs
+2025-12-24 14:29:29.336 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766582939336
+2025-12-24 14:29:29.336 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 5 µs
+2025-12-24 14:29:34.337 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766582944336
+2025-12-24 14:29:34.337 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 6 µs
+2025-12-24 14:29:39.337 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766582949337
+2025-12-24 14:29:39.340 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 8 µs
+2025-12-24 14:29:44.337 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766582954337
+2025-12-24 14:29:44.340 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 8 µs
+2025-12-24 14:29:49.338 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766582959338
+2025-12-24 14:29:49.338 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 8 µs
+2025-12-24 14:29:54.338 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766582964338
+2025-12-24 14:29:54.339 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 7 µs
+2025-12-24 14:29:59.339 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766582969339
+2025-12-24 14:29:59.339 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 7 µs
+2025-12-24 14:30:04.339 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766582974339
+2025-12-24 14:30:04.340 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 8 µs
+2025-12-24 14:30:09.340 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766582979340
+2025-12-24 14:30:09.340 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 7 µs
+2025-12-24 14:30:14.340 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766582984340
+2025-12-24 14:30:14.341 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 9 µs
+2025-12-24 14:30:19.341 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766582989341
+2025-12-24 14:30:19.341 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 8 µs
+2025-12-24 14:30:24.341 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766582994341
+2025-12-24 14:30:24.342 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 8 µs
+2025-12-24 14:30:29.342 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766582999342
+2025-12-24 14:30:29.342 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 8 µs
+2025-12-24 14:30:34.342 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766583004342
+2025-12-24 14:30:34.343 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 6 µs
+2025-12-24 14:30:39.343 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766583009343
+2025-12-24 14:30:39.343 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 3 µs
+2025-12-24 14:30:44.343 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766583014343
+2025-12-24 14:30:44.344 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 6 µs
+2025-12-24 14:30:49.344 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766583019344
+2025-12-24 14:30:49.344 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 6 µs
+2025-12-24 14:30:54.344 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766583024344
+2025-12-24 14:30:54.345 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 8 µs
+2025-12-24 14:30:59.345 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766583029344
+2025-12-24 14:30:59.345 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 31 µs
+2025-12-24 14:31:04.345 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766583034345
+2025-12-24 14:31:04.345 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 6 µs
+2025-12-24 14:31:09.345 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766583039345
+2025-12-24 14:31:09.346 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 6 µs
+2025-12-24 14:31:14.346 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766583044346
+2025-12-24 14:31:14.346 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 6 µs
+2025-12-24 14:31:19.346 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766583049346
+2025-12-24 14:31:19.347 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 6 µs
+2025-12-24 14:31:24.347 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766583054346
+2025-12-24 14:31:24.348 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 8 µs
+2025-12-24 14:31:29.347 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766583059347
+2025-12-24 14:31:29.347 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 3 µs
+2025-12-24 14:31:34.347 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766583064347
+2025-12-24 14:31:34.348 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 43 µs
+2025-12-24 14:31:39.347 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766583069347
+2025-12-24 14:31:39.348 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 4 µs
+2025-12-24 14:31:44.348 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766583074348
+2025-12-24 14:31:44.348 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 6 µs
+2025-12-24 14:31:49.349 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766583079348
+2025-12-24 14:31:49.349 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 6 µs
+2025-12-24 14:31:54.349 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766583084349
+2025-12-24 14:31:54.349 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 7 µs
+2025-12-24 14:31:59.349 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766583089349
+2025-12-24 14:31:59.349 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 9 µs
+2025-12-24 14:32:04.349 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766583094349
+2025-12-24 14:32:04.350 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 8 µs
+2025-12-24 14:32:09.350 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766583099350
+2025-12-24 14:32:09.350 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 4 µs
+2025-12-24 14:32:13.863 [AsyncResolver-bootstrap-executor-%d] INFO  [Actor:] - Resolving eureka endpoints via configuration
+2025-12-24 14:32:14.350 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766583104350
+2025-12-24 14:32:14.351 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 10 µs
+2025-12-24 14:32:19.351 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766583109350
+2025-12-24 14:32:19.351 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 8 µs
+2025-12-24 14:32:24.351 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766583114351
+2025-12-24 14:32:24.352 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 8 µs
+2025-12-24 14:32:29.352 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766583119351
+2025-12-24 14:32:29.352 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 51 µs
+2025-12-24 14:32:34.352 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766583124352
+2025-12-24 14:32:34.352 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 7 µs
+2025-12-24 14:32:39.352 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766583129352
+2025-12-24 14:32:39.353 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 9 µs
+2025-12-24 14:32:44.353 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766583134353
+2025-12-24 14:32:44.353 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 8 µs
+2025-12-24 14:32:49.354 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766583139354
+2025-12-24 14:32:49.354 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 22 µs
+2025-12-24 14:32:54.354 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766583144354
+2025-12-24 14:32:54.355 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 13 µs
+2025-12-24 14:32:59.355 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766583149355
+2025-12-24 14:32:59.355 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 8 µs
+2025-12-24 14:33:04.355 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766583154355
+2025-12-24 14:33:04.356 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 9 µs
+2025-12-24 14:33:09.356 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766583159356
+2025-12-24 14:33:09.356 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 9 µs
+2025-12-24 14:33:14.356 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766583164356
+2025-12-24 14:33:14.356 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 6 µs
+2025-12-24 14:33:19.357 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766583169356
+2025-12-24 14:33:19.357 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 7 µs
+2025-12-24 14:33:24.357 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766583174357
+2025-12-24 14:33:24.357 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 7 µs
+2025-12-24 14:33:29.357 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766583179357
+2025-12-24 14:33:29.357 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 7 µs
+2025-12-24 14:33:34.357 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766583184357
+2025-12-24 14:33:34.358 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 8 µs
+2025-12-24 14:33:39.358 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766583189358
+2025-12-24 14:33:39.358 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 11 µs
+2025-12-24 14:33:44.358 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766583194358
+2025-12-24 14:33:44.358 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 10 µs
+2025-12-24 14:33:49.358 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766583199358
+2025-12-24 14:33:49.359 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 7 µs
+2025-12-24 14:33:54.359 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766583204359
+2025-12-24 14:33:54.359 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 11 µs
+2025-12-24 14:33:59.360 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766583209359
+2025-12-24 14:33:59.360 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 10 µs
+2025-12-24 14:34:04.360 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766583214360
+2025-12-24 14:34:04.360 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 12 µs
+2025-12-24 14:34:09.361 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766583219360
+2025-12-24 14:34:09.361 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 10 µs
+2025-12-24 14:34:14.361 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766583224361
+2025-12-24 14:34:14.362 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 28 µs
+2025-12-24 14:34:19.362 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766583229362
+2025-12-24 14:34:19.362 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 10 µs
+2025-12-24 14:34:24.362 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766583234362
+2025-12-24 14:34:24.362 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 6 µs
+2025-12-24 14:34:29.362 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766583239362
+2025-12-24 14:34:29.363 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 7 µs
+2025-12-24 14:34:34.363 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766583244363
+2025-12-24 14:34:34.363 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 10 µs
+2025-12-24 14:34:39.363 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766583249363
+2025-12-24 14:34:39.364 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 5 µs
+2025-12-24 14:34:44.364 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766583254364
+2025-12-24 14:34:44.364 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 11 µs
+2025-12-24 14:34:49.364 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766583259364
+2025-12-24 14:34:49.365 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 8 µs
+2025-12-24 14:34:54.365 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766583264365
+2025-12-24 14:34:54.365 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 10 µs
+2025-12-24 14:34:59.366 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766583269365
+2025-12-24 14:34:59.366 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 10 µs
+2025-12-24 14:35:04.366 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766583274366
+2025-12-24 14:35:04.366 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 7 µs
+2025-12-24 14:35:09.366 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766583279366
+2025-12-24 14:35:09.366 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 7 µs
+2025-12-24 14:35:14.367 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766583284367
+2025-12-24 14:35:14.367 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 7 µs
+2025-12-24 14:35:19.367 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766583289367
+2025-12-24 14:35:19.367 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 5 µs
+2025-12-24 14:35:24.367 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766583294367
+2025-12-24 14:35:24.368 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 7 µs
+2025-12-24 14:35:29.368 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766583299368
+2025-12-24 14:35:29.368 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 11 µs
+2025-12-24 14:35:34.368 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766583304368
+2025-12-24 14:35:34.369 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 13 µs
+2025-12-24 14:35:39.369 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766583309369
+2025-12-24 14:35:39.369 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 11 µs
+2025-12-24 14:35:44.369 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766583314369
+2025-12-24 14:35:44.370 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 11 µs
+2025-12-24 14:35:49.370 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766583319370
+2025-12-24 14:35:49.370 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 10 µs
+2025-12-24 14:35:54.371 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766583324370
+2025-12-24 14:35:54.371 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 13 µs
+2025-12-24 14:35:59.371 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766583329371
+2025-12-24 14:35:59.371 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 8 µs
+2025-12-24 14:36:04.371 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766583334371
+2025-12-24 14:36:04.372 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 9 µs
+2025-12-24 14:36:09.372 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766583339372
+2025-12-24 14:36:09.372 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 12 µs
+2025-12-24 14:36:14.373 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766583344372
+2025-12-24 14:36:14.373 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 11 µs
+2025-12-24 14:36:19.373 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766583349373
+2025-12-24 14:36:19.373 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 14 µs
+2025-12-24 14:36:24.374 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766583354373
+2025-12-24 14:36:24.374 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 12 µs
+2025-12-24 14:36:29.374 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766583359374
+2025-12-24 14:36:29.374 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 6 µs
+2025-12-24 14:36:34.374 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766583364374
+2025-12-24 14:36:34.374 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 7 µs
+2025-12-24 14:36:39.375 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766583369374
+2025-12-24 14:36:39.375 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 9 µs
+2025-12-24 14:36:44.375 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766583374375
+2025-12-24 14:36:44.375 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 9 µs
+2025-12-24 14:36:49.376 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766583379376
+2025-12-24 14:36:49.376 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 11 µs
+2025-12-24 14:36:54.376 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766583384376
+2025-12-24 14:36:54.376 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 8 µs
+2025-12-24 14:36:59.376 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766583389376
+2025-12-24 14:36:59.377 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 13 µs
+2025-12-24 14:37:04.377 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766583394377
+2025-12-24 14:37:04.377 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 10 µs
+2025-12-24 14:37:09.378 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766583399377
+2025-12-24 14:37:09.378 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 9 µs
+2025-12-24 14:37:13.864 [AsyncResolver-bootstrap-executor-%d] INFO  [Actor:] - Resolving eureka endpoints via configuration
+2025-12-24 14:37:14.378 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766583404378
+2025-12-24 14:37:14.378 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 9 µs
+2025-12-24 14:37:19.379 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766583409378
+2025-12-24 14:37:19.379 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 13 µs
+2025-12-24 14:37:24.379 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766583414379
+2025-12-24 14:37:24.379 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 12 µs
+2025-12-24 14:37:29.379 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766583419379
+2025-12-24 14:37:29.380 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 8 µs
+2025-12-24 14:37:34.380 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766583424380
+2025-12-24 14:37:34.380 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 8 µs
+2025-12-24 14:37:39.381 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766583429380
+2025-12-24 14:37:39.381 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 25 µs
+2025-12-24 14:37:44.381 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766583434381
+2025-12-24 14:37:44.381 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 12 µs
+2025-12-24 14:37:49.382 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766583439381
+2025-12-24 14:37:49.382 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 14 µs
+2025-12-24 14:37:54.382 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766583444382
+2025-12-24 14:37:54.382 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 8 µs
+2025-12-24 14:37:59.382 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766583449382
+2025-12-24 14:37:59.382 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 15 µs
+2025-12-24 14:38:04.382 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766583454382
+2025-12-24 14:38:04.383 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 14 µs
+2025-12-24 14:38:09.383 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766583459383
+2025-12-24 14:38:09.383 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 13 µs
+2025-12-24 14:38:14.384 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766583464383
+2025-12-24 14:38:14.384 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 13 µs
+2025-12-24 14:38:19.384 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766583469384
+2025-12-24 14:38:19.384 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 5 µs
+2025-12-24 14:38:24.384 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766583474384
+2025-12-24 14:38:24.385 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 12 µs
+2025-12-24 14:38:29.385 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766583479385
+2025-12-24 14:38:29.385 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 10 µs
+2025-12-24 14:38:34.385 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766583484385
+2025-12-24 14:38:34.385 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 12 µs
+2025-12-24 14:38:39.386 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766583489386
+2025-12-24 14:38:39.386 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 10 µs
+2025-12-24 14:38:44.387 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766583494386
+2025-12-24 14:38:44.387 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 15 µs
+2025-12-24 14:38:49.387 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766583499387
+2025-12-24 14:38:49.387 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 13 µs
+2025-12-24 14:38:54.388 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766583504387
+2025-12-24 14:38:54.388 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 18 µs
+2025-12-24 14:38:59.388 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766583509388
+2025-12-24 14:38:59.388 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 15 µs
+2025-12-24 14:39:04.388 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766583514388
+2025-12-24 14:39:04.388 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 11 µs
+2025-12-24 14:39:09.389 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766583519388
+2025-12-24 14:39:09.389 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 15 µs
+2025-12-24 14:39:14.389 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766583524389
+2025-12-24 14:39:14.389 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 15 µs
+2025-12-24 14:39:19.389 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766583529389
+2025-12-24 14:39:19.389 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 8 µs
+2025-12-24 14:39:24.390 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766583534389
+2025-12-24 14:39:24.390 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 9 µs
+2025-12-24 14:39:29.390 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766583539390
+2025-12-24 14:39:29.390 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 8 µs
+2025-12-24 14:39:34.391 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766583544390
+2025-12-24 14:39:34.391 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 12 µs
+2025-12-24 14:39:39.391 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766583549391
+2025-12-24 14:39:39.391 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 10 µs
+2025-12-24 14:39:44.391 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766583554391
+2025-12-24 14:39:44.392 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 11 µs
+2025-12-24 14:39:49.392 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766583559392
+2025-12-24 14:39:49.392 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 12 µs
+2025-12-24 14:39:54.392 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766583564392
+2025-12-24 14:39:54.393 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 9 µs
+2025-12-24 14:39:59.393 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766583569393
+2025-12-24 14:39:59.393 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 10 µs
+2025-12-24 14:40:04.393 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766583574393
+2025-12-24 14:40:04.394 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 8 µs
+2025-12-24 14:40:09.394 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766583579394
+2025-12-24 14:40:09.394 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 11 µs
+2025-12-24 14:40:14.394 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766583584394
+2025-12-24 14:40:14.394 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 9 µs
+2025-12-24 14:40:19.394 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766583589394
+2025-12-24 14:40:19.395 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 11 µs
+2025-12-24 14:40:24.395 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766583594395
+2025-12-24 14:40:24.395 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 12 µs
+2025-12-24 14:40:29.395 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766583599395
+2025-12-24 14:40:29.395 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 9 µs
+2025-12-24 14:40:34.396 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766583604396
+2025-12-24 14:40:34.396 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 17 µs
+2025-12-24 14:40:39.396 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766583609396
+2025-12-24 14:40:39.397 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 15 µs
+2025-12-24 14:40:44.397 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766583614397
+2025-12-24 14:40:44.397 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 14 µs
+2025-12-24 14:40:49.397 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766583619397
+2025-12-24 14:40:49.397 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 7 µs
+2025-12-24 14:40:54.398 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766583624397
+2025-12-24 14:40:54.398 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 12 µs
+2025-12-24 14:40:59.398 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766583629398
+2025-12-24 14:40:59.398 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 12 µs
+2025-12-24 14:41:04.398 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766583634398
+2025-12-24 14:41:04.398 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 12 µs
+2025-12-24 14:41:09.399 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766583639398
+2025-12-24 14:41:09.399 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 13 µs
+2025-12-24 14:41:14.399 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766583644399
+2025-12-24 14:41:14.399 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 12 µs
+2025-12-24 14:41:19.399 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766583649399
+2025-12-24 14:41:19.400 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 9 µs
+2025-12-24 14:41:24.400 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766583654400
+2025-12-24 14:41:24.400 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 11 µs
+2025-12-24 14:41:29.400 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766583659400
+2025-12-24 14:41:29.400 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 7 µs
+2025-12-24 14:41:34.401 [pool-2-thread-4] INFO  [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - RECEIVED message [PurgeStaleOrders] Payload: 1766583664400
+2025-12-24 14:41:34.401 [pool-2-thread-4] DEBUG [Actor:restaurant-5dd4cc73-377a-4df2-95fd-02d47fd591ec] - PROCESSED message [PurgeStaleOrders] in 9 µs

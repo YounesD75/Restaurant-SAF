@@ -3287,3 +3287,28 @@ com.netflix.discovery.shared.transport.TransportException: Cannot execute reques
 	at java.base/java.lang.Iterable.forEach(Iterable.java:75)
 	at org.springframework.boot.SpringApplicationShutdownHook.run(SpringApplicationShutdownHook.java:114)
 	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-12-24 18:09:47.179 [main] INFO  [com.saf.client.SafClientApplication] [Actor:] - Starting SafClientApplication using Java 21.0.7 with PID 242755 (/home/cytech/Restaurant-SAF/saf-client/target/classes started by cytech in /home/cytech/Restaurant-SAF/saf-client)
+2025-12-24 18:09:47.184 [main] INFO  [com.saf.client.SafClientApplication] [Actor:] - No active profile set, falling back to 1 default profile: "default"
+2025-12-24 18:09:48.995 [main] INFO  [com.saf.core1.LocalActorSystem] [Actor:] - SAF ActorSystem started with 12 threads.
+2025-12-24 18:09:49.002 [main] INFO  [com.saf.core1.router.RoundRobinPool] [Actor:client-router-0e77e2c3-9cfa-4144-9ba8-84dd8781a41d] - Starting Router Pool with 3 initial workers.
+2025-12-24 18:09:50.334 [main] WARN  [o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger] [Actor:] - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-12-24 18:09:50.807 [main] INFO  [com.saf.client.SafClientApplication] [Actor:] - Started SafClientApplication in 4.2 seconds (process running for 4.579)
+2025-12-24 18:12:22.487 [pool-2-thread-1] INFO  [com.saf.core1.ActorCell] [Actor:client-router-0e77e2c3-9cfa-4144-9ba8-84dd8781a41d] - RECEIVED message [ProxyCall] Payload: GET /client/menu
+2025-12-24 18:12:22.489 [pool-2-thread-1] INFO  [com.saf.core1.router.RoundRobinPool] [Actor:] - Pool size is now: 3
+2025-12-24 18:12:22.490 [pool-2-thread-2] INFO  [com.saf.core1.ActorCell] [Actor:worker-0-0c5b66ee-cb64-40ae-8ab3-62205b2bf95b] - RECEIVED message [ProxyCall] Payload: GET /client/menu
+2025-12-24 18:12:22.491 [pool-2-thread-2] INFO  [com.saf.client.ClientGatewayActor] [Actor:worker-0-0c5b66ee-cb64-40ae-8ab3-62205b2bf95b] - Proxy call received: GET /client/menu
+2025-12-24 18:12:34.231 [pool-2-thread-1] INFO  [com.saf.core1.ActorCell] [Actor:] - RECEIVED message [ProxyCall] Payload: POST /client/orders
+2025-12-24 18:12:34.232 [pool-2-thread-3] INFO  [com.saf.core1.ActorCell] [Actor:worker-1-6e825906-cbd8-47a8-8ebd-a58a6d2942ef] - RECEIVED message [ProxyCall] Payload: POST /client/orders
+2025-12-24 18:12:34.232 [pool-2-thread-3] INFO  [com.saf.client.ClientGatewayActor] [Actor:worker-1-6e825906-cbd8-47a8-8ebd-a58a6d2942ef] - Proxy call received: POST /client/orders
+2025-12-24 18:12:54.881 [pool-2-thread-1] INFO  [com.saf.core1.ActorCell] [Actor:] - RECEIVED message [ProxyCall] Payload: GET /client/receipts/1766596100888
+2025-12-24 18:12:54.881 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:worker-2-a84470c8-2a12-48f1-a6d0-1116fb597fd5] - RECEIVED message [ProxyCall] Payload: GET /client/receipts/1766596100888
+2025-12-24 18:12:54.881 [pool-2-thread-4] INFO  [com.saf.client.ClientGatewayActor] [Actor:worker-2-a84470c8-2a12-48f1-a6d0-1116fb597fd5] - Proxy call received: GET /client/receipts/1766596100888
+2025-12-24 18:14:09.570 [pool-2-thread-1] INFO  [com.saf.core1.ActorCell] [Actor:] - RECEIVED message [ProxyCall] Payload: POST /client/orders
+2025-12-24 18:14:09.571 [pool-2-thread-2] INFO  [com.saf.core1.ActorCell] [Actor:worker-0-0c5b66ee-cb64-40ae-8ab3-62205b2bf95b] - RECEIVED message [ProxyCall] Payload: POST /client/orders
+2025-12-24 18:14:09.571 [pool-2-thread-2] INFO  [com.saf.client.ClientGatewayActor] [Actor:worker-0-0c5b66ee-cb64-40ae-8ab3-62205b2bf95b] - Proxy call received: POST /client/orders
+2025-12-24 18:14:54.357 [pool-2-thread-1] INFO  [com.saf.core1.ActorCell] [Actor:] - RECEIVED message [ProxyCall] Payload: POST /client/orders
+2025-12-24 18:14:54.358 [pool-2-thread-3] INFO  [com.saf.core1.ActorCell] [Actor:worker-1-6e825906-cbd8-47a8-8ebd-a58a6d2942ef] - RECEIVED message [ProxyCall] Payload: POST /client/orders
+2025-12-24 18:14:54.358 [pool-2-thread-3] INFO  [com.saf.client.ClientGatewayActor] [Actor:worker-1-6e825906-cbd8-47a8-8ebd-a58a6d2942ef] - Proxy call received: POST /client/orders
+2025-12-24 18:14:57.193 [pool-2-thread-1] INFO  [com.saf.core1.ActorCell] [Actor:] - RECEIVED message [ProxyCall] Payload: POST /client/orders
+2025-12-24 18:14:57.194 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:worker-2-a84470c8-2a12-48f1-a6d0-1116fb597fd5] - RECEIVED message [ProxyCall] Payload: POST /client/orders
+2025-12-24 18:14:57.195 [pool-2-thread-4] INFO  [com.saf.client.ClientGatewayActor] [Actor:worker-2-a84470c8-2a12-48f1-a6d0-1116fb597fd5] - Proxy call received: POST /client/orders

@@ -5239,3 +5239,251 @@ Items:
 2025-12-24 17:47:05.564 [SpringApplicationShutdownHook] INFO  [com.zaxxer.hikari.HikariDataSource] [Actor:] - HikariPool-1 - Shutdown completed.
 2025-12-24 17:47:05.584 [SpringApplicationShutdownHook] INFO  [com.zaxxer.hikari.HikariDataSource] [Actor:] - HikariPool-2 - Shutdown initiated...
 2025-12-24 17:47:05.592 [SpringApplicationShutdownHook] INFO  [com.zaxxer.hikari.HikariDataSource] [Actor:] - HikariPool-2 - Shutdown completed.
+2025-12-24 18:08:16.963 [main] INFO  [c.s.r.SafRestaurantApplication] [Actor:] - Starting SafRestaurantApplication using Java 21.0.7 with PID 241133 (/home/cytech/Restaurant-SAF/saf-restaurant/target/classes started by cytech in /home/cytech/Restaurant-SAF/saf-restaurant)
+2025-12-24 18:08:16.967 [main] INFO  [c.s.r.SafRestaurantApplication] [Actor:] - No active profile set, falling back to 1 default profile: "default"
+2025-12-24 18:08:18.723 [main] INFO  [com.zaxxer.hikari.HikariDataSource] [Actor:] - HikariPool-1 - Starting...
+2025-12-24 18:08:19.017 [main] INFO  [com.zaxxer.hikari.pool.HikariPool] [Actor:] - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@39514976
+2025-12-24 18:08:19.018 [main] INFO  [com.zaxxer.hikari.HikariDataSource] [Actor:] - HikariPool-1 - Start completed.
+2025-12-24 18:08:20.104 [main] INFO  [com.saf.core1.LocalActorSystem] [Actor:] - SAF ActorSystem started with 12 threads.
+2025-12-24 18:08:20.112 [main] INFO  [com.saf.core1.router.RoundRobinPool] [Actor:menu-router-4779eaa6-0449-4f6b-b738-698c099bacf4] - Starting Router Pool with 3 initial workers.
+2025-12-24 18:08:20.948 [main] WARN  [o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration] [Actor:] - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-12-24 18:08:21.523 [main] WARN  [o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger] [Actor:] - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-12-24 18:08:22.033 [main] INFO  [c.s.r.SafRestaurantApplication] [Actor:] - Started SafRestaurantApplication in 5.52 seconds (process running for 5.961)
+2025-12-24 18:08:22.035 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [PurgeStaleOrders] Payload: 1766596072034
+2025-12-24 18:08:27.036 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [PurgeStaleOrders] Payload: 1766596077036
+2025-12-24 18:08:32.036 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [PurgeStaleOrders] Payload: 1766596082036
+2025-12-24 18:08:37.037 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [PurgeStaleOrders] Payload: 1766596087036
+2025-12-24 18:08:42.037 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [PurgeStaleOrders] Payload: 1766596092037
+2025-12-24 18:08:47.037 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [PurgeStaleOrders] Payload: 1766596097037
+2025-12-24 18:08:52.038 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [PurgeStaleOrders] Payload: 1766596102038
+2025-12-24 18:08:57.038 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [PurgeStaleOrders] Payload: 1766596107038
+2025-12-24 18:09:02.038 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [PurgeStaleOrders] Payload: 1766596112038
+2025-12-24 18:09:07.039 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [PurgeStaleOrders] Payload: 1766596117038
+2025-12-24 18:09:12.039 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [PurgeStaleOrders] Payload: 1766596122039
+2025-12-24 18:09:17.039 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [PurgeStaleOrders] Payload: 1766596127039
+2025-12-24 18:09:22.040 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [PurgeStaleOrders] Payload: 1766596132039
+2025-12-24 18:09:27.040 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [PurgeStaleOrders] Payload: 1766596137040
+2025-12-24 18:09:32.040 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [PurgeStaleOrders] Payload: 1766596142040
+2025-12-24 18:09:37.041 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [PurgeStaleOrders] Payload: 1766596147041
+2025-12-24 18:09:42.041 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [PurgeStaleOrders] Payload: 1766596152041
+2025-12-24 18:09:47.042 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [PurgeStaleOrders] Payload: 1766596157041
+2025-12-24 18:09:52.042 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [PurgeStaleOrders] Payload: 1766596162042
+2025-12-24 18:09:57.042 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [PurgeStaleOrders] Payload: 1766596167042
+2025-12-24 18:10:02.043 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [PurgeStaleOrders] Payload: 1766596172042
+2025-12-24 18:10:07.043 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [PurgeStaleOrders] Payload: 1766596177043
+2025-12-24 18:10:12.043 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [PurgeStaleOrders] Payload: 1766596182043
+2025-12-24 18:10:17.045 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [PurgeStaleOrders] Payload: 1766596187044
+2025-12-24 18:10:22.044 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [PurgeStaleOrders] Payload: 1766596192044
+2025-12-24 18:10:27.045 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [PurgeStaleOrders] Payload: 1766596197044
+2025-12-24 18:10:32.045 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [PurgeStaleOrders] Payload: 1766596202045
+2025-12-24 18:10:37.045 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [PurgeStaleOrders] Payload: 1766596207045
+2025-12-24 18:10:42.046 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [PurgeStaleOrders] Payload: 1766596212045
+2025-12-24 18:10:47.046 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [PurgeStaleOrders] Payload: 1766596217046
+2025-12-24 18:10:52.046 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [PurgeStaleOrders] Payload: 1766596222046
+2025-12-24 18:10:57.047 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [PurgeStaleOrders] Payload: 1766596227047
+2025-12-24 18:11:02.047 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [PurgeStaleOrders] Payload: 1766596232047
+2025-12-24 18:11:07.048 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [PurgeStaleOrders] Payload: 1766596237047
+2025-12-24 18:11:12.048 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [PurgeStaleOrders] Payload: 1766596242048
+2025-12-24 18:11:17.048 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [PurgeStaleOrders] Payload: 1766596247048
+2025-12-24 18:11:22.049 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [PurgeStaleOrders] Payload: 1766596252049
+2025-12-24 18:11:27.049 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [PurgeStaleOrders] Payload: 1766596257049
+2025-12-24 18:11:32.050 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [PurgeStaleOrders] Payload: 1766596262049
+2025-12-24 18:11:37.050 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [PurgeStaleOrders] Payload: 1766596267050
+2025-12-24 18:11:42.050 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [PurgeStaleOrders] Payload: 1766596272050
+2025-12-24 18:11:47.051 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [PurgeStaleOrders] Payload: 1766596277051
+2025-12-24 18:11:52.051 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [PurgeStaleOrders] Payload: 1766596282051
+2025-12-24 18:11:57.052 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [PurgeStaleOrders] Payload: 1766596287051
+2025-12-24 18:12:02.052 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [PurgeStaleOrders] Payload: 1766596292052
+2025-12-24 18:12:07.052 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [PurgeStaleOrders] Payload: 1766596297052
+2025-12-24 18:12:12.053 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [PurgeStaleOrders] Payload: 1766596302053
+2025-12-24 18:12:17.053 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [PurgeStaleOrders] Payload: 1766596307053
+2025-12-24 18:12:22.054 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [PurgeStaleOrders] Payload: 1766596312053
+2025-12-24 18:12:22.724 [pool-2-thread-1] INFO  [com.saf.core1.ActorCell] [Actor:menu-router-4779eaa6-0449-4f6b-b738-698c099bacf4] - RECEIVED message [ListMenu] Payload: ActorRef(ask-dbdb76fb-a72c-4c73-a307-f153d9cb6224-0adb2f80-a2a3-4cc7-bf23-7e2d701a7117)
+2025-12-24 18:12:22.728 [pool-2-thread-1] INFO  [com.saf.core1.router.RoundRobinPool] [Actor:] - Pool size is now: 3
+2025-12-24 18:12:22.730 [pool-2-thread-6] INFO  [com.saf.core1.ActorCell] [Actor:worker-0-b95206ee-ad84-46d6-8a92-d824b07bcc7f] - RECEIVED message [ListMenu] Payload: ActorRef(ask-dbdb76fb-a72c-4c73-a307-f153d9cb6224-0adb2f80-a2a3-4cc7-bf23-7e2d701a7117)
+2025-12-24 18:12:22.731 [pool-2-thread-5] INFO  [com.saf.core1.ActorCell] [Actor:ask-dbdb76fb-a72c-4c73-a307-f153d9cb6224-0adb2f80-a2a3-4cc7-bf23-7e2d701a7117] - RECEIVED message [MenuListed] Payload: [MenuItem[dishName=burger, name=Burger maison, price=12.5, description=Pain brioché, boeuf, cheddar], MenuItem[dishName=salad, name=Salade fraîcheur, price=9.9, description=Légumes croquants], MenuItem[dishName=dessert, name=Mousse au chocolat, price=6.5, description=Chocolat noir 70%], MenuItem[dishName=drink, name=Limonade artisanale, price=4.0, description=Citron, menthe], MenuItem[dishName=coffee, name=Expresso, price=2.5, description=Arabica torréfié]]
+2025-12-24 18:12:27.054 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [PurgeStaleOrders] Payload: 1766596317054
+2025-12-24 18:12:32.054 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [PurgeStaleOrders] Payload: 1766596322054
+2025-12-24 18:12:34.427 [pool-2-thread-9] INFO  [com.saf.core1.ActorCell] [Actor:client-1766596100888-5569f99e-ac61-44ef-a07a-cdd4202b3bbd] - RECEIVED message [BeginOrder] Payload: BeginOrder[]
+2025-12-24 18:12:34.430 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [OrderPlaced] Payload: OrderRequest[clientName=Alice, tableNumber=12, instructions=sans oignons, items=[OrderItem[dishName=burger, quantity=2], OrderItem[dishName=drink, quantity=2]]]
+2025-12-24 18:12:34.432 [pool-2-thread-4] INFO  [c.s.r.actors.RestaurantActor] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - Received order 1766596100888 from Alice
+2025-12-24 18:12:34.433 [pool-2-thread-1] INFO  [com.saf.core1.ActorCell] [Actor:] - RECEIVED message [CalculatePrice] Payload: OrderRequest[clientName=Alice, tableNumber=12, instructions=sans oignons, items=[OrderItem[dishName=burger, quantity=2], OrderItem[dishName=drink, quantity=2]]]
+2025-12-24 18:12:34.434 [pool-2-thread-7] INFO  [com.saf.core1.ActorCell] [Actor:worker-1-49250885-b1d7-4b62-bc41-5b60b9c6cc74] - RECEIVED message [CalculatePrice] Payload: OrderRequest[clientName=Alice, tableNumber=12, instructions=sans oignons, items=[OrderItem[dishName=burger, quantity=2], OrderItem[dishName=drink, quantity=2]]]
+2025-12-24 18:12:34.435 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [PriceCalculated] Payload: PriceCalculated[orderId=1766596100888, valid=true, total=33.0, missingItems=[]]
+2025-12-24 18:12:34.441 [pool-2-thread-9] INFO  [com.saf.core1.ActorCell] [Actor:client-1766596100888-5569f99e-ac61-44ef-a07a-cdd4202b3bbd] - RECEIVED message [AcknowledgeOrder] Payload: OrderAcknowledgement[orderId=1766596100888, status=PENDING_STOCK, message=Commande validée. Vérification du stock en cours., estimatedTotal=33.0, receipt=null]
+2025-12-24 18:12:34.764 [pool-2-thread-4] INFO  [c.s.r.client.InventoryClient] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - Stock check request sent to inventory for order 1766596100888
+2025-12-24 18:12:35.390 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [StockResult] Payload: StockResult[orderId=1766596100888, available=true, missingItems=[]]
+2025-12-24 18:12:35.398 [pool-2-thread-2] INFO  [com.saf.core1.ActorCell] [Actor:treasury-b8bf4a20-896a-4500-a3a4-b0c321e59e4d] - RECEIVED message [RecordPayment] Payload: 33.0
+2025-12-24 18:12:35.398 [pool-2-thread-3] INFO  [com.saf.core1.ActorCell] [Actor:receipt-0374eaac-3947-44d8-943d-d921b912980c] - RECEIVED message [GenerateReceipt] Payload: OrderRequest[clientName=Alice, tableNumber=12, instructions=sans oignons, items=[OrderItem[dishName=burger, quantity=2], OrderItem[dishName=drink, quantity=2]]]
+2025-12-24 18:12:35.732 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [ReceiptReady] Payload: ReceiptDocument[orderId=1766596100888, clientName=Alice, tableNumber=12, total=33.0, items=[OrderItem[dishName=burger, quantity=2], OrderItem[dishName=drink, quantity=2]], issuedAt=2025-12-24T17:12:35.400667291Z, content==== SAF RESTAURANT RECEIPT ===
+Client: Alice
+Table: 12
+Total: 33.0 €
+Items:
+- burger x 2
+- drink x 2
+]
+2025-12-24 18:12:35.738 [pool-2-thread-9] INFO  [com.saf.core1.ActorCell] [Actor:client-1766596100888-5569f99e-ac61-44ef-a07a-cdd4202b3bbd] - RECEIVED message [AcknowledgeOrder] Payload: OrderAcknowledgement[orderId=1766596100888, status=COMPLETED, message=Commande servie et ticket généré., estimatedTotal=33.0, receipt==== SAF RESTAURANT RECEIPT ===
+Client: Alice
+Table: 12
+Total: 33.0 €
+Items:
+- burger x 2
+- drink x 2
+]
+2025-12-24 18:12:37.055 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [PurgeStaleOrders] Payload: 1766596327055
+2025-12-24 18:12:42.056 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [PurgeStaleOrders] Payload: 1766596332055
+2025-12-24 18:12:47.056 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [PurgeStaleOrders] Payload: 1766596337056
+2025-12-24 18:12:52.057 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [PurgeStaleOrders] Payload: 1766596342056
+2025-12-24 18:12:57.057 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [PurgeStaleOrders] Payload: 1766596347057
+2025-12-24 18:13:02.057 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [PurgeStaleOrders] Payload: 1766596352057
+2025-12-24 18:13:07.058 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [PurgeStaleOrders] Payload: 1766596357058
+2025-12-24 18:13:12.058 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [PurgeStaleOrders] Payload: 1766596362058
+2025-12-24 18:13:17.059 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [PurgeStaleOrders] Payload: 1766596367059
+2025-12-24 18:13:22.059 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [PurgeStaleOrders] Payload: 1766596372059
+2025-12-24 18:13:23.760 [pool-2-thread-2] INFO  [com.saf.core1.ActorCell] [Actor:treasury-b8bf4a20-896a-4500-a3a4-b0c321e59e4d] - RECEIVED message [TreasurySnapshotRequest] Payload: ActorRef(ask-79971423-85bf-4147-b996-359e57d1c2cd-cc782f53-5b98-4f83-9ea6-7ec1ac763334)
+2025-12-24 18:13:23.786 [pool-2-thread-10] INFO  [com.saf.core1.ActorCell] [Actor:ask-79971423-85bf-4147-b996-359e57d1c2cd-cc782f53-5b98-4f83-9ea6-7ec1ac763334] - RECEIVED message [TreasurySnapshot] Payload: TreasurySnapshot[totalRevenue=45.50, ordersSettled=2]
+2025-12-24 18:13:27.060 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [PurgeStaleOrders] Payload: 1766596377060
+2025-12-24 18:13:32.060 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [PurgeStaleOrders] Payload: 1766596382060
+2025-12-24 18:13:37.060 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [PurgeStaleOrders] Payload: 1766596387060
+2025-12-24 18:13:42.061 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [PurgeStaleOrders] Payload: 1766596392061
+2025-12-24 18:13:47.061 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [PurgeStaleOrders] Payload: 1766596397061
+2025-12-24 18:13:52.062 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [PurgeStaleOrders] Payload: 1766596402062
+2025-12-24 18:13:57.062 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [PurgeStaleOrders] Payload: 1766596407062
+2025-12-24 18:14:02.062 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [PurgeStaleOrders] Payload: 1766596412062
+2025-12-24 18:14:07.063 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [PurgeStaleOrders] Payload: 1766596417063
+2025-12-24 18:14:09.582 [pool-2-thread-11] INFO  [com.saf.core1.ActorCell] [Actor:client-1766596100889-fa11f5f9-ac56-49bd-92b4-91506cba6e51] - RECEIVED message [BeginOrder] Payload: BeginOrder[]
+2025-12-24 18:14:09.583 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [OrderPlaced] Payload: OrderRequest[clientName=Bob, tableNumber=3, instructions=, items=[OrderItem[dishName=unknown-item, quantity=1]]]
+2025-12-24 18:14:09.583 [pool-2-thread-4] INFO  [c.s.r.actors.RestaurantActor] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - Received order 1766596100889 from Bob
+2025-12-24 18:14:09.584 [pool-2-thread-1] INFO  [com.saf.core1.ActorCell] [Actor:] - RECEIVED message [CalculatePrice] Payload: OrderRequest[clientName=Bob, tableNumber=3, instructions=, items=[OrderItem[dishName=unknown-item, quantity=1]]]
+2025-12-24 18:14:09.584 [pool-2-thread-8] INFO  [com.saf.core1.ActorCell] [Actor:worker-2-5c5945fa-bbe0-4be9-b9f3-549dbc9e8892] - RECEIVED message [CalculatePrice] Payload: OrderRequest[clientName=Bob, tableNumber=3, instructions=, items=[OrderItem[dishName=unknown-item, quantity=1]]]
+2025-12-24 18:14:09.585 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [PriceCalculated] Payload: PriceCalculated[orderId=1766596100889, valid=true, total=0, missingItems=[unknown-item]]
+2025-12-24 18:14:09.587 [pool-2-thread-11] INFO  [com.saf.core1.ActorCell] [Actor:client-1766596100889-fa11f5f9-ac56-49bd-92b4-91506cba6e51] - RECEIVED message [AcknowledgeOrder] Payload: OrderAcknowledgement[orderId=1766596100889, status=PENDING_STOCK, message=Commande en attente: articles inconnus (unknown-item)., estimatedTotal=0, receipt=null]
+2025-12-24 18:14:09.613 [pool-2-thread-4] INFO  [c.s.r.client.InventoryClient] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - Stock check request sent to inventory for order 1766596100889
+2025-12-24 18:14:09.634 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [StockResult] Payload: StockResult[orderId=1766596100889, available=false, missingItems=[Unknown dish: unknown-item]]
+2025-12-24 18:14:09.634 [pool-2-thread-11] INFO  [com.saf.core1.ActorCell] [Actor:client-1766596100889-fa11f5f9-ac56-49bd-92b4-91506cba6e51] - RECEIVED message [AcknowledgeOrder] Payload: OrderAcknowledgement[orderId=1766596100889, status=REJECTED, message=Articles inconnus: unknown-item, estimatedTotal=0, receipt=null]
+2025-12-24 18:14:12.063 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [PurgeStaleOrders] Payload: 1766596422063
+2025-12-24 18:14:17.064 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [PurgeStaleOrders] Payload: 1766596427063
+2025-12-24 18:14:22.064 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [PurgeStaleOrders] Payload: 1766596432064
+2025-12-24 18:14:27.065 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [PurgeStaleOrders] Payload: 1766596437064
+2025-12-24 18:14:32.065 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [PurgeStaleOrders] Payload: 1766596442065
+2025-12-24 18:14:37.065 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [PurgeStaleOrders] Payload: 1766596447065
+2025-12-24 18:14:42.066 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [PurgeStaleOrders] Payload: 1766596452066
+2025-12-24 18:14:47.066 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [PurgeStaleOrders] Payload: 1766596457066
+2025-12-24 18:14:52.066 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [PurgeStaleOrders] Payload: 1766596462066
+2025-12-24 18:14:54.368 [pool-2-thread-12] INFO  [com.saf.core1.ActorCell] [Actor:client-1766596100890-00a47b17-90c8-4c29-a50f-39336434d19d] - RECEIVED message [BeginOrder] Payload: BeginOrder[]
+2025-12-24 18:14:54.369 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [OrderPlaced] Payload: OrderRequest[clientName=Bob, tableNumber=3, instructions=, items=[OrderItem[dishName=unknown-item, quantity=1]]]
+2025-12-24 18:14:54.370 [pool-2-thread-4] INFO  [c.s.r.actors.RestaurantActor] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - Received order 1766596100890 from Bob
+2025-12-24 18:14:54.370 [pool-2-thread-1] INFO  [com.saf.core1.ActorCell] [Actor:] - RECEIVED message [CalculatePrice] Payload: OrderRequest[clientName=Bob, tableNumber=3, instructions=, items=[OrderItem[dishName=unknown-item, quantity=1]]]
+2025-12-24 18:14:54.370 [pool-2-thread-6] INFO  [com.saf.core1.ActorCell] [Actor:worker-0-b95206ee-ad84-46d6-8a92-d824b07bcc7f] - RECEIVED message [CalculatePrice] Payload: OrderRequest[clientName=Bob, tableNumber=3, instructions=, items=[OrderItem[dishName=unknown-item, quantity=1]]]
+2025-12-24 18:14:54.371 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [PriceCalculated] Payload: PriceCalculated[orderId=1766596100890, valid=true, total=0, missingItems=[unknown-item]]
+2025-12-24 18:14:54.372 [pool-2-thread-12] INFO  [com.saf.core1.ActorCell] [Actor:client-1766596100890-00a47b17-90c8-4c29-a50f-39336434d19d] - RECEIVED message [AcknowledgeOrder] Payload: OrderAcknowledgement[orderId=1766596100890, status=PENDING_STOCK, message=Commande en attente: articles inconnus (unknown-item)., estimatedTotal=0, receipt=null]
+2025-12-24 18:14:54.392 [pool-2-thread-4] INFO  [c.s.r.client.InventoryClient] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - Stock check request sent to inventory for order 1766596100890
+2025-12-24 18:14:54.412 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [StockResult] Payload: StockResult[orderId=1766596100890, available=false, missingItems=[Unknown dish: unknown-item]]
+2025-12-24 18:14:54.414 [pool-2-thread-12] INFO  [com.saf.core1.ActorCell] [Actor:client-1766596100890-00a47b17-90c8-4c29-a50f-39336434d19d] - RECEIVED message [AcknowledgeOrder] Payload: OrderAcknowledgement[orderId=1766596100890, status=REJECTED, message=Articles inconnus: unknown-item, estimatedTotal=0, receipt=null]
+2025-12-24 18:14:57.067 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [PurgeStaleOrders] Payload: 1766596467067
+2025-12-24 18:14:57.203 [pool-2-thread-5] INFO  [com.saf.core1.ActorCell] [Actor:client-1766596100891-931e0d3e-f710-496c-889f-da298548fb97] - RECEIVED message [BeginOrder] Payload: BeginOrder[]
+2025-12-24 18:14:57.203 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [OrderPlaced] Payload: OrderRequest[clientName=Bob, tableNumber=3, instructions=, items=[OrderItem[dishName=unknown-item, quantity=1]]]
+2025-12-24 18:14:57.204 [pool-2-thread-4] INFO  [c.s.r.actors.RestaurantActor] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - Received order 1766596100891 from Bob
+2025-12-24 18:14:57.204 [pool-2-thread-1] INFO  [com.saf.core1.ActorCell] [Actor:] - RECEIVED message [CalculatePrice] Payload: OrderRequest[clientName=Bob, tableNumber=3, instructions=, items=[OrderItem[dishName=unknown-item, quantity=1]]]
+2025-12-24 18:14:57.204 [pool-2-thread-7] INFO  [com.saf.core1.ActorCell] [Actor:worker-1-49250885-b1d7-4b62-bc41-5b60b9c6cc74] - RECEIVED message [CalculatePrice] Payload: OrderRequest[clientName=Bob, tableNumber=3, instructions=, items=[OrderItem[dishName=unknown-item, quantity=1]]]
+2025-12-24 18:14:57.205 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [PriceCalculated] Payload: PriceCalculated[orderId=1766596100891, valid=true, total=0, missingItems=[unknown-item]]
+2025-12-24 18:14:57.206 [pool-2-thread-5] INFO  [com.saf.core1.ActorCell] [Actor:client-1766596100891-931e0d3e-f710-496c-889f-da298548fb97] - RECEIVED message [AcknowledgeOrder] Payload: OrderAcknowledgement[orderId=1766596100891, status=PENDING_STOCK, message=Commande en attente: articles inconnus (unknown-item)., estimatedTotal=0, receipt=null]
+2025-12-24 18:14:57.222 [pool-2-thread-4] INFO  [c.s.r.client.InventoryClient] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - Stock check request sent to inventory for order 1766596100891
+2025-12-24 18:14:57.246 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [StockResult] Payload: StockResult[orderId=1766596100891, available=false, missingItems=[Unknown dish: unknown-item]]
+2025-12-24 18:14:57.246 [pool-2-thread-5] INFO  [com.saf.core1.ActorCell] [Actor:client-1766596100891-931e0d3e-f710-496c-889f-da298548fb97] - RECEIVED message [AcknowledgeOrder] Payload: OrderAcknowledgement[orderId=1766596100891, status=REJECTED, message=Articles inconnus: unknown-item, estimatedTotal=0, receipt=null]
+2025-12-24 18:15:02.067 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [PurgeStaleOrders] Payload: 1766596472067
+2025-12-24 18:15:07.068 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [PurgeStaleOrders] Payload: 1766596477068
+2025-12-24 18:15:12.068 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [PurgeStaleOrders] Payload: 1766596482068
+2025-12-24 18:15:17.069 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [PurgeStaleOrders] Payload: 1766596487068
+2025-12-24 18:15:22.069 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [PurgeStaleOrders] Payload: 1766596492069
+2025-12-24 18:15:27.069 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [PurgeStaleOrders] Payload: 1766596497069
+2025-12-24 18:15:32.070 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [PurgeStaleOrders] Payload: 1766596502070
+2025-12-24 18:15:37.070 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [PurgeStaleOrders] Payload: 1766596507070
+2025-12-24 18:15:42.071 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [PurgeStaleOrders] Payload: 1766596512070
+2025-12-24 18:15:47.071 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [PurgeStaleOrders] Payload: 1766596517071
+2025-12-24 18:15:52.071 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [PurgeStaleOrders] Payload: 1766596522071
+2025-12-24 18:15:57.072 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [PurgeStaleOrders] Payload: 1766596527072
+2025-12-24 18:16:02.073 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [PurgeStaleOrders] Payload: 1766596532072
+2025-12-24 18:16:07.073 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [PurgeStaleOrders] Payload: 1766596537073
+2025-12-24 18:16:12.073 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [PurgeStaleOrders] Payload: 1766596542073
+2025-12-24 18:16:17.074 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [PurgeStaleOrders] Payload: 1766596547074
+2025-12-24 18:16:22.074 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [PurgeStaleOrders] Payload: 1766596552074
+2025-12-24 18:16:27.075 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [PurgeStaleOrders] Payload: 1766596557074
+2025-12-24 18:16:32.075 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [PurgeStaleOrders] Payload: 1766596562075
+2025-12-24 18:16:37.075 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [PurgeStaleOrders] Payload: 1766596567075
+2025-12-24 18:16:42.076 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [PurgeStaleOrders] Payload: 1766596572076
+2025-12-24 18:16:47.076 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [PurgeStaleOrders] Payload: 1766596577076
+2025-12-24 18:16:52.077 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [PurgeStaleOrders] Payload: 1766596582077
+2025-12-24 18:16:57.077 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [PurgeStaleOrders] Payload: 1766596587077
+2025-12-24 18:17:02.077 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [PurgeStaleOrders] Payload: 1766596592077
+2025-12-24 18:17:07.078 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [PurgeStaleOrders] Payload: 1766596597078
+2025-12-24 18:17:12.078 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [PurgeStaleOrders] Payload: 1766596602078
+2025-12-24 18:17:17.079 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [PurgeStaleOrders] Payload: 1766596607078
+2025-12-24 18:17:22.079 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [PurgeStaleOrders] Payload: 1766596612079
+2025-12-24 18:17:27.080 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [PurgeStaleOrders] Payload: 1766596617080
+2025-12-24 18:17:32.080 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [PurgeStaleOrders] Payload: 1766596622080
+2025-12-24 18:17:37.081 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [PurgeStaleOrders] Payload: 1766596627080
+2025-12-24 18:17:42.081 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [PurgeStaleOrders] Payload: 1766596632081
+2025-12-24 18:17:47.082 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [PurgeStaleOrders] Payload: 1766596637082
+2025-12-24 18:17:52.082 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [PurgeStaleOrders] Payload: 1766596642082
+2025-12-24 18:17:57.082 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [PurgeStaleOrders] Payload: 1766596647082
+2025-12-24 18:18:02.083 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [PurgeStaleOrders] Payload: 1766596652082
+2025-12-24 18:18:07.083 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [PurgeStaleOrders] Payload: 1766596657083
+2025-12-24 18:18:12.083 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [PurgeStaleOrders] Payload: 1766596662083
+2025-12-24 18:18:17.084 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [PurgeStaleOrders] Payload: 1766596667084
+2025-12-24 18:18:22.084 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [PurgeStaleOrders] Payload: 1766596672084
+2025-12-24 18:18:27.084 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [PurgeStaleOrders] Payload: 1766596677084
+2025-12-24 18:18:32.085 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [PurgeStaleOrders] Payload: 1766596682085
+2025-12-24 18:18:37.085 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [PurgeStaleOrders] Payload: 1766596687085
+2025-12-24 18:18:42.086 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [PurgeStaleOrders] Payload: 1766596692085
+2025-12-24 18:18:47.086 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [PurgeStaleOrders] Payload: 1766596697086
+2025-12-24 18:18:52.087 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [PurgeStaleOrders] Payload: 1766596702086
+2025-12-24 18:18:57.088 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [PurgeStaleOrders] Payload: 1766596707088
+2025-12-24 18:19:02.088 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [PurgeStaleOrders] Payload: 1766596712088
+2025-12-24 18:19:07.089 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [PurgeStaleOrders] Payload: 1766596717089
+2025-12-24 18:19:12.089 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [PurgeStaleOrders] Payload: 1766596722089
+2025-12-24 18:19:17.089 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [PurgeStaleOrders] Payload: 1766596727089
+2025-12-24 18:19:22.090 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [PurgeStaleOrders] Payload: 1766596732090
+2025-12-24 18:19:27.090 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [PurgeStaleOrders] Payload: 1766596737090
+2025-12-24 18:19:32.090 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [PurgeStaleOrders] Payload: 1766596742090
+2025-12-24 18:19:37.091 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [PurgeStaleOrders] Payload: 1766596747090
+2025-12-24 18:19:42.091 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [PurgeStaleOrders] Payload: 1766596752091
+2025-12-24 18:19:47.092 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [PurgeStaleOrders] Payload: 1766596757091
+2025-12-24 18:19:52.092 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [PurgeStaleOrders] Payload: 1766596762092
+2025-12-24 18:19:57.092 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [PurgeStaleOrders] Payload: 1766596767092
+2025-12-24 18:20:02.093 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [PurgeStaleOrders] Payload: 1766596772093
+2025-12-24 18:20:07.093 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [PurgeStaleOrders] Payload: 1766596777093
+2025-12-24 18:20:12.094 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [PurgeStaleOrders] Payload: 1766596782093
+2025-12-24 18:20:17.094 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [PurgeStaleOrders] Payload: 1766596787094
+2025-12-24 18:20:22.095 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [PurgeStaleOrders] Payload: 1766596792094
+2025-12-24 18:20:27.095 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [PurgeStaleOrders] Payload: 1766596797095
+2025-12-24 18:20:32.095 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [PurgeStaleOrders] Payload: 1766596802095
+2025-12-24 18:20:37.096 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [PurgeStaleOrders] Payload: 1766596807095
+2025-12-24 18:20:42.096 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [PurgeStaleOrders] Payload: 1766596812096
+2025-12-24 18:20:47.096 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [PurgeStaleOrders] Payload: 1766596817096
+2025-12-24 18:20:52.097 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [PurgeStaleOrders] Payload: 1766596822097
+2025-12-24 18:20:57.097 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [PurgeStaleOrders] Payload: 1766596827097
+2025-12-24 18:21:02.098 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [PurgeStaleOrders] Payload: 1766596832097
+2025-12-24 18:21:07.098 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [PurgeStaleOrders] Payload: 1766596837098
+2025-12-24 18:21:12.098 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [PurgeStaleOrders] Payload: 1766596842098
+2025-12-24 18:21:17.099 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [PurgeStaleOrders] Payload: 1766596847099
+2025-12-24 18:21:22.099 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [PurgeStaleOrders] Payload: 1766596852099
+2025-12-24 18:21:27.100 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [PurgeStaleOrders] Payload: 1766596857100
+2025-12-24 18:21:32.100 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [PurgeStaleOrders] Payload: 1766596862100
+2025-12-24 18:21:37.101 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [PurgeStaleOrders] Payload: 1766596867100
+2025-12-24 18:21:42.101 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [PurgeStaleOrders] Payload: 1766596872101
+2025-12-24 18:21:47.101 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [PurgeStaleOrders] Payload: 1766596877101
+2025-12-24 18:21:52.102 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [PurgeStaleOrders] Payload: 1766596882101
+2025-12-24 18:21:57.102 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [PurgeStaleOrders] Payload: 1766596887102
+2025-12-24 18:22:02.102 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [PurgeStaleOrders] Payload: 1766596892102
+2025-12-24 18:22:07.103 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [PurgeStaleOrders] Payload: 1766596897102
+2025-12-24 18:22:12.103 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [PurgeStaleOrders] Payload: 1766596902103
+2025-12-24 18:22:17.104 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [PurgeStaleOrders] Payload: 1766596907103
+2025-12-24 18:22:22.104 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [PurgeStaleOrders] Payload: 1766596912104
+2025-12-24 18:22:27.104 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [PurgeStaleOrders] Payload: 1766596917104
+2025-12-24 18:22:32.105 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [PurgeStaleOrders] Payload: 1766596922105
+2025-12-24 18:22:37.105 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [PurgeStaleOrders] Payload: 1766596927105
+2025-12-24 18:22:42.105 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [PurgeStaleOrders] Payload: 1766596932105
+2025-12-24 18:22:47.106 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [PurgeStaleOrders] Payload: 1766596937106
+2025-12-24 18:22:52.106 [pool-2-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-46b5f40a-00de-4c9e-9393-831954b205c3] - RECEIVED message [PurgeStaleOrders] Payload: 1766596942106

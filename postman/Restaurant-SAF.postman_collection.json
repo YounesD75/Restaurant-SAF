@@ -1,0 +1,115 @@
+{
+  "info": {
+    "_postman_id": "8e2a8b2a-6d3b-4d8a-9f3a-7b2d5c1a4f10",
+    "name": "Restaurant-SAF Demo",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Menu (Client)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{clientUrl}}/client/menu",
+          "host": ["{{clientUrl}}"],
+          "path": ["client", "menu"]
+        }
+      }
+    },
+    {
+      "name": "Passer une commande (OK)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"clientName\": \"Alice\",\n  \"tableNumber\": \"12\",\n  \"items\": [\n    {\"dishName\": \"burger\", \"quantity\": 2},\n    {\"dishName\": \"drink\", \"quantity\": 2}\n  ],\n  \"instructions\": \"sans oignons\"\n}"
+        },
+        "url": {
+          "raw": "{{clientUrl}}/client/orders",
+          "host": ["{{clientUrl}}"],
+          "path": ["client", "orders"]
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "if (pm.response.code === 200) {",
+              "  var body = pm.response.json();",
+              "  if (body && body.orderId) {",
+              "    pm.environment.set('orderId', body.orderId);",
+              "  }",
+              "}"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Recevoir le ticket (Client)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{clientUrl}}/client/receipts/{{orderId}}",
+          "host": ["{{clientUrl}}"],
+          "path": ["client", "receipts", "{{orderId}}"]
+        }
+      }
+    },
+    {
+      "name": "Trésorerie (Restaurant)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{restaurantUrl}}/treasury",
+          "host": ["{{restaurantUrl}}"],
+          "path": ["treasury"]
+        }
+      }
+    },
+    {
+      "name": "Tickets (Restaurant)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{restaurantUrl}}/receipts",
+          "host": ["{{restaurantUrl}}"],
+          "path": ["receipts"]
+        }
+      }
+    },
+    {
+      "name": "Commande avec plat inconnu (Erreur)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"clientName\": \"Bob\",\n  \"tableNumber\": \"3\",\n  \"items\": [\n    {\"dishName\": \"unknown-item\", \"quantity\": 1}\n  ],\n  \"instructions\": \"\"\n}"
+        },
+        "url": {
+          "raw": "{{clientUrl}}/client/orders",
+          "host": ["{{clientUrl}}"],
+          "path": ["client", "orders"]
+        }
+      }
+    }
+  ]
+}

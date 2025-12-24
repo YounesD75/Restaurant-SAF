@@ -1,0 +1,681 @@
+2025-12-24 17:04:10.042 [main] INFO  [c.s.client.SafClientApplicationTests] [Actor:] - Starting SafClientApplicationTests using Java 21.0.7 with PID 192560 (started by cytech in /home/cytech/Restaurant-SAF/saf-client)
+2025-12-24 17:04:10.043 [main] INFO  [c.s.client.SafClientApplicationTests] [Actor:] - No active profile set, falling back to 1 default profile: "default"
+2025-12-24 17:04:12.140 [main] INFO  [com.saf.core1.LocalActorSystem] [Actor:] - SAF ActorSystem started with 12 threads.
+2025-12-24 17:04:12.150 [main] INFO  [com.saf.core1.router.RoundRobinPool] [Actor:client-router-581473a4-227c-4490-af68-5b963b337bd6] - Starting Router Pool with 3 initial workers.
+2025-12-24 17:04:14.533 [main] WARN  [o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger] [Actor:] - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-12-24 17:04:14.623 [main] INFO  [c.s.client.SafClientApplicationTests] [Actor:] - Started SafClientApplicationTests in 4.974 seconds (process running for 6.073)
+2025-12-24 17:04:15.787 [main] INFO  [c.s.c.ClientProxyIntegrationTest] [Actor:] - Starting ClientProxyIntegrationTest using Java 21.0.7 with PID 192560 (started by cytech in /home/cytech/Restaurant-SAF/saf-client)
+2025-12-24 17:04:15.787 [main] INFO  [c.s.c.ClientProxyIntegrationTest] [Actor:] - No active profile set, falling back to 1 default profile: "default"
+2025-12-24 17:04:16.826 [main] INFO  [com.saf.core1.LocalActorSystem] [Actor:] - SAF ActorSystem started with 12 threads.
+2025-12-24 17:04:16.829 [main] INFO  [com.saf.core1.router.RoundRobinPool] [Actor:client-router-a90ff1e7-20c9-4789-affb-c5c6a79b29a4] - Starting Router Pool with 3 initial workers.
+2025-12-24 17:04:17.941 [main] WARN  [o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger] [Actor:] - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-12-24 17:04:18.232 [main] INFO  [c.s.c.ClientProxyIntegrationTest] [Actor:] - Started ClientProxyIntegrationTest in 2.531 seconds (process running for 9.682)
+2025-12-24 17:04:18.498 [pool-6-thread-1] INFO  [com.saf.core1.ActorCell] [Actor:client-router-a90ff1e7-20c9-4789-affb-c5c6a79b29a4] - RECEIVED message [ProxyCall] Payload: GET /client/menu
+2025-12-24 17:04:18.500 [pool-6-thread-1] INFO  [com.saf.core1.router.RoundRobinPool] [Actor:] - Pool size is now: 3
+2025-12-24 17:04:18.509 [pool-6-thread-2] INFO  [com.saf.core1.ActorCell] [Actor:worker-0-446cb16b-0619-4e5c-b2a8-ddb2ead280fc] - RECEIVED message [ProxyCall] Payload: GET /client/menu
+2025-12-24 17:04:18.509 [pool-6-thread-2] INFO  [com.saf.client.ClientGatewayActor] [Actor:worker-0-446cb16b-0619-4e5c-b2a8-ddb2ead280fc] - Proxy call received: GET /client/menu
+2025-12-24 17:04:18.665 [pool-6-thread-1] INFO  [com.saf.core1.ActorCell] [Actor:] - RECEIVED message [ProxyCall] Payload: POST /client/orders
+2025-12-24 17:04:18.665 [pool-6-thread-3] INFO  [com.saf.core1.ActorCell] [Actor:worker-1-1818bc0d-00f7-494d-97f4-737169b382f6] - RECEIVED message [ProxyCall] Payload: POST /client/orders
+2025-12-24 17:04:18.665 [pool-6-thread-3] INFO  [com.saf.client.ClientGatewayActor] [Actor:worker-1-1818bc0d-00f7-494d-97f4-737169b382f6] - Proxy call received: POST /client/orders
+2025-12-24 17:04:26.323 [main] ERROR [o.s.b.w.e.tomcat.TomcatStarter] [Actor:] - Error starting Tomcat context. Exception: org.springframework.beans.factory.UnsatisfiedDependencyException. Message: Error creating bean with name 'org.springframework.cloud.netflix.eureka.server.EurekaServerAutoConfiguration': Unsatisfied dependency expressed through field 'applicationInfoManager': No qualifying bean of type 'com.netflix.appinfo.ApplicationInfoManager' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2025-12-24 17:04:26.348 [main] WARN  [o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext] [Actor:] - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Unable to start web server
+2025-12-24 17:04:26.382 [main] ERROR [o.s.b.d.LoggingFailureAnalysisReporter] [Actor:] - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field applicationInfoManager in org.springframework.cloud.netflix.eureka.server.EurekaServerAutoConfiguration required a bean of type 'com.netflix.appinfo.ApplicationInfoManager' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'com.netflix.appinfo.ApplicationInfoManager' in your configuration.
+
+2025-12-24 17:07:56.036 [main] INFO  [c.s.client.SafClientApplicationTests] [Actor:] - Starting SafClientApplicationTests using Java 21.0.7 with PID 195740 (started by cytech in /home/cytech/Restaurant-SAF/saf-client)
+2025-12-24 17:07:56.038 [main] INFO  [c.s.client.SafClientApplicationTests] [Actor:] - No active profile set, falling back to 1 default profile: "default"
+2025-12-24 17:07:58.094 [main] INFO  [com.saf.core1.LocalActorSystem] [Actor:] - SAF ActorSystem started with 12 threads.
+2025-12-24 17:07:58.105 [main] INFO  [com.saf.core1.router.RoundRobinPool] [Actor:client-router-08f74ecb-8fe7-48a2-a47e-e337208fcff8] - Starting Router Pool with 3 initial workers.
+2025-12-24 17:08:01.139 [main] WARN  [o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger] [Actor:] - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-12-24 17:08:01.237 [main] INFO  [c.s.client.SafClientApplicationTests] [Actor:] - Started SafClientApplicationTests in 5.593 seconds (process running for 6.622)
+2025-12-24 17:08:02.456 [main] INFO  [c.s.c.ClientProxyIntegrationTest] [Actor:] - Starting ClientProxyIntegrationTest using Java 21.0.7 with PID 195740 (started by cytech in /home/cytech/Restaurant-SAF/saf-client)
+2025-12-24 17:08:02.457 [main] INFO  [c.s.c.ClientProxyIntegrationTest] [Actor:] - No active profile set, falling back to 1 default profile: "default"
+2025-12-24 17:08:03.399 [main] INFO  [com.saf.core1.LocalActorSystem] [Actor:] - SAF ActorSystem started with 12 threads.
+2025-12-24 17:08:03.401 [main] INFO  [com.saf.core1.router.RoundRobinPool] [Actor:client-router-d6619486-7071-4552-9e28-3ced64e4bd9d] - Starting Router Pool with 3 initial workers.
+2025-12-24 17:08:04.381 [main] WARN  [o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger] [Actor:] - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-12-24 17:08:04.729 [main] INFO  [c.s.c.ClientProxyIntegrationTest] [Actor:] - Started ClientProxyIntegrationTest in 2.32 seconds (process running for 10.114)
+2025-12-24 17:08:04.959 [pool-6-thread-1] INFO  [com.saf.core1.ActorCell] [Actor:client-router-d6619486-7071-4552-9e28-3ced64e4bd9d] - RECEIVED message [ProxyCall] Payload: GET /client/menu
+2025-12-24 17:08:04.961 [pool-6-thread-1] INFO  [com.saf.core1.router.RoundRobinPool] [Actor:] - Pool size is now: 3
+2025-12-24 17:08:04.963 [pool-6-thread-2] INFO  [com.saf.core1.ActorCell] [Actor:worker-0-30aea06c-1a6c-4dc6-a29b-883b50f03a70] - RECEIVED message [ProxyCall] Payload: GET /client/menu
+2025-12-24 17:08:04.963 [pool-6-thread-2] INFO  [com.saf.client.ClientGatewayActor] [Actor:worker-0-30aea06c-1a6c-4dc6-a29b-883b50f03a70] - Proxy call received: GET /client/menu
+2025-12-24 17:08:05.181 [pool-6-thread-1] INFO  [com.saf.core1.ActorCell] [Actor:] - RECEIVED message [ProxyCall] Payload: POST /client/orders
+2025-12-24 17:08:05.182 [pool-6-thread-3] INFO  [com.saf.core1.ActorCell] [Actor:worker-1-f2942a29-5c28-4d1b-8e80-4b9583f79bba] - RECEIVED message [ProxyCall] Payload: POST /client/orders
+2025-12-24 17:08:05.182 [pool-6-thread-3] INFO  [com.saf.client.ClientGatewayActor] [Actor:worker-1-f2942a29-5c28-4d1b-8e80-4b9583f79bba] - Proxy call received: POST /client/orders
+2025-12-24 17:08:13.068 [main] ERROR [o.s.b.w.e.tomcat.TomcatStarter] [Actor:] - Error starting Tomcat context. Exception: org.springframework.beans.factory.UnsatisfiedDependencyException. Message: Error creating bean with name 'org.springframework.cloud.netflix.eureka.server.EurekaServerAutoConfiguration': Unsatisfied dependency expressed through field 'applicationInfoManager': No qualifying bean of type 'com.netflix.appinfo.ApplicationInfoManager' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2025-12-24 17:08:13.096 [main] WARN  [o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext] [Actor:] - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Unable to start web server
+2025-12-24 17:08:13.161 [main] ERROR [o.s.b.d.LoggingFailureAnalysisReporter] [Actor:] - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field applicationInfoManager in org.springframework.cloud.netflix.eureka.server.EurekaServerAutoConfiguration required a bean of type 'com.netflix.appinfo.ApplicationInfoManager' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'com.netflix.appinfo.ApplicationInfoManager' in your configuration.
+
+2025-12-24 17:11:23.403 [main] INFO  [c.s.client.SafClientApplicationTests] [Actor:] - Starting SafClientApplicationTests using Java 21.0.7 with PID 198790 (started by cytech in /home/cytech/Restaurant-SAF/saf-client)
+2025-12-24 17:11:23.406 [main] INFO  [c.s.client.SafClientApplicationTests] [Actor:] - No active profile set, falling back to 1 default profile: "default"
+2025-12-24 17:11:25.462 [main] INFO  [com.saf.core1.LocalActorSystem] [Actor:] - SAF ActorSystem started with 12 threads.
+2025-12-24 17:11:25.472 [main] INFO  [com.saf.core1.router.RoundRobinPool] [Actor:client-router-5cfc61f6-335f-46ba-af7f-00186a2cbcc3] - Starting Router Pool with 3 initial workers.
+2025-12-24 17:11:28.269 [main] WARN  [o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger] [Actor:] - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-12-24 17:11:28.438 [main] INFO  [c.s.client.SafClientApplicationTests] [Actor:] - Started SafClientApplicationTests in 5.617 seconds (process running for 6.564)
+2025-12-24 17:11:29.620 [main] INFO  [c.s.c.ClientProxyIntegrationTest] [Actor:] - Starting ClientProxyIntegrationTest using Java 21.0.7 with PID 198790 (started by cytech in /home/cytech/Restaurant-SAF/saf-client)
+2025-12-24 17:11:29.620 [main] INFO  [c.s.c.ClientProxyIntegrationTest] [Actor:] - No active profile set, falling back to 1 default profile: "default"
+2025-12-24 17:11:30.506 [main] INFO  [com.saf.core1.LocalActorSystem] [Actor:] - SAF ActorSystem started with 12 threads.
+2025-12-24 17:11:30.509 [main] INFO  [com.saf.core1.router.RoundRobinPool] [Actor:client-router-49691d02-1e01-4390-abeb-b5cfd29ecac4] - Starting Router Pool with 3 initial workers.
+2025-12-24 17:11:31.302 [main] WARN  [o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger] [Actor:] - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-12-24 17:11:31.564 [main] INFO  [c.s.c.ClientProxyIntegrationTest] [Actor:] - Started ClientProxyIntegrationTest in 1.989 seconds (process running for 9.691)
+2025-12-24 17:11:31.724 [pool-6-thread-1] INFO  [com.saf.core1.ActorCell] [Actor:client-router-49691d02-1e01-4390-abeb-b5cfd29ecac4] - RECEIVED message [ProxyCall] Payload: GET /client/menu
+2025-12-24 17:11:31.725 [pool-6-thread-1] INFO  [com.saf.core1.router.RoundRobinPool] [Actor:] - Pool size is now: 3
+2025-12-24 17:11:31.727 [pool-6-thread-2] INFO  [com.saf.core1.ActorCell] [Actor:worker-0-6686d6b8-be0c-4922-bb51-81083ad70325] - RECEIVED message [ProxyCall] Payload: GET /client/menu
+2025-12-24 17:11:31.727 [pool-6-thread-2] INFO  [com.saf.client.ClientGatewayActor] [Actor:worker-0-6686d6b8-be0c-4922-bb51-81083ad70325] - Proxy call received: GET /client/menu
+2025-12-24 17:11:31.903 [pool-6-thread-1] INFO  [com.saf.core1.ActorCell] [Actor:] - RECEIVED message [ProxyCall] Payload: POST /client/orders
+2025-12-24 17:11:31.903 [pool-6-thread-3] INFO  [com.saf.core1.ActorCell] [Actor:worker-1-c6652494-4885-487a-9d4a-6ede3c5e03a6] - RECEIVED message [ProxyCall] Payload: POST /client/orders
+2025-12-24 17:11:31.903 [pool-6-thread-3] INFO  [com.saf.client.ClientGatewayActor] [Actor:worker-1-c6652494-4885-487a-9d4a-6ede3c5e03a6] - Proxy call received: POST /client/orders
+2025-12-24 17:26:13.095 [main] INFO  [c.s.client.SafClientApplicationTests] [Actor:] - Starting SafClientApplicationTests using Java 21.0.7 with PID 208636 (started by cytech in /home/cytech/Restaurant-SAF/saf-client)
+2025-12-24 17:26:13.098 [main] INFO  [c.s.client.SafClientApplicationTests] [Actor:] - No active profile set, falling back to 1 default profile: "default"
+2025-12-24 17:26:15.024 [main] INFO  [com.saf.core1.LocalActorSystem] [Actor:] - SAF ActorSystem started with 12 threads.
+2025-12-24 17:26:15.035 [main] INFO  [com.saf.core1.router.RoundRobinPool] [Actor:client-router-b7585f41-c4fb-4f5b-b4df-257856c2495f] - Starting Router Pool with 3 initial workers.
+2025-12-24 17:26:18.083 [main] WARN  [o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger] [Actor:] - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-12-24 17:26:18.235 [main] INFO  [c.s.client.SafClientApplicationTests] [Actor:] - Started SafClientApplicationTests in 5.59 seconds (process running for 6.662)
+2025-12-24 17:26:19.196 [main] INFO  [c.s.c.ClientProxyIntegrationTest] [Actor:] - Starting ClientProxyIntegrationTest using Java 21.0.7 with PID 208636 (started by cytech in /home/cytech/Restaurant-SAF/saf-client)
+2025-12-24 17:26:19.196 [main] INFO  [c.s.c.ClientProxyIntegrationTest] [Actor:] - No active profile set, falling back to 1 default profile: "default"
+2025-12-24 17:26:20.027 [main] INFO  [com.saf.core1.LocalActorSystem] [Actor:] - SAF ActorSystem started with 12 threads.
+2025-12-24 17:26:20.029 [main] INFO  [com.saf.core1.router.RoundRobinPool] [Actor:client-router-4d76615e-5dc7-4d74-8b0d-9903d6a5951c] - Starting Router Pool with 3 initial workers.
+2025-12-24 17:26:20.846 [main] WARN  [o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger] [Actor:] - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-12-24 17:26:21.170 [main] INFO  [c.s.c.ClientProxyIntegrationTest] [Actor:] - Started ClientProxyIntegrationTest in 2.044 seconds (process running for 9.598)
+2025-12-24 17:26:21.362 [pool-6-thread-1] INFO  [com.saf.core1.ActorCell] [Actor:client-router-4d76615e-5dc7-4d74-8b0d-9903d6a5951c] - RECEIVED message [ProxyCall] Payload: GET /client/menu
+2025-12-24 17:26:21.364 [pool-6-thread-1] INFO  [com.saf.core1.router.RoundRobinPool] [Actor:] - Pool size is now: 3
+2025-12-24 17:26:21.365 [pool-6-thread-2] INFO  [com.saf.core1.ActorCell] [Actor:worker-0-4b17e017-9d16-4c44-a2de-6cbfd7c7dcda] - RECEIVED message [ProxyCall] Payload: GET /client/menu
+2025-12-24 17:26:21.366 [pool-6-thread-2] INFO  [com.saf.client.ClientGatewayActor] [Actor:worker-0-4b17e017-9d16-4c44-a2de-6cbfd7c7dcda] - Proxy call received: GET /client/menu
+2025-12-24 17:26:21.526 [pool-6-thread-1] INFO  [com.saf.core1.ActorCell] [Actor:] - RECEIVED message [ProxyCall] Payload: POST /client/orders
+2025-12-24 17:26:21.527 [pool-6-thread-3] INFO  [com.saf.core1.ActorCell] [Actor:worker-1-6d64c983-b72f-4b5b-9285-28312940b261] - RECEIVED message [ProxyCall] Payload: POST /client/orders
+2025-12-24 17:26:21.527 [pool-6-thread-3] INFO  [com.saf.client.ClientGatewayActor] [Actor:worker-1-6d64c983-b72f-4b5b-9285-28312940b261] - Proxy call received: POST /client/orders
+2025-12-24 17:26:28.687 [main] ERROR [o.s.b.w.e.tomcat.TomcatStarter] [Actor:] - Error starting Tomcat context. Exception: org.springframework.beans.factory.UnsatisfiedDependencyException. Message: Error creating bean with name 'org.springframework.cloud.netflix.eureka.server.EurekaServerAutoConfiguration': Unsatisfied dependency expressed through field 'applicationInfoManager': No qualifying bean of type 'com.netflix.appinfo.ApplicationInfoManager' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2025-12-24 17:26:28.713 [main] WARN  [o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext] [Actor:] - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Unable to start web server
+2025-12-24 17:26:28.749 [main] ERROR [o.s.b.d.LoggingFailureAnalysisReporter] [Actor:] - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field applicationInfoManager in org.springframework.cloud.netflix.eureka.server.EurekaServerAutoConfiguration required a bean of type 'com.netflix.appinfo.ApplicationInfoManager' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'com.netflix.appinfo.ApplicationInfoManager' in your configuration.
+
+2025-12-24 17:33:15.746 [main] INFO  [c.s.client.SafClientApplicationTests] [Actor:] - Starting SafClientApplicationTests using Java 21.0.7 with PID 213949 (started by cytech in /home/cytech/Restaurant-SAF/saf-client)
+2025-12-24 17:33:15.749 [main] INFO  [c.s.client.SafClientApplicationTests] [Actor:] - No active profile set, falling back to 1 default profile: "default"
+2025-12-24 17:33:17.588 [main] INFO  [com.saf.core1.LocalActorSystem] [Actor:] - SAF ActorSystem started with 12 threads.
+2025-12-24 17:33:17.598 [main] INFO  [com.saf.core1.router.RoundRobinPool] [Actor:client-router-05f182a1-a6c6-4883-a47c-6d71e5479b56] - Starting Router Pool with 3 initial workers.
+2025-12-24 17:33:20.303 [main] WARN  [o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger] [Actor:] - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-12-24 17:33:20.406 [main] INFO  [c.s.client.SafClientApplicationTests] [Actor:] - Started SafClientApplicationTests in 5.147 seconds (process running for 6.334)
+2025-12-24 17:33:21.454 [main] INFO  [c.s.c.ClientProxyIntegrationTest] [Actor:] - Starting ClientProxyIntegrationTest using Java 21.0.7 with PID 213949 (started by cytech in /home/cytech/Restaurant-SAF/saf-client)
+2025-12-24 17:33:21.455 [main] INFO  [c.s.c.ClientProxyIntegrationTest] [Actor:] - No active profile set, falling back to 1 default profile: "default"
+2025-12-24 17:33:22.487 [main] INFO  [com.saf.core1.LocalActorSystem] [Actor:] - SAF ActorSystem started with 12 threads.
+2025-12-24 17:33:22.491 [main] INFO  [com.saf.core1.router.RoundRobinPool] [Actor:client-router-849ff8ec-763d-4723-b88f-40d4940bc037] - Starting Router Pool with 3 initial workers.
+2025-12-24 17:33:23.859 [main] WARN  [o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger] [Actor:] - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-12-24 17:33:24.137 [main] INFO  [c.s.c.ClientProxyIntegrationTest] [Actor:] - Started ClientProxyIntegrationTest in 2.766 seconds (process running for 10.065)
+2025-12-24 17:33:24.299 [pool-6-thread-1] INFO  [com.saf.core1.ActorCell] [Actor:client-router-849ff8ec-763d-4723-b88f-40d4940bc037] - RECEIVED message [ProxyCall] Payload: GET /client/menu
+2025-12-24 17:33:24.302 [pool-6-thread-1] INFO  [com.saf.core1.router.RoundRobinPool] [Actor:] - Pool size is now: 3
+2025-12-24 17:33:24.303 [pool-6-thread-2] INFO  [com.saf.core1.ActorCell] [Actor:worker-0-c37e2022-7fe6-4ac6-b26d-183082563e22] - RECEIVED message [ProxyCall] Payload: GET /client/menu
+2025-12-24 17:33:24.304 [pool-6-thread-2] INFO  [com.saf.client.ClientGatewayActor] [Actor:worker-0-c37e2022-7fe6-4ac6-b26d-183082563e22] - Proxy call received: GET /client/menu
+2025-12-24 17:33:24.488 [pool-6-thread-1] INFO  [com.saf.core1.ActorCell] [Actor:] - RECEIVED message [ProxyCall] Payload: POST /client/orders
+2025-12-24 17:33:24.489 [pool-6-thread-3] INFO  [com.saf.core1.ActorCell] [Actor:worker-1-8ceab31c-173b-4909-80f2-dac3d3729457] - RECEIVED message [ProxyCall] Payload: POST /client/orders
+2025-12-24 17:33:24.489 [pool-6-thread-3] INFO  [com.saf.client.ClientGatewayActor] [Actor:worker-1-8ceab31c-173b-4909-80f2-dac3d3729457] - Proxy call received: POST /client/orders
+2025-12-24 17:33:35.274 [main] WARN  [o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger] [Actor:] - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-12-24 17:33:37.255 [main] INFO  [com.zaxxer.hikari.HikariDataSource] [Actor:] - HikariPool-1 - Starting...
+2025-12-24 17:33:37.303 [main] INFO  [com.zaxxer.hikari.pool.HikariPool] [Actor:] - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@751d9a40
+2025-12-24 17:33:37.306 [main] INFO  [com.zaxxer.hikari.HikariDataSource] [Actor:] - HikariPool-1 - Start completed.
+2025-12-24 17:33:37.430 [main] INFO  [o.f.c.i.license.VersionPrinter] [Actor:] - Flyway Community Edition 9.22.3 by Redgate
+2025-12-24 17:33:37.430 [main] INFO  [o.f.c.i.license.VersionPrinter] [Actor:] - See release notes here: https://rd.gt/416ObMi
+2025-12-24 17:33:37.431 [main] INFO  [o.f.c.i.license.VersionPrinter] [Actor:] - 
+2025-12-24 17:33:37.449 [main] INFO  [org.flywaydb.core.FlywayExecutor] [Actor:] - Database: jdbc:postgresql://localhost:32779/inventory_db (PostgreSQL 15.15)
+2025-12-24 17:33:37.495 [main] INFO  [o.f.c.i.s.JdbcTableSchemaHistory] [Actor:] - Schema history table "public"."flyway_schema_history" does not exist yet
+2025-12-24 17:33:37.498 [main] INFO  [o.f.core.internal.command.DbValidate] [Actor:] - Successfully validated 2 migrations (execution time 00:00.022s)
+2025-12-24 17:33:37.515 [main] INFO  [o.f.c.i.s.JdbcTableSchemaHistory] [Actor:] - Creating Schema History table "public"."flyway_schema_history" ...
+2025-12-24 17:33:37.567 [main] INFO  [o.f.core.internal.command.DbMigrate] [Actor:] - Current version of schema "public": << Empty Schema >>
+2025-12-24 17:33:37.579 [main] INFO  [o.f.core.internal.command.DbMigrate] [Actor:] - Migrating schema "public" to version "1 - init inventory tables"
+2025-12-24 17:33:37.622 [main] INFO  [o.f.core.internal.command.DbMigrate] [Actor:] - Migrating schema "public" to version "2 - seed inventory data"
+2025-12-24 17:33:37.643 [main] INFO  [o.f.core.internal.command.DbMigrate] [Actor:] - Successfully applied 2 migrations to schema "public", now at version v2 (execution time 00:00.038s)
+2025-12-24 17:33:39.508 [main] INFO  [com.saf.core1.LocalActorSystem] [Actor:] - SAF ActorSystem started with 12 threads.
+2025-12-24 17:33:39.513 [main] INFO  [com.saf.core1.router.RoundRobinPool] [Actor:stock-router-ddb8bf3b-14ab-44fe-b50f-eed66a9f1db1] - Starting Router Pool with 3 initial workers.
+2025-12-24 17:33:39.594 [main] WARN  [o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration] [Actor:] - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-12-24 17:33:40.875 [main] WARN  [o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger] [Actor:] - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-12-24 17:33:40.971 [main] ERROR [o.s.c.n.e.s.EurekaRegistration] [Actor:] - error getting CloudEurekaClient
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'scopedTarget.eurekaClient' defined in class path resource [org/springframework/cloud/netflix/eureka/EurekaClientAutoConfiguration$RefreshableEurekaClientConfiguration.class]: Unsatisfied dependency expressed through method 'eurekaClient' parameter 3: No qualifying bean of type 'com.netflix.discovery.shared.transport.jersey.TransportClientFactories<?>' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:798) ~[spring-beans-6.1.3.jar:6.1.3]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:542) ~[spring-beans-6.1.3.jar:6.1.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1334) ~[spring-beans-6.1.3.jar:6.1.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1164) ~[spring-beans-6.1.3.jar:6.1.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:561) ~[spring-beans-6.1.3.jar:6.1.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:521) ~[spring-beans-6.1.3.jar:6.1.3]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$1(AbstractBeanFactory.java:364) ~[spring-beans-6.1.3.jar:6.1.3]
+	at org.springframework.cloud.context.scope.GenericScope$BeanLifecycleWrapper.getBean(GenericScope.java:375) ~[spring-cloud-context-4.1.5.jar:4.1.5]
+	at org.springframework.cloud.context.scope.GenericScope.get(GenericScope.java:179) ~[spring-cloud-context-4.1.5.jar:4.1.5]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:361) ~[spring-beans-6.1.3.jar:6.1.3]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) ~[spring-beans-6.1.3.jar:6.1.3]
+	at org.springframework.aop.target.SimpleBeanTargetSource.getTarget(SimpleBeanTargetSource.java:35) ~[spring-aop-6.1.3.jar:6.1.3]
+	at org.springframework.cloud.netflix.eureka.serviceregistry.EurekaRegistration.getTargetObject(EurekaRegistration.java:128) ~[spring-cloud-netflix-eureka-client-4.1.5.jar:4.1.5]
+	at org.springframework.cloud.netflix.eureka.serviceregistry.EurekaRegistration.getEurekaClient(EurekaRegistration.java:116) ~[spring-cloud-netflix-eureka-client-4.1.5.jar:4.1.5]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:281) ~[spring-core-6.1.3.jar:6.1.3]
+	at org.springframework.cloud.context.scope.GenericScope$LockedScopedProxyFactoryBean.invoke(GenericScope.java:482) ~[spring-cloud-context-4.1.5.jar:4.1.5]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.1.3.jar:6.1.3]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:765) ~[spring-aop-6.1.3.jar:6.1.3]
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:717) ~[spring-aop-6.1.3.jar:6.1.3]
+	at org.springframework.cloud.netflix.eureka.serviceregistry.EurekaRegistration$$SpringCGLIB$$0.getEurekaClient(<generated>) ~[spring-cloud-netflix-eureka-client-4.1.5.jar:4.1.5]
+	at org.springframework.cloud.netflix.eureka.serviceregistry.EurekaServiceRegistry.maybeInitializeClient(EurekaServiceRegistry.java:83) ~[spring-cloud-netflix-eureka-client-4.1.5.jar:4.1.5]
+	at org.springframework.cloud.netflix.eureka.serviceregistry.EurekaServiceRegistry.register(EurekaServiceRegistry.java:66) ~[spring-cloud-netflix-eureka-client-4.1.5.jar:4.1.5]
+	at org.springframework.cloud.netflix.eureka.serviceregistry.EurekaAutoServiceRegistration.start(EurekaAutoServiceRegistration.java:89) ~[spring-cloud-netflix-eureka-client-4.1.5.jar:4.1.5]
+	at org.springframework.cloud.netflix.eureka.serviceregistry.EurekaAutoServiceRegistration.onApplicationEvent(EurekaAutoServiceRegistration.java:152) ~[spring-cloud-netflix-eureka-client-4.1.5.jar:4.1.5]
+	at org.springframework.cloud.netflix.eureka.serviceregistry.EurekaAutoServiceRegistration.onApplicationEvent(EurekaAutoServiceRegistration.java:137) ~[spring-cloud-netflix-eureka-client-4.1.5.jar:4.1.5]
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:178) ~[spring-context-6.1.3.jar:6.1.3]
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:171) ~[spring-context-6.1.3.jar:6.1.3]
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:149) ~[spring-context-6.1.3.jar:6.1.3]
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:451) ~[spring-context-6.1.3.jar:6.1.3]
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:384) ~[spring-context-6.1.3.jar:6.1.3]
+	at org.springframework.boot.web.servlet.context.WebServerStartStopLifecycle.start(WebServerStartStopLifecycle.java:47) ~[spring-boot-3.2.2.jar:3.2.2]
+	at org.springframework.context.support.DefaultLifecycleProcessor.doStart(DefaultLifecycleProcessor.java:284) ~[spring-context-6.1.3.jar:6.1.3]
+	at org.springframework.context.support.DefaultLifecycleProcessor$LifecycleGroup.start(DefaultLifecycleProcessor.java:467) ~[spring-context-6.1.3.jar:6.1.3]
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75) ~[na:na]
+	at org.springframework.context.support.DefaultLifecycleProcessor.startBeans(DefaultLifecycleProcessor.java:256) ~[spring-context-6.1.3.jar:6.1.3]
+	at org.springframework.context.support.DefaultLifecycleProcessor.onRefresh(DefaultLifecycleProcessor.java:201) ~[spring-context-6.1.3.jar:6.1.3]
+	at org.springframework.context.support.AbstractApplicationContext.finishRefresh(AbstractApplicationContext.java:978) ~[spring-context-6.1.3.jar:6.1.3]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:627) ~[spring-context-6.1.3.jar:6.1.3]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.2.2.jar:3.2.2]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754) ~[spring-boot-3.2.2.jar:3.2.2]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456) ~[spring-boot-3.2.2.jar:3.2.2]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:334) ~[spring-boot-3.2.2.jar:3.2.2]
+	at org.springframework.boot.builder.SpringApplicationBuilder.run(SpringApplicationBuilder.java:149) ~[spring-boot-3.2.2.jar:3.2.2]
+	at com.saf.client.CrossServiceIntegrationIT.startServices(CrossServiceIntegrationIT.java:64) ~[test-classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:728) ~[junit-platform-commons-1.10.1.jar:1.10.1]
+	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60) ~[junit-jupiter-engine-5.10.1.jar:5.10.1]
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131) ~[junit-jupiter-engine-5.10.1.jar:5.10.1]
+	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:156) ~[junit-jupiter-engine-5.10.1.jar:5.10.1]
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptLifecycleMethod(TimeoutExtension.java:128) ~[junit-jupiter-engine-5.10.1.jar:5.10.1]
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptBeforeAllMethod(TimeoutExtension.java:70) ~[junit-jupiter-engine-5.10.1.jar:5.10.1]
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(InterceptingExecutableInvoker.java:103) ~[junit-jupiter-engine-5.10.1.jar:5.10.1]
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.lambda$invoke$0(InterceptingExecutableInvoker.java:93) ~[junit-jupiter-engine-5.10.1.jar:5.10.1]
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106) ~[junit-jupiter-engine-5.10.1.jar:5.10.1]
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64) ~[junit-jupiter-engine-5.10.1.jar:5.10.1]
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45) ~[junit-jupiter-engine-5.10.1.jar:5.10.1]
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37) ~[junit-jupiter-engine-5.10.1.jar:5.10.1]
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:92) ~[junit-jupiter-engine-5.10.1.jar:5.10.1]
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:86) ~[junit-jupiter-engine-5.10.1.jar:5.10.1]
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$invokeBeforeAllMethods$13(ClassBasedTestDescriptor.java:412) ~[junit-jupiter-engine-5.10.1.jar:5.10.1]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.10.1.jar:1.10.1]
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.invokeBeforeAllMethods(ClassBasedTestDescriptor.java:410) ~[junit-jupiter-engine-5.10.1.jar:5.10.1]
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.before(ClassBasedTestDescriptor.java:216) ~[junit-jupiter-engine-5.10.1.jar:5.10.1]
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.before(ClassBasedTestDescriptor.java:85) ~[junit-jupiter-engine-5.10.1.jar:5.10.1]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:148) ~[junit-platform-engine-1.10.1.jar:1.10.1]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.10.1.jar:1.10.1]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141) ~[junit-platform-engine-1.10.1.jar:1.10.1]
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137) ~[junit-platform-engine-1.10.1.jar:1.10.1]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139) ~[junit-platform-engine-1.10.1.jar:1.10.1]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.10.1.jar:1.10.1]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138) ~[junit-platform-engine-1.10.1.jar:1.10.1]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95) ~[junit-platform-engine-1.10.1.jar:1.10.1]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596) ~[na:na]
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41) ~[junit-platform-engine-1.10.1.jar:1.10.1]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155) ~[junit-platform-engine-1.10.1.jar:1.10.1]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.10.1.jar:1.10.1]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141) ~[junit-platform-engine-1.10.1.jar:1.10.1]
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137) ~[junit-platform-engine-1.10.1.jar:1.10.1]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139) ~[junit-platform-engine-1.10.1.jar:1.10.1]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.10.1.jar:1.10.1]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138) ~[junit-platform-engine-1.10.1.jar:1.10.1]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95) ~[junit-platform-engine-1.10.1.jar:1.10.1]
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35) ~[junit-platform-engine-1.10.1.jar:1.10.1]
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57) ~[junit-platform-engine-1.10.1.jar:1.10.1]
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54) ~[junit-platform-engine-1.10.1.jar:1.10.1]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:198) ~[junit-platform-launcher-1.10.1.jar:1.10.1]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:169) ~[junit-platform-launcher-1.10.1.jar:1.10.1]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:93) ~[junit-platform-launcher-1.10.1.jar:1.10.1]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:58) ~[junit-platform-launcher-1.10.1.jar:1.10.1]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:141) ~[junit-platform-launcher-1.10.1.jar:1.10.1]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:57) ~[junit-platform-launcher-1.10.1.jar:1.10.1]
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:103) ~[junit-platform-launcher-1.10.1.jar:1.10.1]
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:85) ~[junit-platform-launcher-1.10.1.jar:1.10.1]
+	at org.junit.platform.launcher.core.DelegatingLauncher.execute(DelegatingLauncher.java:47) ~[junit-platform-launcher-1.10.1.jar:1.10.1]
+	at org.apache.maven.surefire.junitplatform.LazyLauncher.execute(LazyLauncher.java:56) ~[surefire-junit-platform-3.1.2.jar:3.1.2]
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.execute(JUnitPlatformProvider.java:184) ~[surefire-junit-platform-3.1.2.jar:3.1.2]
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:148) ~[surefire-junit-platform-3.1.2.jar:3.1.2]
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:122) ~[surefire-junit-platform-3.1.2.jar:3.1.2]
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385) ~[surefire-booter-3.1.2.jar:3.1.2]
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162) ~[surefire-booter-3.1.2.jar:3.1.2]
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507) ~[surefire-booter-3.1.2.jar:3.1.2]
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495) ~[surefire-booter-3.1.2.jar:3.1.2]
+Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.netflix.discovery.shared.transport.jersey.TransportClientFactories<?>' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.raiseNoMatchingBeanFound(DefaultListableBeanFactory.java:1880) ~[spring-beans-6.1.3.jar:6.1.3]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1406) ~[spring-beans-6.1.3.jar:6.1.3]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1353) ~[spring-beans-6.1.3.jar:6.1.3]
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:907) ~[spring-beans-6.1.3.jar:6.1.3]
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:785) ~[spring-beans-6.1.3.jar:6.1.3]
+	... 104 common frames omitted
+2025-12-24 17:33:40.985 [main] WARN  [o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext] [Actor:] - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'
+2025-12-24 17:33:40.998 [main] INFO  [com.zaxxer.hikari.HikariDataSource] [Actor:] - HikariPool-1 - Shutdown initiated...
+2025-12-24 17:33:41.002 [main] INFO  [com.zaxxer.hikari.HikariDataSource] [Actor:] - HikariPool-1 - Shutdown completed.
+2025-12-24 17:33:41.032 [main] ERROR [o.s.boot.SpringApplication] [Actor:] - Application run failed
+org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'
+	at org.springframework.context.support.DefaultLifecycleProcessor.doStart(DefaultLifecycleProcessor.java:287) ~[spring-context-6.1.3.jar:6.1.3]
+	at org.springframework.context.support.DefaultLifecycleProcessor$LifecycleGroup.start(DefaultLifecycleProcessor.java:467) ~[spring-context-6.1.3.jar:6.1.3]
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75) ~[na:na]
+	at org.springframework.context.support.DefaultLifecycleProcessor.startBeans(DefaultLifecycleProcessor.java:256) ~[spring-context-6.1.3.jar:6.1.3]
+	at org.springframework.context.support.DefaultLifecycleProcessor.onRefresh(DefaultLifecycleProcessor.java:201) ~[spring-context-6.1.3.jar:6.1.3]
+	at org.springframework.context.support.AbstractApplicationContext.finishRefresh(AbstractApplicationContext.java:978) ~[spring-context-6.1.3.jar:6.1.3]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:627) ~[spring-context-6.1.3.jar:6.1.3]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.2.2.jar:3.2.2]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754) ~[spring-boot-3.2.2.jar:3.2.2]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456) ~[spring-boot-3.2.2.jar:3.2.2]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:334) ~[spring-boot-3.2.2.jar:3.2.2]
+	at org.springframework.boot.builder.SpringApplicationBuilder.run(SpringApplicationBuilder.java:149) ~[spring-boot-3.2.2.jar:3.2.2]
+	at com.saf.client.CrossServiceIntegrationIT.startServices(CrossServiceIntegrationIT.java:64) ~[test-classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:728) ~[junit-platform-commons-1.10.1.jar:1.10.1]
+	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60) ~[junit-jupiter-engine-5.10.1.jar:5.10.1]
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131) ~[junit-jupiter-engine-5.10.1.jar:5.10.1]
+	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:156) ~[junit-jupiter-engine-5.10.1.jar:5.10.1]
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptLifecycleMethod(TimeoutExtension.java:128) ~[junit-jupiter-engine-5.10.1.jar:5.10.1]
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptBeforeAllMethod(TimeoutExtension.java:70) ~[junit-jupiter-engine-5.10.1.jar:5.10.1]
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(InterceptingExecutableInvoker.java:103) ~[junit-jupiter-engine-5.10.1.jar:5.10.1]
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.lambda$invoke$0(InterceptingExecutableInvoker.java:93) ~[junit-jupiter-engine-5.10.1.jar:5.10.1]
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106) ~[junit-jupiter-engine-5.10.1.jar:5.10.1]
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64) ~[junit-jupiter-engine-5.10.1.jar:5.10.1]
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45) ~[junit-jupiter-engine-5.10.1.jar:5.10.1]
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37) ~[junit-jupiter-engine-5.10.1.jar:5.10.1]
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:92) ~[junit-jupiter-engine-5.10.1.jar:5.10.1]
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:86) ~[junit-jupiter-engine-5.10.1.jar:5.10.1]
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$invokeBeforeAllMethods$13(ClassBasedTestDescriptor.java:412) ~[junit-jupiter-engine-5.10.1.jar:5.10.1]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.10.1.jar:1.10.1]
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.invokeBeforeAllMethods(ClassBasedTestDescriptor.java:410) ~[junit-jupiter-engine-5.10.1.jar:5.10.1]
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.before(ClassBasedTestDescriptor.java:216) ~[junit-jupiter-engine-5.10.1.jar:5.10.1]
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.before(ClassBasedTestDescriptor.java:85) ~[junit-jupiter-engine-5.10.1.jar:5.10.1]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:148) ~[junit-platform-engine-1.10.1.jar:1.10.1]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.10.1.jar:1.10.1]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141) ~[junit-platform-engine-1.10.1.jar:1.10.1]
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137) ~[junit-platform-engine-1.10.1.jar:1.10.1]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139) ~[junit-platform-engine-1.10.1.jar:1.10.1]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.10.1.jar:1.10.1]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138) ~[junit-platform-engine-1.10.1.jar:1.10.1]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95) ~[junit-platform-engine-1.10.1.jar:1.10.1]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596) ~[na:na]
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41) ~[junit-platform-engine-1.10.1.jar:1.10.1]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155) ~[junit-platform-engine-1.10.1.jar:1.10.1]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.10.1.jar:1.10.1]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141) ~[junit-platform-engine-1.10.1.jar:1.10.1]
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137) ~[junit-platform-engine-1.10.1.jar:1.10.1]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139) ~[junit-platform-engine-1.10.1.jar:1.10.1]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.10.1.jar:1.10.1]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138) ~[junit-platform-engine-1.10.1.jar:1.10.1]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95) ~[junit-platform-engine-1.10.1.jar:1.10.1]
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35) ~[junit-platform-engine-1.10.1.jar:1.10.1]
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57) ~[junit-platform-engine-1.10.1.jar:1.10.1]
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54) ~[junit-platform-engine-1.10.1.jar:1.10.1]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:198) ~[junit-platform-launcher-1.10.1.jar:1.10.1]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:169) ~[junit-platform-launcher-1.10.1.jar:1.10.1]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:93) ~[junit-platform-launcher-1.10.1.jar:1.10.1]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:58) ~[junit-platform-launcher-1.10.1.jar:1.10.1]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:141) ~[junit-platform-launcher-1.10.1.jar:1.10.1]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:57) ~[junit-platform-launcher-1.10.1.jar:1.10.1]
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:103) ~[junit-platform-launcher-1.10.1.jar:1.10.1]
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:85) ~[junit-platform-launcher-1.10.1.jar:1.10.1]
+	at org.junit.platform.launcher.core.DelegatingLauncher.execute(DelegatingLauncher.java:47) ~[junit-platform-launcher-1.10.1.jar:1.10.1]
+	at org.apache.maven.surefire.junitplatform.LazyLauncher.execute(LazyLauncher.java:56) ~[surefire-junit-platform-3.1.2.jar:3.1.2]
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.execute(JUnitPlatformProvider.java:184) ~[surefire-junit-platform-3.1.2.jar:3.1.2]
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:148) ~[surefire-junit-platform-3.1.2.jar:3.1.2]
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:122) ~[surefire-junit-platform-3.1.2.jar:3.1.2]
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385) ~[surefire-booter-3.1.2.jar:3.1.2]
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162) ~[surefire-booter-3.1.2.jar:3.1.2]
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507) ~[surefire-booter-3.1.2.jar:3.1.2]
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495) ~[surefire-booter-3.1.2.jar:3.1.2]
+Caused by: java.lang.NullPointerException: Cannot invoke "org.springframework.cloud.netflix.eureka.CloudEurekaClient.getApplications()" because the return value of "org.springframework.cloud.netflix.eureka.serviceregistry.EurekaRegistration.getEurekaClient()" is null
+	at org.springframework.cloud.netflix.eureka.serviceregistry.EurekaServiceRegistry.maybeInitializeClient(EurekaServiceRegistry.java:83) ~[spring-cloud-netflix-eureka-client-4.1.5.jar:4.1.5]
+	at org.springframework.cloud.netflix.eureka.serviceregistry.EurekaServiceRegistry.register(EurekaServiceRegistry.java:66) ~[spring-cloud-netflix-eureka-client-4.1.5.jar:4.1.5]
+	at org.springframework.cloud.netflix.eureka.serviceregistry.EurekaAutoServiceRegistration.start(EurekaAutoServiceRegistration.java:89) ~[spring-cloud-netflix-eureka-client-4.1.5.jar:4.1.5]
+	at org.springframework.cloud.netflix.eureka.serviceregistry.EurekaAutoServiceRegistration.onApplicationEvent(EurekaAutoServiceRegistration.java:152) ~[spring-cloud-netflix-eureka-client-4.1.5.jar:4.1.5]
+	at org.springframework.cloud.netflix.eureka.serviceregistry.EurekaAutoServiceRegistration.onApplicationEvent(EurekaAutoServiceRegistration.java:137) ~[spring-cloud-netflix-eureka-client-4.1.5.jar:4.1.5]
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:178) ~[spring-context-6.1.3.jar:6.1.3]
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:171) ~[spring-context-6.1.3.jar:6.1.3]
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:149) ~[spring-context-6.1.3.jar:6.1.3]
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:451) ~[spring-context-6.1.3.jar:6.1.3]
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:384) ~[spring-context-6.1.3.jar:6.1.3]
+	at org.springframework.boot.web.servlet.context.WebServerStartStopLifecycle.start(WebServerStartStopLifecycle.java:47) ~[spring-boot-3.2.2.jar:3.2.2]
+	at org.springframework.context.support.DefaultLifecycleProcessor.doStart(DefaultLifecycleProcessor.java:284) ~[spring-context-6.1.3.jar:6.1.3]
+	... 71 common frames omitted
+2025-12-24 17:33:41.043 [Eureka-Jersey3Client-Conn-Cleaner2] ERROR [c.n.d.s.t.j.EurekaJersey3ClientImpl] [Actor:] - Cannot clean connections
+java.lang.IllegalStateException: Client instance has been closed.
+	at org.glassfish.jersey.internal.guava.Preconditions.checkState(Preconditions.java:169) ~[jersey-common-3.1.5.jar:na]
+	at org.glassfish.jersey.client.JerseyClient.checkNotClosed(JerseyClient.java:248) ~[jersey-client-3.1.5.jar:na]
+	at org.glassfish.jersey.client.JerseyClient.getConfiguration(JerseyClient.java:363) ~[jersey-client-3.1.5.jar:na]
+	at org.glassfish.jersey.client.JerseyClient.getConfiguration(JerseyClient.java:54) ~[jersey-client-3.1.5.jar:na]
+	at com.netflix.discovery.shared.transport.jersey3.EurekaJersey3ClientImpl$ConnectionCleanerTask.run(EurekaJersey3ClientImpl.java:338) ~[eureka-client-jersey3-2.0.4.jar:2.0.4]
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572) ~[na:na]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317) ~[na:na]
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:1583) ~[na:na]
+2025-12-24 17:37:58.621 [main] INFO  [c.s.client.SafClientApplicationTests] [Actor:] - Starting SafClientApplicationTests using Java 21.0.7 with PID 217720 (started by cytech in /home/cytech/Restaurant-SAF/saf-client)
+2025-12-24 17:37:58.624 [main] INFO  [c.s.client.SafClientApplicationTests] [Actor:] - No active profile set, falling back to 1 default profile: "default"
+2025-12-24 17:38:00.882 [main] INFO  [com.saf.core1.LocalActorSystem] [Actor:] - SAF ActorSystem started with 12 threads.
+2025-12-24 17:38:00.892 [main] INFO  [com.saf.core1.router.RoundRobinPool] [Actor:client-router-3d005f50-a271-4402-b518-eae29cfcf6c1] - Starting Router Pool with 3 initial workers.
+2025-12-24 17:38:03.341 [main] WARN  [o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger] [Actor:] - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-12-24 17:38:03.505 [main] INFO  [c.s.client.SafClientApplicationTests] [Actor:] - Started SafClientApplicationTests in 5.397 seconds (process running for 6.482)
+2025-12-24 17:38:04.683 [main] INFO  [c.s.c.ClientProxyIntegrationTest] [Actor:] - Starting ClientProxyIntegrationTest using Java 21.0.7 with PID 217720 (started by cytech in /home/cytech/Restaurant-SAF/saf-client)
+2025-12-24 17:38:04.683 [main] INFO  [c.s.c.ClientProxyIntegrationTest] [Actor:] - No active profile set, falling back to 1 default profile: "default"
+2025-12-24 17:38:05.501 [main] INFO  [com.saf.core1.LocalActorSystem] [Actor:] - SAF ActorSystem started with 12 threads.
+2025-12-24 17:38:05.504 [main] INFO  [com.saf.core1.router.RoundRobinPool] [Actor:client-router-084f95fd-fe6b-4707-ad6a-a717a128bfbb] - Starting Router Pool with 3 initial workers.
+2025-12-24 17:38:06.459 [main] WARN  [o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger] [Actor:] - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-12-24 17:38:06.829 [main] INFO  [c.s.c.ClientProxyIntegrationTest] [Actor:] - Started ClientProxyIntegrationTest in 2.198 seconds (process running for 9.806)
+2025-12-24 17:38:07.057 [pool-6-thread-1] INFO  [com.saf.core1.ActorCell] [Actor:client-router-084f95fd-fe6b-4707-ad6a-a717a128bfbb] - RECEIVED message [ProxyCall] Payload: GET /client/menu
+2025-12-24 17:38:07.059 [pool-6-thread-1] INFO  [com.saf.core1.router.RoundRobinPool] [Actor:] - Pool size is now: 3
+2025-12-24 17:38:07.060 [pool-6-thread-2] INFO  [com.saf.core1.ActorCell] [Actor:worker-0-dcb54713-2c93-4f93-b102-2e1b0c919391] - RECEIVED message [ProxyCall] Payload: GET /client/menu
+2025-12-24 17:38:07.061 [pool-6-thread-2] INFO  [com.saf.client.ClientGatewayActor] [Actor:worker-0-dcb54713-2c93-4f93-b102-2e1b0c919391] - Proxy call received: GET /client/menu
+2025-12-24 17:38:07.313 [pool-6-thread-1] INFO  [com.saf.core1.ActorCell] [Actor:] - RECEIVED message [ProxyCall] Payload: POST /client/orders
+2025-12-24 17:38:07.314 [pool-6-thread-3] INFO  [com.saf.core1.ActorCell] [Actor:worker-1-0ade3212-66b8-4e11-bf4a-a1f875bfbc46] - RECEIVED message [ProxyCall] Payload: POST /client/orders
+2025-12-24 17:38:07.314 [pool-6-thread-3] INFO  [com.saf.client.ClientGatewayActor] [Actor:worker-1-0ade3212-66b8-4e11-bf4a-a1f875bfbc46] - Proxy call received: POST /client/orders
+2025-12-24 17:38:14.713 [main] WARN  [o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext] [Actor:] - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'recipeServiceImpl' defined in URL [jar:file:/home/cytech/Restaurant-SAF/InventoryService/target/InventoryService-1.0.0-SNAPSHOT.jar!/com/InventoryService/InventoryService/service/impl/RecipeServiceImpl.class]: Unsatisfied dependency expressed through constructor parameter 0: No qualifying bean of type 'com.InventoryService.InventoryService.repository.RecipeRepository' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+2025-12-24 17:38:14.780 [main] ERROR [o.s.b.d.LoggingFailureAnalysisReporter] [Actor:] - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 0 of constructor in com.InventoryService.InventoryService.service.impl.RecipeServiceImpl required a bean of type 'com.InventoryService.InventoryService.repository.RecipeRepository' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'com.InventoryService.InventoryService.repository.RecipeRepository' in your configuration.
+
+2025-12-24 17:41:54.028 [main] INFO  [c.s.client.SafClientApplicationTests] [Actor:] - Starting SafClientApplicationTests using Java 21.0.7 with PID 221022 (started by cytech in /home/cytech/Restaurant-SAF/saf-client)
+2025-12-24 17:41:54.030 [main] INFO  [c.s.client.SafClientApplicationTests] [Actor:] - No active profile set, falling back to 1 default profile: "default"
+2025-12-24 17:41:56.119 [main] INFO  [com.saf.core1.LocalActorSystem] [Actor:] - SAF ActorSystem started with 12 threads.
+2025-12-24 17:41:56.131 [main] INFO  [com.saf.core1.router.RoundRobinPool] [Actor:client-router-a8a8077b-2bed-4d7b-ae9e-85aedf1d5374] - Starting Router Pool with 3 initial workers.
+2025-12-24 17:41:59.460 [main] WARN  [o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger] [Actor:] - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-12-24 17:41:59.554 [main] INFO  [c.s.client.SafClientApplicationTests] [Actor:] - Started SafClientApplicationTests in 5.914 seconds (process running for 6.951)
+2025-12-24 17:42:00.602 [main] INFO  [c.s.c.ClientProxyIntegrationTest] [Actor:] - Starting ClientProxyIntegrationTest using Java 21.0.7 with PID 221022 (started by cytech in /home/cytech/Restaurant-SAF/saf-client)
+2025-12-24 17:42:00.602 [main] INFO  [c.s.c.ClientProxyIntegrationTest] [Actor:] - No active profile set, falling back to 1 default profile: "default"
+2025-12-24 17:42:01.718 [main] INFO  [com.saf.core1.LocalActorSystem] [Actor:] - SAF ActorSystem started with 12 threads.
+2025-12-24 17:42:01.721 [main] INFO  [com.saf.core1.router.RoundRobinPool] [Actor:client-router-c8d819ec-c20c-4509-8074-4dc9668cf9a4] - Starting Router Pool with 3 initial workers.
+2025-12-24 17:42:02.696 [main] WARN  [o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger] [Actor:] - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-12-24 17:42:03.002 [main] INFO  [c.s.c.ClientProxyIntegrationTest] [Actor:] - Started ClientProxyIntegrationTest in 2.474 seconds (process running for 10.398)
+2025-12-24 17:42:03.183 [pool-6-thread-1] INFO  [com.saf.core1.ActorCell] [Actor:client-router-c8d819ec-c20c-4509-8074-4dc9668cf9a4] - RECEIVED message [ProxyCall] Payload: GET /client/menu
+2025-12-24 17:42:03.185 [pool-6-thread-1] INFO  [com.saf.core1.router.RoundRobinPool] [Actor:] - Pool size is now: 3
+2025-12-24 17:42:03.186 [pool-6-thread-2] INFO  [com.saf.core1.ActorCell] [Actor:worker-0-9d495cd8-df59-4f38-8f7e-8f45071717b6] - RECEIVED message [ProxyCall] Payload: GET /client/menu
+2025-12-24 17:42:03.187 [pool-6-thread-2] INFO  [com.saf.client.ClientGatewayActor] [Actor:worker-0-9d495cd8-df59-4f38-8f7e-8f45071717b6] - Proxy call received: GET /client/menu
+2025-12-24 17:42:03.377 [pool-6-thread-1] INFO  [com.saf.core1.ActorCell] [Actor:] - RECEIVED message [ProxyCall] Payload: POST /client/orders
+2025-12-24 17:42:03.378 [pool-6-thread-3] INFO  [com.saf.core1.ActorCell] [Actor:worker-1-c59a5c06-86b8-4bf0-991f-45728eb79a67] - RECEIVED message [ProxyCall] Payload: POST /client/orders
+2025-12-24 17:42:03.378 [pool-6-thread-3] INFO  [com.saf.client.ClientGatewayActor] [Actor:worker-1-c59a5c06-86b8-4bf0-991f-45728eb79a67] - Proxy call received: POST /client/orders
+2025-12-24 17:42:11.624 [main] INFO  [com.zaxxer.hikari.HikariDataSource] [Actor:] - HikariPool-1 - Starting...
+2025-12-24 17:42:11.658 [main] INFO  [com.zaxxer.hikari.pool.HikariPool] [Actor:] - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@707b38a1
+2025-12-24 17:42:11.661 [main] INFO  [com.zaxxer.hikari.HikariDataSource] [Actor:] - HikariPool-1 - Start completed.
+2025-12-24 17:42:11.741 [main] INFO  [o.f.c.i.license.VersionPrinter] [Actor:] - Flyway Community Edition 9.22.3 by Redgate
+2025-12-24 17:42:11.741 [main] INFO  [o.f.c.i.license.VersionPrinter] [Actor:] - See release notes here: https://rd.gt/416ObMi
+2025-12-24 17:42:11.741 [main] INFO  [o.f.c.i.license.VersionPrinter] [Actor:] - 
+2025-12-24 17:42:11.757 [main] INFO  [org.flywaydb.core.FlywayExecutor] [Actor:] - Database: jdbc:postgresql://localhost:32783/inventory_db (PostgreSQL 15.15)
+2025-12-24 17:42:11.792 [main] INFO  [o.f.c.i.s.JdbcTableSchemaHistory] [Actor:] - Schema history table "public"."flyway_schema_history" does not exist yet
+2025-12-24 17:42:11.795 [main] INFO  [o.f.core.internal.command.DbValidate] [Actor:] - Successfully validated 2 migrations (execution time 00:00.018s)
+2025-12-24 17:42:11.811 [main] INFO  [o.f.c.i.s.JdbcTableSchemaHistory] [Actor:] - Creating Schema History table "public"."flyway_schema_history" ...
+2025-12-24 17:42:11.843 [main] INFO  [o.f.core.internal.command.DbMigrate] [Actor:] - Current version of schema "public": << Empty Schema >>
+2025-12-24 17:42:11.852 [main] INFO  [o.f.core.internal.command.DbMigrate] [Actor:] - Migrating schema "public" to version "1 - init inventory tables"
+2025-12-24 17:42:11.891 [main] INFO  [o.f.core.internal.command.DbMigrate] [Actor:] - Migrating schema "public" to version "2 - seed inventory data"
+2025-12-24 17:42:11.917 [main] INFO  [o.f.core.internal.command.DbMigrate] [Actor:] - Successfully applied 2 migrations to schema "public", now at version v2 (execution time 00:00.033s)
+2025-12-24 17:42:13.941 [main] INFO  [com.saf.core1.LocalActorSystem] [Actor:] - SAF ActorSystem started with 12 threads.
+2025-12-24 17:42:13.948 [main] INFO  [com.saf.core1.router.RoundRobinPool] [Actor:stock-router-b9e7e582-8331-4149-8a56-4361f68215d4] - Starting Router Pool with 3 initial workers.
+2025-12-24 17:42:14.084 [main] WARN  [o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration] [Actor:] - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-12-24 17:42:17.338 [main] INFO  [com.zaxxer.hikari.HikariDataSource] [Actor:] - HikariPool-2 - Starting...
+2025-12-24 17:42:17.357 [main] INFO  [com.zaxxer.hikari.pool.HikariPool] [Actor:] - HikariPool-2 - Added connection org.postgresql.jdbc.PgConnection@7c2f7667
+2025-12-24 17:42:17.358 [main] INFO  [com.zaxxer.hikari.HikariDataSource] [Actor:] - HikariPool-2 - Start completed.
+2025-12-24 17:42:17.377 [main] INFO  [org.flywaydb.core.FlywayExecutor] [Actor:] - Database: jdbc:postgresql://localhost:32783/saf_restaurant (PostgreSQL 15.15)
+2025-12-24 17:42:17.391 [main] INFO  [o.f.c.i.s.JdbcTableSchemaHistory] [Actor:] - Schema history table "public"."flyway_schema_history" does not exist yet
+2025-12-24 17:42:17.393 [main] INFO  [o.f.core.internal.command.DbValidate] [Actor:] - Successfully validated 2 migrations (execution time 00:00.006s)
+2025-12-24 17:42:17.405 [main] INFO  [o.f.c.i.s.JdbcTableSchemaHistory] [Actor:] - Creating Schema History table "public"."flyway_schema_history" ...
+2025-12-24 17:42:17.435 [main] INFO  [o.f.core.internal.command.DbMigrate] [Actor:] - Current version of schema "public": << Empty Schema >>
+2025-12-24 17:42:17.442 [main] INFO  [o.f.core.internal.command.DbMigrate] [Actor:] - Migrating schema "public" to version "1 - init inventory tables"
+2025-12-24 17:42:17.476 [main] INFO  [o.f.core.internal.command.DbMigrate] [Actor:] - Migrating schema "public" to version "2 - seed inventory data"
+2025-12-24 17:42:17.500 [main] INFO  [o.f.core.internal.command.DbMigrate] [Actor:] - Successfully applied 2 migrations to schema "public", now at version v2 (execution time 00:00.030s)
+2025-12-24 17:42:17.770 [main] WARN  [o.h.e.jdbc.spi.SqlExceptionHelper] [Actor:] - SQL Warning Code: 0, SQLState: 00000
+2025-12-24 17:42:17.771 [main] WARN  [o.h.e.jdbc.spi.SqlExceptionHelper] [Actor:] - constraint "uk_oq3k6lov98v737betmc0gna0f" of relation "receipts" does not exist, skipping
+2025-12-24 17:42:17.774 [main] WARN  [o.h.e.jdbc.spi.SqlExceptionHelper] [Actor:] - SQL Warning Code: 0, SQLState: 00000
+2025-12-24 17:42:17.775 [main] WARN  [o.h.e.jdbc.spi.SqlExceptionHelper] [Actor:] - constraint "uk_604j9lgnslnhffkb9atk5van2" of relation "treasury_entries" does not exist, skipping
+2025-12-24 17:42:17.799 [main] INFO  [com.saf.core1.LocalActorSystem] [Actor:] - SAF ActorSystem started with 12 threads.
+2025-12-24 17:42:17.802 [main] INFO  [com.saf.core1.router.RoundRobinPool] [Actor:menu-router-4c96c82e-c825-48b2-8b18-e9a9b83a1b2a] - Starting Router Pool with 3 initial workers.
+2025-12-24 17:42:18.521 [main] WARN  [o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration] [Actor:] - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-12-24 17:42:20.108 [main] INFO  [com.saf.core1.LocalActorSystem] [Actor:] - SAF ActorSystem started with 12 threads.
+2025-12-24 17:42:20.112 [main] INFO  [com.saf.core1.router.RoundRobinPool] [Actor:client-router-5c40ba68-9628-44ef-810b-92d0ea689e31] - Starting Router Pool with 3 initial workers.
+2025-12-24 17:42:23.092 [pool-9-thread-1] INFO  [com.saf.core1.ActorCell] [Actor:client-router-5c40ba68-9628-44ef-810b-92d0ea689e31] - RECEIVED message [ProxyCall] Payload: GET /client/menu
+2025-12-24 17:42:23.095 [pool-9-thread-1] INFO  [com.saf.core1.router.RoundRobinPool] [Actor:] - Pool size is now: 3
+2025-12-24 17:42:23.096 [pool-9-thread-2] INFO  [com.saf.core1.ActorCell] [Actor:worker-0-3a8eedb1-4f6f-449f-8b72-6f6ed78d7e7a] - RECEIVED message [ProxyCall] Payload: GET /client/menu
+2025-12-24 17:42:23.096 [pool-9-thread-2] INFO  [com.saf.client.ClientGatewayActor] [Actor:worker-0-3a8eedb1-4f6f-449f-8b72-6f6ed78d7e7a] - Proxy call received: GET /client/menu
+2025-12-24 17:42:23.102 [pool-6-thread-1] INFO  [com.saf.core1.ActorCell] [Actor:menu-router-4c96c82e-c825-48b2-8b18-e9a9b83a1b2a] - RECEIVED message [ListMenu] Payload: ActorRef(ask-7a627cab-8ffc-4fd0-874b-4f1028a9a235-d70f08c9-3c9e-4846-84ae-b0bc635c662d)
+2025-12-24 17:42:23.105 [pool-6-thread-1] INFO  [com.saf.core1.router.RoundRobinPool] [Actor:] - Pool size is now: 3
+2025-12-24 17:42:23.106 [pool-6-thread-6] INFO  [com.saf.core1.ActorCell] [Actor:worker-0-75a79cec-94f2-4b7a-a9e9-ff9d6d419e10] - RECEIVED message [ListMenu] Payload: ActorRef(ask-7a627cab-8ffc-4fd0-874b-4f1028a9a235-d70f08c9-3c9e-4846-84ae-b0bc635c662d)
+2025-12-24 17:42:23.106 [pool-6-thread-5] INFO  [com.saf.core1.ActorCell] [Actor:ask-7a627cab-8ffc-4fd0-874b-4f1028a9a235-d70f08c9-3c9e-4846-84ae-b0bc635c662d] - RECEIVED message [MenuListed] Payload: [MenuItem[dishName=burger, name=Burger maison, price=12.5, description=Pain brioché, boeuf, cheddar], MenuItem[dishName=salad, name=Salade fraîcheur, price=9.9, description=Légumes croquants], MenuItem[dishName=dessert, name=Mousse au chocolat, price=6.5, description=Chocolat noir 70%], MenuItem[dishName=drink, name=Limonade artisanale, price=4.0, description=Citron, menthe], MenuItem[dishName=coffee, name=Expresso, price=2.5, description=Arabica torréfié]]
+2025-12-24 17:42:23.330 [pool-9-thread-1] INFO  [com.saf.core1.ActorCell] [Actor:] - RECEIVED message [ProxyCall] Payload: POST /client/orders
+2025-12-24 17:42:23.331 [pool-9-thread-3] INFO  [com.saf.core1.ActorCell] [Actor:worker-1-9cb110c2-bf55-491a-ab50-2159028ffe63] - RECEIVED message [ProxyCall] Payload: POST /client/orders
+2025-12-24 17:42:23.331 [pool-9-thread-3] INFO  [com.saf.client.ClientGatewayActor] [Actor:worker-1-9cb110c2-bf55-491a-ab50-2159028ffe63] - Proxy call received: POST /client/orders
+2025-12-24 17:42:23.438 [pool-6-thread-9] INFO  [com.saf.core1.ActorCell] [Actor:client-1766594538430-af90a7fd-3560-405f-8170-671a107d4d0a] - RECEIVED message [BeginOrder] Payload: BeginOrder[]
+2025-12-24 17:42:23.440 [pool-6-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-5bb3f6d1-ba80-4dfe-abd5-72e883af9d91] - RECEIVED message [OrderPlaced] Payload: OrderRequest[clientName=Alice, tableNumber=12, instructions=sans oignons, items=[OrderItem[dishName=burger, quantity=2], OrderItem[dishName=drink, quantity=2]]]
+2025-12-24 17:42:23.441 [pool-6-thread-4] INFO  [c.s.r.actors.RestaurantActor] [Actor:restaurant-5bb3f6d1-ba80-4dfe-abd5-72e883af9d91] - Received order 1766594538430 from Alice
+2025-12-24 17:42:23.442 [pool-6-thread-1] INFO  [com.saf.core1.ActorCell] [Actor:] - RECEIVED message [CalculatePrice] Payload: OrderRequest[clientName=Alice, tableNumber=12, instructions=sans oignons, items=[OrderItem[dishName=burger, quantity=2], OrderItem[dishName=drink, quantity=2]]]
+2025-12-24 17:42:23.443 [pool-6-thread-7] INFO  [com.saf.core1.ActorCell] [Actor:worker-1-6f2478f0-c7f0-496f-b98b-6672059fc09c] - RECEIVED message [CalculatePrice] Payload: OrderRequest[clientName=Alice, tableNumber=12, instructions=sans oignons, items=[OrderItem[dishName=burger, quantity=2], OrderItem[dishName=drink, quantity=2]]]
+2025-12-24 17:42:23.444 [pool-6-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-5bb3f6d1-ba80-4dfe-abd5-72e883af9d91] - RECEIVED message [PriceCalculated] Payload: PriceCalculated[orderId=1766594538430, valid=true, total=33.0, missingItems=[]]
+2025-12-24 17:42:23.448 [pool-6-thread-9] INFO  [com.saf.core1.ActorCell] [Actor:client-1766594538430-af90a7fd-3560-405f-8170-671a107d4d0a] - RECEIVED message [AcknowledgeOrder] Payload: OrderAcknowledgement[orderId=1766594538430, status=PENDING_STOCK, message=Commande validée. Vérification du stock en cours., estimatedTotal=33.0, receipt=null]
+2025-12-24 17:42:23.468 [pool-4-thread-1] INFO  [com.saf.core1.ActorCell] [Actor:stock-router-b9e7e582-8331-4149-8a56-4361f68215d4] - RECEIVED message [VerifyStock] Payload: com.InventoryService.InventoryService.dto.StockCheckRequest@5601d3bf
+2025-12-24 17:42:23.471 [pool-4-thread-1] INFO  [com.saf.core1.router.RoundRobinPool] [Actor:] - Pool size is now: 3
+2025-12-24 17:42:23.472 [pool-4-thread-2] INFO  [com.saf.core1.ActorCell] [Actor:worker-0-3d4f16f3-da3d-4651-a8a8-9bf102bc4c2b] - RECEIVED message [VerifyStock] Payload: com.InventoryService.InventoryService.dto.StockCheckRequest@5601d3bf
+2025-12-24 17:42:23.472 [pool-4-thread-2] INFO  [c.I.I.actors.InventoryStockActor] [Actor:worker-0-3d4f16f3-da3d-4651-a8a8-9bf102bc4c2b] - Stock check start: orderId=1766594538430 items=[com.InventoryService.InventoryService.dto.StockCheckRequest$Item@2ac00ffa, com.InventoryService.InventoryService.dto.StockCheckRequest$Item@2407e4d2]
+2025-12-24 17:42:23.478 [pool-6-thread-4] INFO  [c.s.r.client.InventoryClient] [Actor:restaurant-5bb3f6d1-ba80-4dfe-abd5-72e883af9d91] - Stock check request sent to inventory for order 1766594538430
+2025-12-24 17:42:23.498 [pool-9-thread-1] INFO  [com.saf.core1.ActorCell] [Actor:] - RECEIVED message [ProxyCall] Payload: GET /client/receipts/1766594538430
+2025-12-24 17:42:23.499 [pool-9-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:worker-2-35609e40-c5cb-4373-9661-6d978ae72705] - RECEIVED message [ProxyCall] Payload: GET /client/receipts/1766594538430
+2025-12-24 17:42:23.499 [pool-9-thread-4] INFO  [com.saf.client.ClientGatewayActor] [Actor:worker-2-35609e40-c5cb-4373-9661-6d978ae72705] - Proxy call received: GET /client/receipts/1766594538430
+2025-12-24 17:42:23.719 [pool-4-thread-2] INFO  [c.I.I.actors.InventoryStockActor] [Actor:worker-0-3d4f16f3-da3d-4651-a8a8-9bf102bc4c2b] - Stock check result: orderId=1766594538430 success=true message=Stock reserved successfully
+2025-12-24 17:42:23.723 [pool-4-thread-2] WARN  [c.I.I.client.InventoryCallbackClient] [Actor:worker-0-3d4f16f3-da3d-4651-a8a8-9bf102bc4c2b] - Erreur callback vers http://localhost:8080/events/stock-result: I/O error on POST request for "http://localhost:8080/events/stock-result": Connexion refusée
+2025-12-24 17:42:24.162 [pool-9-thread-1] INFO  [com.saf.core1.ActorCell] [Actor:] - RECEIVED message [ProxyCall] Payload: GET /client/receipts/1766594538430
+2025-12-24 17:42:24.163 [pool-9-thread-2] INFO  [com.saf.core1.ActorCell] [Actor:worker-0-3a8eedb1-4f6f-449f-8b72-6f6ed78d7e7a] - RECEIVED message [ProxyCall] Payload: GET /client/receipts/1766594538430
+2025-12-24 17:42:24.163 [pool-9-thread-2] INFO  [com.saf.client.ClientGatewayActor] [Actor:worker-0-3a8eedb1-4f6f-449f-8b72-6f6ed78d7e7a] - Proxy call received: GET /client/receipts/1766594538430
+2025-12-24 17:42:24.500 [pool-6-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-5bb3f6d1-ba80-4dfe-abd5-72e883af9d91] - RECEIVED message [PurgeStaleOrders] Payload: 1766594514500
+2025-12-24 17:42:24.680 [pool-9-thread-1] INFO  [com.saf.core1.ActorCell] [Actor:] - RECEIVED message [ProxyCall] Payload: GET /client/receipts/1766594538430
+2025-12-24 17:42:24.681 [pool-9-thread-3] INFO  [com.saf.core1.ActorCell] [Actor:worker-1-9cb110c2-bf55-491a-ab50-2159028ffe63] - RECEIVED message [ProxyCall] Payload: GET /client/receipts/1766594538430
+2025-12-24 17:42:24.681 [pool-9-thread-3] INFO  [com.saf.client.ClientGatewayActor] [Actor:worker-1-9cb110c2-bf55-491a-ab50-2159028ffe63] - Proxy call received: GET /client/receipts/1766594538430
+2025-12-24 17:42:25.203 [pool-9-thread-1] INFO  [com.saf.core1.ActorCell] [Actor:] - RECEIVED message [ProxyCall] Payload: GET /client/receipts/1766594538430
+2025-12-24 17:42:25.204 [pool-9-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:worker-2-35609e40-c5cb-4373-9661-6d978ae72705] - RECEIVED message [ProxyCall] Payload: GET /client/receipts/1766594538430
+2025-12-24 17:42:25.204 [pool-9-thread-4] INFO  [com.saf.client.ClientGatewayActor] [Actor:worker-2-35609e40-c5cb-4373-9661-6d978ae72705] - Proxy call received: GET /client/receipts/1766594538430
+2025-12-24 17:42:25.726 [pool-9-thread-1] INFO  [com.saf.core1.ActorCell] [Actor:] - RECEIVED message [ProxyCall] Payload: GET /client/receipts/1766594538430
+2025-12-24 17:42:25.727 [pool-9-thread-2] INFO  [com.saf.core1.ActorCell] [Actor:worker-0-3a8eedb1-4f6f-449f-8b72-6f6ed78d7e7a] - RECEIVED message [ProxyCall] Payload: GET /client/receipts/1766594538430
+2025-12-24 17:42:25.727 [pool-9-thread-2] INFO  [com.saf.client.ClientGatewayActor] [Actor:worker-0-3a8eedb1-4f6f-449f-8b72-6f6ed78d7e7a] - Proxy call received: GET /client/receipts/1766594538430
+2025-12-24 17:42:26.246 [pool-9-thread-1] INFO  [com.saf.core1.ActorCell] [Actor:] - RECEIVED message [ProxyCall] Payload: GET /client/receipts/1766594538430
+2025-12-24 17:42:26.247 [pool-9-thread-3] INFO  [com.saf.core1.ActorCell] [Actor:worker-1-9cb110c2-bf55-491a-ab50-2159028ffe63] - RECEIVED message [ProxyCall] Payload: GET /client/receipts/1766594538430
+2025-12-24 17:42:26.247 [pool-9-thread-3] INFO  [com.saf.client.ClientGatewayActor] [Actor:worker-1-9cb110c2-bf55-491a-ab50-2159028ffe63] - Proxy call received: GET /client/receipts/1766594538430
+2025-12-24 17:42:26.765 [pool-9-thread-1] INFO  [com.saf.core1.ActorCell] [Actor:] - RECEIVED message [ProxyCall] Payload: GET /client/receipts/1766594538430
+2025-12-24 17:42:26.766 [pool-9-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:worker-2-35609e40-c5cb-4373-9661-6d978ae72705] - RECEIVED message [ProxyCall] Payload: GET /client/receipts/1766594538430
+2025-12-24 17:42:26.766 [pool-9-thread-4] INFO  [com.saf.client.ClientGatewayActor] [Actor:worker-2-35609e40-c5cb-4373-9661-6d978ae72705] - Proxy call received: GET /client/receipts/1766594538430
+2025-12-24 17:42:27.285 [pool-9-thread-1] INFO  [com.saf.core1.ActorCell] [Actor:] - RECEIVED message [ProxyCall] Payload: GET /client/receipts/1766594538430
+2025-12-24 17:42:27.286 [pool-9-thread-2] INFO  [com.saf.core1.ActorCell] [Actor:worker-0-3a8eedb1-4f6f-449f-8b72-6f6ed78d7e7a] - RECEIVED message [ProxyCall] Payload: GET /client/receipts/1766594538430
+2025-12-24 17:42:27.286 [pool-9-thread-2] INFO  [com.saf.client.ClientGatewayActor] [Actor:worker-0-3a8eedb1-4f6f-449f-8b72-6f6ed78d7e7a] - Proxy call received: GET /client/receipts/1766594538430
+2025-12-24 17:42:27.804 [pool-9-thread-1] INFO  [com.saf.core1.ActorCell] [Actor:] - RECEIVED message [ProxyCall] Payload: GET /client/receipts/1766594538430
+2025-12-24 17:42:27.804 [pool-9-thread-3] INFO  [com.saf.core1.ActorCell] [Actor:worker-1-9cb110c2-bf55-491a-ab50-2159028ffe63] - RECEIVED message [ProxyCall] Payload: GET /client/receipts/1766594538430
+2025-12-24 17:42:27.804 [pool-9-thread-3] INFO  [com.saf.client.ClientGatewayActor] [Actor:worker-1-9cb110c2-bf55-491a-ab50-2159028ffe63] - Proxy call received: GET /client/receipts/1766594538430
+2025-12-24 17:42:28.321 [pool-9-thread-1] INFO  [com.saf.core1.ActorCell] [Actor:] - RECEIVED message [ProxyCall] Payload: GET /client/receipts/1766594538430
+2025-12-24 17:42:28.322 [pool-9-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:worker-2-35609e40-c5cb-4373-9661-6d978ae72705] - RECEIVED message [ProxyCall] Payload: GET /client/receipts/1766594538430
+2025-12-24 17:42:28.322 [pool-9-thread-4] INFO  [com.saf.client.ClientGatewayActor] [Actor:worker-2-35609e40-c5cb-4373-9661-6d978ae72705] - Proxy call received: GET /client/receipts/1766594538430
+2025-12-24 17:42:28.841 [pool-9-thread-1] INFO  [com.saf.core1.ActorCell] [Actor:] - RECEIVED message [ProxyCall] Payload: GET /client/receipts/1766594538430
+2025-12-24 17:42:28.841 [pool-9-thread-2] INFO  [com.saf.core1.ActorCell] [Actor:worker-0-3a8eedb1-4f6f-449f-8b72-6f6ed78d7e7a] - RECEIVED message [ProxyCall] Payload: GET /client/receipts/1766594538430
+2025-12-24 17:42:28.841 [pool-9-thread-2] INFO  [com.saf.client.ClientGatewayActor] [Actor:worker-0-3a8eedb1-4f6f-449f-8b72-6f6ed78d7e7a] - Proxy call received: GET /client/receipts/1766594538430
+2025-12-24 17:42:29.359 [pool-9-thread-1] INFO  [com.saf.core1.ActorCell] [Actor:] - RECEIVED message [ProxyCall] Payload: GET /client/receipts/1766594538430
+2025-12-24 17:42:29.360 [pool-9-thread-3] INFO  [com.saf.core1.ActorCell] [Actor:worker-1-9cb110c2-bf55-491a-ab50-2159028ffe63] - RECEIVED message [ProxyCall] Payload: GET /client/receipts/1766594538430
+2025-12-24 17:42:29.360 [pool-9-thread-3] INFO  [com.saf.client.ClientGatewayActor] [Actor:worker-1-9cb110c2-bf55-491a-ab50-2159028ffe63] - Proxy call received: GET /client/receipts/1766594538430
+2025-12-24 17:42:29.501 [pool-6-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-5bb3f6d1-ba80-4dfe-abd5-72e883af9d91] - RECEIVED message [PurgeStaleOrders] Payload: 1766594519501
+2025-12-24 17:42:29.880 [pool-9-thread-1] INFO  [com.saf.core1.ActorCell] [Actor:] - RECEIVED message [ProxyCall] Payload: GET /client/receipts/1766594538430
+2025-12-24 17:42:29.881 [pool-9-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:worker-2-35609e40-c5cb-4373-9661-6d978ae72705] - RECEIVED message [ProxyCall] Payload: GET /client/receipts/1766594538430
+2025-12-24 17:42:29.881 [pool-9-thread-4] INFO  [com.saf.client.ClientGatewayActor] [Actor:worker-2-35609e40-c5cb-4373-9661-6d978ae72705] - Proxy call received: GET /client/receipts/1766594538430
+2025-12-24 17:42:30.400 [pool-9-thread-1] INFO  [com.saf.core1.ActorCell] [Actor:] - RECEIVED message [ProxyCall] Payload: GET /client/receipts/1766594538430
+2025-12-24 17:42:30.400 [pool-9-thread-2] INFO  [com.saf.core1.ActorCell] [Actor:worker-0-3a8eedb1-4f6f-449f-8b72-6f6ed78d7e7a] - RECEIVED message [ProxyCall] Payload: GET /client/receipts/1766594538430
+2025-12-24 17:42:30.400 [pool-9-thread-2] INFO  [com.saf.client.ClientGatewayActor] [Actor:worker-0-3a8eedb1-4f6f-449f-8b72-6f6ed78d7e7a] - Proxy call received: GET /client/receipts/1766594538430
+2025-12-24 17:42:30.918 [pool-9-thread-1] INFO  [com.saf.core1.ActorCell] [Actor:] - RECEIVED message [ProxyCall] Payload: GET /client/receipts/1766594538430
+2025-12-24 17:42:30.918 [pool-9-thread-3] INFO  [com.saf.core1.ActorCell] [Actor:worker-1-9cb110c2-bf55-491a-ab50-2159028ffe63] - RECEIVED message [ProxyCall] Payload: GET /client/receipts/1766594538430
+2025-12-24 17:42:30.921 [pool-9-thread-3] INFO  [com.saf.client.ClientGatewayActor] [Actor:worker-1-9cb110c2-bf55-491a-ab50-2159028ffe63] - Proxy call received: GET /client/receipts/1766594538430
+2025-12-24 17:42:31.439 [pool-9-thread-1] INFO  [com.saf.core1.ActorCell] [Actor:] - RECEIVED message [ProxyCall] Payload: GET /client/receipts/1766594538430
+2025-12-24 17:42:31.440 [pool-9-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:worker-2-35609e40-c5cb-4373-9661-6d978ae72705] - RECEIVED message [ProxyCall] Payload: GET /client/receipts/1766594538430
+2025-12-24 17:42:31.440 [pool-9-thread-4] INFO  [com.saf.client.ClientGatewayActor] [Actor:worker-2-35609e40-c5cb-4373-9661-6d978ae72705] - Proxy call received: GET /client/receipts/1766594538430
+2025-12-24 17:42:31.957 [pool-9-thread-1] INFO  [com.saf.core1.ActorCell] [Actor:] - RECEIVED message [ProxyCall] Payload: GET /client/receipts/1766594538430
+2025-12-24 17:42:31.957 [pool-9-thread-2] INFO  [com.saf.core1.ActorCell] [Actor:worker-0-3a8eedb1-4f6f-449f-8b72-6f6ed78d7e7a] - RECEIVED message [ProxyCall] Payload: GET /client/receipts/1766594538430
+2025-12-24 17:42:31.957 [pool-9-thread-2] INFO  [com.saf.client.ClientGatewayActor] [Actor:worker-0-3a8eedb1-4f6f-449f-8b72-6f6ed78d7e7a] - Proxy call received: GET /client/receipts/1766594538430
+2025-12-24 17:42:32.474 [pool-9-thread-1] INFO  [com.saf.core1.ActorCell] [Actor:] - RECEIVED message [ProxyCall] Payload: GET /client/receipts/1766594538430
+2025-12-24 17:42:32.475 [pool-9-thread-3] INFO  [com.saf.core1.ActorCell] [Actor:worker-1-9cb110c2-bf55-491a-ab50-2159028ffe63] - RECEIVED message [ProxyCall] Payload: GET /client/receipts/1766594538430
+2025-12-24 17:42:32.475 [pool-9-thread-3] INFO  [com.saf.client.ClientGatewayActor] [Actor:worker-1-9cb110c2-bf55-491a-ab50-2159028ffe63] - Proxy call received: GET /client/receipts/1766594538430
+2025-12-24 17:42:32.990 [pool-9-thread-1] INFO  [com.saf.core1.ActorCell] [Actor:] - RECEIVED message [ProxyCall] Payload: GET /client/receipts/1766594538430
+2025-12-24 17:42:32.991 [pool-9-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:worker-2-35609e40-c5cb-4373-9661-6d978ae72705] - RECEIVED message [ProxyCall] Payload: GET /client/receipts/1766594538430
+2025-12-24 17:42:32.992 [pool-9-thread-4] INFO  [com.saf.client.ClientGatewayActor] [Actor:worker-2-35609e40-c5cb-4373-9661-6d978ae72705] - Proxy call received: GET /client/receipts/1766594538430
+2025-12-24 17:42:33.556 [main] INFO  [com.zaxxer.hikari.HikariDataSource] [Actor:] - HikariPool-2 - Shutdown initiated...
+2025-12-24 17:42:33.560 [main] INFO  [com.zaxxer.hikari.HikariDataSource] [Actor:] - HikariPool-2 - Shutdown completed.
+2025-12-24 17:42:33.574 [main] INFO  [com.zaxxer.hikari.HikariDataSource] [Actor:] - HikariPool-1 - Shutdown initiated...
+2025-12-24 17:42:33.579 [main] INFO  [com.zaxxer.hikari.HikariDataSource] [Actor:] - HikariPool-1 - Shutdown completed.
+2025-12-24 17:47:20.016 [main] INFO  [c.s.client.SafClientApplicationTests] [Actor:] - Starting SafClientApplicationTests using Java 21.0.7 with PID 225227 (started by cytech in /home/cytech/Restaurant-SAF/saf-client)
+2025-12-24 17:47:20.018 [main] INFO  [c.s.client.SafClientApplicationTests] [Actor:] - No active profile set, falling back to 1 default profile: "default"
+2025-12-24 17:47:22.005 [main] INFO  [com.saf.core1.LocalActorSystem] [Actor:] - SAF ActorSystem started with 12 threads.
+2025-12-24 17:47:22.015 [main] INFO  [com.saf.core1.router.RoundRobinPool] [Actor:client-router-7ce32891-91c2-4e1a-ba5d-39d1de5d97a8] - Starting Router Pool with 3 initial workers.
+2025-12-24 17:47:24.379 [main] WARN  [o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger] [Actor:] - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-12-24 17:47:24.517 [main] INFO  [c.s.client.SafClientApplicationTests] [Actor:] - Started SafClientApplicationTests in 4.978 seconds (process running for 6.134)
+2025-12-24 17:47:25.567 [main] INFO  [c.s.c.ClientProxyIntegrationTest] [Actor:] - Starting ClientProxyIntegrationTest using Java 21.0.7 with PID 225227 (started by cytech in /home/cytech/Restaurant-SAF/saf-client)
+2025-12-24 17:47:25.567 [main] INFO  [c.s.c.ClientProxyIntegrationTest] [Actor:] - No active profile set, falling back to 1 default profile: "default"
+2025-12-24 17:47:26.374 [main] INFO  [com.saf.core1.LocalActorSystem] [Actor:] - SAF ActorSystem started with 12 threads.
+2025-12-24 17:47:26.377 [main] INFO  [com.saf.core1.router.RoundRobinPool] [Actor:client-router-fa073f16-60d7-4ba4-85e5-d031bd0ad4e1] - Starting Router Pool with 3 initial workers.
+2025-12-24 17:47:27.342 [main] WARN  [o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger] [Actor:] - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-12-24 17:47:27.714 [main] INFO  [c.s.c.ClientProxyIntegrationTest] [Actor:] - Started ClientProxyIntegrationTest in 2.214 seconds (process running for 9.332)
+2025-12-24 17:47:27.951 [pool-6-thread-1] INFO  [com.saf.core1.ActorCell] [Actor:client-router-fa073f16-60d7-4ba4-85e5-d031bd0ad4e1] - RECEIVED message [ProxyCall] Payload: GET /client/menu
+2025-12-24 17:47:27.953 [pool-6-thread-1] INFO  [com.saf.core1.router.RoundRobinPool] [Actor:] - Pool size is now: 3
+2025-12-24 17:47:27.955 [pool-6-thread-2] INFO  [com.saf.core1.ActorCell] [Actor:worker-0-8938335d-1b27-45db-b287-b7594262914d] - RECEIVED message [ProxyCall] Payload: GET /client/menu
+2025-12-24 17:47:27.955 [pool-6-thread-2] INFO  [com.saf.client.ClientGatewayActor] [Actor:worker-0-8938335d-1b27-45db-b287-b7594262914d] - Proxy call received: GET /client/menu
+2025-12-24 17:47:28.149 [pool-6-thread-1] INFO  [com.saf.core1.ActorCell] [Actor:] - RECEIVED message [ProxyCall] Payload: POST /client/orders
+2025-12-24 17:47:28.150 [pool-6-thread-3] INFO  [com.saf.core1.ActorCell] [Actor:worker-1-798f0fed-81e3-4405-b930-89de47ab4512] - RECEIVED message [ProxyCall] Payload: POST /client/orders
+2025-12-24 17:47:28.150 [pool-6-thread-3] INFO  [com.saf.client.ClientGatewayActor] [Actor:worker-1-798f0fed-81e3-4405-b930-89de47ab4512] - Proxy call received: POST /client/orders
+2025-12-24 17:47:35.567 [main] INFO  [com.zaxxer.hikari.HikariDataSource] [Actor:] - HikariPool-1 - Starting...
+2025-12-24 17:47:35.600 [main] INFO  [com.zaxxer.hikari.pool.HikariPool] [Actor:] - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@5bfdc92b
+2025-12-24 17:47:35.602 [main] INFO  [com.zaxxer.hikari.HikariDataSource] [Actor:] - HikariPool-1 - Start completed.
+2025-12-24 17:47:35.695 [main] INFO  [o.f.c.i.license.VersionPrinter] [Actor:] - Flyway Community Edition 9.22.3 by Redgate
+2025-12-24 17:47:35.695 [main] INFO  [o.f.c.i.license.VersionPrinter] [Actor:] - See release notes here: https://rd.gt/416ObMi
+2025-12-24 17:47:35.695 [main] INFO  [o.f.c.i.license.VersionPrinter] [Actor:] - 
+2025-12-24 17:47:35.711 [main] INFO  [org.flywaydb.core.FlywayExecutor] [Actor:] - Database: jdbc:postgresql://localhost:32785/inventory_db (PostgreSQL 15.15)
+2025-12-24 17:47:35.749 [main] INFO  [o.f.c.i.s.JdbcTableSchemaHistory] [Actor:] - Schema history table "public"."flyway_schema_history" does not exist yet
+2025-12-24 17:47:35.756 [main] INFO  [o.f.core.internal.command.DbValidate] [Actor:] - Successfully validated 2 migrations (execution time 00:00.021s)
+2025-12-24 17:47:35.778 [main] INFO  [o.f.c.i.s.JdbcTableSchemaHistory] [Actor:] - Creating Schema History table "public"."flyway_schema_history" ...
+2025-12-24 17:47:35.809 [main] INFO  [o.f.core.internal.command.DbMigrate] [Actor:] - Current version of schema "public": << Empty Schema >>
+2025-12-24 17:47:35.817 [main] INFO  [o.f.core.internal.command.DbMigrate] [Actor:] - Migrating schema "public" to version "1 - init inventory tables"
+2025-12-24 17:47:35.851 [main] INFO  [o.f.core.internal.command.DbMigrate] [Actor:] - Migrating schema "public" to version "2 - seed inventory data"
+2025-12-24 17:47:35.875 [main] INFO  [o.f.core.internal.command.DbMigrate] [Actor:] - Successfully applied 2 migrations to schema "public", now at version v2 (execution time 00:00.026s)
+2025-12-24 17:47:38.017 [main] INFO  [com.saf.core1.LocalActorSystem] [Actor:] - SAF ActorSystem started with 12 threads.
+2025-12-24 17:47:38.023 [main] INFO  [com.saf.core1.router.RoundRobinPool] [Actor:stock-router-4fa2a342-bf3c-437f-ab69-9681708a9c2a] - Starting Router Pool with 3 initial workers.
+2025-12-24 17:47:38.146 [main] WARN  [o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration] [Actor:] - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-12-24 17:47:41.014 [main] INFO  [com.zaxxer.hikari.HikariDataSource] [Actor:] - HikariPool-2 - Starting...
+2025-12-24 17:47:41.033 [main] INFO  [com.zaxxer.hikari.pool.HikariPool] [Actor:] - HikariPool-2 - Added connection org.postgresql.jdbc.PgConnection@2d935682
+2025-12-24 17:47:41.034 [main] INFO  [com.zaxxer.hikari.HikariDataSource] [Actor:] - HikariPool-2 - Start completed.
+2025-12-24 17:47:41.054 [main] INFO  [org.flywaydb.core.FlywayExecutor] [Actor:] - Database: jdbc:postgresql://localhost:32785/saf_restaurant (PostgreSQL 15.15)
+2025-12-24 17:47:41.070 [main] INFO  [o.f.c.i.s.JdbcTableSchemaHistory] [Actor:] - Schema history table "public"."flyway_schema_history" does not exist yet
+2025-12-24 17:47:41.072 [main] INFO  [o.f.core.internal.command.DbValidate] [Actor:] - Successfully validated 2 migrations (execution time 00:00.006s)
+2025-12-24 17:47:41.088 [main] INFO  [o.f.c.i.s.JdbcTableSchemaHistory] [Actor:] - Creating Schema History table "public"."flyway_schema_history" ...
+2025-12-24 17:47:41.123 [main] INFO  [o.f.core.internal.command.DbMigrate] [Actor:] - Current version of schema "public": << Empty Schema >>
+2025-12-24 17:47:41.130 [main] INFO  [o.f.core.internal.command.DbMigrate] [Actor:] - Migrating schema "public" to version "1 - init inventory tables"
+2025-12-24 17:47:41.163 [main] INFO  [o.f.core.internal.command.DbMigrate] [Actor:] - Migrating schema "public" to version "2 - seed inventory data"
+2025-12-24 17:47:41.198 [main] INFO  [o.f.core.internal.command.DbMigrate] [Actor:] - Successfully applied 2 migrations to schema "public", now at version v2 (execution time 00:00.031s)
+2025-12-24 17:47:41.508 [main] WARN  [o.h.e.jdbc.spi.SqlExceptionHelper] [Actor:] - SQL Warning Code: 0, SQLState: 00000
+2025-12-24 17:47:41.508 [main] WARN  [o.h.e.jdbc.spi.SqlExceptionHelper] [Actor:] - constraint "uk_oq3k6lov98v737betmc0gna0f" of relation "receipts" does not exist, skipping
+2025-12-24 17:47:41.512 [main] WARN  [o.h.e.jdbc.spi.SqlExceptionHelper] [Actor:] - SQL Warning Code: 0, SQLState: 00000
+2025-12-24 17:47:41.512 [main] WARN  [o.h.e.jdbc.spi.SqlExceptionHelper] [Actor:] - constraint "uk_604j9lgnslnhffkb9atk5van2" of relation "treasury_entries" does not exist, skipping
+2025-12-24 17:47:41.531 [main] INFO  [com.saf.core1.LocalActorSystem] [Actor:] - SAF ActorSystem started with 12 threads.
+2025-12-24 17:47:41.534 [main] INFO  [com.saf.core1.router.RoundRobinPool] [Actor:menu-router-3bab311e-0d82-47d0-9237-cc330e8650e9] - Starting Router Pool with 3 initial workers.
+2025-12-24 17:47:42.397 [main] WARN  [o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration] [Actor:] - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-12-24 17:47:43.842 [main] INFO  [com.saf.core1.LocalActorSystem] [Actor:] - SAF ActorSystem started with 12 threads.
+2025-12-24 17:47:43.844 [main] INFO  [com.saf.core1.router.RoundRobinPool] [Actor:client-router-b42bc7f5-6b96-4c2e-ad74-3a31febffe67] - Starting Router Pool with 3 initial workers.
+2025-12-24 17:47:46.796 [pool-9-thread-1] INFO  [com.saf.core1.ActorCell] [Actor:client-router-b42bc7f5-6b96-4c2e-ad74-3a31febffe67] - RECEIVED message [ProxyCall] Payload: GET /client/menu
+2025-12-24 17:47:46.798 [pool-9-thread-1] INFO  [com.saf.core1.router.RoundRobinPool] [Actor:] - Pool size is now: 3
+2025-12-24 17:47:46.799 [pool-9-thread-2] INFO  [com.saf.core1.ActorCell] [Actor:worker-0-fdab7bb9-761f-49e8-9fe6-258545a6be92] - RECEIVED message [ProxyCall] Payload: GET /client/menu
+2025-12-24 17:47:46.800 [pool-9-thread-2] INFO  [com.saf.client.ClientGatewayActor] [Actor:worker-0-fdab7bb9-761f-49e8-9fe6-258545a6be92] - Proxy call received: GET /client/menu
+2025-12-24 17:47:46.805 [pool-6-thread-1] INFO  [com.saf.core1.ActorCell] [Actor:menu-router-3bab311e-0d82-47d0-9237-cc330e8650e9] - RECEIVED message [ListMenu] Payload: ActorRef(ask-c517df9c-f96e-41d9-9379-116153219989-c6685603-04df-433c-97af-185c2dafd0a3)
+2025-12-24 17:47:46.808 [pool-6-thread-1] INFO  [com.saf.core1.router.RoundRobinPool] [Actor:] - Pool size is now: 3
+2025-12-24 17:47:46.809 [pool-6-thread-6] INFO  [com.saf.core1.ActorCell] [Actor:worker-0-c05dc029-a573-43a6-af41-fe836ec80570] - RECEIVED message [ListMenu] Payload: ActorRef(ask-c517df9c-f96e-41d9-9379-116153219989-c6685603-04df-433c-97af-185c2dafd0a3)
+2025-12-24 17:47:46.809 [pool-6-thread-5] INFO  [com.saf.core1.ActorCell] [Actor:ask-c517df9c-f96e-41d9-9379-116153219989-c6685603-04df-433c-97af-185c2dafd0a3] - RECEIVED message [MenuListed] Payload: [MenuItem[dishName=burger, name=Burger maison, price=12.5, description=Pain brioché, boeuf, cheddar], MenuItem[dishName=salad, name=Salade fraîcheur, price=9.9, description=Légumes croquants], MenuItem[dishName=dessert, name=Mousse au chocolat, price=6.5, description=Chocolat noir 70%], MenuItem[dishName=drink, name=Limonade artisanale, price=4.0, description=Citron, menthe], MenuItem[dishName=coffee, name=Expresso, price=2.5, description=Arabica torréfié]]
+2025-12-24 17:47:47.019 [pool-9-thread-1] INFO  [com.saf.core1.ActorCell] [Actor:] - RECEIVED message [ProxyCall] Payload: POST /client/orders
+2025-12-24 17:47:47.019 [pool-9-thread-3] INFO  [com.saf.core1.ActorCell] [Actor:worker-1-5b067a9e-3399-47f8-9c91-4b5bf68cc5ef] - RECEIVED message [ProxyCall] Payload: POST /client/orders
+2025-12-24 17:47:47.019 [pool-9-thread-3] INFO  [com.saf.client.ClientGatewayActor] [Actor:worker-1-5b067a9e-3399-47f8-9c91-4b5bf68cc5ef] - Proxy call received: POST /client/orders
+2025-12-24 17:47:47.105 [pool-6-thread-9] INFO  [com.saf.core1.ActorCell] [Actor:client-1766594862267-a92a4f55-e965-4c08-a8e1-6964870dd01c] - RECEIVED message [BeginOrder] Payload: BeginOrder[]
+2025-12-24 17:47:47.107 [pool-6-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-d384c83a-09f4-437b-a818-e1c77bd1b6c0] - RECEIVED message [OrderPlaced] Payload: OrderRequest[clientName=Alice, tableNumber=12, instructions=sans oignons, items=[OrderItem[dishName=burger, quantity=2], OrderItem[dishName=drink, quantity=2]]]
+2025-12-24 17:47:47.110 [pool-6-thread-4] INFO  [c.s.r.actors.RestaurantActor] [Actor:restaurant-d384c83a-09f4-437b-a818-e1c77bd1b6c0] - Received order 1766594862267 from Alice
+2025-12-24 17:47:47.111 [pool-6-thread-1] INFO  [com.saf.core1.ActorCell] [Actor:] - RECEIVED message [CalculatePrice] Payload: OrderRequest[clientName=Alice, tableNumber=12, instructions=sans oignons, items=[OrderItem[dishName=burger, quantity=2], OrderItem[dishName=drink, quantity=2]]]
+2025-12-24 17:47:47.112 [pool-6-thread-7] INFO  [com.saf.core1.ActorCell] [Actor:worker-1-6e1e7d90-728c-4edc-9003-19454a5ed53d] - RECEIVED message [CalculatePrice] Payload: OrderRequest[clientName=Alice, tableNumber=12, instructions=sans oignons, items=[OrderItem[dishName=burger, quantity=2], OrderItem[dishName=drink, quantity=2]]]
+2025-12-24 17:47:47.113 [pool-6-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-d384c83a-09f4-437b-a818-e1c77bd1b6c0] - RECEIVED message [PriceCalculated] Payload: PriceCalculated[orderId=1766594862267, valid=true, total=33.0, missingItems=[]]
+2025-12-24 17:47:47.117 [pool-6-thread-9] INFO  [com.saf.core1.ActorCell] [Actor:client-1766594862267-a92a4f55-e965-4c08-a8e1-6964870dd01c] - RECEIVED message [AcknowledgeOrder] Payload: OrderAcknowledgement[orderId=1766594862267, status=PENDING_STOCK, message=Commande validée. Vérification du stock en cours., estimatedTotal=33.0, receipt=null]
+2025-12-24 17:47:47.138 [pool-4-thread-1] INFO  [com.saf.core1.ActorCell] [Actor:stock-router-4fa2a342-bf3c-437f-ab69-9681708a9c2a] - RECEIVED message [VerifyStock] Payload: com.InventoryService.InventoryService.dto.StockCheckRequest@56c409cd
+2025-12-24 17:47:47.141 [pool-4-thread-1] INFO  [com.saf.core1.router.RoundRobinPool] [Actor:] - Pool size is now: 3
+2025-12-24 17:47:47.142 [pool-4-thread-2] INFO  [com.saf.core1.ActorCell] [Actor:worker-0-b9826fb4-2b1b-42a7-956d-0f7285cd7498] - RECEIVED message [VerifyStock] Payload: com.InventoryService.InventoryService.dto.StockCheckRequest@56c409cd
+2025-12-24 17:47:47.143 [pool-4-thread-2] INFO  [c.I.I.actors.InventoryStockActor] [Actor:worker-0-b9826fb4-2b1b-42a7-956d-0f7285cd7498] - Stock check start: orderId=1766594862267 items=[com.InventoryService.InventoryService.dto.StockCheckRequest$Item@68944d1e, com.InventoryService.InventoryService.dto.StockCheckRequest$Item@6653be7c]
+2025-12-24 17:47:47.150 [pool-6-thread-4] INFO  [c.s.r.client.InventoryClient] [Actor:restaurant-d384c83a-09f4-437b-a818-e1c77bd1b6c0] - Stock check request sent to inventory for order 1766594862267
+2025-12-24 17:47:47.163 [pool-9-thread-1] INFO  [com.saf.core1.ActorCell] [Actor:] - RECEIVED message [ProxyCall] Payload: GET /client/receipts/1766594862267
+2025-12-24 17:47:47.163 [pool-9-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:worker-2-e423ad6a-b932-4948-8e50-635327846d03] - RECEIVED message [ProxyCall] Payload: GET /client/receipts/1766594862267
+2025-12-24 17:47:47.164 [pool-9-thread-4] INFO  [com.saf.client.ClientGatewayActor] [Actor:worker-2-e423ad6a-b932-4948-8e50-635327846d03] - Proxy call received: GET /client/receipts/1766594862267
+2025-12-24 17:47:47.320 [pool-4-thread-2] INFO  [c.I.I.actors.InventoryStockActor] [Actor:worker-0-b9826fb4-2b1b-42a7-956d-0f7285cd7498] - Stock check result: orderId=1766594862267 success=true message=Stock reserved successfully
+2025-12-24 17:47:47.337 [pool-4-thread-2] INFO  [c.I.I.client.InventoryCallbackClient] [Actor:worker-0-b9826fb4-2b1b-42a7-956d-0f7285cd7498] - Callback envoyé vers http://localhost:38655/events/stock-result pour order 1766594862267
+2025-12-24 17:47:47.333 [pool-6-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-d384c83a-09f4-437b-a818-e1c77bd1b6c0] - RECEIVED message [StockResult] Payload: StockResult[orderId=1766594862267, available=true, missingItems=[]]
+2025-12-24 17:47:47.339 [pool-6-thread-2] INFO  [com.saf.core1.ActorCell] [Actor:treasury-85308b32-84ed-46ed-8b7e-30f95e2098ce] - RECEIVED message [RecordPayment] Payload: 33.0
+2025-12-24 17:47:47.340 [pool-6-thread-3] INFO  [com.saf.core1.ActorCell] [Actor:receipt-c71b1e98-65ac-4a09-ada7-fc705ffd581b] - RECEIVED message [GenerateReceipt] Payload: OrderRequest[clientName=Alice, tableNumber=12, instructions=sans oignons, items=[OrderItem[dishName=burger, quantity=2], OrderItem[dishName=drink, quantity=2]]]
+2025-12-24 17:47:47.419 [pool-6-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-d384c83a-09f4-437b-a818-e1c77bd1b6c0] - RECEIVED message [ReceiptReady] Payload: ReceiptDocument[orderId=1766594862267, clientName=Alice, tableNumber=12, total=33.0, items=[OrderItem[dishName=burger, quantity=2], OrderItem[dishName=drink, quantity=2]], issuedAt=2025-12-24T16:47:47.341978617Z, content==== SAF RESTAURANT RECEIPT ===
+Client: Alice
+Table: 12
+Total: 33.0 €
+Items:
+- burger x 2
+- drink x 2
+]
+2025-12-24 17:47:47.425 [pool-6-thread-9] INFO  [com.saf.core1.ActorCell] [Actor:client-1766594862267-a92a4f55-e965-4c08-a8e1-6964870dd01c] - RECEIVED message [AcknowledgeOrder] Payload: OrderAcknowledgement[orderId=1766594862267, status=COMPLETED, message=Commande servie et ticket généré., estimatedTotal=33.0, receipt==== SAF RESTAURANT RECEIPT ===
+Client: Alice
+Table: 12
+Total: 33.0 €
+Items:
+- burger x 2
+- drink x 2
+]
+2025-12-24 17:47:47.781 [pool-9-thread-1] INFO  [com.saf.core1.ActorCell] [Actor:] - RECEIVED message [ProxyCall] Payload: GET /client/receipts/1766594862267
+2025-12-24 17:47:47.782 [pool-9-thread-2] INFO  [com.saf.core1.ActorCell] [Actor:worker-0-fdab7bb9-761f-49e8-9fe6-258545a6be92] - RECEIVED message [ProxyCall] Payload: GET /client/receipts/1766594862267
+2025-12-24 17:47:47.782 [pool-9-thread-2] INFO  [com.saf.client.ClientGatewayActor] [Actor:worker-0-fdab7bb9-761f-49e8-9fe6-258545a6be92] - Proxy call received: GET /client/receipts/1766594862267
+2025-12-24 17:47:47.876 [main] INFO  [com.zaxxer.hikari.HikariDataSource] [Actor:] - HikariPool-2 - Shutdown initiated...
+2025-12-24 17:47:47.881 [main] INFO  [com.zaxxer.hikari.HikariDataSource] [Actor:] - HikariPool-2 - Shutdown completed.
+2025-12-24 17:47:47.901 [main] INFO  [com.zaxxer.hikari.HikariDataSource] [Actor:] - HikariPool-1 - Shutdown initiated...
+2025-12-24 17:47:47.907 [main] INFO  [com.zaxxer.hikari.HikariDataSource] [Actor:] - HikariPool-1 - Shutdown completed.

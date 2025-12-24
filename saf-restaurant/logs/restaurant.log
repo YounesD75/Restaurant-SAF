@@ -4221,3 +4221,1021 @@ com.netflix.discovery.shared.transport.TransportException: Cannot execute reques
 	at java.base/java.lang.Iterable.forEach(Iterable.java:75)
 	at org.springframework.boot.SpringApplicationShutdownHook.run(SpringApplicationShutdownHook.java:114)
 	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-12-24 16:25:55.757 [main] INFO  [c.s.r.RestaurantStockKoIntegrationTest] [Actor:] - Starting RestaurantStockKoIntegrationTest using Java 21.0.7 with PID 165641 (started by cytech in /home/cytech/Restaurant-SAF/saf-restaurant)
+2025-12-24 16:25:55.759 [main] INFO  [c.s.r.RestaurantStockKoIntegrationTest] [Actor:] - No active profile set, falling back to 1 default profile: "default"
+2025-12-24 16:25:57.845 [main] INFO  [com.zaxxer.hikari.HikariDataSource] [Actor:] - HikariPool-1 - Starting...
+2025-12-24 16:25:58.030 [main] INFO  [com.zaxxer.hikari.pool.HikariPool] [Actor:] - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:restaurantdb user=SA
+2025-12-24 16:25:58.031 [main] INFO  [com.zaxxer.hikari.HikariDataSource] [Actor:] - HikariPool-1 - Start completed.
+2025-12-24 16:25:59.039 [main] INFO  [com.saf.core1.LocalActorSystem] [Actor:] - SAF ActorSystem started with 12 threads.
+2025-12-24 16:25:59.048 [main] INFO  [com.saf.core1.router.RoundRobinPool] [Actor:menu-router-f59fdcf6-e6c2-4e92-8d95-39bfc05bd634] - Starting Router Pool with 3 initial workers.
+2025-12-24 16:26:00.332 [main] WARN  [o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration] [Actor:] - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-12-24 16:26:01.032 [main] WARN  [o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger] [Actor:] - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-12-24 16:26:01.340 [main] INFO  [c.s.r.RestaurantStockKoIntegrationTest] [Actor:] - Started RestaurantStockKoIntegrationTest in 6.014 seconds (process running for 7.088)
+2025-12-24 16:26:01.344 [pool-3-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-b5d0a78c-9b93-46ba-8c05-af3e8012ddfb] - RECEIVED message [PurgeStaleOrders] Payload: 1766589931344
+2025-12-24 16:26:02.109 [pool-3-thread-5] INFO  [com.saf.core1.ActorCell] [Actor:client-1766589960237-32a3b26a-78fe-48b7-a930-97ee4fa7d68a] - RECEIVED message [BeginOrder] Payload: BeginOrder[]
+2025-12-24 16:26:02.111 [pool-3-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-b5d0a78c-9b93-46ba-8c05-af3e8012ddfb] - RECEIVED message [OrderPlaced] Payload: OrderRequest[clientName=Carol, tableNumber=T3, instructions=null, items=[OrderItem[dishName=unknown-item, quantity=1]]]
+2025-12-24 16:26:02.117 [pool-3-thread-4] INFO  [c.s.r.actors.RestaurantActor] [Actor:restaurant-b5d0a78c-9b93-46ba-8c05-af3e8012ddfb] - Received order 1766589960237 from Carol
+2025-12-24 16:26:02.118 [pool-3-thread-1] INFO  [com.saf.core1.ActorCell] [Actor:menu-router-f59fdcf6-e6c2-4e92-8d95-39bfc05bd634] - RECEIVED message [CalculatePrice] Payload: OrderRequest[clientName=Carol, tableNumber=T3, instructions=null, items=[OrderItem[dishName=unknown-item, quantity=1]]]
+2025-12-24 16:26:02.121 [pool-3-thread-1] INFO  [com.saf.core1.router.RoundRobinPool] [Actor:] - Pool size is now: 3
+2025-12-24 16:26:02.122 [pool-3-thread-6] INFO  [com.saf.core1.ActorCell] [Actor:worker-0-f11aca48-c74e-4130-b491-ba443db4af47] - RECEIVED message [CalculatePrice] Payload: OrderRequest[clientName=Carol, tableNumber=T3, instructions=null, items=[OrderItem[dishName=unknown-item, quantity=1]]]
+2025-12-24 16:26:02.123 [pool-3-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-b5d0a78c-9b93-46ba-8c05-af3e8012ddfb] - RECEIVED message [PriceCalculated] Payload: PriceCalculated[orderId=1766589960237, valid=true, total=0, missingItems=[unknown-item]]
+2025-12-24 16:26:02.126 [pool-3-thread-5] INFO  [com.saf.core1.ActorCell] [Actor:client-1766589960237-32a3b26a-78fe-48b7-a930-97ee4fa7d68a] - RECEIVED message [AcknowledgeOrder] Payload: OrderAcknowledgement[orderId=1766589960237, status=PENDING_STOCK, message=Commande en attente: articles inconnus (unknown-item)., estimatedTotal=0, receipt=null]
+2025-12-24 16:26:02.236 [pool-3-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-b5d0a78c-9b93-46ba-8c05-af3e8012ddfb] - RECEIVED message [StockResult] Payload: StockResult[orderId=1766589960237, available=false, missingItems=[unknown-item]]
+2025-12-24 16:26:02.245 [pool-3-thread-5] INFO  [com.saf.core1.ActorCell] [Actor:client-1766589960237-32a3b26a-78fe-48b7-a930-97ee4fa7d68a] - RECEIVED message [AcknowledgeOrder] Payload: OrderAcknowledgement[orderId=1766589960237, status=REJECTED, message=Articles inconnus: unknown-item, estimatedTotal=0, receipt=null]
+2025-12-24 16:26:02.461 [pool-3-thread-9] INFO  [com.saf.core1.ActorCell] [Actor:client-1766589960238-44f8d23b-f6c6-4615-a795-d311e35fb12d] - RECEIVED message [BeginOrder] Payload: BeginOrder[]
+2025-12-24 16:26:02.462 [pool-3-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-b5d0a78c-9b93-46ba-8c05-af3e8012ddfb] - RECEIVED message [OrderPlaced] Payload: OrderRequest[clientName=Alice, tableNumber=T1, instructions=no onions, items=[OrderItem[dishName=burger, quantity=1]]]
+2025-12-24 16:26:02.463 [pool-3-thread-4] INFO  [c.s.r.actors.RestaurantActor] [Actor:restaurant-b5d0a78c-9b93-46ba-8c05-af3e8012ddfb] - Received order 1766589960238 from Alice
+2025-12-24 16:26:02.463 [pool-3-thread-1] INFO  [com.saf.core1.ActorCell] [Actor:] - RECEIVED message [CalculatePrice] Payload: OrderRequest[clientName=Alice, tableNumber=T1, instructions=no onions, items=[OrderItem[dishName=burger, quantity=1]]]
+2025-12-24 16:26:02.464 [pool-3-thread-7] INFO  [com.saf.core1.ActorCell] [Actor:worker-1-26008198-9cca-4c66-bbc8-af31d2ebbf8a] - RECEIVED message [CalculatePrice] Payload: OrderRequest[clientName=Alice, tableNumber=T1, instructions=no onions, items=[OrderItem[dishName=burger, quantity=1]]]
+2025-12-24 16:26:02.465 [pool-3-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-b5d0a78c-9b93-46ba-8c05-af3e8012ddfb] - RECEIVED message [PriceCalculated] Payload: PriceCalculated[orderId=1766589960238, valid=true, total=12.5, missingItems=[]]
+2025-12-24 16:26:02.467 [pool-3-thread-9] INFO  [com.saf.core1.ActorCell] [Actor:client-1766589960238-44f8d23b-f6c6-4615-a795-d311e35fb12d] - RECEIVED message [AcknowledgeOrder] Payload: OrderAcknowledgement[orderId=1766589960238, status=PENDING_STOCK, message=Commande validée. Vérification du stock en cours., estimatedTotal=12.5, receipt=null]
+2025-12-24 16:26:02.484 [pool-3-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-b5d0a78c-9b93-46ba-8c05-af3e8012ddfb] - RECEIVED message [StockResult] Payload: StockResult[orderId=1766589960238, available=true, missingItems=[]]
+2025-12-24 16:26:02.486 [pool-3-thread-2] INFO  [com.saf.core1.ActorCell] [Actor:treasury-5fede6e0-47e1-4ab5-a04c-586a3911ea42] - RECEIVED message [RecordPayment] Payload: 12.5
+2025-12-24 16:26:02.487 [pool-3-thread-3] INFO  [com.saf.core1.ActorCell] [Actor:receipt-31040200-494d-43a7-a64a-1d50eae88bca] - RECEIVED message [GenerateReceipt] Payload: OrderRequest[clientName=Alice, tableNumber=T1, instructions=no onions, items=[OrderItem[dishName=burger, quantity=1]]]
+2025-12-24 16:26:02.610 [pool-3-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-b5d0a78c-9b93-46ba-8c05-af3e8012ddfb] - RECEIVED message [ReceiptReady] Payload: ReceiptDocument[orderId=1766589960238, clientName=Alice, tableNumber=T1, total=12.5, items=[OrderItem[dishName=burger, quantity=1]], issuedAt=2025-12-24T15:26:02.490237678Z, content==== SAF RESTAURANT RECEIPT ===
+Client: Alice
+Table: T1
+Total: 12.5 €
+Items:
+- burger x 1
+]
+2025-12-24 16:26:02.615 [pool-3-thread-9] INFO  [com.saf.core1.ActorCell] [Actor:client-1766589960238-44f8d23b-f6c6-4615-a795-d311e35fb12d] - RECEIVED message [AcknowledgeOrder] Payload: OrderAcknowledgement[orderId=1766589960238, status=COMPLETED, message=Commande servie et ticket généré., estimatedTotal=12.5, receipt==== SAF RESTAURANT RECEIPT ===
+Client: Alice
+Table: T1
+Total: 12.5 €
+Items:
+- burger x 1
+]
+2025-12-24 16:26:02.918 [main] INFO  [c.s.r.RestaurantInventoryIntegrationTest] [Actor:] - Starting RestaurantInventoryIntegrationTest using Java 21.0.7 with PID 165641 (started by cytech in /home/cytech/Restaurant-SAF/saf-restaurant)
+2025-12-24 16:26:02.919 [main] INFO  [c.s.r.RestaurantInventoryIntegrationTest] [Actor:] - No active profile set, falling back to 1 default profile: "default"
+2025-12-24 16:26:03.451 [main] INFO  [com.zaxxer.hikari.HikariDataSource] [Actor:] - HikariPool-2 - Starting...
+2025-12-24 16:26:03.454 [main] INFO  [com.zaxxer.hikari.pool.HikariPool] [Actor:] - HikariPool-2 - Added connection conn10: url=jdbc:h2:mem:restaurantdb user=SA
+2025-12-24 16:26:03.454 [main] INFO  [com.zaxxer.hikari.HikariDataSource] [Actor:] - HikariPool-2 - Start completed.
+2025-12-24 16:26:03.606 [main] INFO  [com.saf.core1.LocalActorSystem] [Actor:] - SAF ActorSystem started with 12 threads.
+2025-12-24 16:26:03.609 [main] INFO  [com.saf.core1.router.RoundRobinPool] [Actor:menu-router-6697117c-d80a-499e-8370-14824e6dc768] - Starting Router Pool with 3 initial workers.
+2025-12-24 16:26:03.743 [main] WARN  [o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration] [Actor:] - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-12-24 16:26:03.931 [main] WARN  [o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger] [Actor:] - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-12-24 16:26:03.960 [pool-4-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-4a8278b9-cfbd-4efa-8c9f-ebc6170aed89] - RECEIVED message [PurgeStaleOrders] Payload: 1766589933960
+2025-12-24 16:26:03.961 [main] INFO  [c.s.r.RestaurantInventoryIntegrationTest] [Actor:] - Started RestaurantInventoryIntegrationTest in 1.134 seconds (process running for 9.709)
+2025-12-24 16:26:04.065 [pool-4-thread-5] INFO  [com.saf.core1.ActorCell] [Actor:client-1766589963712-25e96b2e-a5c3-4eb5-a817-b844e5862220] - RECEIVED message [BeginOrder] Payload: BeginOrder[]
+2025-12-24 16:26:04.066 [pool-4-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-4a8278b9-cfbd-4efa-8c9f-ebc6170aed89] - RECEIVED message [OrderPlaced] Payload: OrderRequest[clientName=Alice, tableNumber=T1, instructions=no onions, items=[OrderItem[dishName=burger, quantity=1]]]
+2025-12-24 16:26:04.066 [pool-4-thread-4] INFO  [c.s.r.actors.RestaurantActor] [Actor:restaurant-4a8278b9-cfbd-4efa-8c9f-ebc6170aed89] - Received order 1766589963712 from Alice
+2025-12-24 16:26:04.066 [pool-4-thread-1] INFO  [com.saf.core1.ActorCell] [Actor:menu-router-6697117c-d80a-499e-8370-14824e6dc768] - RECEIVED message [CalculatePrice] Payload: OrderRequest[clientName=Alice, tableNumber=T1, instructions=no onions, items=[OrderItem[dishName=burger, quantity=1]]]
+2025-12-24 16:26:04.068 [pool-4-thread-1] INFO  [com.saf.core1.router.RoundRobinPool] [Actor:] - Pool size is now: 3
+2025-12-24 16:26:04.069 [pool-4-thread-6] INFO  [com.saf.core1.ActorCell] [Actor:worker-0-6018fbc5-b8ec-4f2a-a856-70e652a2568a] - RECEIVED message [CalculatePrice] Payload: OrderRequest[clientName=Alice, tableNumber=T1, instructions=no onions, items=[OrderItem[dishName=burger, quantity=1]]]
+2025-12-24 16:26:04.069 [pool-4-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-4a8278b9-cfbd-4efa-8c9f-ebc6170aed89] - RECEIVED message [PriceCalculated] Payload: PriceCalculated[orderId=1766589963712, valid=true, total=12.5, missingItems=[]]
+2025-12-24 16:26:04.070 [pool-4-thread-5] INFO  [com.saf.core1.ActorCell] [Actor:client-1766589963712-25e96b2e-a5c3-4eb5-a817-b844e5862220] - RECEIVED message [AcknowledgeOrder] Payload: OrderAcknowledgement[orderId=1766589963712, status=PENDING_STOCK, message=Commande validée. Vérification du stock en cours., estimatedTotal=12.5, receipt=null]
+2025-12-24 16:26:04.079 [pool-4-thread-4] INFO  [c.s.r.client.InventoryClient] [Actor:restaurant-4a8278b9-cfbd-4efa-8c9f-ebc6170aed89] - Stock check request sent to inventory for order 1766589963712
+2025-12-24 16:26:04.128 [SpringApplicationShutdownHook] INFO  [com.zaxxer.hikari.HikariDataSource] [Actor:] - HikariPool-1 - Shutdown initiated...
+2025-12-24 16:26:04.131 [SpringApplicationShutdownHook] INFO  [com.zaxxer.hikari.HikariDataSource] [Actor:] - HikariPool-1 - Shutdown completed.
+2025-12-24 16:26:04.146 [SpringApplicationShutdownHook] INFO  [com.zaxxer.hikari.HikariDataSource] [Actor:] - HikariPool-2 - Shutdown initiated...
+2025-12-24 16:26:04.148 [SpringApplicationShutdownHook] INFO  [com.zaxxer.hikari.HikariDataSource] [Actor:] - HikariPool-2 - Shutdown completed.
+2025-12-24 16:32:15.144 [main] INFO  [c.s.r.RestaurantStockKoIntegrationTest] [Actor:] - Starting RestaurantStockKoIntegrationTest using Java 21.0.7 with PID 169723 (started by cytech in /home/cytech/Restaurant-SAF/saf-restaurant)
+2025-12-24 16:32:15.146 [main] INFO  [c.s.r.RestaurantStockKoIntegrationTest] [Actor:] - No active profile set, falling back to 1 default profile: "default"
+2025-12-24 16:32:18.166 [main] INFO  [com.zaxxer.hikari.HikariDataSource] [Actor:] - HikariPool-1 - Starting...
+2025-12-24 16:32:18.454 [main] INFO  [com.zaxxer.hikari.pool.HikariPool] [Actor:] - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:restaurantdb user=SA
+2025-12-24 16:32:18.458 [main] INFO  [com.zaxxer.hikari.HikariDataSource] [Actor:] - HikariPool-1 - Start completed.
+2025-12-24 16:32:19.990 [main] INFO  [com.saf.core1.LocalActorSystem] [Actor:] - SAF ActorSystem started with 12 threads.
+2025-12-24 16:32:20.001 [main] INFO  [com.saf.core1.router.RoundRobinPool] [Actor:menu-router-aa13c592-9ed2-461e-9b35-e48e77884396] - Starting Router Pool with 3 initial workers.
+2025-12-24 16:32:21.055 [main] WARN  [o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration] [Actor:] - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-12-24 16:32:21.738 [main] WARN  [o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger] [Actor:] - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-12-24 16:32:22.087 [main] INFO  [c.s.r.RestaurantStockKoIntegrationTest] [Actor:] - Started RestaurantStockKoIntegrationTest in 7.409 seconds (process running for 8.441)
+2025-12-24 16:32:22.089 [pool-3-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-474d1d42-6366-462c-bbbf-3d3aa4065057] - RECEIVED message [PurgeStaleOrders] Payload: 1766590312088
+2025-12-24 16:32:23.206 [pool-3-thread-5] INFO  [com.saf.core1.ActorCell] [Actor:client-1766590340963-ab732fc3-1d2d-405d-b91d-79626246d608] - RECEIVED message [BeginOrder] Payload: BeginOrder[]
+2025-12-24 16:32:23.208 [pool-3-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-474d1d42-6366-462c-bbbf-3d3aa4065057] - RECEIVED message [OrderPlaced] Payload: OrderRequest[clientName=Carol, tableNumber=T3, instructions=null, items=[OrderItem[dishName=unknown-item, quantity=1]]]
+2025-12-24 16:32:23.221 [pool-3-thread-4] INFO  [c.s.r.actors.RestaurantActor] [Actor:restaurant-474d1d42-6366-462c-bbbf-3d3aa4065057] - Received order 1766590340963 from Carol
+2025-12-24 16:32:23.223 [pool-3-thread-1] INFO  [com.saf.core1.ActorCell] [Actor:menu-router-aa13c592-9ed2-461e-9b35-e48e77884396] - RECEIVED message [CalculatePrice] Payload: OrderRequest[clientName=Carol, tableNumber=T3, instructions=null, items=[OrderItem[dishName=unknown-item, quantity=1]]]
+2025-12-24 16:32:23.226 [pool-3-thread-1] INFO  [com.saf.core1.router.RoundRobinPool] [Actor:] - Pool size is now: 3
+2025-12-24 16:32:23.228 [pool-3-thread-6] INFO  [com.saf.core1.ActorCell] [Actor:worker-0-e0257ac9-9337-4f6c-ba81-d81af8ac2545] - RECEIVED message [CalculatePrice] Payload: OrderRequest[clientName=Carol, tableNumber=T3, instructions=null, items=[OrderItem[dishName=unknown-item, quantity=1]]]
+2025-12-24 16:32:23.230 [pool-3-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-474d1d42-6366-462c-bbbf-3d3aa4065057] - RECEIVED message [PriceCalculated] Payload: PriceCalculated[orderId=1766590340963, valid=true, total=0, missingItems=[unknown-item]]
+2025-12-24 16:32:23.237 [pool-3-thread-5] INFO  [com.saf.core1.ActorCell] [Actor:client-1766590340963-ab732fc3-1d2d-405d-b91d-79626246d608] - RECEIVED message [AcknowledgeOrder] Payload: OrderAcknowledgement[orderId=1766590340963, status=PENDING_STOCK, message=Commande en attente: articles inconnus (unknown-item)., estimatedTotal=0, receipt=null]
+2025-12-24 16:32:23.382 [pool-3-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-474d1d42-6366-462c-bbbf-3d3aa4065057] - RECEIVED message [StockResult] Payload: StockResult[orderId=1766590340963, available=false, missingItems=[unknown-item]]
+2025-12-24 16:32:23.387 [pool-3-thread-5] INFO  [com.saf.core1.ActorCell] [Actor:client-1766590340963-ab732fc3-1d2d-405d-b91d-79626246d608] - RECEIVED message [AcknowledgeOrder] Payload: OrderAcknowledgement[orderId=1766590340963, status=REJECTED, message=Articles inconnus: unknown-item, estimatedTotal=0, receipt=null]
+2025-12-24 16:32:23.652 [pool-3-thread-9] INFO  [com.saf.core1.ActorCell] [Actor:client-1766590340964-7132bd51-e8da-4aa5-be0e-9397305d948a] - RECEIVED message [BeginOrder] Payload: BeginOrder[]
+2025-12-24 16:32:23.653 [pool-3-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-474d1d42-6366-462c-bbbf-3d3aa4065057] - RECEIVED message [OrderPlaced] Payload: OrderRequest[clientName=Alice, tableNumber=T1, instructions=no onions, items=[OrderItem[dishName=burger, quantity=1]]]
+2025-12-24 16:32:23.653 [pool-3-thread-4] INFO  [c.s.r.actors.RestaurantActor] [Actor:restaurant-474d1d42-6366-462c-bbbf-3d3aa4065057] - Received order 1766590340964 from Alice
+2025-12-24 16:32:23.654 [pool-3-thread-1] INFO  [com.saf.core1.ActorCell] [Actor:] - RECEIVED message [CalculatePrice] Payload: OrderRequest[clientName=Alice, tableNumber=T1, instructions=no onions, items=[OrderItem[dishName=burger, quantity=1]]]
+2025-12-24 16:32:23.655 [pool-3-thread-7] INFO  [com.saf.core1.ActorCell] [Actor:worker-1-8f0e5a5f-2047-4722-93fd-eecd2f91a94b] - RECEIVED message [CalculatePrice] Payload: OrderRequest[clientName=Alice, tableNumber=T1, instructions=no onions, items=[OrderItem[dishName=burger, quantity=1]]]
+2025-12-24 16:32:23.655 [pool-3-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-474d1d42-6366-462c-bbbf-3d3aa4065057] - RECEIVED message [PriceCalculated] Payload: PriceCalculated[orderId=1766590340964, valid=true, total=12.5, missingItems=[]]
+2025-12-24 16:32:23.656 [pool-3-thread-9] INFO  [com.saf.core1.ActorCell] [Actor:client-1766590340964-7132bd51-e8da-4aa5-be0e-9397305d948a] - RECEIVED message [AcknowledgeOrder] Payload: OrderAcknowledgement[orderId=1766590340964, status=PENDING_STOCK, message=Commande validée. Vérification du stock en cours., estimatedTotal=12.5, receipt=null]
+2025-12-24 16:32:23.672 [pool-3-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-474d1d42-6366-462c-bbbf-3d3aa4065057] - RECEIVED message [StockResult] Payload: StockResult[orderId=1766590340964, available=true, missingItems=[]]
+2025-12-24 16:32:23.674 [pool-3-thread-2] INFO  [com.saf.core1.ActorCell] [Actor:treasury-24f2a5d7-8e59-45a7-a87e-4dc0f1f33006] - RECEIVED message [RecordPayment] Payload: 12.5
+2025-12-24 16:32:23.675 [pool-3-thread-3] INFO  [com.saf.core1.ActorCell] [Actor:receipt-311b8f4d-9790-4e25-861f-ccb00c166118] - RECEIVED message [GenerateReceipt] Payload: OrderRequest[clientName=Alice, tableNumber=T1, instructions=no onions, items=[OrderItem[dishName=burger, quantity=1]]]
+2025-12-24 16:32:23.877 [pool-3-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-474d1d42-6366-462c-bbbf-3d3aa4065057] - RECEIVED message [ReceiptReady] Payload: ReceiptDocument[orderId=1766590340964, clientName=Alice, tableNumber=T1, total=12.5, items=[OrderItem[dishName=burger, quantity=1]], issuedAt=2025-12-24T15:32:23.683089818Z, content==== SAF RESTAURANT RECEIPT ===
+Client: Alice
+Table: T1
+Total: 12.5 €
+Items:
+- burger x 1
+]
+2025-12-24 16:32:23.884 [pool-3-thread-9] INFO  [com.saf.core1.ActorCell] [Actor:client-1766590340964-7132bd51-e8da-4aa5-be0e-9397305d948a] - RECEIVED message [AcknowledgeOrder] Payload: OrderAcknowledgement[orderId=1766590340964, status=COMPLETED, message=Commande servie et ticket généré., estimatedTotal=12.5, receipt==== SAF RESTAURANT RECEIPT ===
+Client: Alice
+Table: T1
+Total: 12.5 €
+Items:
+- burger x 1
+]
+2025-12-24 16:32:24.128 [main] INFO  [c.s.r.RestaurantInventoryIntegrationTest] [Actor:] - Starting RestaurantInventoryIntegrationTest using Java 21.0.7 with PID 169723 (started by cytech in /home/cytech/Restaurant-SAF/saf-restaurant)
+2025-12-24 16:32:24.129 [main] INFO  [c.s.r.RestaurantInventoryIntegrationTest] [Actor:] - No active profile set, falling back to 1 default profile: "default"
+2025-12-24 16:32:24.785 [main] INFO  [com.zaxxer.hikari.HikariDataSource] [Actor:] - HikariPool-2 - Starting...
+2025-12-24 16:32:24.788 [main] INFO  [com.zaxxer.hikari.pool.HikariPool] [Actor:] - HikariPool-2 - Added connection conn10: url=jdbc:h2:mem:restaurantdb user=SA
+2025-12-24 16:32:24.789 [main] INFO  [com.zaxxer.hikari.HikariDataSource] [Actor:] - HikariPool-2 - Start completed.
+2025-12-24 16:32:24.936 [main] INFO  [com.saf.core1.LocalActorSystem] [Actor:] - SAF ActorSystem started with 12 threads.
+2025-12-24 16:32:24.939 [main] INFO  [com.saf.core1.router.RoundRobinPool] [Actor:menu-router-9406c22e-ddee-41a8-9081-6e6c55405d49] - Starting Router Pool with 3 initial workers.
+2025-12-24 16:32:25.158 [main] WARN  [o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration] [Actor:] - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-12-24 16:32:25.425 [main] WARN  [o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger] [Actor:] - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-12-24 16:32:25.466 [pool-4-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-c511e085-a354-4b99-8bf5-3e668773a96e] - RECEIVED message [PurgeStaleOrders] Payload: 1766590315466
+2025-12-24 16:32:25.467 [main] INFO  [c.s.r.RestaurantInventoryIntegrationTest] [Actor:] - Started RestaurantInventoryIntegrationTest in 1.42 seconds (process running for 11.821)
+2025-12-24 16:32:25.542 [pool-4-thread-5] INFO  [com.saf.core1.ActorCell] [Actor:client-1766590345094-3f404aa3-df26-4c02-b5bf-b1056777adce] - RECEIVED message [BeginOrder] Payload: BeginOrder[]
+2025-12-24 16:32:25.542 [pool-4-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-c511e085-a354-4b99-8bf5-3e668773a96e] - RECEIVED message [OrderPlaced] Payload: OrderRequest[clientName=Alice, tableNumber=T1, instructions=no onions, items=[OrderItem[dishName=burger, quantity=1]]]
+2025-12-24 16:32:25.543 [pool-4-thread-4] INFO  [c.s.r.actors.RestaurantActor] [Actor:restaurant-c511e085-a354-4b99-8bf5-3e668773a96e] - Received order 1766590345094 from Alice
+2025-12-24 16:32:25.543 [pool-4-thread-1] INFO  [com.saf.core1.ActorCell] [Actor:menu-router-9406c22e-ddee-41a8-9081-6e6c55405d49] - RECEIVED message [CalculatePrice] Payload: OrderRequest[clientName=Alice, tableNumber=T1, instructions=no onions, items=[OrderItem[dishName=burger, quantity=1]]]
+2025-12-24 16:32:25.544 [pool-4-thread-1] INFO  [com.saf.core1.router.RoundRobinPool] [Actor:] - Pool size is now: 3
+2025-12-24 16:32:25.544 [pool-4-thread-6] INFO  [com.saf.core1.ActorCell] [Actor:worker-0-b8984be9-e9d4-4922-9ea0-e332c40b4e4f] - RECEIVED message [CalculatePrice] Payload: OrderRequest[clientName=Alice, tableNumber=T1, instructions=no onions, items=[OrderItem[dishName=burger, quantity=1]]]
+2025-12-24 16:32:25.545 [pool-4-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-c511e085-a354-4b99-8bf5-3e668773a96e] - RECEIVED message [PriceCalculated] Payload: PriceCalculated[orderId=1766590345094, valid=true, total=12.5, missingItems=[]]
+2025-12-24 16:32:25.545 [pool-4-thread-5] INFO  [com.saf.core1.ActorCell] [Actor:client-1766590345094-3f404aa3-df26-4c02-b5bf-b1056777adce] - RECEIVED message [AcknowledgeOrder] Payload: OrderAcknowledgement[orderId=1766590345094, status=PENDING_STOCK, message=Commande validée. Vérification du stock en cours., estimatedTotal=12.5, receipt=null]
+2025-12-24 16:32:25.558 [pool-4-thread-4] INFO  [c.s.r.client.InventoryClient] [Actor:restaurant-c511e085-a354-4b99-8bf5-3e668773a96e] - Stock check request sent to inventory for order 1766590345094
+2025-12-24 16:32:25.611 [SpringApplicationShutdownHook] INFO  [com.zaxxer.hikari.HikariDataSource] [Actor:] - HikariPool-1 - Shutdown initiated...
+2025-12-24 16:32:25.614 [SpringApplicationShutdownHook] INFO  [com.zaxxer.hikari.HikariDataSource] [Actor:] - HikariPool-1 - Shutdown completed.
+2025-12-24 16:32:25.627 [SpringApplicationShutdownHook] INFO  [com.zaxxer.hikari.HikariDataSource] [Actor:] - HikariPool-2 - Shutdown initiated...
+2025-12-24 16:32:25.628 [SpringApplicationShutdownHook] INFO  [com.zaxxer.hikari.HikariDataSource] [Actor:] - HikariPool-2 - Shutdown completed.
+2025-12-24 16:39:27.252 [main] INFO  [c.s.r.RestaurantStockKoIntegrationTest] [Actor:] - Starting RestaurantStockKoIntegrationTest using Java 21.0.7 with PID 174527 (started by cytech in /home/cytech/Restaurant-SAF/saf-restaurant)
+2025-12-24 16:39:27.254 [main] INFO  [c.s.r.RestaurantStockKoIntegrationTest] [Actor:] - No active profile set, falling back to 1 default profile: "default"
+2025-12-24 16:39:30.070 [main] INFO  [com.zaxxer.hikari.HikariDataSource] [Actor:] - HikariPool-1 - Starting...
+2025-12-24 16:39:30.309 [main] INFO  [com.zaxxer.hikari.pool.HikariPool] [Actor:] - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:restaurantdb user=SA
+2025-12-24 16:39:30.312 [main] INFO  [com.zaxxer.hikari.HikariDataSource] [Actor:] - HikariPool-1 - Start completed.
+2025-12-24 16:39:31.445 [main] INFO  [com.saf.core1.LocalActorSystem] [Actor:] - SAF ActorSystem started with 12 threads.
+2025-12-24 16:39:31.455 [main] INFO  [com.saf.core1.router.RoundRobinPool] [Actor:menu-router-9a39ad91-9212-4f46-ba32-c52855218c53] - Starting Router Pool with 3 initial workers.
+2025-12-24 16:39:32.656 [main] WARN  [o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration] [Actor:] - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-12-24 16:39:33.359 [main] WARN  [o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger] [Actor:] - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-12-24 16:39:33.608 [main] INFO  [c.s.r.RestaurantStockKoIntegrationTest] [Actor:] - Started RestaurantStockKoIntegrationTest in 6.914 seconds (process running for 8.191)
+2025-12-24 16:39:33.612 [pool-3-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-103528db-7b9d-4e7f-b803-a685961a8203] - RECEIVED message [PurgeStaleOrders] Payload: 1766590743611
+2025-12-24 16:39:34.447 [pool-3-thread-5] INFO  [com.saf.core1.ActorCell] [Actor:client-1766590772553-ac3b6cc9-56be-49ed-be3c-8834629b8242] - RECEIVED message [BeginOrder] Payload: BeginOrder[]
+2025-12-24 16:39:34.448 [pool-3-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-103528db-7b9d-4e7f-b803-a685961a8203] - RECEIVED message [OrderPlaced] Payload: OrderRequest[clientName=Carol, tableNumber=T3, instructions=null, items=[OrderItem[dishName=unknown-item, quantity=1]]]
+2025-12-24 16:39:34.457 [pool-3-thread-4] INFO  [c.s.r.actors.RestaurantActor] [Actor:restaurant-103528db-7b9d-4e7f-b803-a685961a8203] - Received order 1766590772553 from Carol
+2025-12-24 16:39:34.458 [pool-3-thread-1] INFO  [com.saf.core1.ActorCell] [Actor:menu-router-9a39ad91-9212-4f46-ba32-c52855218c53] - RECEIVED message [CalculatePrice] Payload: OrderRequest[clientName=Carol, tableNumber=T3, instructions=null, items=[OrderItem[dishName=unknown-item, quantity=1]]]
+2025-12-24 16:39:34.461 [pool-3-thread-1] INFO  [com.saf.core1.router.RoundRobinPool] [Actor:] - Pool size is now: 3
+2025-12-24 16:39:34.462 [pool-3-thread-6] INFO  [com.saf.core1.ActorCell] [Actor:worker-0-e6875011-0f50-4aaa-979b-f34c70370884] - RECEIVED message [CalculatePrice] Payload: OrderRequest[clientName=Carol, tableNumber=T3, instructions=null, items=[OrderItem[dishName=unknown-item, quantity=1]]]
+2025-12-24 16:39:34.464 [pool-3-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-103528db-7b9d-4e7f-b803-a685961a8203] - RECEIVED message [PriceCalculated] Payload: PriceCalculated[orderId=1766590772553, valid=true, total=0, missingItems=[unknown-item]]
+2025-12-24 16:39:34.471 [pool-3-thread-5] INFO  [com.saf.core1.ActorCell] [Actor:client-1766590772553-ac3b6cc9-56be-49ed-be3c-8834629b8242] - RECEIVED message [AcknowledgeOrder] Payload: OrderAcknowledgement[orderId=1766590772553, status=PENDING_STOCK, message=Commande en attente: articles inconnus (unknown-item)., estimatedTotal=0, receipt=null]
+2025-12-24 16:39:34.605 [pool-3-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-103528db-7b9d-4e7f-b803-a685961a8203] - RECEIVED message [StockResult] Payload: StockResult[orderId=1766590772553, available=false, missingItems=[unknown-item]]
+2025-12-24 16:39:34.612 [pool-3-thread-5] INFO  [com.saf.core1.ActorCell] [Actor:client-1766590772553-ac3b6cc9-56be-49ed-be3c-8834629b8242] - RECEIVED message [AcknowledgeOrder] Payload: OrderAcknowledgement[orderId=1766590772553, status=REJECTED, message=Articles inconnus: unknown-item, estimatedTotal=0, receipt=null]
+2025-12-24 16:39:34.813 [pool-3-thread-9] INFO  [com.saf.core1.ActorCell] [Actor:client-1766590772554-e89ab30f-06e4-494e-9a5d-4726103b2511] - RECEIVED message [BeginOrder] Payload: BeginOrder[]
+2025-12-24 16:39:34.814 [pool-3-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-103528db-7b9d-4e7f-b803-a685961a8203] - RECEIVED message [OrderPlaced] Payload: OrderRequest[clientName=Alice, tableNumber=T1, instructions=no onions, items=[OrderItem[dishName=burger, quantity=1]]]
+2025-12-24 16:39:34.815 [pool-3-thread-4] INFO  [c.s.r.actors.RestaurantActor] [Actor:restaurant-103528db-7b9d-4e7f-b803-a685961a8203] - Received order 1766590772554 from Alice
+2025-12-24 16:39:34.816 [pool-3-thread-1] INFO  [com.saf.core1.ActorCell] [Actor:] - RECEIVED message [CalculatePrice] Payload: OrderRequest[clientName=Alice, tableNumber=T1, instructions=no onions, items=[OrderItem[dishName=burger, quantity=1]]]
+2025-12-24 16:39:34.817 [pool-3-thread-7] INFO  [com.saf.core1.ActorCell] [Actor:worker-1-894ed5e5-1634-46f9-b827-bc3b9f3c5ce8] - RECEIVED message [CalculatePrice] Payload: OrderRequest[clientName=Alice, tableNumber=T1, instructions=no onions, items=[OrderItem[dishName=burger, quantity=1]]]
+2025-12-24 16:39:34.818 [pool-3-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-103528db-7b9d-4e7f-b803-a685961a8203] - RECEIVED message [PriceCalculated] Payload: PriceCalculated[orderId=1766590772554, valid=true, total=12.5, missingItems=[]]
+2025-12-24 16:39:34.819 [pool-3-thread-9] INFO  [com.saf.core1.ActorCell] [Actor:client-1766590772554-e89ab30f-06e4-494e-9a5d-4726103b2511] - RECEIVED message [AcknowledgeOrder] Payload: OrderAcknowledgement[orderId=1766590772554, status=PENDING_STOCK, message=Commande validée. Vérification du stock en cours., estimatedTotal=12.5, receipt=null]
+2025-12-24 16:39:34.835 [pool-3-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-103528db-7b9d-4e7f-b803-a685961a8203] - RECEIVED message [StockResult] Payload: StockResult[orderId=1766590772554, available=true, missingItems=[]]
+2025-12-24 16:39:34.838 [pool-3-thread-2] INFO  [com.saf.core1.ActorCell] [Actor:treasury-b7c599c1-27bf-44a1-b2dc-554ff92152bd] - RECEIVED message [RecordPayment] Payload: 12.5
+2025-12-24 16:39:34.838 [pool-3-thread-3] INFO  [com.saf.core1.ActorCell] [Actor:receipt-0205dea1-cc22-4926-98e2-8c9c17dc79e1] - RECEIVED message [GenerateReceipt] Payload: OrderRequest[clientName=Alice, tableNumber=T1, instructions=no onions, items=[OrderItem[dishName=burger, quantity=1]]]
+2025-12-24 16:39:34.956 [pool-3-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-103528db-7b9d-4e7f-b803-a685961a8203] - RECEIVED message [ReceiptReady] Payload: ReceiptDocument[orderId=1766590772554, clientName=Alice, tableNumber=T1, total=12.5, items=[OrderItem[dishName=burger, quantity=1]], issuedAt=2025-12-24T15:39:34.840934717Z, content==== SAF RESTAURANT RECEIPT ===
+Client: Alice
+Table: T1
+Total: 12.5 €
+Items:
+- burger x 1
+]
+2025-12-24 16:39:34.959 [pool-3-thread-9] INFO  [com.saf.core1.ActorCell] [Actor:client-1766590772554-e89ab30f-06e4-494e-9a5d-4726103b2511] - RECEIVED message [AcknowledgeOrder] Payload: OrderAcknowledgement[orderId=1766590772554, status=COMPLETED, message=Commande servie et ticket généré., estimatedTotal=12.5, receipt==== SAF RESTAURANT RECEIPT ===
+Client: Alice
+Table: T1
+Total: 12.5 €
+Items:
+- burger x 1
+]
+2025-12-24 16:39:35.224 [main] INFO  [c.s.r.RestaurantInventoryIntegrationTest] [Actor:] - Starting RestaurantInventoryIntegrationTest using Java 21.0.7 with PID 174527 (started by cytech in /home/cytech/Restaurant-SAF/saf-restaurant)
+2025-12-24 16:39:35.224 [main] INFO  [c.s.r.RestaurantInventoryIntegrationTest] [Actor:] - No active profile set, falling back to 1 default profile: "default"
+2025-12-24 16:39:36.117 [main] INFO  [com.zaxxer.hikari.HikariDataSource] [Actor:] - HikariPool-2 - Starting...
+2025-12-24 16:39:36.120 [main] INFO  [com.zaxxer.hikari.pool.HikariPool] [Actor:] - HikariPool-2 - Added connection conn10: url=jdbc:h2:mem:restaurantdb user=SA
+2025-12-24 16:39:36.121 [main] INFO  [com.zaxxer.hikari.HikariDataSource] [Actor:] - HikariPool-2 - Start completed.
+2025-12-24 16:39:36.323 [main] INFO  [com.saf.core1.LocalActorSystem] [Actor:] - SAF ActorSystem started with 12 threads.
+2025-12-24 16:39:36.326 [main] INFO  [com.saf.core1.router.RoundRobinPool] [Actor:menu-router-8ad24b4d-d022-4e63-8837-78057545383a] - Starting Router Pool with 3 initial workers.
+2025-12-24 16:39:36.503 [main] WARN  [o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration] [Actor:] - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-12-24 16:39:36.855 [main] WARN  [o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger] [Actor:] - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-12-24 16:39:36.904 [pool-4-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-8bac9d23-0380-4384-bcf7-66e0b3552d08] - RECEIVED message [PurgeStaleOrders] Payload: 1766590746904
+2025-12-24 16:39:36.908 [main] INFO  [c.s.r.RestaurantInventoryIntegrationTest] [Actor:] - Started RestaurantInventoryIntegrationTest in 1.738 seconds (process running for 11.491)
+2025-12-24 16:39:37.067 [SpringApplicationShutdownHook] INFO  [com.zaxxer.hikari.HikariDataSource] [Actor:] - HikariPool-1 - Shutdown initiated...
+2025-12-24 16:39:37.070 [SpringApplicationShutdownHook] INFO  [com.zaxxer.hikari.HikariDataSource] [Actor:] - HikariPool-1 - Shutdown completed.
+2025-12-24 16:39:37.087 [SpringApplicationShutdownHook] INFO  [com.zaxxer.hikari.HikariDataSource] [Actor:] - HikariPool-2 - Shutdown initiated...
+2025-12-24 16:39:37.089 [SpringApplicationShutdownHook] INFO  [com.zaxxer.hikari.HikariDataSource] [Actor:] - HikariPool-2 - Shutdown completed.
+2025-12-24 16:41:08.753 [main] INFO  [c.s.r.RestaurantStockKoIntegrationTest] [Actor:] - Starting RestaurantStockKoIntegrationTest using Java 21.0.7 with PID 175783 (started by cytech in /home/cytech/Restaurant-SAF/saf-restaurant)
+2025-12-24 16:41:08.756 [main] INFO  [c.s.r.RestaurantStockKoIntegrationTest] [Actor:] - No active profile set, falling back to 1 default profile: "default"
+2025-12-24 16:41:11.483 [main] INFO  [com.zaxxer.hikari.HikariDataSource] [Actor:] - HikariPool-1 - Starting...
+2025-12-24 16:41:11.699 [main] INFO  [com.zaxxer.hikari.pool.HikariPool] [Actor:] - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:restaurantdb user=SA
+2025-12-24 16:41:11.701 [main] INFO  [com.zaxxer.hikari.HikariDataSource] [Actor:] - HikariPool-1 - Start completed.
+2025-12-24 16:41:12.579 [main] INFO  [com.saf.core1.LocalActorSystem] [Actor:] - SAF ActorSystem started with 12 threads.
+2025-12-24 16:41:12.585 [main] INFO  [com.saf.core1.router.RoundRobinPool] [Actor:menu-router-fec4c9ff-a740-450f-9d57-72a37cb5d98c] - Starting Router Pool with 3 initial workers.
+2025-12-24 16:41:13.482 [main] WARN  [o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration] [Actor:] - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-12-24 16:41:14.237 [main] WARN  [o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger] [Actor:] - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-12-24 16:41:14.519 [main] INFO  [c.s.r.RestaurantStockKoIntegrationTest] [Actor:] - Started RestaurantStockKoIntegrationTest in 6.299 seconds (process running for 7.302)
+2025-12-24 16:41:14.522 [pool-3-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-0bafe03d-83e9-4aa5-9807-bc511ee053c6] - RECEIVED message [PurgeStaleOrders] Payload: 1766590844521
+2025-12-24 16:41:15.320 [pool-3-thread-5] INFO  [com.saf.core1.ActorCell] [Actor:client-1766590873383-30c01297-0817-45d7-80ad-85ba1395badf] - RECEIVED message [BeginOrder] Payload: BeginOrder[]
+2025-12-24 16:41:15.322 [pool-3-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-0bafe03d-83e9-4aa5-9807-bc511ee053c6] - RECEIVED message [OrderPlaced] Payload: OrderRequest[clientName=Carol, tableNumber=T3, instructions=null, items=[OrderItem[dishName=unknown-item, quantity=1]]]
+2025-12-24 16:41:15.330 [pool-3-thread-4] INFO  [c.s.r.actors.RestaurantActor] [Actor:restaurant-0bafe03d-83e9-4aa5-9807-bc511ee053c6] - Received order 1766590873383 from Carol
+2025-12-24 16:41:15.332 [pool-3-thread-1] INFO  [com.saf.core1.ActorCell] [Actor:menu-router-fec4c9ff-a740-450f-9d57-72a37cb5d98c] - RECEIVED message [CalculatePrice] Payload: OrderRequest[clientName=Carol, tableNumber=T3, instructions=null, items=[OrderItem[dishName=unknown-item, quantity=1]]]
+2025-12-24 16:41:15.336 [pool-3-thread-1] INFO  [com.saf.core1.router.RoundRobinPool] [Actor:] - Pool size is now: 3
+2025-12-24 16:41:15.337 [pool-3-thread-6] INFO  [com.saf.core1.ActorCell] [Actor:worker-0-cb483103-2ccf-40d1-a6ef-c70ca9c0c28e] - RECEIVED message [CalculatePrice] Payload: OrderRequest[clientName=Carol, tableNumber=T3, instructions=null, items=[OrderItem[dishName=unknown-item, quantity=1]]]
+2025-12-24 16:41:15.338 [pool-3-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-0bafe03d-83e9-4aa5-9807-bc511ee053c6] - RECEIVED message [PriceCalculated] Payload: PriceCalculated[orderId=1766590873383, valid=true, total=0, missingItems=[unknown-item]]
+2025-12-24 16:41:15.343 [pool-3-thread-5] INFO  [com.saf.core1.ActorCell] [Actor:client-1766590873383-30c01297-0817-45d7-80ad-85ba1395badf] - RECEIVED message [AcknowledgeOrder] Payload: OrderAcknowledgement[orderId=1766590873383, status=PENDING_STOCK, message=Commande en attente: articles inconnus (unknown-item)., estimatedTotal=0, receipt=null]
+2025-12-24 16:41:15.431 [pool-3-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-0bafe03d-83e9-4aa5-9807-bc511ee053c6] - RECEIVED message [StockResult] Payload: StockResult[orderId=1766590873383, available=false, missingItems=[unknown-item]]
+2025-12-24 16:41:15.434 [pool-3-thread-5] INFO  [com.saf.core1.ActorCell] [Actor:client-1766590873383-30c01297-0817-45d7-80ad-85ba1395badf] - RECEIVED message [AcknowledgeOrder] Payload: OrderAcknowledgement[orderId=1766590873383, status=REJECTED, message=Articles inconnus: unknown-item, estimatedTotal=0, receipt=null]
+2025-12-24 16:41:15.628 [pool-3-thread-9] INFO  [com.saf.core1.ActorCell] [Actor:client-1766590873384-4a1f8380-ffb4-4f83-a4d8-7d88dd30418a] - RECEIVED message [BeginOrder] Payload: BeginOrder[]
+2025-12-24 16:41:15.629 [pool-3-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-0bafe03d-83e9-4aa5-9807-bc511ee053c6] - RECEIVED message [OrderPlaced] Payload: OrderRequest[clientName=Alice, tableNumber=T1, instructions=no onions, items=[OrderItem[dishName=burger, quantity=1]]]
+2025-12-24 16:41:15.629 [pool-3-thread-4] INFO  [c.s.r.actors.RestaurantActor] [Actor:restaurant-0bafe03d-83e9-4aa5-9807-bc511ee053c6] - Received order 1766590873384 from Alice
+2025-12-24 16:41:15.630 [pool-3-thread-1] INFO  [com.saf.core1.ActorCell] [Actor:] - RECEIVED message [CalculatePrice] Payload: OrderRequest[clientName=Alice, tableNumber=T1, instructions=no onions, items=[OrderItem[dishName=burger, quantity=1]]]
+2025-12-24 16:41:15.631 [pool-3-thread-7] INFO  [com.saf.core1.ActorCell] [Actor:worker-1-ae37b5c0-fa0b-428d-bcc7-591f244cf764] - RECEIVED message [CalculatePrice] Payload: OrderRequest[clientName=Alice, tableNumber=T1, instructions=no onions, items=[OrderItem[dishName=burger, quantity=1]]]
+2025-12-24 16:41:15.632 [pool-3-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-0bafe03d-83e9-4aa5-9807-bc511ee053c6] - RECEIVED message [PriceCalculated] Payload: PriceCalculated[orderId=1766590873384, valid=true, total=12.5, missingItems=[]]
+2025-12-24 16:41:15.633 [pool-3-thread-9] INFO  [com.saf.core1.ActorCell] [Actor:client-1766590873384-4a1f8380-ffb4-4f83-a4d8-7d88dd30418a] - RECEIVED message [AcknowledgeOrder] Payload: OrderAcknowledgement[orderId=1766590873384, status=PENDING_STOCK, message=Commande validée. Vérification du stock en cours., estimatedTotal=12.5, receipt=null]
+2025-12-24 16:41:15.648 [pool-3-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-0bafe03d-83e9-4aa5-9807-bc511ee053c6] - RECEIVED message [StockResult] Payload: StockResult[orderId=1766590873384, available=true, missingItems=[]]
+2025-12-24 16:41:15.650 [pool-3-thread-2] INFO  [com.saf.core1.ActorCell] [Actor:treasury-95cb7739-dd09-4cdf-adf2-72c3f6273ca9] - RECEIVED message [RecordPayment] Payload: 12.5
+2025-12-24 16:41:15.651 [pool-3-thread-3] INFO  [com.saf.core1.ActorCell] [Actor:receipt-9dd83a20-7681-4f83-bc11-27fdcab18026] - RECEIVED message [GenerateReceipt] Payload: OrderRequest[clientName=Alice, tableNumber=T1, instructions=no onions, items=[OrderItem[dishName=burger, quantity=1]]]
+2025-12-24 16:41:15.781 [pool-3-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-0bafe03d-83e9-4aa5-9807-bc511ee053c6] - RECEIVED message [ReceiptReady] Payload: ReceiptDocument[orderId=1766590873384, clientName=Alice, tableNumber=T1, total=12.5, items=[OrderItem[dishName=burger, quantity=1]], issuedAt=2025-12-24T15:41:15.653692642Z, content==== SAF RESTAURANT RECEIPT ===
+Client: Alice
+Table: T1
+Total: 12.5 €
+Items:
+- burger x 1
+]
+2025-12-24 16:41:15.788 [pool-3-thread-9] INFO  [com.saf.core1.ActorCell] [Actor:client-1766590873384-4a1f8380-ffb4-4f83-a4d8-7d88dd30418a] - RECEIVED message [AcknowledgeOrder] Payload: OrderAcknowledgement[orderId=1766590873384, status=COMPLETED, message=Commande servie et ticket généré., estimatedTotal=12.5, receipt==== SAF RESTAURANT RECEIPT ===
+Client: Alice
+Table: T1
+Total: 12.5 €
+Items:
+- burger x 1
+]
+2025-12-24 16:41:16.049 [main] INFO  [c.s.r.RestaurantInventoryIntegrationTest] [Actor:] - Starting RestaurantInventoryIntegrationTest using Java 21.0.7 with PID 175783 (started by cytech in /home/cytech/Restaurant-SAF/saf-restaurant)
+2025-12-24 16:41:16.050 [main] INFO  [c.s.r.RestaurantInventoryIntegrationTest] [Actor:] - No active profile set, falling back to 1 default profile: "default"
+2025-12-24 16:41:16.806 [main] INFO  [com.zaxxer.hikari.HikariDataSource] [Actor:] - HikariPool-2 - Starting...
+2025-12-24 16:41:16.808 [main] INFO  [com.zaxxer.hikari.pool.HikariPool] [Actor:] - HikariPool-2 - Added connection conn10: url=jdbc:h2:mem:restaurantdb user=SA
+2025-12-24 16:41:16.809 [main] INFO  [com.zaxxer.hikari.HikariDataSource] [Actor:] - HikariPool-2 - Start completed.
+2025-12-24 16:41:16.940 [main] INFO  [com.saf.core1.LocalActorSystem] [Actor:] - SAF ActorSystem started with 12 threads.
+2025-12-24 16:41:16.942 [main] INFO  [com.saf.core1.router.RoundRobinPool] [Actor:menu-router-2b3f1241-e212-4290-966f-1f98493d1aa1] - Starting Router Pool with 3 initial workers.
+2025-12-24 16:41:17.093 [main] WARN  [o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration] [Actor:] - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-12-24 16:41:17.335 [main] WARN  [o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger] [Actor:] - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-12-24 16:41:17.368 [pool-4-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-c90cc5d6-ea0a-4dd5-972f-7c33fd3c70a0] - RECEIVED message [PurgeStaleOrders] Payload: 1766590847368
+2025-12-24 16:41:17.371 [main] INFO  [c.s.r.RestaurantInventoryIntegrationTest] [Actor:] - Started RestaurantInventoryIntegrationTest in 1.381 seconds (process running for 10.153)
+2025-12-24 16:41:17.514 [SpringApplicationShutdownHook] INFO  [com.zaxxer.hikari.HikariDataSource] [Actor:] - HikariPool-1 - Shutdown initiated...
+2025-12-24 16:41:17.517 [SpringApplicationShutdownHook] INFO  [com.zaxxer.hikari.HikariDataSource] [Actor:] - HikariPool-1 - Shutdown completed.
+2025-12-24 16:41:17.538 [SpringApplicationShutdownHook] INFO  [com.zaxxer.hikari.HikariDataSource] [Actor:] - HikariPool-2 - Shutdown initiated...
+2025-12-24 16:41:17.540 [SpringApplicationShutdownHook] INFO  [com.zaxxer.hikari.HikariDataSource] [Actor:] - HikariPool-2 - Shutdown completed.
+2025-12-24 16:47:28.282 [main] INFO  [c.s.r.RestaurantStockKoIntegrationTest] [Actor:] - Starting RestaurantStockKoIntegrationTest using Java 21.0.7 with PID 179696 (started by cytech in /home/cytech/Restaurant-SAF/saf-restaurant)
+2025-12-24 16:47:28.286 [main] INFO  [c.s.r.RestaurantStockKoIntegrationTest] [Actor:] - No active profile set, falling back to 1 default profile: "default"
+2025-12-24 16:47:31.201 [main] INFO  [com.zaxxer.hikari.HikariDataSource] [Actor:] - HikariPool-1 - Starting...
+2025-12-24 16:47:31.415 [main] INFO  [com.zaxxer.hikari.pool.HikariPool] [Actor:] - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:restaurantdb user=SA
+2025-12-24 16:47:31.418 [main] INFO  [com.zaxxer.hikari.HikariDataSource] [Actor:] - HikariPool-1 - Start completed.
+2025-12-24 16:47:32.850 [main] INFO  [com.saf.core1.LocalActorSystem] [Actor:] - SAF ActorSystem started with 12 threads.
+2025-12-24 16:47:32.869 [main] INFO  [com.saf.core1.router.RoundRobinPool] [Actor:menu-router-2b0aa24f-fd2e-4e22-8d20-911d44d35f8a] - Starting Router Pool with 3 initial workers.
+2025-12-24 16:47:34.331 [main] WARN  [o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration] [Actor:] - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-12-24 16:47:35.270 [main] WARN  [o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger] [Actor:] - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-12-24 16:47:35.689 [main] INFO  [c.s.r.RestaurantStockKoIntegrationTest] [Actor:] - Started RestaurantStockKoIntegrationTest in 8.036 seconds (process running for 9.731)
+2025-12-24 16:47:35.696 [pool-3-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-287f2e08-c616-4b4d-ae9b-632b9eb7dcf6] - RECEIVED message [PurgeStaleOrders] Payload: 1766591225695
+2025-12-24 16:47:37.154 [pool-3-thread-5] INFO  [com.saf.core1.ActorCell] [Actor:client-1766591254231-445818f6-58b7-4cb6-921e-bd5c503f3e26] - RECEIVED message [BeginOrder] Payload: BeginOrder[]
+2025-12-24 16:47:37.159 [pool-3-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-287f2e08-c616-4b4d-ae9b-632b9eb7dcf6] - RECEIVED message [OrderPlaced] Payload: OrderRequest[clientName=Carol, tableNumber=T3, instructions=null, items=[OrderItem[dishName=unknown-item, quantity=1]]]
+2025-12-24 16:47:37.166 [pool-3-thread-4] INFO  [c.s.r.actors.RestaurantActor] [Actor:restaurant-287f2e08-c616-4b4d-ae9b-632b9eb7dcf6] - Received order 1766591254231 from Carol
+2025-12-24 16:47:37.167 [pool-3-thread-1] INFO  [com.saf.core1.ActorCell] [Actor:menu-router-2b0aa24f-fd2e-4e22-8d20-911d44d35f8a] - RECEIVED message [CalculatePrice] Payload: OrderRequest[clientName=Carol, tableNumber=T3, instructions=null, items=[OrderItem[dishName=unknown-item, quantity=1]]]
+2025-12-24 16:47:37.171 [pool-3-thread-1] INFO  [com.saf.core1.router.RoundRobinPool] [Actor:] - Pool size is now: 3
+2025-12-24 16:47:37.172 [pool-3-thread-6] INFO  [com.saf.core1.ActorCell] [Actor:worker-0-5084a25c-0e58-429b-9d4d-8ad5a2cb15fb] - RECEIVED message [CalculatePrice] Payload: OrderRequest[clientName=Carol, tableNumber=T3, instructions=null, items=[OrderItem[dishName=unknown-item, quantity=1]]]
+2025-12-24 16:47:37.174 [pool-3-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-287f2e08-c616-4b4d-ae9b-632b9eb7dcf6] - RECEIVED message [PriceCalculated] Payload: PriceCalculated[orderId=1766591254231, valid=true, total=0, missingItems=[unknown-item]]
+2025-12-24 16:47:37.180 [pool-3-thread-5] INFO  [com.saf.core1.ActorCell] [Actor:client-1766591254231-445818f6-58b7-4cb6-921e-bd5c503f3e26] - RECEIVED message [AcknowledgeOrder] Payload: OrderAcknowledgement[orderId=1766591254231, status=PENDING_STOCK, message=Commande en attente: articles inconnus (unknown-item)., estimatedTotal=0, receipt=null]
+2025-12-24 16:47:37.354 [pool-3-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-287f2e08-c616-4b4d-ae9b-632b9eb7dcf6] - RECEIVED message [StockResult] Payload: StockResult[orderId=1766591254231, available=false, missingItems=[unknown-item]]
+2025-12-24 16:47:37.364 [pool-3-thread-5] INFO  [com.saf.core1.ActorCell] [Actor:client-1766591254231-445818f6-58b7-4cb6-921e-bd5c503f3e26] - RECEIVED message [AcknowledgeOrder] Payload: OrderAcknowledgement[orderId=1766591254231, status=REJECTED, message=Articles inconnus: unknown-item, estimatedTotal=0, receipt=null]
+2025-12-24 16:47:37.708 [pool-3-thread-9] INFO  [com.saf.core1.ActorCell] [Actor:client-1766591254232-29db57cc-a4ab-41f8-9b0b-7467604aab55] - RECEIVED message [BeginOrder] Payload: BeginOrder[]
+2025-12-24 16:47:37.709 [pool-3-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-287f2e08-c616-4b4d-ae9b-632b9eb7dcf6] - RECEIVED message [OrderPlaced] Payload: OrderRequest[clientName=Alice, tableNumber=T1, instructions=no onions, items=[OrderItem[dishName=burger, quantity=1]]]
+2025-12-24 16:47:37.710 [pool-3-thread-4] INFO  [c.s.r.actors.RestaurantActor] [Actor:restaurant-287f2e08-c616-4b4d-ae9b-632b9eb7dcf6] - Received order 1766591254232 from Alice
+2025-12-24 16:47:37.710 [pool-3-thread-1] INFO  [com.saf.core1.ActorCell] [Actor:] - RECEIVED message [CalculatePrice] Payload: OrderRequest[clientName=Alice, tableNumber=T1, instructions=no onions, items=[OrderItem[dishName=burger, quantity=1]]]
+2025-12-24 16:47:37.711 [pool-3-thread-7] INFO  [com.saf.core1.ActorCell] [Actor:worker-1-d9fdb488-2b2f-4016-a67b-b226d7f19991] - RECEIVED message [CalculatePrice] Payload: OrderRequest[clientName=Alice, tableNumber=T1, instructions=no onions, items=[OrderItem[dishName=burger, quantity=1]]]
+2025-12-24 16:47:37.711 [pool-3-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-287f2e08-c616-4b4d-ae9b-632b9eb7dcf6] - RECEIVED message [PriceCalculated] Payload: PriceCalculated[orderId=1766591254232, valid=true, total=12.5, missingItems=[]]
+2025-12-24 16:47:37.713 [pool-3-thread-9] INFO  [com.saf.core1.ActorCell] [Actor:client-1766591254232-29db57cc-a4ab-41f8-9b0b-7467604aab55] - RECEIVED message [AcknowledgeOrder] Payload: OrderAcknowledgement[orderId=1766591254232, status=PENDING_STOCK, message=Commande validée. Vérification du stock en cours., estimatedTotal=12.5, receipt=null]
+2025-12-24 16:47:37.728 [pool-3-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-287f2e08-c616-4b4d-ae9b-632b9eb7dcf6] - RECEIVED message [StockResult] Payload: StockResult[orderId=1766591254232, available=true, missingItems=[]]
+2025-12-24 16:47:37.730 [pool-3-thread-2] INFO  [com.saf.core1.ActorCell] [Actor:treasury-9e9c6d2e-46b8-4340-a50f-0a48a42ddbfb] - RECEIVED message [RecordPayment] Payload: 12.5
+2025-12-24 16:47:37.730 [pool-3-thread-3] INFO  [com.saf.core1.ActorCell] [Actor:receipt-d2138aca-1076-4dc9-a0ae-588543a82175] - RECEIVED message [GenerateReceipt] Payload: OrderRequest[clientName=Alice, tableNumber=T1, instructions=no onions, items=[OrderItem[dishName=burger, quantity=1]]]
+2025-12-24 16:47:37.896 [pool-3-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-287f2e08-c616-4b4d-ae9b-632b9eb7dcf6] - RECEIVED message [ReceiptReady] Payload: ReceiptDocument[orderId=1766591254232, clientName=Alice, tableNumber=T1, total=12.5, items=[OrderItem[dishName=burger, quantity=1]], issuedAt=2025-12-24T15:47:37.732597871Z, content==== SAF RESTAURANT RECEIPT ===
+Client: Alice
+Table: T1
+Total: 12.5 €
+Items:
+- burger x 1
+]
+2025-12-24 16:47:37.903 [pool-3-thread-9] INFO  [com.saf.core1.ActorCell] [Actor:client-1766591254232-29db57cc-a4ab-41f8-9b0b-7467604aab55] - RECEIVED message [AcknowledgeOrder] Payload: OrderAcknowledgement[orderId=1766591254232, status=COMPLETED, message=Commande servie et ticket généré., estimatedTotal=12.5, receipt==== SAF RESTAURANT RECEIPT ===
+Client: Alice
+Table: T1
+Total: 12.5 €
+Items:
+- burger x 1
+]
+2025-12-24 16:47:38.211 [main] INFO  [c.s.r.RestaurantInventoryIntegrationTest] [Actor:] - Starting RestaurantInventoryIntegrationTest using Java 21.0.7 with PID 179696 (started by cytech in /home/cytech/Restaurant-SAF/saf-restaurant)
+2025-12-24 16:47:38.213 [main] INFO  [c.s.r.RestaurantInventoryIntegrationTest] [Actor:] - No active profile set, falling back to 1 default profile: "default"
+2025-12-24 16:47:40.014 [main] INFO  [com.zaxxer.hikari.HikariDataSource] [Actor:] - HikariPool-2 - Starting...
+2025-12-24 16:47:40.017 [main] INFO  [com.zaxxer.hikari.pool.HikariPool] [Actor:] - HikariPool-2 - Added connection conn10: url=jdbc:h2:mem:restaurantdb user=SA
+2025-12-24 16:47:40.017 [main] INFO  [com.zaxxer.hikari.HikariDataSource] [Actor:] - HikariPool-2 - Start completed.
+2025-12-24 16:47:40.264 [main] INFO  [com.saf.core1.LocalActorSystem] [Actor:] - SAF ActorSystem started with 12 threads.
+2025-12-24 16:47:40.268 [main] INFO  [com.saf.core1.router.RoundRobinPool] [Actor:menu-router-c5ad512c-f35c-4ee2-8711-cf1fed3d4b4f] - Starting Router Pool with 3 initial workers.
+2025-12-24 16:47:40.604 [main] WARN  [o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration] [Actor:] - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-12-24 16:47:40.697 [pool-3-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-287f2e08-c616-4b4d-ae9b-632b9eb7dcf6] - RECEIVED message [PurgeStaleOrders] Payload: 1766591230697
+2025-12-24 16:47:41.100 [main] WARN  [o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger] [Actor:] - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-12-24 16:47:41.136 [pool-4-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-12135061-b7bb-4247-a122-246e80202c57] - RECEIVED message [PurgeStaleOrders] Payload: 1766591231136
+2025-12-24 16:47:41.140 [main] INFO  [c.s.r.RestaurantInventoryIntegrationTest] [Actor:] - Started RestaurantInventoryIntegrationTest in 3.027 seconds (process running for 15.183)
+2025-12-24 16:47:41.435 [pool-4-thread-5] INFO  [com.saf.core1.ActorCell] [Actor:client-1766591260504-8a4a1c97-b679-4b31-910f-806dd9be21df] - RECEIVED message [BeginOrder] Payload: BeginOrder[]
+2025-12-24 16:47:41.436 [pool-4-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-12135061-b7bb-4247-a122-246e80202c57] - RECEIVED message [OrderPlaced] Payload: OrderRequest[clientName=Alice, tableNumber=T1, instructions=no onions, items=[OrderItem[dishName=burger, quantity=1]]]
+2025-12-24 16:47:41.437 [pool-4-thread-4] INFO  [c.s.r.actors.RestaurantActor] [Actor:restaurant-12135061-b7bb-4247-a122-246e80202c57] - Received order 1766591260504 from Alice
+2025-12-24 16:47:41.437 [pool-4-thread-1] INFO  [com.saf.core1.ActorCell] [Actor:menu-router-c5ad512c-f35c-4ee2-8711-cf1fed3d4b4f] - RECEIVED message [CalculatePrice] Payload: OrderRequest[clientName=Alice, tableNumber=T1, instructions=no onions, items=[OrderItem[dishName=burger, quantity=1]]]
+2025-12-24 16:47:41.439 [pool-4-thread-1] INFO  [com.saf.core1.router.RoundRobinPool] [Actor:] - Pool size is now: 3
+2025-12-24 16:47:41.439 [pool-4-thread-6] INFO  [com.saf.core1.ActorCell] [Actor:worker-0-c9032d53-7765-4a15-9ae7-9877588d84fd] - RECEIVED message [CalculatePrice] Payload: OrderRequest[clientName=Alice, tableNumber=T1, instructions=no onions, items=[OrderItem[dishName=burger, quantity=1]]]
+2025-12-24 16:47:41.440 [pool-4-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-12135061-b7bb-4247-a122-246e80202c57] - RECEIVED message [PriceCalculated] Payload: PriceCalculated[orderId=1766591260504, valid=true, total=12.5, missingItems=[]]
+2025-12-24 16:47:41.441 [pool-4-thread-5] INFO  [com.saf.core1.ActorCell] [Actor:client-1766591260504-8a4a1c97-b679-4b31-910f-806dd9be21df] - RECEIVED message [AcknowledgeOrder] Payload: OrderAcknowledgement[orderId=1766591260504, status=PENDING_STOCK, message=Commande validée. Vérification du stock en cours., estimatedTotal=12.5, receipt=null]
+2025-12-24 16:47:41.452 [pool-4-thread-4] INFO  [c.s.r.client.InventoryClient] [Actor:restaurant-12135061-b7bb-4247-a122-246e80202c57] - Stock check request sent to inventory for order 1766591260504
+2025-12-24 16:47:41.540 [SpringApplicationShutdownHook] INFO  [com.zaxxer.hikari.HikariDataSource] [Actor:] - HikariPool-1 - Shutdown initiated...
+2025-12-24 16:47:41.546 [SpringApplicationShutdownHook] INFO  [com.zaxxer.hikari.HikariDataSource] [Actor:] - HikariPool-1 - Shutdown completed.
+2025-12-24 16:47:41.571 [SpringApplicationShutdownHook] INFO  [com.zaxxer.hikari.HikariDataSource] [Actor:] - HikariPool-2 - Shutdown initiated...
+2025-12-24 16:47:41.573 [SpringApplicationShutdownHook] INFO  [com.zaxxer.hikari.HikariDataSource] [Actor:] - HikariPool-2 - Shutdown completed.
+2025-12-24 16:51:24.831 [main] INFO  [c.s.r.RestaurantStockKoIntegrationTest] [Actor:] - Starting RestaurantStockKoIntegrationTest using Java 21.0.7 with PID 183262 (started by cytech in /home/cytech/Restaurant-SAF/saf-restaurant)
+2025-12-24 16:51:24.834 [main] INFO  [c.s.r.RestaurantStockKoIntegrationTest] [Actor:] - No active profile set, falling back to 1 default profile: "default"
+2025-12-24 16:51:27.046 [main] INFO  [com.zaxxer.hikari.HikariDataSource] [Actor:] - HikariPool-1 - Starting...
+2025-12-24 16:51:27.236 [main] INFO  [com.zaxxer.hikari.pool.HikariPool] [Actor:] - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:restaurantdb user=SA
+2025-12-24 16:51:27.238 [main] INFO  [com.zaxxer.hikari.HikariDataSource] [Actor:] - HikariPool-1 - Start completed.
+2025-12-24 16:51:28.139 [main] INFO  [com.saf.core1.LocalActorSystem] [Actor:] - SAF ActorSystem started with 12 threads.
+2025-12-24 16:51:28.145 [main] INFO  [com.saf.core1.router.RoundRobinPool] [Actor:menu-router-4d52fd5a-f0ae-4d0d-8f93-1f00d42a2a08] - Starting Router Pool with 3 initial workers.
+2025-12-24 16:51:29.102 [main] WARN  [o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration] [Actor:] - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-12-24 16:51:29.675 [main] WARN  [o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger] [Actor:] - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-12-24 16:51:29.962 [main] INFO  [c.s.r.RestaurantStockKoIntegrationTest] [Actor:] - Started RestaurantStockKoIntegrationTest in 5.611 seconds (process running for 6.656)
+2025-12-24 16:51:29.966 [pool-3-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-c73142ec-dc98-4f21-bb25-5c5c9dd57e46] - RECEIVED message [PurgeStaleOrders] Payload: 1766591459966
+2025-12-24 16:51:30.739 [pool-3-thread-5] INFO  [com.saf.core1.ActorCell] [Actor:client-1766591489046-45d48472-a343-4b5f-b4ac-facc482688e1] - RECEIVED message [BeginOrder] Payload: BeginOrder[]
+2025-12-24 16:51:30.740 [pool-3-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-c73142ec-dc98-4f21-bb25-5c5c9dd57e46] - RECEIVED message [OrderPlaced] Payload: OrderRequest[clientName=Carol, tableNumber=T3, instructions=null, items=[OrderItem[dishName=unknown-item, quantity=1]]]
+2025-12-24 16:51:30.749 [pool-3-thread-4] INFO  [c.s.r.actors.RestaurantActor] [Actor:restaurant-c73142ec-dc98-4f21-bb25-5c5c9dd57e46] - Received order 1766591489046 from Carol
+2025-12-24 16:51:30.751 [pool-3-thread-1] INFO  [com.saf.core1.ActorCell] [Actor:menu-router-4d52fd5a-f0ae-4d0d-8f93-1f00d42a2a08] - RECEIVED message [CalculatePrice] Payload: OrderRequest[clientName=Carol, tableNumber=T3, instructions=null, items=[OrderItem[dishName=unknown-item, quantity=1]]]
+2025-12-24 16:51:30.762 [pool-3-thread-1] INFO  [com.saf.core1.router.RoundRobinPool] [Actor:] - Pool size is now: 3
+2025-12-24 16:51:30.765 [pool-3-thread-6] INFO  [com.saf.core1.ActorCell] [Actor:worker-0-013d398c-1a51-4464-bdb5-bbfddae0b2d8] - RECEIVED message [CalculatePrice] Payload: OrderRequest[clientName=Carol, tableNumber=T3, instructions=null, items=[OrderItem[dishName=unknown-item, quantity=1]]]
+2025-12-24 16:51:30.768 [pool-3-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-c73142ec-dc98-4f21-bb25-5c5c9dd57e46] - RECEIVED message [PriceCalculated] Payload: PriceCalculated[orderId=1766591489046, valid=true, total=0, missingItems=[unknown-item]]
+2025-12-24 16:51:30.776 [pool-3-thread-5] INFO  [com.saf.core1.ActorCell] [Actor:client-1766591489046-45d48472-a343-4b5f-b4ac-facc482688e1] - RECEIVED message [AcknowledgeOrder] Payload: OrderAcknowledgement[orderId=1766591489046, status=PENDING_STOCK, message=Commande en attente: articles inconnus (unknown-item)., estimatedTotal=0, receipt=null]
+2025-12-24 16:51:30.879 [pool-3-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-c73142ec-dc98-4f21-bb25-5c5c9dd57e46] - RECEIVED message [StockResult] Payload: StockResult[orderId=1766591489046, available=false, missingItems=[unknown-item]]
+2025-12-24 16:51:30.885 [pool-3-thread-5] INFO  [com.saf.core1.ActorCell] [Actor:client-1766591489046-45d48472-a343-4b5f-b4ac-facc482688e1] - RECEIVED message [AcknowledgeOrder] Payload: OrderAcknowledgement[orderId=1766591489046, status=REJECTED, message=Articles inconnus: unknown-item, estimatedTotal=0, receipt=null]
+2025-12-24 16:51:31.066 [pool-3-thread-9] INFO  [com.saf.core1.ActorCell] [Actor:client-1766591489047-3e224e02-5d2e-471c-977a-2b107b975ffd] - RECEIVED message [BeginOrder] Payload: BeginOrder[]
+2025-12-24 16:51:31.067 [pool-3-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-c73142ec-dc98-4f21-bb25-5c5c9dd57e46] - RECEIVED message [OrderPlaced] Payload: OrderRequest[clientName=Alice, tableNumber=T1, instructions=no onions, items=[OrderItem[dishName=burger, quantity=1]]]
+2025-12-24 16:51:31.068 [pool-3-thread-4] INFO  [c.s.r.actors.RestaurantActor] [Actor:restaurant-c73142ec-dc98-4f21-bb25-5c5c9dd57e46] - Received order 1766591489047 from Alice
+2025-12-24 16:51:31.068 [pool-3-thread-1] INFO  [com.saf.core1.ActorCell] [Actor:] - RECEIVED message [CalculatePrice] Payload: OrderRequest[clientName=Alice, tableNumber=T1, instructions=no onions, items=[OrderItem[dishName=burger, quantity=1]]]
+2025-12-24 16:51:31.069 [pool-3-thread-7] INFO  [com.saf.core1.ActorCell] [Actor:worker-1-81d6be4c-4d57-4b8a-b018-ef498c631952] - RECEIVED message [CalculatePrice] Payload: OrderRequest[clientName=Alice, tableNumber=T1, instructions=no onions, items=[OrderItem[dishName=burger, quantity=1]]]
+2025-12-24 16:51:31.070 [pool-3-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-c73142ec-dc98-4f21-bb25-5c5c9dd57e46] - RECEIVED message [PriceCalculated] Payload: PriceCalculated[orderId=1766591489047, valid=true, total=12.5, missingItems=[]]
+2025-12-24 16:51:31.072 [pool-3-thread-9] INFO  [com.saf.core1.ActorCell] [Actor:client-1766591489047-3e224e02-5d2e-471c-977a-2b107b975ffd] - RECEIVED message [AcknowledgeOrder] Payload: OrderAcknowledgement[orderId=1766591489047, status=PENDING_STOCK, message=Commande validée. Vérification du stock en cours., estimatedTotal=12.5, receipt=null]
+2025-12-24 16:51:31.086 [pool-3-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-c73142ec-dc98-4f21-bb25-5c5c9dd57e46] - RECEIVED message [StockResult] Payload: StockResult[orderId=1766591489047, available=true, missingItems=[]]
+2025-12-24 16:51:31.088 [pool-3-thread-2] INFO  [com.saf.core1.ActorCell] [Actor:treasury-b0b8fa03-cfb3-4db3-af16-005f3a848ef8] - RECEIVED message [RecordPayment] Payload: 12.5
+2025-12-24 16:51:31.089 [pool-3-thread-3] INFO  [com.saf.core1.ActorCell] [Actor:receipt-6b3cf6b9-14ff-44c3-8a50-10f2810a4a2d] - RECEIVED message [GenerateReceipt] Payload: OrderRequest[clientName=Alice, tableNumber=T1, instructions=no onions, items=[OrderItem[dishName=burger, quantity=1]]]
+2025-12-24 16:51:31.223 [pool-3-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-c73142ec-dc98-4f21-bb25-5c5c9dd57e46] - RECEIVED message [ReceiptReady] Payload: ReceiptDocument[orderId=1766591489047, clientName=Alice, tableNumber=T1, total=12.5, items=[OrderItem[dishName=burger, quantity=1]], issuedAt=2025-12-24T15:51:31.091568821Z, content==== SAF RESTAURANT RECEIPT ===
+Client: Alice
+Table: T1
+Total: 12.5 €
+Items:
+- burger x 1
+]
+2025-12-24 16:51:31.229 [pool-3-thread-9] INFO  [com.saf.core1.ActorCell] [Actor:client-1766591489047-3e224e02-5d2e-471c-977a-2b107b975ffd] - RECEIVED message [AcknowledgeOrder] Payload: OrderAcknowledgement[orderId=1766591489047, status=COMPLETED, message=Commande servie et ticket généré., estimatedTotal=12.5, receipt==== SAF RESTAURANT RECEIPT ===
+Client: Alice
+Table: T1
+Total: 12.5 €
+Items:
+- burger x 1
+]
+2025-12-24 16:51:31.472 [main] INFO  [c.s.r.RestaurantInventoryIntegrationTest] [Actor:] - Starting RestaurantInventoryIntegrationTest using Java 21.0.7 with PID 183262 (started by cytech in /home/cytech/Restaurant-SAF/saf-restaurant)
+2025-12-24 16:51:31.473 [main] INFO  [c.s.r.RestaurantInventoryIntegrationTest] [Actor:] - No active profile set, falling back to 1 default profile: "default"
+2025-12-24 16:51:32.723 [main] INFO  [com.zaxxer.hikari.HikariDataSource] [Actor:] - HikariPool-2 - Starting...
+2025-12-24 16:51:32.726 [main] INFO  [com.zaxxer.hikari.pool.HikariPool] [Actor:] - HikariPool-2 - Added connection conn10: url=jdbc:h2:mem:restaurantdb user=SA
+2025-12-24 16:51:32.727 [main] INFO  [com.zaxxer.hikari.HikariDataSource] [Actor:] - HikariPool-2 - Start completed.
+2025-12-24 16:51:32.930 [main] INFO  [com.saf.core1.LocalActorSystem] [Actor:] - SAF ActorSystem started with 12 threads.
+2025-12-24 16:51:32.934 [main] INFO  [com.saf.core1.router.RoundRobinPool] [Actor:menu-router-0d492109-5211-4220-97a0-cad849a1b286] - Starting Router Pool with 3 initial workers.
+2025-12-24 16:51:33.095 [main] WARN  [o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration] [Actor:] - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-12-24 16:51:33.341 [main] WARN  [o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger] [Actor:] - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-12-24 16:51:33.387 [pool-4-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-a6bb15f5-c7cd-4910-8917-321d17523c92] - RECEIVED message [PurgeStaleOrders] Payload: 1766591463387
+2025-12-24 16:51:33.390 [main] INFO  [c.s.r.RestaurantInventoryIntegrationTest] [Actor:] - Started RestaurantInventoryIntegrationTest in 1.981 seconds (process running for 10.083)
+2025-12-24 16:51:33.544 [pool-4-thread-5] INFO  [com.saf.core1.ActorCell] [Actor:client-1766591493046-c10914be-003e-4520-a449-9a7565740d68] - RECEIVED message [BeginOrder] Payload: BeginOrder[]
+2025-12-24 16:51:33.545 [pool-4-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-a6bb15f5-c7cd-4910-8917-321d17523c92] - RECEIVED message [OrderPlaced] Payload: OrderRequest[clientName=Alice, tableNumber=T1, instructions=no onions, items=[OrderItem[dishName=burger, quantity=1]]]
+2025-12-24 16:51:33.545 [pool-4-thread-4] INFO  [c.s.r.actors.RestaurantActor] [Actor:restaurant-a6bb15f5-c7cd-4910-8917-321d17523c92] - Received order 1766591493046 from Alice
+2025-12-24 16:51:33.545 [pool-4-thread-1] INFO  [com.saf.core1.ActorCell] [Actor:menu-router-0d492109-5211-4220-97a0-cad849a1b286] - RECEIVED message [CalculatePrice] Payload: OrderRequest[clientName=Alice, tableNumber=T1, instructions=no onions, items=[OrderItem[dishName=burger, quantity=1]]]
+2025-12-24 16:51:33.548 [pool-4-thread-1] INFO  [com.saf.core1.router.RoundRobinPool] [Actor:] - Pool size is now: 3
+2025-12-24 16:51:33.548 [pool-4-thread-6] INFO  [com.saf.core1.ActorCell] [Actor:worker-0-f52e4b9f-2ec3-46af-b492-09d8aaddc64a] - RECEIVED message [CalculatePrice] Payload: OrderRequest[clientName=Alice, tableNumber=T1, instructions=no onions, items=[OrderItem[dishName=burger, quantity=1]]]
+2025-12-24 16:51:33.548 [pool-4-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-a6bb15f5-c7cd-4910-8917-321d17523c92] - RECEIVED message [PriceCalculated] Payload: PriceCalculated[orderId=1766591493046, valid=true, total=12.5, missingItems=[]]
+2025-12-24 16:51:33.549 [pool-4-thread-5] INFO  [com.saf.core1.ActorCell] [Actor:client-1766591493046-c10914be-003e-4520-a449-9a7565740d68] - RECEIVED message [AcknowledgeOrder] Payload: OrderAcknowledgement[orderId=1766591493046, status=PENDING_STOCK, message=Commande validée. Vérification du stock en cours., estimatedTotal=12.5, receipt=null]
+2025-12-24 16:51:33.557 [pool-4-thread-4] INFO  [c.s.r.client.InventoryClient] [Actor:restaurant-a6bb15f5-c7cd-4910-8917-321d17523c92] - Stock check request sent to inventory for order 1766591493046
+2025-12-24 16:51:33.620 [SpringApplicationShutdownHook] INFO  [com.zaxxer.hikari.HikariDataSource] [Actor:] - HikariPool-1 - Shutdown initiated...
+2025-12-24 16:51:33.622 [SpringApplicationShutdownHook] INFO  [com.zaxxer.hikari.HikariDataSource] [Actor:] - HikariPool-1 - Shutdown completed.
+2025-12-24 16:51:33.640 [SpringApplicationShutdownHook] INFO  [com.zaxxer.hikari.HikariDataSource] [Actor:] - HikariPool-2 - Shutdown initiated...
+2025-12-24 16:51:33.642 [SpringApplicationShutdownHook] INFO  [com.zaxxer.hikari.HikariDataSource] [Actor:] - HikariPool-2 - Shutdown completed.
+2025-12-24 16:56:27.022 [main] INFO  [c.s.r.RestaurantStockKoIntegrationTest] [Actor:] - Starting RestaurantStockKoIntegrationTest using Java 21.0.7 with PID 186655 (started by cytech in /home/cytech/Restaurant-SAF/saf-restaurant)
+2025-12-24 16:56:27.023 [main] INFO  [c.s.r.RestaurantStockKoIntegrationTest] [Actor:] - No active profile set, falling back to 1 default profile: "default"
+2025-12-24 16:56:29.298 [main] INFO  [com.zaxxer.hikari.HikariDataSource] [Actor:] - HikariPool-1 - Starting...
+2025-12-24 16:56:29.489 [main] INFO  [com.zaxxer.hikari.pool.HikariPool] [Actor:] - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:restaurantdb user=SA
+2025-12-24 16:56:29.490 [main] INFO  [com.zaxxer.hikari.HikariDataSource] [Actor:] - HikariPool-1 - Start completed.
+2025-12-24 16:56:30.392 [main] INFO  [com.saf.core1.LocalActorSystem] [Actor:] - SAF ActorSystem started with 12 threads.
+2025-12-24 16:56:30.397 [main] INFO  [com.saf.core1.router.RoundRobinPool] [Actor:menu-router-ea536d30-7a2e-445a-a94d-c43b118c2671] - Starting Router Pool with 3 initial workers.
+2025-12-24 16:56:31.293 [main] WARN  [o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration] [Actor:] - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-12-24 16:56:31.815 [main] WARN  [o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger] [Actor:] - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-12-24 16:56:32.138 [main] INFO  [c.s.r.RestaurantStockKoIntegrationTest] [Actor:] - Started RestaurantStockKoIntegrationTest in 5.554 seconds (process running for 6.582)
+2025-12-24 16:56:32.143 [pool-3-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-0bd4b922-eb43-4b8a-9c59-225f3fa4b542] - RECEIVED message [PurgeStaleOrders] Payload: 1766591762142
+2025-12-24 16:56:33.031 [pool-3-thread-5] INFO  [com.saf.core1.ActorCell] [Actor:client-1766591791228-fda45b9b-34da-429c-ac8b-2d2219490ca2] - RECEIVED message [BeginOrder] Payload: BeginOrder[]
+2025-12-24 16:56:33.034 [pool-3-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-0bd4b922-eb43-4b8a-9c59-225f3fa4b542] - RECEIVED message [OrderPlaced] Payload: OrderRequest[clientName=Carol, tableNumber=T3, instructions=null, items=[OrderItem[dishName=unknown-item, quantity=1]]]
+2025-12-24 16:56:33.042 [pool-3-thread-4] INFO  [c.s.r.actors.RestaurantActor] [Actor:restaurant-0bd4b922-eb43-4b8a-9c59-225f3fa4b542] - Received order 1766591791228 from Carol
+2025-12-24 16:56:33.043 [pool-3-thread-1] INFO  [com.saf.core1.ActorCell] [Actor:menu-router-ea536d30-7a2e-445a-a94d-c43b118c2671] - RECEIVED message [CalculatePrice] Payload: OrderRequest[clientName=Carol, tableNumber=T3, instructions=null, items=[OrderItem[dishName=unknown-item, quantity=1]]]
+2025-12-24 16:56:33.045 [pool-3-thread-1] INFO  [com.saf.core1.router.RoundRobinPool] [Actor:] - Pool size is now: 3
+2025-12-24 16:56:33.046 [pool-3-thread-6] INFO  [com.saf.core1.ActorCell] [Actor:worker-0-97ee9257-e06a-4644-92f8-0a346cc696f6] - RECEIVED message [CalculatePrice] Payload: OrderRequest[clientName=Carol, tableNumber=T3, instructions=null, items=[OrderItem[dishName=unknown-item, quantity=1]]]
+2025-12-24 16:56:33.047 [pool-3-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-0bd4b922-eb43-4b8a-9c59-225f3fa4b542] - RECEIVED message [PriceCalculated] Payload: PriceCalculated[orderId=1766591791228, valid=true, total=0, missingItems=[unknown-item]]
+2025-12-24 16:56:33.055 [pool-3-thread-5] INFO  [com.saf.core1.ActorCell] [Actor:client-1766591791228-fda45b9b-34da-429c-ac8b-2d2219490ca2] - RECEIVED message [AcknowledgeOrder] Payload: OrderAcknowledgement[orderId=1766591791228, status=PENDING_STOCK, message=Commande en attente: articles inconnus (unknown-item)., estimatedTotal=0, receipt=null]
+2025-12-24 16:56:33.172 [pool-3-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-0bd4b922-eb43-4b8a-9c59-225f3fa4b542] - RECEIVED message [StockResult] Payload: StockResult[orderId=1766591791228, available=false, missingItems=[unknown-item]]
+2025-12-24 16:56:33.177 [pool-3-thread-5] INFO  [com.saf.core1.ActorCell] [Actor:client-1766591791228-fda45b9b-34da-429c-ac8b-2d2219490ca2] - RECEIVED message [AcknowledgeOrder] Payload: OrderAcknowledgement[orderId=1766591791228, status=REJECTED, message=Articles inconnus: unknown-item, estimatedTotal=0, receipt=null]
+2025-12-24 16:56:33.365 [pool-3-thread-9] INFO  [com.saf.core1.ActorCell] [Actor:client-1766591791229-7890b487-1d06-46e0-89c5-3cbab42d5d50] - RECEIVED message [BeginOrder] Payload: BeginOrder[]
+2025-12-24 16:56:33.366 [pool-3-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-0bd4b922-eb43-4b8a-9c59-225f3fa4b542] - RECEIVED message [OrderPlaced] Payload: OrderRequest[clientName=Alice, tableNumber=T1, instructions=no onions, items=[OrderItem[dishName=burger, quantity=1]]]
+2025-12-24 16:56:33.366 [pool-3-thread-4] INFO  [c.s.r.actors.RestaurantActor] [Actor:restaurant-0bd4b922-eb43-4b8a-9c59-225f3fa4b542] - Received order 1766591791229 from Alice
+2025-12-24 16:56:33.367 [pool-3-thread-1] INFO  [com.saf.core1.ActorCell] [Actor:] - RECEIVED message [CalculatePrice] Payload: OrderRequest[clientName=Alice, tableNumber=T1, instructions=no onions, items=[OrderItem[dishName=burger, quantity=1]]]
+2025-12-24 16:56:33.367 [pool-3-thread-7] INFO  [com.saf.core1.ActorCell] [Actor:worker-1-4e0793ec-f782-4bb2-9c2a-35ff7e569309] - RECEIVED message [CalculatePrice] Payload: OrderRequest[clientName=Alice, tableNumber=T1, instructions=no onions, items=[OrderItem[dishName=burger, quantity=1]]]
+2025-12-24 16:56:33.368 [pool-3-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-0bd4b922-eb43-4b8a-9c59-225f3fa4b542] - RECEIVED message [PriceCalculated] Payload: PriceCalculated[orderId=1766591791229, valid=true, total=12.5, missingItems=[]]
+2025-12-24 16:56:33.369 [pool-3-thread-9] INFO  [com.saf.core1.ActorCell] [Actor:client-1766591791229-7890b487-1d06-46e0-89c5-3cbab42d5d50] - RECEIVED message [AcknowledgeOrder] Payload: OrderAcknowledgement[orderId=1766591791229, status=PENDING_STOCK, message=Commande validée. Vérification du stock en cours., estimatedTotal=12.5, receipt=null]
+2025-12-24 16:56:33.386 [pool-3-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-0bd4b922-eb43-4b8a-9c59-225f3fa4b542] - RECEIVED message [StockResult] Payload: StockResult[orderId=1766591791229, available=true, missingItems=[]]
+2025-12-24 16:56:33.389 [pool-3-thread-2] INFO  [com.saf.core1.ActorCell] [Actor:treasury-9b43525a-a57f-41a3-9e96-932df8155f47] - RECEIVED message [RecordPayment] Payload: 12.5
+2025-12-24 16:56:33.390 [pool-3-thread-3] INFO  [com.saf.core1.ActorCell] [Actor:receipt-ba35b65a-5c0e-4dca-a583-e7272b028c42] - RECEIVED message [GenerateReceipt] Payload: OrderRequest[clientName=Alice, tableNumber=T1, instructions=no onions, items=[OrderItem[dishName=burger, quantity=1]]]
+2025-12-24 16:56:33.577 [pool-3-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-0bd4b922-eb43-4b8a-9c59-225f3fa4b542] - RECEIVED message [ReceiptReady] Payload: ReceiptDocument[orderId=1766591791229, clientName=Alice, tableNumber=T1, total=12.5, items=[OrderItem[dishName=burger, quantity=1]], issuedAt=2025-12-24T15:56:33.392319153Z, content==== SAF RESTAURANT RECEIPT ===
+Client: Alice
+Table: T1
+Total: 12.5 €
+Items:
+- burger x 1
+]
+2025-12-24 16:56:33.583 [pool-3-thread-9] INFO  [com.saf.core1.ActorCell] [Actor:client-1766591791229-7890b487-1d06-46e0-89c5-3cbab42d5d50] - RECEIVED message [AcknowledgeOrder] Payload: OrderAcknowledgement[orderId=1766591791229, status=COMPLETED, message=Commande servie et ticket généré., estimatedTotal=12.5, receipt==== SAF RESTAURANT RECEIPT ===
+Client: Alice
+Table: T1
+Total: 12.5 €
+Items:
+- burger x 1
+]
+2025-12-24 16:56:33.860 [main] INFO  [c.s.r.RestaurantInventoryIntegrationTest] [Actor:] - Starting RestaurantInventoryIntegrationTest using Java 21.0.7 with PID 186655 (started by cytech in /home/cytech/Restaurant-SAF/saf-restaurant)
+2025-12-24 16:56:33.860 [main] INFO  [c.s.r.RestaurantInventoryIntegrationTest] [Actor:] - No active profile set, falling back to 1 default profile: "default"
+2025-12-24 16:56:34.999 [main] INFO  [com.zaxxer.hikari.HikariDataSource] [Actor:] - HikariPool-2 - Starting...
+2025-12-24 16:56:35.001 [main] INFO  [com.zaxxer.hikari.pool.HikariPool] [Actor:] - HikariPool-2 - Added connection conn10: url=jdbc:h2:mem:restaurantdb user=SA
+2025-12-24 16:56:35.002 [main] INFO  [com.zaxxer.hikari.HikariDataSource] [Actor:] - HikariPool-2 - Start completed.
+2025-12-24 16:56:35.115 [main] INFO  [com.saf.core1.LocalActorSystem] [Actor:] - SAF ActorSystem started with 12 threads.
+2025-12-24 16:56:35.118 [main] INFO  [com.saf.core1.router.RoundRobinPool] [Actor:menu-router-441d4a8e-ef54-434c-9b00-d52e783ff928] - Starting Router Pool with 3 initial workers.
+2025-12-24 16:56:35.314 [main] WARN  [o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration] [Actor:] - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-12-24 16:56:35.564 [main] WARN  [o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger] [Actor:] - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-12-24 16:56:35.595 [pool-4-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-59d84b12-dc3b-48ea-b7b8-d5bb8b64565d] - RECEIVED message [PurgeStaleOrders] Payload: 1766591765595
+2025-12-24 16:56:35.596 [main] INFO  [c.s.r.RestaurantInventoryIntegrationTest] [Actor:] - Started RestaurantInventoryIntegrationTest in 1.829 seconds (process running for 10.04)
+2025-12-24 16:56:35.721 [pool-4-thread-5] INFO  [com.saf.core1.ActorCell] [Actor:client-1766591795252-406f34dd-11aa-4979-a0e3-d8eb849a6a0a] - RECEIVED message [BeginOrder] Payload: BeginOrder[]
+2025-12-24 16:56:35.721 [pool-4-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-59d84b12-dc3b-48ea-b7b8-d5bb8b64565d] - RECEIVED message [OrderPlaced] Payload: OrderRequest[clientName=Alice, tableNumber=T1, instructions=no onions, items=[OrderItem[dishName=burger, quantity=1]]]
+2025-12-24 16:56:35.722 [pool-4-thread-4] INFO  [c.s.r.actors.RestaurantActor] [Actor:restaurant-59d84b12-dc3b-48ea-b7b8-d5bb8b64565d] - Received order 1766591795252 from Alice
+2025-12-24 16:56:35.722 [pool-4-thread-1] INFO  [com.saf.core1.ActorCell] [Actor:menu-router-441d4a8e-ef54-434c-9b00-d52e783ff928] - RECEIVED message [CalculatePrice] Payload: OrderRequest[clientName=Alice, tableNumber=T1, instructions=no onions, items=[OrderItem[dishName=burger, quantity=1]]]
+2025-12-24 16:56:35.724 [pool-4-thread-1] INFO  [com.saf.core1.router.RoundRobinPool] [Actor:] - Pool size is now: 3
+2025-12-24 16:56:35.725 [pool-4-thread-6] INFO  [com.saf.core1.ActorCell] [Actor:worker-0-9e93353b-6502-4b95-855a-8dd67ca30d91] - RECEIVED message [CalculatePrice] Payload: OrderRequest[clientName=Alice, tableNumber=T1, instructions=no onions, items=[OrderItem[dishName=burger, quantity=1]]]
+2025-12-24 16:56:35.726 [pool-4-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-59d84b12-dc3b-48ea-b7b8-d5bb8b64565d] - RECEIVED message [PriceCalculated] Payload: PriceCalculated[orderId=1766591795252, valid=true, total=12.5, missingItems=[]]
+2025-12-24 16:56:35.726 [pool-4-thread-5] INFO  [com.saf.core1.ActorCell] [Actor:client-1766591795252-406f34dd-11aa-4979-a0e3-d8eb849a6a0a] - RECEIVED message [AcknowledgeOrder] Payload: OrderAcknowledgement[orderId=1766591795252, status=PENDING_STOCK, message=Commande validée. Vérification du stock en cours., estimatedTotal=12.5, receipt=null]
+2025-12-24 16:56:35.732 [pool-4-thread-4] INFO  [c.s.r.client.InventoryClient] [Actor:restaurant-59d84b12-dc3b-48ea-b7b8-d5bb8b64565d] - Stock check request sent to inventory for order 1766591795252
+2025-12-24 16:56:35.844 [SpringApplicationShutdownHook] INFO  [com.zaxxer.hikari.HikariDataSource] [Actor:] - HikariPool-1 - Shutdown initiated...
+2025-12-24 16:56:35.847 [SpringApplicationShutdownHook] INFO  [com.zaxxer.hikari.HikariDataSource] [Actor:] - HikariPool-1 - Shutdown completed.
+2025-12-24 16:56:35.861 [SpringApplicationShutdownHook] INFO  [com.zaxxer.hikari.HikariDataSource] [Actor:] - HikariPool-2 - Shutdown initiated...
+2025-12-24 16:56:35.862 [SpringApplicationShutdownHook] INFO  [com.zaxxer.hikari.HikariDataSource] [Actor:] - HikariPool-2 - Shutdown completed.
+2025-12-24 17:03:44.892 [main] INFO  [c.s.r.RestaurantStockKoIntegrationTest] [Actor:] - Starting RestaurantStockKoIntegrationTest using Java 21.0.7 with PID 192085 (started by cytech in /home/cytech/Restaurant-SAF/saf-restaurant)
+2025-12-24 17:03:44.897 [main] INFO  [c.s.r.RestaurantStockKoIntegrationTest] [Actor:] - No active profile set, falling back to 1 default profile: "default"
+2025-12-24 17:03:47.220 [main] INFO  [com.zaxxer.hikari.HikariDataSource] [Actor:] - HikariPool-1 - Starting...
+2025-12-24 17:03:47.414 [main] INFO  [com.zaxxer.hikari.pool.HikariPool] [Actor:] - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:restaurantdb user=SA
+2025-12-24 17:03:47.416 [main] INFO  [com.zaxxer.hikari.HikariDataSource] [Actor:] - HikariPool-1 - Start completed.
+2025-12-24 17:03:48.598 [main] INFO  [com.saf.core1.LocalActorSystem] [Actor:] - SAF ActorSystem started with 12 threads.
+2025-12-24 17:03:48.607 [main] INFO  [com.saf.core1.router.RoundRobinPool] [Actor:menu-router-5e34a122-2be6-4061-b700-f5be79f3711f] - Starting Router Pool with 3 initial workers.
+2025-12-24 17:03:49.519 [main] WARN  [o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration] [Actor:] - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-12-24 17:03:49.997 [main] WARN  [o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger] [Actor:] - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-12-24 17:03:50.288 [main] INFO  [c.s.r.RestaurantStockKoIntegrationTest] [Actor:] - Started RestaurantStockKoIntegrationTest in 5.998 seconds (process running for 7.442)
+2025-12-24 17:03:50.290 [pool-3-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-069a71ec-8344-4bad-975d-45256b6c7bf6] - RECEIVED message [PurgeStaleOrders] Payload: 1766592200290
+2025-12-24 17:03:51.273 [pool-3-thread-5] INFO  [com.saf.core1.ActorCell] [Actor:client-1766592229461-41c9b5f4-6393-437d-a8cd-a602fb0d6e6a] - RECEIVED message [BeginOrder] Payload: BeginOrder[]
+2025-12-24 17:03:51.274 [pool-3-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-069a71ec-8344-4bad-975d-45256b6c7bf6] - RECEIVED message [OrderPlaced] Payload: OrderRequest[clientName=Carol, tableNumber=T3, instructions=null, items=[OrderItem[dishName=unknown-item, quantity=1]]]
+2025-12-24 17:03:51.281 [pool-3-thread-4] INFO  [c.s.r.actors.RestaurantActor] [Actor:restaurant-069a71ec-8344-4bad-975d-45256b6c7bf6] - Received order 1766592229461 from Carol
+2025-12-24 17:03:51.282 [pool-3-thread-1] INFO  [com.saf.core1.ActorCell] [Actor:menu-router-5e34a122-2be6-4061-b700-f5be79f3711f] - RECEIVED message [CalculatePrice] Payload: OrderRequest[clientName=Carol, tableNumber=T3, instructions=null, items=[OrderItem[dishName=unknown-item, quantity=1]]]
+2025-12-24 17:03:51.286 [pool-3-thread-1] INFO  [com.saf.core1.router.RoundRobinPool] [Actor:] - Pool size is now: 3
+2025-12-24 17:03:51.287 [pool-3-thread-6] INFO  [com.saf.core1.ActorCell] [Actor:worker-0-cd1ea629-493e-4205-9b76-29c1fb8d68b0] - RECEIVED message [CalculatePrice] Payload: OrderRequest[clientName=Carol, tableNumber=T3, instructions=null, items=[OrderItem[dishName=unknown-item, quantity=1]]]
+2025-12-24 17:03:51.288 [pool-3-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-069a71ec-8344-4bad-975d-45256b6c7bf6] - RECEIVED message [PriceCalculated] Payload: PriceCalculated[orderId=1766592229461, valid=true, total=0, missingItems=[unknown-item]]
+2025-12-24 17:03:51.292 [pool-3-thread-5] INFO  [com.saf.core1.ActorCell] [Actor:client-1766592229461-41c9b5f4-6393-437d-a8cd-a602fb0d6e6a] - RECEIVED message [AcknowledgeOrder] Payload: OrderAcknowledgement[orderId=1766592229461, status=PENDING_STOCK, message=Commande en attente: articles inconnus (unknown-item)., estimatedTotal=0, receipt=null]
+2025-12-24 17:03:51.383 [pool-3-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-069a71ec-8344-4bad-975d-45256b6c7bf6] - RECEIVED message [StockResult] Payload: StockResult[orderId=1766592229461, available=false, missingItems=[unknown-item]]
+2025-12-24 17:03:51.387 [pool-3-thread-5] INFO  [com.saf.core1.ActorCell] [Actor:client-1766592229461-41c9b5f4-6393-437d-a8cd-a602fb0d6e6a] - RECEIVED message [AcknowledgeOrder] Payload: OrderAcknowledgement[orderId=1766592229461, status=REJECTED, message=Articles inconnus: unknown-item, estimatedTotal=0, receipt=null]
+2025-12-24 17:03:51.586 [pool-3-thread-9] INFO  [com.saf.core1.ActorCell] [Actor:client-1766592229462-8a55c355-057b-4587-9a1d-224213c91ae7] - RECEIVED message [BeginOrder] Payload: BeginOrder[]
+2025-12-24 17:03:51.587 [pool-3-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-069a71ec-8344-4bad-975d-45256b6c7bf6] - RECEIVED message [OrderPlaced] Payload: OrderRequest[clientName=Alice, tableNumber=T1, instructions=no onions, items=[OrderItem[dishName=burger, quantity=1]]]
+2025-12-24 17:03:51.588 [pool-3-thread-4] INFO  [c.s.r.actors.RestaurantActor] [Actor:restaurant-069a71ec-8344-4bad-975d-45256b6c7bf6] - Received order 1766592229462 from Alice
+2025-12-24 17:03:51.588 [pool-3-thread-1] INFO  [com.saf.core1.ActorCell] [Actor:] - RECEIVED message [CalculatePrice] Payload: OrderRequest[clientName=Alice, tableNumber=T1, instructions=no onions, items=[OrderItem[dishName=burger, quantity=1]]]
+2025-12-24 17:03:51.589 [pool-3-thread-7] INFO  [com.saf.core1.ActorCell] [Actor:worker-1-c320735e-4031-42b2-b239-56fae85e5bef] - RECEIVED message [CalculatePrice] Payload: OrderRequest[clientName=Alice, tableNumber=T1, instructions=no onions, items=[OrderItem[dishName=burger, quantity=1]]]
+2025-12-24 17:03:51.590 [pool-3-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-069a71ec-8344-4bad-975d-45256b6c7bf6] - RECEIVED message [PriceCalculated] Payload: PriceCalculated[orderId=1766592229462, valid=true, total=12.5, missingItems=[]]
+2025-12-24 17:03:51.591 [pool-3-thread-9] INFO  [com.saf.core1.ActorCell] [Actor:client-1766592229462-8a55c355-057b-4587-9a1d-224213c91ae7] - RECEIVED message [AcknowledgeOrder] Payload: OrderAcknowledgement[orderId=1766592229462, status=PENDING_STOCK, message=Commande validée. Vérification du stock en cours., estimatedTotal=12.5, receipt=null]
+2025-12-24 17:03:51.606 [pool-3-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-069a71ec-8344-4bad-975d-45256b6c7bf6] - RECEIVED message [StockResult] Payload: StockResult[orderId=1766592229462, available=true, missingItems=[]]
+2025-12-24 17:03:51.607 [pool-3-thread-2] INFO  [com.saf.core1.ActorCell] [Actor:treasury-8be8a2c1-744c-4ecb-8c4b-2c4a6cf3a8a9] - RECEIVED message [RecordPayment] Payload: 12.5
+2025-12-24 17:03:51.608 [pool-3-thread-3] INFO  [com.saf.core1.ActorCell] [Actor:receipt-dbc48c70-360b-44b4-9ff3-1d6f139dfbfb] - RECEIVED message [GenerateReceipt] Payload: OrderRequest[clientName=Alice, tableNumber=T1, instructions=no onions, items=[OrderItem[dishName=burger, quantity=1]]]
+2025-12-24 17:03:51.737 [pool-3-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-069a71ec-8344-4bad-975d-45256b6c7bf6] - RECEIVED message [ReceiptReady] Payload: ReceiptDocument[orderId=1766592229462, clientName=Alice, tableNumber=T1, total=12.5, items=[OrderItem[dishName=burger, quantity=1]], issuedAt=2025-12-24T16:03:51.611088455Z, content==== SAF RESTAURANT RECEIPT ===
+Client: Alice
+Table: T1
+Total: 12.5 €
+Items:
+- burger x 1
+]
+2025-12-24 17:03:51.743 [pool-3-thread-9] INFO  [com.saf.core1.ActorCell] [Actor:client-1766592229462-8a55c355-057b-4587-9a1d-224213c91ae7] - RECEIVED message [AcknowledgeOrder] Payload: OrderAcknowledgement[orderId=1766592229462, status=COMPLETED, message=Commande servie et ticket généré., estimatedTotal=12.5, receipt==== SAF RESTAURANT RECEIPT ===
+Client: Alice
+Table: T1
+Total: 12.5 €
+Items:
+- burger x 1
+]
+2025-12-24 17:03:51.993 [main] INFO  [c.s.r.RestaurantInventoryIntegrationTest] [Actor:] - Starting RestaurantInventoryIntegrationTest using Java 21.0.7 with PID 192085 (started by cytech in /home/cytech/Restaurant-SAF/saf-restaurant)
+2025-12-24 17:03:51.994 [main] INFO  [c.s.r.RestaurantInventoryIntegrationTest] [Actor:] - No active profile set, falling back to 1 default profile: "default"
+2025-12-24 17:03:53.292 [main] INFO  [com.zaxxer.hikari.HikariDataSource] [Actor:] - HikariPool-2 - Starting...
+2025-12-24 17:03:53.294 [main] INFO  [com.zaxxer.hikari.pool.HikariPool] [Actor:] - HikariPool-2 - Added connection conn10: url=jdbc:h2:mem:restaurantdb user=SA
+2025-12-24 17:03:53.295 [main] INFO  [com.zaxxer.hikari.HikariDataSource] [Actor:] - HikariPool-2 - Start completed.
+2025-12-24 17:03:53.498 [main] INFO  [com.saf.core1.LocalActorSystem] [Actor:] - SAF ActorSystem started with 12 threads.
+2025-12-24 17:03:53.502 [main] INFO  [com.saf.core1.router.RoundRobinPool] [Actor:menu-router-2ac3e889-1950-4eb6-9ffa-018aa746a01b] - Starting Router Pool with 3 initial workers.
+2025-12-24 17:03:53.809 [main] WARN  [o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration] [Actor:] - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-12-24 17:03:54.202 [main] WARN  [o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger] [Actor:] - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-12-24 17:03:54.235 [pool-4-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-1fc3a2e6-7a84-4b3a-a9ab-f08c0e086525] - RECEIVED message [PurgeStaleOrders] Payload: 1766592204235
+2025-12-24 17:03:54.238 [main] INFO  [c.s.r.RestaurantInventoryIntegrationTest] [Actor:] - Started RestaurantInventoryIntegrationTest in 2.311 seconds (process running for 11.392)
+2025-12-24 17:03:54.465 [pool-4-thread-5] INFO  [com.saf.core1.ActorCell] [Actor:client-1766592233745-5b6b8c22-044f-41c2-978d-ca8a0d8ab9ed] - RECEIVED message [BeginOrder] Payload: BeginOrder[]
+2025-12-24 17:03:54.466 [pool-4-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-1fc3a2e6-7a84-4b3a-a9ab-f08c0e086525] - RECEIVED message [OrderPlaced] Payload: OrderRequest[clientName=Alice, tableNumber=T1, instructions=no onions, items=[OrderItem[dishName=burger, quantity=1]]]
+2025-12-24 17:03:54.467 [pool-4-thread-4] INFO  [c.s.r.actors.RestaurantActor] [Actor:restaurant-1fc3a2e6-7a84-4b3a-a9ab-f08c0e086525] - Received order 1766592233745 from Alice
+2025-12-24 17:03:54.467 [pool-4-thread-1] INFO  [com.saf.core1.ActorCell] [Actor:menu-router-2ac3e889-1950-4eb6-9ffa-018aa746a01b] - RECEIVED message [CalculatePrice] Payload: OrderRequest[clientName=Alice, tableNumber=T1, instructions=no onions, items=[OrderItem[dishName=burger, quantity=1]]]
+2025-12-24 17:03:54.470 [pool-4-thread-1] INFO  [com.saf.core1.router.RoundRobinPool] [Actor:] - Pool size is now: 3
+2025-12-24 17:03:54.470 [pool-4-thread-6] INFO  [com.saf.core1.ActorCell] [Actor:worker-0-22587fc0-9780-42ee-81e5-f5874e7ad823] - RECEIVED message [CalculatePrice] Payload: OrderRequest[clientName=Alice, tableNumber=T1, instructions=no onions, items=[OrderItem[dishName=burger, quantity=1]]]
+2025-12-24 17:03:54.471 [pool-4-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-1fc3a2e6-7a84-4b3a-a9ab-f08c0e086525] - RECEIVED message [PriceCalculated] Payload: PriceCalculated[orderId=1766592233745, valid=true, total=12.5, missingItems=[]]
+2025-12-24 17:03:54.471 [pool-4-thread-5] INFO  [com.saf.core1.ActorCell] [Actor:client-1766592233745-5b6b8c22-044f-41c2-978d-ca8a0d8ab9ed] - RECEIVED message [AcknowledgeOrder] Payload: OrderAcknowledgement[orderId=1766592233745, status=PENDING_STOCK, message=Commande validée. Vérification du stock en cours., estimatedTotal=12.5, receipt=null]
+2025-12-24 17:03:54.481 [pool-4-thread-4] INFO  [c.s.r.client.InventoryClient] [Actor:restaurant-1fc3a2e6-7a84-4b3a-a9ab-f08c0e086525] - Stock check request sent to inventory for order 1766592233745
+2025-12-24 17:03:54.556 [SpringApplicationShutdownHook] INFO  [com.zaxxer.hikari.HikariDataSource] [Actor:] - HikariPool-1 - Shutdown initiated...
+2025-12-24 17:03:54.560 [SpringApplicationShutdownHook] INFO  [com.zaxxer.hikari.HikariDataSource] [Actor:] - HikariPool-1 - Shutdown completed.
+2025-12-24 17:03:54.586 [SpringApplicationShutdownHook] INFO  [com.zaxxer.hikari.HikariDataSource] [Actor:] - HikariPool-2 - Shutdown initiated...
+2025-12-24 17:03:54.588 [SpringApplicationShutdownHook] INFO  [com.zaxxer.hikari.HikariDataSource] [Actor:] - HikariPool-2 - Shutdown completed.
+2025-12-24 17:07:32.014 [main] INFO  [c.s.r.RestaurantStockKoIntegrationTest] [Actor:] - Starting RestaurantStockKoIntegrationTest using Java 21.0.7 with PID 195266 (started by cytech in /home/cytech/Restaurant-SAF/saf-restaurant)
+2025-12-24 17:07:32.015 [main] INFO  [c.s.r.RestaurantStockKoIntegrationTest] [Actor:] - No active profile set, falling back to 1 default profile: "default"
+2025-12-24 17:07:34.438 [main] INFO  [com.zaxxer.hikari.HikariDataSource] [Actor:] - HikariPool-1 - Starting...
+2025-12-24 17:07:34.754 [main] INFO  [com.zaxxer.hikari.pool.HikariPool] [Actor:] - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:restaurantdb user=SA
+2025-12-24 17:07:34.757 [main] INFO  [com.zaxxer.hikari.HikariDataSource] [Actor:] - HikariPool-1 - Start completed.
+2025-12-24 17:07:35.843 [main] INFO  [com.saf.core1.LocalActorSystem] [Actor:] - SAF ActorSystem started with 12 threads.
+2025-12-24 17:07:35.849 [main] INFO  [com.saf.core1.router.RoundRobinPool] [Actor:menu-router-9147136c-db52-4276-aa84-39bde593e8ff] - Starting Router Pool with 3 initial workers.
+2025-12-24 17:07:36.935 [main] WARN  [o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration] [Actor:] - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-12-24 17:07:37.440 [main] WARN  [o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger] [Actor:] - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-12-24 17:07:37.728 [main] INFO  [c.s.r.RestaurantStockKoIntegrationTest] [Actor:] - Started RestaurantStockKoIntegrationTest in 6.293 seconds (process running for 7.548)
+2025-12-24 17:07:37.733 [pool-3-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-3e7ba7a5-41f0-448c-80a8-cd3c9db57570] - RECEIVED message [PurgeStaleOrders] Payload: 1766592427732
+2025-12-24 17:07:38.700 [pool-3-thread-5] INFO  [com.saf.core1.ActorCell] [Actor:client-1766592456842-f414d542-4241-4041-a0f9-582fa30204bc] - RECEIVED message [BeginOrder] Payload: BeginOrder[]
+2025-12-24 17:07:38.703 [pool-3-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-3e7ba7a5-41f0-448c-80a8-cd3c9db57570] - RECEIVED message [OrderPlaced] Payload: OrderRequest[clientName=Carol, tableNumber=T3, instructions=null, items=[OrderItem[dishName=unknown-item, quantity=1]]]
+2025-12-24 17:07:38.711 [pool-3-thread-4] INFO  [c.s.r.actors.RestaurantActor] [Actor:restaurant-3e7ba7a5-41f0-448c-80a8-cd3c9db57570] - Received order 1766592456842 from Carol
+2025-12-24 17:07:38.713 [pool-3-thread-1] INFO  [com.saf.core1.ActorCell] [Actor:menu-router-9147136c-db52-4276-aa84-39bde593e8ff] - RECEIVED message [CalculatePrice] Payload: OrderRequest[clientName=Carol, tableNumber=T3, instructions=null, items=[OrderItem[dishName=unknown-item, quantity=1]]]
+2025-12-24 17:07:38.717 [pool-3-thread-1] INFO  [com.saf.core1.router.RoundRobinPool] [Actor:] - Pool size is now: 3
+2025-12-24 17:07:38.718 [pool-3-thread-6] INFO  [com.saf.core1.ActorCell] [Actor:worker-0-50c79abc-215d-4edd-9941-e46ba00709d6] - RECEIVED message [CalculatePrice] Payload: OrderRequest[clientName=Carol, tableNumber=T3, instructions=null, items=[OrderItem[dishName=unknown-item, quantity=1]]]
+2025-12-24 17:07:38.720 [pool-3-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-3e7ba7a5-41f0-448c-80a8-cd3c9db57570] - RECEIVED message [PriceCalculated] Payload: PriceCalculated[orderId=1766592456842, valid=true, total=0, missingItems=[unknown-item]]
+2025-12-24 17:07:38.725 [pool-3-thread-5] INFO  [com.saf.core1.ActorCell] [Actor:client-1766592456842-f414d542-4241-4041-a0f9-582fa30204bc] - RECEIVED message [AcknowledgeOrder] Payload: OrderAcknowledgement[orderId=1766592456842, status=PENDING_STOCK, message=Commande en attente: articles inconnus (unknown-item)., estimatedTotal=0, receipt=null]
+2025-12-24 17:07:38.831 [pool-3-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-3e7ba7a5-41f0-448c-80a8-cd3c9db57570] - RECEIVED message [StockResult] Payload: StockResult[orderId=1766592456842, available=false, missingItems=[unknown-item]]
+2025-12-24 17:07:38.835 [pool-3-thread-5] INFO  [com.saf.core1.ActorCell] [Actor:client-1766592456842-f414d542-4241-4041-a0f9-582fa30204bc] - RECEIVED message [AcknowledgeOrder] Payload: OrderAcknowledgement[orderId=1766592456842, status=REJECTED, message=Articles inconnus: unknown-item, estimatedTotal=0, receipt=null]
+2025-12-24 17:07:39.092 [pool-3-thread-9] INFO  [com.saf.core1.ActorCell] [Actor:client-1766592456843-dc6b17e3-e50d-4593-9a59-21c01bcb0e11] - RECEIVED message [BeginOrder] Payload: BeginOrder[]
+2025-12-24 17:07:39.092 [pool-3-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-3e7ba7a5-41f0-448c-80a8-cd3c9db57570] - RECEIVED message [OrderPlaced] Payload: OrderRequest[clientName=Alice, tableNumber=T1, instructions=no onions, items=[OrderItem[dishName=burger, quantity=1]]]
+2025-12-24 17:07:39.093 [pool-3-thread-4] INFO  [c.s.r.actors.RestaurantActor] [Actor:restaurant-3e7ba7a5-41f0-448c-80a8-cd3c9db57570] - Received order 1766592456843 from Alice
+2025-12-24 17:07:39.093 [pool-3-thread-1] INFO  [com.saf.core1.ActorCell] [Actor:] - RECEIVED message [CalculatePrice] Payload: OrderRequest[clientName=Alice, tableNumber=T1, instructions=no onions, items=[OrderItem[dishName=burger, quantity=1]]]
+2025-12-24 17:07:39.094 [pool-3-thread-7] INFO  [com.saf.core1.ActorCell] [Actor:worker-1-f8e72da5-ff8b-41f0-a27a-e457b060942b] - RECEIVED message [CalculatePrice] Payload: OrderRequest[clientName=Alice, tableNumber=T1, instructions=no onions, items=[OrderItem[dishName=burger, quantity=1]]]
+2025-12-24 17:07:39.095 [pool-3-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-3e7ba7a5-41f0-448c-80a8-cd3c9db57570] - RECEIVED message [PriceCalculated] Payload: PriceCalculated[orderId=1766592456843, valid=true, total=12.5, missingItems=[]]
+2025-12-24 17:07:39.096 [pool-3-thread-9] INFO  [com.saf.core1.ActorCell] [Actor:client-1766592456843-dc6b17e3-e50d-4593-9a59-21c01bcb0e11] - RECEIVED message [AcknowledgeOrder] Payload: OrderAcknowledgement[orderId=1766592456843, status=PENDING_STOCK, message=Commande validée. Vérification du stock en cours., estimatedTotal=12.5, receipt=null]
+2025-12-24 17:07:39.111 [pool-3-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-3e7ba7a5-41f0-448c-80a8-cd3c9db57570] - RECEIVED message [StockResult] Payload: StockResult[orderId=1766592456843, available=true, missingItems=[]]
+2025-12-24 17:07:39.112 [pool-3-thread-2] INFO  [com.saf.core1.ActorCell] [Actor:treasury-bcb6b235-dd68-480b-9dc3-0e476fa00e47] - RECEIVED message [RecordPayment] Payload: 12.5
+2025-12-24 17:07:39.112 [pool-3-thread-3] INFO  [com.saf.core1.ActorCell] [Actor:receipt-457365a5-3c6c-4b66-ab9e-2fde899447e6] - RECEIVED message [GenerateReceipt] Payload: OrderRequest[clientName=Alice, tableNumber=T1, instructions=no onions, items=[OrderItem[dishName=burger, quantity=1]]]
+2025-12-24 17:07:39.229 [pool-3-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-3e7ba7a5-41f0-448c-80a8-cd3c9db57570] - RECEIVED message [ReceiptReady] Payload: ReceiptDocument[orderId=1766592456843, clientName=Alice, tableNumber=T1, total=12.5, items=[OrderItem[dishName=burger, quantity=1]], issuedAt=2025-12-24T16:07:39.114049469Z, content==== SAF RESTAURANT RECEIPT ===
+Client: Alice
+Table: T1
+Total: 12.5 €
+Items:
+- burger x 1
+]
+2025-12-24 17:07:39.232 [pool-3-thread-9] INFO  [com.saf.core1.ActorCell] [Actor:client-1766592456843-dc6b17e3-e50d-4593-9a59-21c01bcb0e11] - RECEIVED message [AcknowledgeOrder] Payload: OrderAcknowledgement[orderId=1766592456843, status=COMPLETED, message=Commande servie et ticket généré., estimatedTotal=12.5, receipt==== SAF RESTAURANT RECEIPT ===
+Client: Alice
+Table: T1
+Total: 12.5 €
+Items:
+- burger x 1
+]
+2025-12-24 17:07:39.509 [main] INFO  [c.s.r.RestaurantInventoryIntegrationTest] [Actor:] - Starting RestaurantInventoryIntegrationTest using Java 21.0.7 with PID 195266 (started by cytech in /home/cytech/Restaurant-SAF/saf-restaurant)
+2025-12-24 17:07:39.509 [main] INFO  [c.s.r.RestaurantInventoryIntegrationTest] [Actor:] - No active profile set, falling back to 1 default profile: "default"
+2025-12-24 17:07:40.486 [main] INFO  [com.zaxxer.hikari.HikariDataSource] [Actor:] - HikariPool-2 - Starting...
+2025-12-24 17:07:40.490 [main] INFO  [com.zaxxer.hikari.pool.HikariPool] [Actor:] - HikariPool-2 - Added connection conn10: url=jdbc:h2:mem:restaurantdb user=SA
+2025-12-24 17:07:40.492 [main] INFO  [com.zaxxer.hikari.HikariDataSource] [Actor:] - HikariPool-2 - Start completed.
+2025-12-24 17:07:40.779 [main] INFO  [com.saf.core1.LocalActorSystem] [Actor:] - SAF ActorSystem started with 12 threads.
+2025-12-24 17:07:40.781 [main] INFO  [com.saf.core1.router.RoundRobinPool] [Actor:menu-router-64235657-706f-4179-b368-559912411976] - Starting Router Pool with 3 initial workers.
+2025-12-24 17:07:40.933 [main] WARN  [o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration] [Actor:] - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-12-24 17:07:41.179 [main] WARN  [o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger] [Actor:] - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-12-24 17:07:41.207 [pool-4-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-9baae7ee-7a99-469a-8b67-2532c426455f] - RECEIVED message [PurgeStaleOrders] Payload: 1766592431207
+2025-12-24 17:07:41.208 [main] INFO  [c.s.r.RestaurantInventoryIntegrationTest] [Actor:] - Started RestaurantInventoryIntegrationTest in 1.776 seconds (process running for 11.028)
+2025-12-24 17:07:41.329 [pool-4-thread-5] INFO  [com.saf.core1.ActorCell] [Actor:client-1766592460890-97e9316e-f6d0-4084-912c-844fa20aab1b] - RECEIVED message [BeginOrder] Payload: BeginOrder[]
+2025-12-24 17:07:41.329 [pool-4-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-9baae7ee-7a99-469a-8b67-2532c426455f] - RECEIVED message [OrderPlaced] Payload: OrderRequest[clientName=Alice, tableNumber=T1, instructions=no onions, items=[OrderItem[dishName=burger, quantity=1]]]
+2025-12-24 17:07:41.330 [pool-4-thread-4] INFO  [c.s.r.actors.RestaurantActor] [Actor:restaurant-9baae7ee-7a99-469a-8b67-2532c426455f] - Received order 1766592460890 from Alice
+2025-12-24 17:07:41.330 [pool-4-thread-1] INFO  [com.saf.core1.ActorCell] [Actor:menu-router-64235657-706f-4179-b368-559912411976] - RECEIVED message [CalculatePrice] Payload: OrderRequest[clientName=Alice, tableNumber=T1, instructions=no onions, items=[OrderItem[dishName=burger, quantity=1]]]
+2025-12-24 17:07:41.332 [pool-4-thread-1] INFO  [com.saf.core1.router.RoundRobinPool] [Actor:] - Pool size is now: 3
+2025-12-24 17:07:41.333 [pool-4-thread-6] INFO  [com.saf.core1.ActorCell] [Actor:worker-0-c4cc8ba8-0128-4904-8e5e-8b74c097ce43] - RECEIVED message [CalculatePrice] Payload: OrderRequest[clientName=Alice, tableNumber=T1, instructions=no onions, items=[OrderItem[dishName=burger, quantity=1]]]
+2025-12-24 17:07:41.333 [pool-4-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-9baae7ee-7a99-469a-8b67-2532c426455f] - RECEIVED message [PriceCalculated] Payload: PriceCalculated[orderId=1766592460890, valid=true, total=12.5, missingItems=[]]
+2025-12-24 17:07:41.334 [pool-4-thread-5] INFO  [com.saf.core1.ActorCell] [Actor:client-1766592460890-97e9316e-f6d0-4084-912c-844fa20aab1b] - RECEIVED message [AcknowledgeOrder] Payload: OrderAcknowledgement[orderId=1766592460890, status=PENDING_STOCK, message=Commande validée. Vérification du stock en cours., estimatedTotal=12.5, receipt=null]
+2025-12-24 17:07:41.344 [pool-4-thread-4] INFO  [c.s.r.client.InventoryClient] [Actor:restaurant-9baae7ee-7a99-469a-8b67-2532c426455f] - Stock check request sent to inventory for order 1766592460890
+2025-12-24 17:07:41.416 [SpringApplicationShutdownHook] INFO  [com.zaxxer.hikari.HikariDataSource] [Actor:] - HikariPool-1 - Shutdown initiated...
+2025-12-24 17:07:41.421 [SpringApplicationShutdownHook] INFO  [com.zaxxer.hikari.HikariDataSource] [Actor:] - HikariPool-1 - Shutdown completed.
+2025-12-24 17:07:41.436 [SpringApplicationShutdownHook] INFO  [com.zaxxer.hikari.HikariDataSource] [Actor:] - HikariPool-2 - Shutdown initiated...
+2025-12-24 17:07:41.437 [SpringApplicationShutdownHook] INFO  [com.zaxxer.hikari.HikariDataSource] [Actor:] - HikariPool-2 - Shutdown completed.
+2025-12-24 17:10:58.736 [main] INFO  [c.s.r.RestaurantStockKoIntegrationTest] [Actor:] - Starting RestaurantStockKoIntegrationTest using Java 21.0.7 with PID 198314 (started by cytech in /home/cytech/Restaurant-SAF/saf-restaurant)
+2025-12-24 17:10:58.739 [main] INFO  [c.s.r.RestaurantStockKoIntegrationTest] [Actor:] - No active profile set, falling back to 1 default profile: "default"
+2025-12-24 17:11:01.301 [main] INFO  [com.zaxxer.hikari.HikariDataSource] [Actor:] - HikariPool-1 - Starting...
+2025-12-24 17:11:01.482 [main] INFO  [com.zaxxer.hikari.pool.HikariPool] [Actor:] - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:restaurantdb user=SA
+2025-12-24 17:11:01.484 [main] INFO  [com.zaxxer.hikari.HikariDataSource] [Actor:] - HikariPool-1 - Start completed.
+2025-12-24 17:11:02.434 [main] INFO  [com.saf.core1.LocalActorSystem] [Actor:] - SAF ActorSystem started with 12 threads.
+2025-12-24 17:11:02.443 [main] INFO  [com.saf.core1.router.RoundRobinPool] [Actor:menu-router-0a912b7d-fc0e-41f8-86cd-ea7a93f0b1a8] - Starting Router Pool with 3 initial workers.
+2025-12-24 17:11:03.624 [main] WARN  [o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration] [Actor:] - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-12-24 17:11:04.331 [main] WARN  [o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger] [Actor:] - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-12-24 17:11:04.646 [main] INFO  [c.s.r.RestaurantStockKoIntegrationTest] [Actor:] - Started RestaurantStockKoIntegrationTest in 6.413 seconds (process running for 7.445)
+2025-12-24 17:11:04.650 [pool-3-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-03473c4a-a258-4efd-8f45-3caf0239bbcf] - RECEIVED message [PurgeStaleOrders] Payload: 1766592634650
+2025-12-24 17:11:05.467 [pool-3-thread-5] INFO  [com.saf.core1.ActorCell] [Actor:client-1766592663543-5d821c82-ff5f-47e6-adcf-be010a3ea151] - RECEIVED message [BeginOrder] Payload: BeginOrder[]
+2025-12-24 17:11:05.469 [pool-3-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-03473c4a-a258-4efd-8f45-3caf0239bbcf] - RECEIVED message [OrderPlaced] Payload: OrderRequest[clientName=Carol, tableNumber=T3, instructions=null, items=[OrderItem[dishName=unknown-item, quantity=1]]]
+2025-12-24 17:11:05.479 [pool-3-thread-4] INFO  [c.s.r.actors.RestaurantActor] [Actor:restaurant-03473c4a-a258-4efd-8f45-3caf0239bbcf] - Received order 1766592663543 from Carol
+2025-12-24 17:11:05.480 [pool-3-thread-1] INFO  [com.saf.core1.ActorCell] [Actor:menu-router-0a912b7d-fc0e-41f8-86cd-ea7a93f0b1a8] - RECEIVED message [CalculatePrice] Payload: OrderRequest[clientName=Carol, tableNumber=T3, instructions=null, items=[OrderItem[dishName=unknown-item, quantity=1]]]
+2025-12-24 17:11:05.483 [pool-3-thread-1] INFO  [com.saf.core1.router.RoundRobinPool] [Actor:] - Pool size is now: 3
+2025-12-24 17:11:05.485 [pool-3-thread-6] INFO  [com.saf.core1.ActorCell] [Actor:worker-0-44f5f954-abe2-4172-a6ec-fde51c812ce8] - RECEIVED message [CalculatePrice] Payload: OrderRequest[clientName=Carol, tableNumber=T3, instructions=null, items=[OrderItem[dishName=unknown-item, quantity=1]]]
+2025-12-24 17:11:05.486 [pool-3-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-03473c4a-a258-4efd-8f45-3caf0239bbcf] - RECEIVED message [PriceCalculated] Payload: PriceCalculated[orderId=1766592663543, valid=true, total=0, missingItems=[unknown-item]]
+2025-12-24 17:11:05.492 [pool-3-thread-5] INFO  [com.saf.core1.ActorCell] [Actor:client-1766592663543-5d821c82-ff5f-47e6-adcf-be010a3ea151] - RECEIVED message [AcknowledgeOrder] Payload: OrderAcknowledgement[orderId=1766592663543, status=PENDING_STOCK, message=Commande en attente: articles inconnus (unknown-item)., estimatedTotal=0, receipt=null]
+2025-12-24 17:11:05.580 [pool-3-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-03473c4a-a258-4efd-8f45-3caf0239bbcf] - RECEIVED message [StockResult] Payload: StockResult[orderId=1766592663543, available=false, missingItems=[unknown-item]]
+2025-12-24 17:11:05.585 [pool-3-thread-5] INFO  [com.saf.core1.ActorCell] [Actor:client-1766592663543-5d821c82-ff5f-47e6-adcf-be010a3ea151] - RECEIVED message [AcknowledgeOrder] Payload: OrderAcknowledgement[orderId=1766592663543, status=REJECTED, message=Articles inconnus: unknown-item, estimatedTotal=0, receipt=null]
+2025-12-24 17:11:05.793 [pool-3-thread-9] INFO  [com.saf.core1.ActorCell] [Actor:client-1766592663544-a54089bc-fc70-4f4d-b87d-c5b7e0c66cee] - RECEIVED message [BeginOrder] Payload: BeginOrder[]
+2025-12-24 17:11:05.794 [pool-3-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-03473c4a-a258-4efd-8f45-3caf0239bbcf] - RECEIVED message [OrderPlaced] Payload: OrderRequest[clientName=Alice, tableNumber=T1, instructions=no onions, items=[OrderItem[dishName=burger, quantity=1]]]
+2025-12-24 17:11:05.795 [pool-3-thread-4] INFO  [c.s.r.actors.RestaurantActor] [Actor:restaurant-03473c4a-a258-4efd-8f45-3caf0239bbcf] - Received order 1766592663544 from Alice
+2025-12-24 17:11:05.795 [pool-3-thread-1] INFO  [com.saf.core1.ActorCell] [Actor:] - RECEIVED message [CalculatePrice] Payload: OrderRequest[clientName=Alice, tableNumber=T1, instructions=no onions, items=[OrderItem[dishName=burger, quantity=1]]]
+2025-12-24 17:11:05.796 [pool-3-thread-7] INFO  [com.saf.core1.ActorCell] [Actor:worker-1-2b595fbd-7482-4cd2-9ce4-21763976b39c] - RECEIVED message [CalculatePrice] Payload: OrderRequest[clientName=Alice, tableNumber=T1, instructions=no onions, items=[OrderItem[dishName=burger, quantity=1]]]
+2025-12-24 17:11:05.797 [pool-3-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-03473c4a-a258-4efd-8f45-3caf0239bbcf] - RECEIVED message [PriceCalculated] Payload: PriceCalculated[orderId=1766592663544, valid=true, total=12.5, missingItems=[]]
+2025-12-24 17:11:05.798 [pool-3-thread-9] INFO  [com.saf.core1.ActorCell] [Actor:client-1766592663544-a54089bc-fc70-4f4d-b87d-c5b7e0c66cee] - RECEIVED message [AcknowledgeOrder] Payload: OrderAcknowledgement[orderId=1766592663544, status=PENDING_STOCK, message=Commande validée. Vérification du stock en cours., estimatedTotal=12.5, receipt=null]
+2025-12-24 17:11:05.816 [pool-3-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-03473c4a-a258-4efd-8f45-3caf0239bbcf] - RECEIVED message [StockResult] Payload: StockResult[orderId=1766592663544, available=true, missingItems=[]]
+2025-12-24 17:11:05.818 [pool-3-thread-2] INFO  [com.saf.core1.ActorCell] [Actor:treasury-cd274e70-7764-4be0-a3a8-d8e4865b7985] - RECEIVED message [RecordPayment] Payload: 12.5
+2025-12-24 17:11:05.818 [pool-3-thread-3] INFO  [com.saf.core1.ActorCell] [Actor:receipt-0039cb3d-6f8b-4cf4-8c03-b20e6307aa8f] - RECEIVED message [GenerateReceipt] Payload: OrderRequest[clientName=Alice, tableNumber=T1, instructions=no onions, items=[OrderItem[dishName=burger, quantity=1]]]
+2025-12-24 17:11:05.941 [pool-3-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-03473c4a-a258-4efd-8f45-3caf0239bbcf] - RECEIVED message [ReceiptReady] Payload: ReceiptDocument[orderId=1766592663544, clientName=Alice, tableNumber=T1, total=12.5, items=[OrderItem[dishName=burger, quantity=1]], issuedAt=2025-12-24T16:11:05.820925348Z, content==== SAF RESTAURANT RECEIPT ===
+Client: Alice
+Table: T1
+Total: 12.5 €
+Items:
+- burger x 1
+]
+2025-12-24 17:11:05.947 [pool-3-thread-9] INFO  [com.saf.core1.ActorCell] [Actor:client-1766592663544-a54089bc-fc70-4f4d-b87d-c5b7e0c66cee] - RECEIVED message [AcknowledgeOrder] Payload: OrderAcknowledgement[orderId=1766592663544, status=COMPLETED, message=Commande servie et ticket généré., estimatedTotal=12.5, receipt==== SAF RESTAURANT RECEIPT ===
+Client: Alice
+Table: T1
+Total: 12.5 €
+Items:
+- burger x 1
+]
+2025-12-24 17:11:06.215 [main] INFO  [c.s.r.RestaurantInventoryIntegrationTest] [Actor:] - Starting RestaurantInventoryIntegrationTest using Java 21.0.7 with PID 198314 (started by cytech in /home/cytech/Restaurant-SAF/saf-restaurant)
+2025-12-24 17:11:06.216 [main] INFO  [c.s.r.RestaurantInventoryIntegrationTest] [Actor:] - No active profile set, falling back to 1 default profile: "default"
+2025-12-24 17:11:07.154 [main] INFO  [com.zaxxer.hikari.HikariDataSource] [Actor:] - HikariPool-2 - Starting...
+2025-12-24 17:11:07.156 [main] INFO  [com.zaxxer.hikari.pool.HikariPool] [Actor:] - HikariPool-2 - Added connection conn10: url=jdbc:h2:mem:restaurantdb user=SA
+2025-12-24 17:11:07.157 [main] INFO  [com.zaxxer.hikari.HikariDataSource] [Actor:] - HikariPool-2 - Start completed.
+2025-12-24 17:11:07.320 [main] INFO  [com.saf.core1.LocalActorSystem] [Actor:] - SAF ActorSystem started with 12 threads.
+2025-12-24 17:11:07.323 [main] INFO  [com.saf.core1.router.RoundRobinPool] [Actor:menu-router-dd1caef2-040d-4597-9450-c8b85fdef1d9] - Starting Router Pool with 3 initial workers.
+2025-12-24 17:11:07.466 [main] WARN  [o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration] [Actor:] - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-12-24 17:11:07.706 [main] WARN  [o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger] [Actor:] - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-12-24 17:11:07.738 [pool-4-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-5315f05e-9047-4731-873b-65591401fc16] - RECEIVED message [PurgeStaleOrders] Payload: 1766592637738
+2025-12-24 17:11:07.740 [main] INFO  [c.s.r.RestaurantInventoryIntegrationTest] [Actor:] - Started RestaurantInventoryIntegrationTest in 1.585 seconds (process running for 10.539)
+2025-12-24 17:11:07.928 [pool-4-thread-5] INFO  [com.saf.core1.ActorCell] [Actor:client-1766592667427-364b5ced-9dbd-4bb0-8420-82c5445899d1] - RECEIVED message [BeginOrder] Payload: BeginOrder[]
+2025-12-24 17:11:07.929 [pool-4-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-5315f05e-9047-4731-873b-65591401fc16] - RECEIVED message [OrderPlaced] Payload: OrderRequest[clientName=Alice, tableNumber=T1, instructions=no onions, items=[OrderItem[dishName=burger, quantity=1]]]
+2025-12-24 17:11:07.930 [pool-4-thread-4] INFO  [c.s.r.actors.RestaurantActor] [Actor:restaurant-5315f05e-9047-4731-873b-65591401fc16] - Received order 1766592667427 from Alice
+2025-12-24 17:11:07.931 [pool-4-thread-1] INFO  [com.saf.core1.ActorCell] [Actor:menu-router-dd1caef2-040d-4597-9450-c8b85fdef1d9] - RECEIVED message [CalculatePrice] Payload: OrderRequest[clientName=Alice, tableNumber=T1, instructions=no onions, items=[OrderItem[dishName=burger, quantity=1]]]
+2025-12-24 17:11:07.933 [pool-4-thread-1] INFO  [com.saf.core1.router.RoundRobinPool] [Actor:] - Pool size is now: 3
+2025-12-24 17:11:07.934 [pool-4-thread-6] INFO  [com.saf.core1.ActorCell] [Actor:worker-0-0540c447-e689-4b43-836a-3f0257fe2d9a] - RECEIVED message [CalculatePrice] Payload: OrderRequest[clientName=Alice, tableNumber=T1, instructions=no onions, items=[OrderItem[dishName=burger, quantity=1]]]
+2025-12-24 17:11:07.934 [pool-4-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-5315f05e-9047-4731-873b-65591401fc16] - RECEIVED message [PriceCalculated] Payload: PriceCalculated[orderId=1766592667427, valid=true, total=12.5, missingItems=[]]
+2025-12-24 17:11:07.935 [pool-4-thread-5] INFO  [com.saf.core1.ActorCell] [Actor:client-1766592667427-364b5ced-9dbd-4bb0-8420-82c5445899d1] - RECEIVED message [AcknowledgeOrder] Payload: OrderAcknowledgement[orderId=1766592667427, status=PENDING_STOCK, message=Commande validée. Vérification du stock en cours., estimatedTotal=12.5, receipt=null]
+2025-12-24 17:11:07.943 [pool-4-thread-4] INFO  [c.s.r.client.InventoryClient] [Actor:restaurant-5315f05e-9047-4731-873b-65591401fc16] - Stock check request sent to inventory for order 1766592667427
+2025-12-24 17:11:08.017 [SpringApplicationShutdownHook] INFO  [com.zaxxer.hikari.HikariDataSource] [Actor:] - HikariPool-1 - Shutdown initiated...
+2025-12-24 17:11:08.022 [SpringApplicationShutdownHook] INFO  [com.zaxxer.hikari.HikariDataSource] [Actor:] - HikariPool-1 - Shutdown completed.
+2025-12-24 17:11:08.051 [SpringApplicationShutdownHook] INFO  [com.zaxxer.hikari.HikariDataSource] [Actor:] - HikariPool-2 - Shutdown initiated...
+2025-12-24 17:11:08.052 [SpringApplicationShutdownHook] INFO  [com.zaxxer.hikari.HikariDataSource] [Actor:] - HikariPool-2 - Shutdown completed.
+2025-12-24 17:25:50.127 [main] INFO  [c.s.r.RestaurantStockKoIntegrationTest] [Actor:] - Starting RestaurantStockKoIntegrationTest using Java 21.0.7 with PID 208172 (started by cytech in /home/cytech/Restaurant-SAF/saf-restaurant)
+2025-12-24 17:25:50.129 [main] INFO  [c.s.r.RestaurantStockKoIntegrationTest] [Actor:] - No active profile set, falling back to 1 default profile: "default"
+2025-12-24 17:25:52.134 [main] INFO  [com.zaxxer.hikari.HikariDataSource] [Actor:] - HikariPool-1 - Starting...
+2025-12-24 17:25:52.308 [main] INFO  [com.zaxxer.hikari.pool.HikariPool] [Actor:] - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:restaurantdb user=SA
+2025-12-24 17:25:52.309 [main] INFO  [com.zaxxer.hikari.HikariDataSource] [Actor:] - HikariPool-1 - Start completed.
+2025-12-24 17:25:53.283 [main] INFO  [com.saf.core1.LocalActorSystem] [Actor:] - SAF ActorSystem started with 12 threads.
+2025-12-24 17:25:53.289 [main] INFO  [com.saf.core1.router.RoundRobinPool] [Actor:menu-router-40f109d8-ae96-4707-b341-affef53d3a16] - Starting Router Pool with 3 initial workers.
+2025-12-24 17:25:54.379 [main] WARN  [o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration] [Actor:] - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-12-24 17:25:54.982 [main] WARN  [o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger] [Actor:] - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-12-24 17:25:55.267 [main] INFO  [c.s.r.RestaurantStockKoIntegrationTest] [Actor:] - Started RestaurantStockKoIntegrationTest in 5.704 seconds (process running for 6.891)
+2025-12-24 17:25:55.269 [pool-3-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-31f6b752-300a-4b0a-aabd-02f8ded23f46] - RECEIVED message [PurgeStaleOrders] Payload: 1766593525269
+2025-12-24 17:25:56.175 [pool-3-thread-5] INFO  [com.saf.core1.ActorCell] [Actor:client-1766593554290-a510727b-c594-46f6-ad88-780735db40c1] - RECEIVED message [BeginOrder] Payload: BeginOrder[]
+2025-12-24 17:25:56.177 [pool-3-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-31f6b752-300a-4b0a-aabd-02f8ded23f46] - RECEIVED message [OrderPlaced] Payload: OrderRequest[clientName=Carol, tableNumber=T3, instructions=null, items=[OrderItem[dishName=unknown-item, quantity=1]]]
+2025-12-24 17:25:56.183 [pool-3-thread-4] INFO  [c.s.r.actors.RestaurantActor] [Actor:restaurant-31f6b752-300a-4b0a-aabd-02f8ded23f46] - Received order 1766593554290 from Carol
+2025-12-24 17:25:56.184 [pool-3-thread-1] INFO  [com.saf.core1.ActorCell] [Actor:menu-router-40f109d8-ae96-4707-b341-affef53d3a16] - RECEIVED message [CalculatePrice] Payload: OrderRequest[clientName=Carol, tableNumber=T3, instructions=null, items=[OrderItem[dishName=unknown-item, quantity=1]]]
+2025-12-24 17:25:56.187 [pool-3-thread-1] INFO  [com.saf.core1.router.RoundRobinPool] [Actor:] - Pool size is now: 3
+2025-12-24 17:25:56.188 [pool-3-thread-6] INFO  [com.saf.core1.ActorCell] [Actor:worker-0-ad23243b-1e34-4b7d-8d41-87185bfcced7] - RECEIVED message [CalculatePrice] Payload: OrderRequest[clientName=Carol, tableNumber=T3, instructions=null, items=[OrderItem[dishName=unknown-item, quantity=1]]]
+2025-12-24 17:25:56.189 [pool-3-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-31f6b752-300a-4b0a-aabd-02f8ded23f46] - RECEIVED message [PriceCalculated] Payload: PriceCalculated[orderId=1766593554290, valid=true, total=0, missingItems=[unknown-item]]
+2025-12-24 17:25:56.193 [pool-3-thread-5] INFO  [com.saf.core1.ActorCell] [Actor:client-1766593554290-a510727b-c594-46f6-ad88-780735db40c1] - RECEIVED message [AcknowledgeOrder] Payload: OrderAcknowledgement[orderId=1766593554290, status=PENDING_STOCK, message=Commande en attente: articles inconnus (unknown-item)., estimatedTotal=0, receipt=null]
+2025-12-24 17:25:56.283 [pool-3-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-31f6b752-300a-4b0a-aabd-02f8ded23f46] - RECEIVED message [StockResult] Payload: StockResult[orderId=1766593554290, available=false, missingItems=[unknown-item]]
+2025-12-24 17:25:56.287 [pool-3-thread-5] INFO  [com.saf.core1.ActorCell] [Actor:client-1766593554290-a510727b-c594-46f6-ad88-780735db40c1] - RECEIVED message [AcknowledgeOrder] Payload: OrderAcknowledgement[orderId=1766593554290, status=REJECTED, message=Articles inconnus: unknown-item, estimatedTotal=0, receipt=null]
+2025-12-24 17:25:56.713 [pool-3-thread-9] INFO  [com.saf.core1.ActorCell] [Actor:client-1766593554291-53d8fcce-24e6-41a6-9a81-9fa709f180f2] - RECEIVED message [BeginOrder] Payload: BeginOrder[]
+2025-12-24 17:25:56.714 [pool-3-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-31f6b752-300a-4b0a-aabd-02f8ded23f46] - RECEIVED message [OrderPlaced] Payload: OrderRequest[clientName=Alice, tableNumber=T1, instructions=no onions, items=[OrderItem[dishName=burger, quantity=1]]]
+2025-12-24 17:25:56.714 [pool-3-thread-4] INFO  [c.s.r.actors.RestaurantActor] [Actor:restaurant-31f6b752-300a-4b0a-aabd-02f8ded23f46] - Received order 1766593554291 from Alice
+2025-12-24 17:25:56.714 [pool-3-thread-1] INFO  [com.saf.core1.ActorCell] [Actor:] - RECEIVED message [CalculatePrice] Payload: OrderRequest[clientName=Alice, tableNumber=T1, instructions=no onions, items=[OrderItem[dishName=burger, quantity=1]]]
+2025-12-24 17:25:56.715 [pool-3-thread-7] INFO  [com.saf.core1.ActorCell] [Actor:worker-1-22170d73-3dd0-4a10-8b20-ac687da2847e] - RECEIVED message [CalculatePrice] Payload: OrderRequest[clientName=Alice, tableNumber=T1, instructions=no onions, items=[OrderItem[dishName=burger, quantity=1]]]
+2025-12-24 17:25:56.716 [pool-3-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-31f6b752-300a-4b0a-aabd-02f8ded23f46] - RECEIVED message [PriceCalculated] Payload: PriceCalculated[orderId=1766593554291, valid=true, total=12.5, missingItems=[]]
+2025-12-24 17:25:56.717 [pool-3-thread-9] INFO  [com.saf.core1.ActorCell] [Actor:client-1766593554291-53d8fcce-24e6-41a6-9a81-9fa709f180f2] - RECEIVED message [AcknowledgeOrder] Payload: OrderAcknowledgement[orderId=1766593554291, status=PENDING_STOCK, message=Commande validée. Vérification du stock en cours., estimatedTotal=12.5, receipt=null]
+2025-12-24 17:25:56.729 [pool-3-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-31f6b752-300a-4b0a-aabd-02f8ded23f46] - RECEIVED message [StockResult] Payload: StockResult[orderId=1766593554291, available=true, missingItems=[]]
+2025-12-24 17:25:56.730 [pool-3-thread-2] INFO  [com.saf.core1.ActorCell] [Actor:treasury-fb0fbdb2-9461-4a0f-bfa7-e020394cacea] - RECEIVED message [RecordPayment] Payload: 12.5
+2025-12-24 17:25:56.731 [pool-3-thread-3] INFO  [com.saf.core1.ActorCell] [Actor:receipt-10953dd1-0ac7-4f21-817e-20a666ee32e2] - RECEIVED message [GenerateReceipt] Payload: OrderRequest[clientName=Alice, tableNumber=T1, instructions=no onions, items=[OrderItem[dishName=burger, quantity=1]]]
+2025-12-24 17:25:56.839 [pool-3-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-31f6b752-300a-4b0a-aabd-02f8ded23f46] - RECEIVED message [ReceiptReady] Payload: ReceiptDocument[orderId=1766593554291, clientName=Alice, tableNumber=T1, total=12.5, items=[OrderItem[dishName=burger, quantity=1]], issuedAt=2025-12-24T16:25:56.733992660Z, content==== SAF RESTAURANT RECEIPT ===
+Client: Alice
+Table: T1
+Total: 12.5 €
+Items:
+- burger x 1
+]
+2025-12-24 17:25:56.842 [pool-3-thread-9] INFO  [com.saf.core1.ActorCell] [Actor:client-1766593554291-53d8fcce-24e6-41a6-9a81-9fa709f180f2] - RECEIVED message [AcknowledgeOrder] Payload: OrderAcknowledgement[orderId=1766593554291, status=COMPLETED, message=Commande servie et ticket généré., estimatedTotal=12.5, receipt==== SAF RESTAURANT RECEIPT ===
+Client: Alice
+Table: T1
+Total: 12.5 €
+Items:
+- burger x 1
+]
+2025-12-24 17:25:57.157 [main] INFO  [c.s.r.RestaurantInventoryIntegrationTest] [Actor:] - Starting RestaurantInventoryIntegrationTest using Java 21.0.7 with PID 208172 (started by cytech in /home/cytech/Restaurant-SAF/saf-restaurant)
+2025-12-24 17:25:57.158 [main] INFO  [c.s.r.RestaurantInventoryIntegrationTest] [Actor:] - No active profile set, falling back to 1 default profile: "default"
+2025-12-24 17:25:58.010 [main] INFO  [com.zaxxer.hikari.HikariDataSource] [Actor:] - HikariPool-2 - Starting...
+2025-12-24 17:25:58.012 [main] INFO  [com.zaxxer.hikari.pool.HikariPool] [Actor:] - HikariPool-2 - Added connection conn10: url=jdbc:h2:mem:restaurantdb user=SA
+2025-12-24 17:25:58.013 [main] INFO  [com.zaxxer.hikari.HikariDataSource] [Actor:] - HikariPool-2 - Start completed.
+2025-12-24 17:25:58.154 [main] INFO  [com.saf.core1.LocalActorSystem] [Actor:] - SAF ActorSystem started with 12 threads.
+2025-12-24 17:25:58.156 [main] INFO  [com.saf.core1.router.RoundRobinPool] [Actor:menu-router-16a9a768-8472-4c9a-91fc-376e39d288b0] - Starting Router Pool with 3 initial workers.
+2025-12-24 17:25:58.351 [main] WARN  [o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration] [Actor:] - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-12-24 17:25:58.830 [main] WARN  [o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger] [Actor:] - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-12-24 17:25:58.866 [pool-4-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-92e41581-8230-47fe-9fe8-1e94fd208205] - RECEIVED message [PurgeStaleOrders] Payload: 1766593528866
+2025-12-24 17:25:58.868 [main] INFO  [c.s.r.RestaurantInventoryIntegrationTest] [Actor:] - Started RestaurantInventoryIntegrationTest in 1.798 seconds (process running for 10.491)
+2025-12-24 17:25:59.028 [pool-4-thread-5] INFO  [com.saf.core1.ActorCell] [Actor:client-1766593558280-64739ff2-1d0c-447a-8f1a-38dac0605af8] - RECEIVED message [BeginOrder] Payload: BeginOrder[]
+2025-12-24 17:25:59.029 [pool-4-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-92e41581-8230-47fe-9fe8-1e94fd208205] - RECEIVED message [OrderPlaced] Payload: OrderRequest[clientName=Alice, tableNumber=T1, instructions=no onions, items=[OrderItem[dishName=burger, quantity=1]]]
+2025-12-24 17:25:59.029 [pool-4-thread-4] INFO  [c.s.r.actors.RestaurantActor] [Actor:restaurant-92e41581-8230-47fe-9fe8-1e94fd208205] - Received order 1766593558280 from Alice
+2025-12-24 17:25:59.030 [pool-4-thread-1] INFO  [com.saf.core1.ActorCell] [Actor:menu-router-16a9a768-8472-4c9a-91fc-376e39d288b0] - RECEIVED message [CalculatePrice] Payload: OrderRequest[clientName=Alice, tableNumber=T1, instructions=no onions, items=[OrderItem[dishName=burger, quantity=1]]]
+2025-12-24 17:25:59.031 [pool-4-thread-1] INFO  [com.saf.core1.router.RoundRobinPool] [Actor:] - Pool size is now: 3
+2025-12-24 17:25:59.031 [pool-4-thread-6] INFO  [com.saf.core1.ActorCell] [Actor:worker-0-c3c518e5-e1b5-4a0d-b0fc-05fbfe12e1a8] - RECEIVED message [CalculatePrice] Payload: OrderRequest[clientName=Alice, tableNumber=T1, instructions=no onions, items=[OrderItem[dishName=burger, quantity=1]]]
+2025-12-24 17:25:59.032 [pool-4-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-92e41581-8230-47fe-9fe8-1e94fd208205] - RECEIVED message [PriceCalculated] Payload: PriceCalculated[orderId=1766593558280, valid=true, total=12.5, missingItems=[]]
+2025-12-24 17:25:59.032 [pool-4-thread-5] INFO  [com.saf.core1.ActorCell] [Actor:client-1766593558280-64739ff2-1d0c-447a-8f1a-38dac0605af8] - RECEIVED message [AcknowledgeOrder] Payload: OrderAcknowledgement[orderId=1766593558280, status=PENDING_STOCK, message=Commande validée. Vérification du stock en cours., estimatedTotal=12.5, receipt=null]
+2025-12-24 17:25:59.040 [pool-4-thread-4] INFO  [c.s.r.client.InventoryClient] [Actor:restaurant-92e41581-8230-47fe-9fe8-1e94fd208205] - Stock check request sent to inventory for order 1766593558280
+2025-12-24 17:25:59.092 [SpringApplicationShutdownHook] INFO  [com.zaxxer.hikari.HikariDataSource] [Actor:] - HikariPool-1 - Shutdown initiated...
+2025-12-24 17:25:59.094 [SpringApplicationShutdownHook] INFO  [com.zaxxer.hikari.HikariDataSource] [Actor:] - HikariPool-1 - Shutdown completed.
+2025-12-24 17:25:59.114 [SpringApplicationShutdownHook] INFO  [com.zaxxer.hikari.HikariDataSource] [Actor:] - HikariPool-2 - Shutdown initiated...
+2025-12-24 17:25:59.115 [SpringApplicationShutdownHook] INFO  [com.zaxxer.hikari.HikariDataSource] [Actor:] - HikariPool-2 - Shutdown completed.
+2025-12-24 17:32:52.701 [main] INFO  [c.s.r.RestaurantStockKoIntegrationTest] [Actor:] - Starting RestaurantStockKoIntegrationTest using Java 21.0.7 with PID 213509 (started by cytech in /home/cytech/Restaurant-SAF/saf-restaurant)
+2025-12-24 17:32:52.704 [main] INFO  [c.s.r.RestaurantStockKoIntegrationTest] [Actor:] - No active profile set, falling back to 1 default profile: "default"
+2025-12-24 17:32:54.801 [main] INFO  [com.zaxxer.hikari.HikariDataSource] [Actor:] - HikariPool-1 - Starting...
+2025-12-24 17:32:54.988 [main] INFO  [com.zaxxer.hikari.pool.HikariPool] [Actor:] - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:restaurantdb user=SA
+2025-12-24 17:32:54.990 [main] INFO  [com.zaxxer.hikari.HikariDataSource] [Actor:] - HikariPool-1 - Start completed.
+2025-12-24 17:32:55.934 [main] INFO  [com.saf.core1.LocalActorSystem] [Actor:] - SAF ActorSystem started with 12 threads.
+2025-12-24 17:32:55.940 [main] INFO  [com.saf.core1.router.RoundRobinPool] [Actor:menu-router-d1225b3a-17dd-40b0-ab87-4b85134261b0] - Starting Router Pool with 3 initial workers.
+2025-12-24 17:32:56.755 [main] WARN  [o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration] [Actor:] - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-12-24 17:32:57.231 [main] WARN  [o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger] [Actor:] - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-12-24 17:32:57.450 [main] INFO  [c.s.r.RestaurantStockKoIntegrationTest] [Actor:] - Started RestaurantStockKoIntegrationTest in 5.199 seconds (process running for 6.269)
+2025-12-24 17:32:57.452 [pool-3-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-77dc000c-af67-4be7-a4d5-2fa386f631ef] - RECEIVED message [PurgeStaleOrders] Payload: 1766593947452
+2025-12-24 17:32:58.340 [pool-3-thread-5] INFO  [com.saf.core1.ActorCell] [Actor:client-1766593976697-4a6bfee7-e5a4-46c1-83f6-3102b3aaa8ca] - RECEIVED message [BeginOrder] Payload: BeginOrder[]
+2025-12-24 17:32:58.343 [pool-3-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-77dc000c-af67-4be7-a4d5-2fa386f631ef] - RECEIVED message [OrderPlaced] Payload: OrderRequest[clientName=Carol, tableNumber=T3, instructions=null, items=[OrderItem[dishName=unknown-item, quantity=1]]]
+2025-12-24 17:32:58.352 [pool-3-thread-4] INFO  [c.s.r.actors.RestaurantActor] [Actor:restaurant-77dc000c-af67-4be7-a4d5-2fa386f631ef] - Received order 1766593976697 from Carol
+2025-12-24 17:32:58.354 [pool-3-thread-1] INFO  [com.saf.core1.ActorCell] [Actor:menu-router-d1225b3a-17dd-40b0-ab87-4b85134261b0] - RECEIVED message [CalculatePrice] Payload: OrderRequest[clientName=Carol, tableNumber=T3, instructions=null, items=[OrderItem[dishName=unknown-item, quantity=1]]]
+2025-12-24 17:32:58.357 [pool-3-thread-1] INFO  [com.saf.core1.router.RoundRobinPool] [Actor:] - Pool size is now: 3
+2025-12-24 17:32:58.359 [pool-3-thread-6] INFO  [com.saf.core1.ActorCell] [Actor:worker-0-e5e150fb-b750-4e02-ae71-5ea8abd05d78] - RECEIVED message [CalculatePrice] Payload: OrderRequest[clientName=Carol, tableNumber=T3, instructions=null, items=[OrderItem[dishName=unknown-item, quantity=1]]]
+2025-12-24 17:32:58.360 [pool-3-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-77dc000c-af67-4be7-a4d5-2fa386f631ef] - RECEIVED message [PriceCalculated] Payload: PriceCalculated[orderId=1766593976697, valid=true, total=0, missingItems=[unknown-item]]
+2025-12-24 17:32:58.364 [pool-3-thread-5] INFO  [com.saf.core1.ActorCell] [Actor:client-1766593976697-4a6bfee7-e5a4-46c1-83f6-3102b3aaa8ca] - RECEIVED message [AcknowledgeOrder] Payload: OrderAcknowledgement[orderId=1766593976697, status=PENDING_STOCK, message=Commande en attente: articles inconnus (unknown-item)., estimatedTotal=0, receipt=null]
+2025-12-24 17:32:58.510 [pool-3-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-77dc000c-af67-4be7-a4d5-2fa386f631ef] - RECEIVED message [StockResult] Payload: StockResult[orderId=1766593976697, available=false, missingItems=[unknown-item]]
+2025-12-24 17:32:58.516 [pool-3-thread-5] INFO  [com.saf.core1.ActorCell] [Actor:client-1766593976697-4a6bfee7-e5a4-46c1-83f6-3102b3aaa8ca] - RECEIVED message [AcknowledgeOrder] Payload: OrderAcknowledgement[orderId=1766593976697, status=REJECTED, message=Articles inconnus: unknown-item, estimatedTotal=0, receipt=null]
+2025-12-24 17:32:58.716 [pool-3-thread-9] INFO  [com.saf.core1.ActorCell] [Actor:client-1766593976698-4905601f-0d28-430a-b1a4-2a24f4ac063f] - RECEIVED message [BeginOrder] Payload: BeginOrder[]
+2025-12-24 17:32:58.717 [pool-3-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-77dc000c-af67-4be7-a4d5-2fa386f631ef] - RECEIVED message [OrderPlaced] Payload: OrderRequest[clientName=Alice, tableNumber=T1, instructions=no onions, items=[OrderItem[dishName=burger, quantity=1]]]
+2025-12-24 17:32:58.718 [pool-3-thread-4] INFO  [c.s.r.actors.RestaurantActor] [Actor:restaurant-77dc000c-af67-4be7-a4d5-2fa386f631ef] - Received order 1766593976698 from Alice
+2025-12-24 17:32:58.719 [pool-3-thread-1] INFO  [com.saf.core1.ActorCell] [Actor:] - RECEIVED message [CalculatePrice] Payload: OrderRequest[clientName=Alice, tableNumber=T1, instructions=no onions, items=[OrderItem[dishName=burger, quantity=1]]]
+2025-12-24 17:32:58.719 [pool-3-thread-7] INFO  [com.saf.core1.ActorCell] [Actor:worker-1-e76a7c00-5fae-48e6-a59d-199a54b8a294] - RECEIVED message [CalculatePrice] Payload: OrderRequest[clientName=Alice, tableNumber=T1, instructions=no onions, items=[OrderItem[dishName=burger, quantity=1]]]
+2025-12-24 17:32:58.720 [pool-3-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-77dc000c-af67-4be7-a4d5-2fa386f631ef] - RECEIVED message [PriceCalculated] Payload: PriceCalculated[orderId=1766593976698, valid=true, total=12.5, missingItems=[]]
+2025-12-24 17:32:58.721 [pool-3-thread-9] INFO  [com.saf.core1.ActorCell] [Actor:client-1766593976698-4905601f-0d28-430a-b1a4-2a24f4ac063f] - RECEIVED message [AcknowledgeOrder] Payload: OrderAcknowledgement[orderId=1766593976698, status=PENDING_STOCK, message=Commande validée. Vérification du stock en cours., estimatedTotal=12.5, receipt=null]
+2025-12-24 17:32:58.738 [pool-3-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-77dc000c-af67-4be7-a4d5-2fa386f631ef] - RECEIVED message [StockResult] Payload: StockResult[orderId=1766593976698, available=true, missingItems=[]]
+2025-12-24 17:32:58.740 [pool-3-thread-2] INFO  [com.saf.core1.ActorCell] [Actor:treasury-1b88cc23-a2e0-4e67-a76f-0331f45107b5] - RECEIVED message [RecordPayment] Payload: 12.5
+2025-12-24 17:32:58.741 [pool-3-thread-3] INFO  [com.saf.core1.ActorCell] [Actor:receipt-ace1a127-acbb-4476-a37f-14017d364ab2] - RECEIVED message [GenerateReceipt] Payload: OrderRequest[clientName=Alice, tableNumber=T1, instructions=no onions, items=[OrderItem[dishName=burger, quantity=1]]]
+2025-12-24 17:32:58.861 [pool-3-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-77dc000c-af67-4be7-a4d5-2fa386f631ef] - RECEIVED message [ReceiptReady] Payload: ReceiptDocument[orderId=1766593976698, clientName=Alice, tableNumber=T1, total=12.5, items=[OrderItem[dishName=burger, quantity=1]], issuedAt=2025-12-24T16:32:58.743479576Z, content==== SAF RESTAURANT RECEIPT ===
+Client: Alice
+Table: T1
+Total: 12.5 €
+Items:
+- burger x 1
+]
+2025-12-24 17:32:58.867 [pool-3-thread-9] INFO  [com.saf.core1.ActorCell] [Actor:client-1766593976698-4905601f-0d28-430a-b1a4-2a24f4ac063f] - RECEIVED message [AcknowledgeOrder] Payload: OrderAcknowledgement[orderId=1766593976698, status=COMPLETED, message=Commande servie et ticket généré., estimatedTotal=12.5, receipt==== SAF RESTAURANT RECEIPT ===
+Client: Alice
+Table: T1
+Total: 12.5 €
+Items:
+- burger x 1
+]
+2025-12-24 17:32:59.159 [main] INFO  [c.s.r.RestaurantInventoryIntegrationTest] [Actor:] - Starting RestaurantInventoryIntegrationTest using Java 21.0.7 with PID 213509 (started by cytech in /home/cytech/Restaurant-SAF/saf-restaurant)
+2025-12-24 17:32:59.160 [main] INFO  [c.s.r.RestaurantInventoryIntegrationTest] [Actor:] - No active profile set, falling back to 1 default profile: "default"
+2025-12-24 17:33:00.339 [main] INFO  [com.zaxxer.hikari.HikariDataSource] [Actor:] - HikariPool-2 - Starting...
+2025-12-24 17:33:00.342 [main] INFO  [com.zaxxer.hikari.pool.HikariPool] [Actor:] - HikariPool-2 - Added connection conn10: url=jdbc:h2:mem:restaurantdb user=SA
+2025-12-24 17:33:00.343 [main] INFO  [com.zaxxer.hikari.HikariDataSource] [Actor:] - HikariPool-2 - Start completed.
+2025-12-24 17:33:00.549 [main] INFO  [com.saf.core1.LocalActorSystem] [Actor:] - SAF ActorSystem started with 12 threads.
+2025-12-24 17:33:00.552 [main] INFO  [com.saf.core1.router.RoundRobinPool] [Actor:menu-router-af25bb9c-26f5-4251-b906-e3a2a3cc56f4] - Starting Router Pool with 3 initial workers.
+2025-12-24 17:33:00.718 [main] WARN  [o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration] [Actor:] - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-12-24 17:33:00.971 [main] WARN  [o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger] [Actor:] - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-12-24 17:33:01.015 [pool-4-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-e3f6e3b5-146d-42fc-9f21-1fe511dd5b03] - RECEIVED message [PurgeStaleOrders] Payload: 1766593951015
+2025-12-24 17:33:01.018 [main] INFO  [c.s.r.RestaurantInventoryIntegrationTest] [Actor:] - Started RestaurantInventoryIntegrationTest in 1.946 seconds (process running for 9.837)
+2025-12-24 17:33:01.225 [pool-4-thread-5] INFO  [com.saf.core1.ActorCell] [Actor:client-1766593980682-f72a8c24-252a-44b5-b2ee-28bbc63c673e] - RECEIVED message [BeginOrder] Payload: BeginOrder[]
+2025-12-24 17:33:01.226 [pool-4-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-e3f6e3b5-146d-42fc-9f21-1fe511dd5b03] - RECEIVED message [OrderPlaced] Payload: OrderRequest[clientName=Alice, tableNumber=T1, instructions=no onions, items=[OrderItem[dishName=burger, quantity=1]]]
+2025-12-24 17:33:01.226 [pool-4-thread-4] INFO  [c.s.r.actors.RestaurantActor] [Actor:restaurant-e3f6e3b5-146d-42fc-9f21-1fe511dd5b03] - Received order 1766593980682 from Alice
+2025-12-24 17:33:01.227 [pool-4-thread-1] INFO  [com.saf.core1.ActorCell] [Actor:menu-router-af25bb9c-26f5-4251-b906-e3a2a3cc56f4] - RECEIVED message [CalculatePrice] Payload: OrderRequest[clientName=Alice, tableNumber=T1, instructions=no onions, items=[OrderItem[dishName=burger, quantity=1]]]
+2025-12-24 17:33:01.229 [pool-4-thread-1] INFO  [com.saf.core1.router.RoundRobinPool] [Actor:] - Pool size is now: 3
+2025-12-24 17:33:01.230 [pool-4-thread-6] INFO  [com.saf.core1.ActorCell] [Actor:worker-0-7357b0b9-cac8-4059-9eae-0d2e18d76dd0] - RECEIVED message [CalculatePrice] Payload: OrderRequest[clientName=Alice, tableNumber=T1, instructions=no onions, items=[OrderItem[dishName=burger, quantity=1]]]
+2025-12-24 17:33:01.230 [pool-4-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-e3f6e3b5-146d-42fc-9f21-1fe511dd5b03] - RECEIVED message [PriceCalculated] Payload: PriceCalculated[orderId=1766593980682, valid=true, total=12.5, missingItems=[]]
+2025-12-24 17:33:01.231 [pool-4-thread-5] INFO  [com.saf.core1.ActorCell] [Actor:client-1766593980682-f72a8c24-252a-44b5-b2ee-28bbc63c673e] - RECEIVED message [AcknowledgeOrder] Payload: OrderAcknowledgement[orderId=1766593980682, status=PENDING_STOCK, message=Commande validée. Vérification du stock en cours., estimatedTotal=12.5, receipt=null]
+2025-12-24 17:33:01.240 [pool-4-thread-4] INFO  [c.s.r.client.InventoryClient] [Actor:restaurant-e3f6e3b5-146d-42fc-9f21-1fe511dd5b03] - Stock check request sent to inventory for order 1766593980682
+2025-12-24 17:33:01.308 [SpringApplicationShutdownHook] INFO  [com.zaxxer.hikari.HikariDataSource] [Actor:] - HikariPool-1 - Shutdown initiated...
+2025-12-24 17:33:01.312 [SpringApplicationShutdownHook] INFO  [com.zaxxer.hikari.HikariDataSource] [Actor:] - HikariPool-1 - Shutdown completed.
+2025-12-24 17:33:01.325 [SpringApplicationShutdownHook] INFO  [com.zaxxer.hikari.HikariDataSource] [Actor:] - HikariPool-2 - Shutdown initiated...
+2025-12-24 17:33:01.326 [SpringApplicationShutdownHook] INFO  [com.zaxxer.hikari.HikariDataSource] [Actor:] - HikariPool-2 - Shutdown completed.
+2025-12-24 17:37:36.784 [main] INFO  [c.s.r.RestaurantStockKoIntegrationTest] [Actor:] - Starting RestaurantStockKoIntegrationTest using Java 21.0.7 with PID 217297 (started by cytech in /home/cytech/Restaurant-SAF/saf-restaurant)
+2025-12-24 17:37:36.787 [main] INFO  [c.s.r.RestaurantStockKoIntegrationTest] [Actor:] - No active profile set, falling back to 1 default profile: "default"
+2025-12-24 17:37:39.027 [main] INFO  [com.zaxxer.hikari.HikariDataSource] [Actor:] - HikariPool-1 - Starting...
+2025-12-24 17:37:39.213 [main] INFO  [com.zaxxer.hikari.pool.HikariPool] [Actor:] - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:restaurantdb user=SA
+2025-12-24 17:37:39.215 [main] INFO  [com.zaxxer.hikari.HikariDataSource] [Actor:] - HikariPool-1 - Start completed.
+2025-12-24 17:37:40.108 [main] INFO  [com.saf.core1.LocalActorSystem] [Actor:] - SAF ActorSystem started with 12 threads.
+2025-12-24 17:37:40.114 [main] INFO  [com.saf.core1.router.RoundRobinPool] [Actor:menu-router-b0094fb3-a35a-46c0-a859-235831df132f] - Starting Router Pool with 3 initial workers.
+2025-12-24 17:37:41.093 [main] WARN  [o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration] [Actor:] - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-12-24 17:37:41.547 [main] WARN  [o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger] [Actor:] - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-12-24 17:37:41.780 [main] INFO  [c.s.r.RestaurantStockKoIntegrationTest] [Actor:] - Started RestaurantStockKoIntegrationTest in 5.513 seconds (process running for 6.452)
+2025-12-24 17:37:41.782 [pool-3-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-1c207d0e-53ba-4b9d-8499-7ae06b1731d1] - RECEIVED message [PurgeStaleOrders] Payload: 1766594231782
+2025-12-24 17:37:42.700 [pool-3-thread-5] INFO  [com.saf.core1.ActorCell] [Actor:client-1766594261039-86a9b299-5697-4a16-8243-bb1ed368cf1b] - RECEIVED message [BeginOrder] Payload: BeginOrder[]
+2025-12-24 17:37:42.703 [pool-3-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-1c207d0e-53ba-4b9d-8499-7ae06b1731d1] - RECEIVED message [OrderPlaced] Payload: OrderRequest[clientName=Carol, tableNumber=T3, instructions=null, items=[OrderItem[dishName=unknown-item, quantity=1]]]
+2025-12-24 17:37:42.709 [pool-3-thread-4] INFO  [c.s.r.actors.RestaurantActor] [Actor:restaurant-1c207d0e-53ba-4b9d-8499-7ae06b1731d1] - Received order 1766594261039 from Carol
+2025-12-24 17:37:42.719 [pool-3-thread-1] INFO  [com.saf.core1.ActorCell] [Actor:menu-router-b0094fb3-a35a-46c0-a859-235831df132f] - RECEIVED message [CalculatePrice] Payload: OrderRequest[clientName=Carol, tableNumber=T3, instructions=null, items=[OrderItem[dishName=unknown-item, quantity=1]]]
+2025-12-24 17:37:42.722 [pool-3-thread-1] INFO  [com.saf.core1.router.RoundRobinPool] [Actor:] - Pool size is now: 3
+2025-12-24 17:37:42.723 [pool-3-thread-6] INFO  [com.saf.core1.ActorCell] [Actor:worker-0-09894f88-82b7-47ef-b6be-d648995a793d] - RECEIVED message [CalculatePrice] Payload: OrderRequest[clientName=Carol, tableNumber=T3, instructions=null, items=[OrderItem[dishName=unknown-item, quantity=1]]]
+2025-12-24 17:37:42.724 [pool-3-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-1c207d0e-53ba-4b9d-8499-7ae06b1731d1] - RECEIVED message [PriceCalculated] Payload: PriceCalculated[orderId=1766594261039, valid=true, total=0, missingItems=[unknown-item]]
+2025-12-24 17:37:42.727 [pool-3-thread-5] INFO  [com.saf.core1.ActorCell] [Actor:client-1766594261039-86a9b299-5697-4a16-8243-bb1ed368cf1b] - RECEIVED message [AcknowledgeOrder] Payload: OrderAcknowledgement[orderId=1766594261039, status=PENDING_STOCK, message=Commande en attente: articles inconnus (unknown-item)., estimatedTotal=0, receipt=null]
+2025-12-24 17:37:42.819 [pool-3-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-1c207d0e-53ba-4b9d-8499-7ae06b1731d1] - RECEIVED message [StockResult] Payload: StockResult[orderId=1766594261039, available=false, missingItems=[unknown-item]]
+2025-12-24 17:37:42.824 [pool-3-thread-5] INFO  [com.saf.core1.ActorCell] [Actor:client-1766594261039-86a9b299-5697-4a16-8243-bb1ed368cf1b] - RECEIVED message [AcknowledgeOrder] Payload: OrderAcknowledgement[orderId=1766594261039, status=REJECTED, message=Articles inconnus: unknown-item, estimatedTotal=0, receipt=null]
+2025-12-24 17:37:42.999 [pool-3-thread-9] INFO  [com.saf.core1.ActorCell] [Actor:client-1766594261040-b8a81ad0-77b6-4083-8631-9cecd4d54423] - RECEIVED message [BeginOrder] Payload: BeginOrder[]
+2025-12-24 17:37:43.000 [pool-3-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-1c207d0e-53ba-4b9d-8499-7ae06b1731d1] - RECEIVED message [OrderPlaced] Payload: OrderRequest[clientName=Alice, tableNumber=T1, instructions=no onions, items=[OrderItem[dishName=burger, quantity=1]]]
+2025-12-24 17:37:43.001 [pool-3-thread-4] INFO  [c.s.r.actors.RestaurantActor] [Actor:restaurant-1c207d0e-53ba-4b9d-8499-7ae06b1731d1] - Received order 1766594261040 from Alice
+2025-12-24 17:37:43.001 [pool-3-thread-1] INFO  [com.saf.core1.ActorCell] [Actor:] - RECEIVED message [CalculatePrice] Payload: OrderRequest[clientName=Alice, tableNumber=T1, instructions=no onions, items=[OrderItem[dishName=burger, quantity=1]]]
+2025-12-24 17:37:43.002 [pool-3-thread-7] INFO  [com.saf.core1.ActorCell] [Actor:worker-1-d5345c3e-38d6-4696-9640-b11081941737] - RECEIVED message [CalculatePrice] Payload: OrderRequest[clientName=Alice, tableNumber=T1, instructions=no onions, items=[OrderItem[dishName=burger, quantity=1]]]
+2025-12-24 17:37:43.003 [pool-3-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-1c207d0e-53ba-4b9d-8499-7ae06b1731d1] - RECEIVED message [PriceCalculated] Payload: PriceCalculated[orderId=1766594261040, valid=true, total=12.5, missingItems=[]]
+2025-12-24 17:37:43.005 [pool-3-thread-9] INFO  [com.saf.core1.ActorCell] [Actor:client-1766594261040-b8a81ad0-77b6-4083-8631-9cecd4d54423] - RECEIVED message [AcknowledgeOrder] Payload: OrderAcknowledgement[orderId=1766594261040, status=PENDING_STOCK, message=Commande validée. Vérification du stock en cours., estimatedTotal=12.5, receipt=null]
+2025-12-24 17:37:43.023 [pool-3-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-1c207d0e-53ba-4b9d-8499-7ae06b1731d1] - RECEIVED message [StockResult] Payload: StockResult[orderId=1766594261040, available=true, missingItems=[]]
+2025-12-24 17:37:43.025 [pool-3-thread-2] INFO  [com.saf.core1.ActorCell] [Actor:treasury-c8440c59-4559-4c85-b259-aabf222045b9] - RECEIVED message [RecordPayment] Payload: 12.5
+2025-12-24 17:37:43.025 [pool-3-thread-3] INFO  [com.saf.core1.ActorCell] [Actor:receipt-8d0183cf-1c53-4b40-b4d3-eb64b5fdd42b] - RECEIVED message [GenerateReceipt] Payload: OrderRequest[clientName=Alice, tableNumber=T1, instructions=no onions, items=[OrderItem[dishName=burger, quantity=1]]]
+2025-12-24 17:37:43.139 [pool-3-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-1c207d0e-53ba-4b9d-8499-7ae06b1731d1] - RECEIVED message [ReceiptReady] Payload: ReceiptDocument[orderId=1766594261040, clientName=Alice, tableNumber=T1, total=12.5, items=[OrderItem[dishName=burger, quantity=1]], issuedAt=2025-12-24T16:37:43.027726949Z, content==== SAF RESTAURANT RECEIPT ===
+Client: Alice
+Table: T1
+Total: 12.5 €
+Items:
+- burger x 1
+]
+2025-12-24 17:37:43.143 [pool-3-thread-9] INFO  [com.saf.core1.ActorCell] [Actor:client-1766594261040-b8a81ad0-77b6-4083-8631-9cecd4d54423] - RECEIVED message [AcknowledgeOrder] Payload: OrderAcknowledgement[orderId=1766594261040, status=COMPLETED, message=Commande servie et ticket généré., estimatedTotal=12.5, receipt==== SAF RESTAURANT RECEIPT ===
+Client: Alice
+Table: T1
+Total: 12.5 €
+Items:
+- burger x 1
+]
+2025-12-24 17:37:43.412 [main] INFO  [c.s.r.RestaurantInventoryIntegrationTest] [Actor:] - Starting RestaurantInventoryIntegrationTest using Java 21.0.7 with PID 217297 (started by cytech in /home/cytech/Restaurant-SAF/saf-restaurant)
+2025-12-24 17:37:43.412 [main] INFO  [c.s.r.RestaurantInventoryIntegrationTest] [Actor:] - No active profile set, falling back to 1 default profile: "default"
+2025-12-24 17:37:44.456 [main] INFO  [com.zaxxer.hikari.HikariDataSource] [Actor:] - HikariPool-2 - Starting...
+2025-12-24 17:37:44.459 [main] INFO  [com.zaxxer.hikari.pool.HikariPool] [Actor:] - HikariPool-2 - Added connection conn10: url=jdbc:h2:mem:restaurantdb user=SA
+2025-12-24 17:37:44.460 [main] INFO  [com.zaxxer.hikari.HikariDataSource] [Actor:] - HikariPool-2 - Start completed.
+2025-12-24 17:37:44.695 [main] INFO  [com.saf.core1.LocalActorSystem] [Actor:] - SAF ActorSystem started with 12 threads.
+2025-12-24 17:37:44.700 [main] INFO  [com.saf.core1.router.RoundRobinPool] [Actor:menu-router-fdc4839c-230e-4c60-b55d-cd49f598c640] - Starting Router Pool with 3 initial workers.
+2025-12-24 17:37:44.933 [main] WARN  [o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration] [Actor:] - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-12-24 17:37:45.185 [main] WARN  [o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger] [Actor:] - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-12-24 17:37:45.217 [pool-4-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-acd2157b-3f4c-42e7-9e23-6e1b1016fefb] - RECEIVED message [PurgeStaleOrders] Payload: 1766594235217
+2025-12-24 17:37:45.218 [main] INFO  [c.s.r.RestaurantInventoryIntegrationTest] [Actor:] - Started RestaurantInventoryIntegrationTest in 1.863 seconds (process running for 9.89)
+2025-12-24 17:37:45.350 [pool-4-thread-5] INFO  [com.saf.core1.ActorCell] [Actor:client-1766594264891-7b8392ac-e361-4c64-94c0-7b6f6a9186bb] - RECEIVED message [BeginOrder] Payload: BeginOrder[]
+2025-12-24 17:37:45.351 [pool-4-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-acd2157b-3f4c-42e7-9e23-6e1b1016fefb] - RECEIVED message [OrderPlaced] Payload: OrderRequest[clientName=Alice, tableNumber=T1, instructions=no onions, items=[OrderItem[dishName=burger, quantity=1]]]
+2025-12-24 17:37:45.352 [pool-4-thread-4] INFO  [c.s.r.actors.RestaurantActor] [Actor:restaurant-acd2157b-3f4c-42e7-9e23-6e1b1016fefb] - Received order 1766594264891 from Alice
+2025-12-24 17:37:45.352 [pool-4-thread-1] INFO  [com.saf.core1.ActorCell] [Actor:menu-router-fdc4839c-230e-4c60-b55d-cd49f598c640] - RECEIVED message [CalculatePrice] Payload: OrderRequest[clientName=Alice, tableNumber=T1, instructions=no onions, items=[OrderItem[dishName=burger, quantity=1]]]
+2025-12-24 17:37:45.354 [pool-4-thread-1] INFO  [com.saf.core1.router.RoundRobinPool] [Actor:] - Pool size is now: 3
+2025-12-24 17:37:45.355 [pool-4-thread-6] INFO  [com.saf.core1.ActorCell] [Actor:worker-0-bf338104-e383-4106-a227-1650721f2773] - RECEIVED message [CalculatePrice] Payload: OrderRequest[clientName=Alice, tableNumber=T1, instructions=no onions, items=[OrderItem[dishName=burger, quantity=1]]]
+2025-12-24 17:37:45.355 [pool-4-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-acd2157b-3f4c-42e7-9e23-6e1b1016fefb] - RECEIVED message [PriceCalculated] Payload: PriceCalculated[orderId=1766594264891, valid=true, total=12.5, missingItems=[]]
+2025-12-24 17:37:45.356 [pool-4-thread-5] INFO  [com.saf.core1.ActorCell] [Actor:client-1766594264891-7b8392ac-e361-4c64-94c0-7b6f6a9186bb] - RECEIVED message [AcknowledgeOrder] Payload: OrderAcknowledgement[orderId=1766594264891, status=PENDING_STOCK, message=Commande validée. Vérification du stock en cours., estimatedTotal=12.5, receipt=null]
+2025-12-24 17:37:45.364 [pool-4-thread-4] INFO  [c.s.r.client.InventoryClient] [Actor:restaurant-acd2157b-3f4c-42e7-9e23-6e1b1016fefb] - Stock check request sent to inventory for order 1766594264891
+2025-12-24 17:37:45.412 [SpringApplicationShutdownHook] INFO  [com.zaxxer.hikari.HikariDataSource] [Actor:] - HikariPool-1 - Shutdown initiated...
+2025-12-24 17:37:45.415 [SpringApplicationShutdownHook] INFO  [com.zaxxer.hikari.HikariDataSource] [Actor:] - HikariPool-1 - Shutdown completed.
+2025-12-24 17:37:45.431 [SpringApplicationShutdownHook] INFO  [com.zaxxer.hikari.HikariDataSource] [Actor:] - HikariPool-2 - Shutdown initiated...
+2025-12-24 17:37:45.432 [SpringApplicationShutdownHook] INFO  [com.zaxxer.hikari.HikariDataSource] [Actor:] - HikariPool-2 - Shutdown completed.
+2025-12-24 17:41:30.708 [main] INFO  [c.s.r.RestaurantStockKoIntegrationTest] [Actor:] - Starting RestaurantStockKoIntegrationTest using Java 21.0.7 with PID 220559 (started by cytech in /home/cytech/Restaurant-SAF/saf-restaurant)
+2025-12-24 17:41:30.710 [main] INFO  [c.s.r.RestaurantStockKoIntegrationTest] [Actor:] - No active profile set, falling back to 1 default profile: "default"
+2025-12-24 17:41:32.751 [main] INFO  [com.zaxxer.hikari.HikariDataSource] [Actor:] - HikariPool-1 - Starting...
+2025-12-24 17:41:32.936 [main] INFO  [com.zaxxer.hikari.pool.HikariPool] [Actor:] - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:restaurantdb user=SA
+2025-12-24 17:41:32.938 [main] INFO  [com.zaxxer.hikari.HikariDataSource] [Actor:] - HikariPool-1 - Start completed.
+2025-12-24 17:41:33.850 [main] INFO  [com.saf.core1.LocalActorSystem] [Actor:] - SAF ActorSystem started with 12 threads.
+2025-12-24 17:41:33.856 [main] INFO  [com.saf.core1.router.RoundRobinPool] [Actor:menu-router-7302de21-6c7a-4a11-9cb6-e8d61854d99c] - Starting Router Pool with 3 initial workers.
+2025-12-24 17:41:35.044 [main] WARN  [o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration] [Actor:] - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-12-24 17:41:35.714 [main] WARN  [o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger] [Actor:] - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-12-24 17:41:35.954 [main] INFO  [c.s.r.RestaurantStockKoIntegrationTest] [Actor:] - Started RestaurantStockKoIntegrationTest in 5.622 seconds (process running for 6.782)
+2025-12-24 17:41:35.958 [pool-3-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-d1d9c16f-6b35-4d0d-83a7-f7e4680c70a7] - RECEIVED message [PurgeStaleOrders] Payload: 1766594465957
+2025-12-24 17:41:36.745 [pool-3-thread-5] INFO  [com.saf.core1.ActorCell] [Actor:client-1766594494970-f52dca51-c85e-4d53-8955-1aed89e7e7ad] - RECEIVED message [BeginOrder] Payload: BeginOrder[]
+2025-12-24 17:41:36.747 [pool-3-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-d1d9c16f-6b35-4d0d-83a7-f7e4680c70a7] - RECEIVED message [OrderPlaced] Payload: OrderRequest[clientName=Carol, tableNumber=T3, instructions=null, items=[OrderItem[dishName=unknown-item, quantity=1]]]
+2025-12-24 17:41:36.756 [pool-3-thread-4] INFO  [c.s.r.actors.RestaurantActor] [Actor:restaurant-d1d9c16f-6b35-4d0d-83a7-f7e4680c70a7] - Received order 1766594494970 from Carol
+2025-12-24 17:41:36.757 [pool-3-thread-1] INFO  [com.saf.core1.ActorCell] [Actor:menu-router-7302de21-6c7a-4a11-9cb6-e8d61854d99c] - RECEIVED message [CalculatePrice] Payload: OrderRequest[clientName=Carol, tableNumber=T3, instructions=null, items=[OrderItem[dishName=unknown-item, quantity=1]]]
+2025-12-24 17:41:36.761 [pool-3-thread-1] INFO  [com.saf.core1.router.RoundRobinPool] [Actor:] - Pool size is now: 3
+2025-12-24 17:41:36.762 [pool-3-thread-6] INFO  [com.saf.core1.ActorCell] [Actor:worker-0-0d5a035c-99ac-4903-9ed0-c54785a9fe08] - RECEIVED message [CalculatePrice] Payload: OrderRequest[clientName=Carol, tableNumber=T3, instructions=null, items=[OrderItem[dishName=unknown-item, quantity=1]]]
+2025-12-24 17:41:36.764 [pool-3-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-d1d9c16f-6b35-4d0d-83a7-f7e4680c70a7] - RECEIVED message [PriceCalculated] Payload: PriceCalculated[orderId=1766594494970, valid=true, total=0, missingItems=[unknown-item]]
+2025-12-24 17:41:36.771 [pool-3-thread-5] INFO  [com.saf.core1.ActorCell] [Actor:client-1766594494970-f52dca51-c85e-4d53-8955-1aed89e7e7ad] - RECEIVED message [AcknowledgeOrder] Payload: OrderAcknowledgement[orderId=1766594494970, status=PENDING_STOCK, message=Commande en attente: articles inconnus (unknown-item)., estimatedTotal=0, receipt=null]
+2025-12-24 17:41:36.864 [pool-3-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-d1d9c16f-6b35-4d0d-83a7-f7e4680c70a7] - RECEIVED message [StockResult] Payload: StockResult[orderId=1766594494970, available=false, missingItems=[unknown-item]]
+2025-12-24 17:41:36.871 [pool-3-thread-5] INFO  [com.saf.core1.ActorCell] [Actor:client-1766594494970-f52dca51-c85e-4d53-8955-1aed89e7e7ad] - RECEIVED message [AcknowledgeOrder] Payload: OrderAcknowledgement[orderId=1766594494970, status=REJECTED, message=Articles inconnus: unknown-item, estimatedTotal=0, receipt=null]
+2025-12-24 17:41:37.062 [pool-3-thread-9] INFO  [com.saf.core1.ActorCell] [Actor:client-1766594494971-43021360-281c-4043-8336-88c6d6469314] - RECEIVED message [BeginOrder] Payload: BeginOrder[]
+2025-12-24 17:41:37.063 [pool-3-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-d1d9c16f-6b35-4d0d-83a7-f7e4680c70a7] - RECEIVED message [OrderPlaced] Payload: OrderRequest[clientName=Alice, tableNumber=T1, instructions=no onions, items=[OrderItem[dishName=burger, quantity=1]]]
+2025-12-24 17:41:37.064 [pool-3-thread-4] INFO  [c.s.r.actors.RestaurantActor] [Actor:restaurant-d1d9c16f-6b35-4d0d-83a7-f7e4680c70a7] - Received order 1766594494971 from Alice
+2025-12-24 17:41:37.065 [pool-3-thread-1] INFO  [com.saf.core1.ActorCell] [Actor:] - RECEIVED message [CalculatePrice] Payload: OrderRequest[clientName=Alice, tableNumber=T1, instructions=no onions, items=[OrderItem[dishName=burger, quantity=1]]]
+2025-12-24 17:41:37.066 [pool-3-thread-7] INFO  [com.saf.core1.ActorCell] [Actor:worker-1-20dd7989-e668-4891-bea1-a9ef06253b93] - RECEIVED message [CalculatePrice] Payload: OrderRequest[clientName=Alice, tableNumber=T1, instructions=no onions, items=[OrderItem[dishName=burger, quantity=1]]]
+2025-12-24 17:41:37.067 [pool-3-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-d1d9c16f-6b35-4d0d-83a7-f7e4680c70a7] - RECEIVED message [PriceCalculated] Payload: PriceCalculated[orderId=1766594494971, valid=true, total=12.5, missingItems=[]]
+2025-12-24 17:41:37.069 [pool-3-thread-9] INFO  [com.saf.core1.ActorCell] [Actor:client-1766594494971-43021360-281c-4043-8336-88c6d6469314] - RECEIVED message [AcknowledgeOrder] Payload: OrderAcknowledgement[orderId=1766594494971, status=PENDING_STOCK, message=Commande validée. Vérification du stock en cours., estimatedTotal=12.5, receipt=null]
+2025-12-24 17:41:37.084 [pool-3-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-d1d9c16f-6b35-4d0d-83a7-f7e4680c70a7] - RECEIVED message [StockResult] Payload: StockResult[orderId=1766594494971, available=true, missingItems=[]]
+2025-12-24 17:41:37.086 [pool-3-thread-2] INFO  [com.saf.core1.ActorCell] [Actor:treasury-9dc4999f-a3eb-4c2f-8df4-88511328fd0e] - RECEIVED message [RecordPayment] Payload: 12.5
+2025-12-24 17:41:37.087 [pool-3-thread-3] INFO  [com.saf.core1.ActorCell] [Actor:receipt-e525034a-01e0-4fe2-80ba-040618417d83] - RECEIVED message [GenerateReceipt] Payload: OrderRequest[clientName=Alice, tableNumber=T1, instructions=no onions, items=[OrderItem[dishName=burger, quantity=1]]]
+2025-12-24 17:41:37.228 [pool-3-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-d1d9c16f-6b35-4d0d-83a7-f7e4680c70a7] - RECEIVED message [ReceiptReady] Payload: ReceiptDocument[orderId=1766594494971, clientName=Alice, tableNumber=T1, total=12.5, items=[OrderItem[dishName=burger, quantity=1]], issuedAt=2025-12-24T16:41:37.089317763Z, content==== SAF RESTAURANT RECEIPT ===
+Client: Alice
+Table: T1
+Total: 12.5 €
+Items:
+- burger x 1
+]
+2025-12-24 17:41:37.234 [pool-3-thread-9] INFO  [com.saf.core1.ActorCell] [Actor:client-1766594494971-43021360-281c-4043-8336-88c6d6469314] - RECEIVED message [AcknowledgeOrder] Payload: OrderAcknowledgement[orderId=1766594494971, status=COMPLETED, message=Commande servie et ticket généré., estimatedTotal=12.5, receipt==== SAF RESTAURANT RECEIPT ===
+Client: Alice
+Table: T1
+Total: 12.5 €
+Items:
+- burger x 1
+]
+2025-12-24 17:41:37.492 [main] INFO  [c.s.r.RestaurantInventoryIntegrationTest] [Actor:] - Starting RestaurantInventoryIntegrationTest using Java 21.0.7 with PID 220559 (started by cytech in /home/cytech/Restaurant-SAF/saf-restaurant)
+2025-12-24 17:41:37.493 [main] INFO  [c.s.r.RestaurantInventoryIntegrationTest] [Actor:] - No active profile set, falling back to 1 default profile: "default"
+2025-12-24 17:41:38.470 [main] INFO  [com.zaxxer.hikari.HikariDataSource] [Actor:] - HikariPool-2 - Starting...
+2025-12-24 17:41:38.474 [main] INFO  [com.zaxxer.hikari.pool.HikariPool] [Actor:] - HikariPool-2 - Added connection conn10: url=jdbc:h2:mem:restaurantdb user=SA
+2025-12-24 17:41:38.475 [main] INFO  [com.zaxxer.hikari.HikariDataSource] [Actor:] - HikariPool-2 - Start completed.
+2025-12-24 17:41:38.669 [main] INFO  [com.saf.core1.LocalActorSystem] [Actor:] - SAF ActorSystem started with 12 threads.
+2025-12-24 17:41:38.672 [main] INFO  [com.saf.core1.router.RoundRobinPool] [Actor:menu-router-eee6d9f1-bb59-4567-a3fb-35a6422b2b11] - Starting Router Pool with 3 initial workers.
+2025-12-24 17:41:38.963 [main] WARN  [o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration] [Actor:] - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-12-24 17:41:39.335 [main] WARN  [o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger] [Actor:] - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-12-24 17:41:39.379 [pool-4-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-4c658299-57f5-403f-80fd-ef3e99cc5cca] - RECEIVED message [PurgeStaleOrders] Payload: 1766594469379
+2025-12-24 17:41:39.382 [main] INFO  [c.s.r.RestaurantInventoryIntegrationTest] [Actor:] - Started RestaurantInventoryIntegrationTest in 1.971 seconds (process running for 10.21)
+2025-12-24 17:41:39.574 [pool-4-thread-5] INFO  [com.saf.core1.ActorCell] [Actor:client-1766594498896-91b66586-fd2b-489d-9ce3-36408f288d71] - RECEIVED message [BeginOrder] Payload: BeginOrder[]
+2025-12-24 17:41:39.575 [pool-4-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-4c658299-57f5-403f-80fd-ef3e99cc5cca] - RECEIVED message [OrderPlaced] Payload: OrderRequest[clientName=Alice, tableNumber=T1, instructions=no onions, items=[OrderItem[dishName=burger, quantity=1]]]
+2025-12-24 17:41:39.575 [pool-4-thread-4] INFO  [c.s.r.actors.RestaurantActor] [Actor:restaurant-4c658299-57f5-403f-80fd-ef3e99cc5cca] - Received order 1766594498896 from Alice
+2025-12-24 17:41:39.576 [pool-4-thread-1] INFO  [com.saf.core1.ActorCell] [Actor:menu-router-eee6d9f1-bb59-4567-a3fb-35a6422b2b11] - RECEIVED message [CalculatePrice] Payload: OrderRequest[clientName=Alice, tableNumber=T1, instructions=no onions, items=[OrderItem[dishName=burger, quantity=1]]]
+2025-12-24 17:41:39.578 [pool-4-thread-1] INFO  [com.saf.core1.router.RoundRobinPool] [Actor:] - Pool size is now: 3
+2025-12-24 17:41:39.579 [pool-4-thread-6] INFO  [com.saf.core1.ActorCell] [Actor:worker-0-9a37d5dc-c951-4144-bf13-3f85b5eea04d] - RECEIVED message [CalculatePrice] Payload: OrderRequest[clientName=Alice, tableNumber=T1, instructions=no onions, items=[OrderItem[dishName=burger, quantity=1]]]
+2025-12-24 17:41:39.579 [pool-4-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-4c658299-57f5-403f-80fd-ef3e99cc5cca] - RECEIVED message [PriceCalculated] Payload: PriceCalculated[orderId=1766594498896, valid=true, total=12.5, missingItems=[]]
+2025-12-24 17:41:39.579 [pool-4-thread-5] INFO  [com.saf.core1.ActorCell] [Actor:client-1766594498896-91b66586-fd2b-489d-9ce3-36408f288d71] - RECEIVED message [AcknowledgeOrder] Payload: OrderAcknowledgement[orderId=1766594498896, status=PENDING_STOCK, message=Commande validée. Vérification du stock en cours., estimatedTotal=12.5, receipt=null]
+2025-12-24 17:41:39.587 [pool-4-thread-4] INFO  [c.s.r.client.InventoryClient] [Actor:restaurant-4c658299-57f5-403f-80fd-ef3e99cc5cca] - Stock check request sent to inventory for order 1766594498896
+2025-12-24 17:41:39.668 [SpringApplicationShutdownHook] INFO  [com.zaxxer.hikari.HikariDataSource] [Actor:] - HikariPool-1 - Shutdown initiated...
+2025-12-24 17:41:39.674 [SpringApplicationShutdownHook] INFO  [com.zaxxer.hikari.HikariDataSource] [Actor:] - HikariPool-1 - Shutdown completed.
+2025-12-24 17:41:39.703 [SpringApplicationShutdownHook] INFO  [com.zaxxer.hikari.HikariDataSource] [Actor:] - HikariPool-2 - Shutdown initiated...
+2025-12-24 17:41:39.705 [SpringApplicationShutdownHook] INFO  [com.zaxxer.hikari.HikariDataSource] [Actor:] - HikariPool-2 - Shutdown completed.
+2025-12-24 17:46:56.705 [main] INFO  [c.s.r.RestaurantStockKoIntegrationTest] [Actor:] - Starting RestaurantStockKoIntegrationTest using Java 21.0.7 with PID 224785 (started by cytech in /home/cytech/Restaurant-SAF/saf-restaurant)
+2025-12-24 17:46:56.707 [main] INFO  [c.s.r.RestaurantStockKoIntegrationTest] [Actor:] - No active profile set, falling back to 1 default profile: "default"
+2025-12-24 17:46:59.084 [main] INFO  [com.zaxxer.hikari.HikariDataSource] [Actor:] - HikariPool-1 - Starting...
+2025-12-24 17:46:59.275 [main] INFO  [com.zaxxer.hikari.pool.HikariPool] [Actor:] - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:restaurantdb user=SA
+2025-12-24 17:46:59.276 [main] INFO  [com.zaxxer.hikari.HikariDataSource] [Actor:] - HikariPool-1 - Start completed.
+2025-12-24 17:47:00.191 [main] INFO  [com.saf.core1.LocalActorSystem] [Actor:] - SAF ActorSystem started with 12 threads.
+2025-12-24 17:47:00.197 [main] INFO  [com.saf.core1.router.RoundRobinPool] [Actor:menu-router-d30d9b41-0c66-48dc-95dd-f8f6cd562580] - Starting Router Pool with 3 initial workers.
+2025-12-24 17:47:01.048 [main] WARN  [o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration] [Actor:] - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-12-24 17:47:01.519 [main] WARN  [o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger] [Actor:] - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-12-24 17:47:01.725 [main] INFO  [c.s.r.RestaurantStockKoIntegrationTest] [Actor:] - Started RestaurantStockKoIntegrationTest in 5.403 seconds (process running for 6.442)
+2025-12-24 17:47:01.729 [pool-3-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-adee870b-c20f-47de-a9db-46e7e2fafdf9] - RECEIVED message [PurgeStaleOrders] Payload: 1766594791728
+2025-12-24 17:47:02.625 [pool-3-thread-5] INFO  [com.saf.core1.ActorCell] [Actor:client-1766594820991-2a589cdf-5f65-41ac-a6e2-e9da0858c1f7] - RECEIVED message [BeginOrder] Payload: BeginOrder[]
+2025-12-24 17:47:02.626 [pool-3-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-adee870b-c20f-47de-a9db-46e7e2fafdf9] - RECEIVED message [OrderPlaced] Payload: OrderRequest[clientName=Carol, tableNumber=T3, instructions=null, items=[OrderItem[dishName=unknown-item, quantity=1]]]
+2025-12-24 17:47:02.632 [pool-3-thread-4] INFO  [c.s.r.actors.RestaurantActor] [Actor:restaurant-adee870b-c20f-47de-a9db-46e7e2fafdf9] - Received order 1766594820991 from Carol
+2025-12-24 17:47:02.632 [pool-3-thread-1] INFO  [com.saf.core1.ActorCell] [Actor:menu-router-d30d9b41-0c66-48dc-95dd-f8f6cd562580] - RECEIVED message [CalculatePrice] Payload: OrderRequest[clientName=Carol, tableNumber=T3, instructions=null, items=[OrderItem[dishName=unknown-item, quantity=1]]]
+2025-12-24 17:47:02.636 [pool-3-thread-1] INFO  [com.saf.core1.router.RoundRobinPool] [Actor:] - Pool size is now: 3
+2025-12-24 17:47:02.637 [pool-3-thread-6] INFO  [com.saf.core1.ActorCell] [Actor:worker-0-d8adcad8-5e72-4a06-a1cf-67d0f95fc65a] - RECEIVED message [CalculatePrice] Payload: OrderRequest[clientName=Carol, tableNumber=T3, instructions=null, items=[OrderItem[dishName=unknown-item, quantity=1]]]
+2025-12-24 17:47:02.638 [pool-3-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-adee870b-c20f-47de-a9db-46e7e2fafdf9] - RECEIVED message [PriceCalculated] Payload: PriceCalculated[orderId=1766594820991, valid=true, total=0, missingItems=[unknown-item]]
+2025-12-24 17:47:02.642 [pool-3-thread-5] INFO  [com.saf.core1.ActorCell] [Actor:client-1766594820991-2a589cdf-5f65-41ac-a6e2-e9da0858c1f7] - RECEIVED message [AcknowledgeOrder] Payload: OrderAcknowledgement[orderId=1766594820991, status=PENDING_STOCK, message=Commande en attente: articles inconnus (unknown-item)., estimatedTotal=0, receipt=null]
+2025-12-24 17:47:02.747 [pool-3-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-adee870b-c20f-47de-a9db-46e7e2fafdf9] - RECEIVED message [StockResult] Payload: StockResult[orderId=1766594820991, available=false, missingItems=[unknown-item]]
+2025-12-24 17:47:02.750 [pool-3-thread-5] INFO  [com.saf.core1.ActorCell] [Actor:client-1766594820991-2a589cdf-5f65-41ac-a6e2-e9da0858c1f7] - RECEIVED message [AcknowledgeOrder] Payload: OrderAcknowledgement[orderId=1766594820991, status=REJECTED, message=Articles inconnus: unknown-item, estimatedTotal=0, receipt=null]
+2025-12-24 17:47:02.940 [pool-3-thread-9] INFO  [com.saf.core1.ActorCell] [Actor:client-1766594820992-a62ef640-7d39-4191-854a-169d37a85c6c] - RECEIVED message [BeginOrder] Payload: BeginOrder[]
+2025-12-24 17:47:02.940 [pool-3-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-adee870b-c20f-47de-a9db-46e7e2fafdf9] - RECEIVED message [OrderPlaced] Payload: OrderRequest[clientName=Alice, tableNumber=T1, instructions=no onions, items=[OrderItem[dishName=burger, quantity=1]]]
+2025-12-24 17:47:02.941 [pool-3-thread-4] INFO  [c.s.r.actors.RestaurantActor] [Actor:restaurant-adee870b-c20f-47de-a9db-46e7e2fafdf9] - Received order 1766594820992 from Alice
+2025-12-24 17:47:02.941 [pool-3-thread-1] INFO  [com.saf.core1.ActorCell] [Actor:] - RECEIVED message [CalculatePrice] Payload: OrderRequest[clientName=Alice, tableNumber=T1, instructions=no onions, items=[OrderItem[dishName=burger, quantity=1]]]
+2025-12-24 17:47:02.941 [pool-3-thread-7] INFO  [com.saf.core1.ActorCell] [Actor:worker-1-257961b1-b2b4-45d7-b074-92c7247d662d] - RECEIVED message [CalculatePrice] Payload: OrderRequest[clientName=Alice, tableNumber=T1, instructions=no onions, items=[OrderItem[dishName=burger, quantity=1]]]
+2025-12-24 17:47:02.942 [pool-3-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-adee870b-c20f-47de-a9db-46e7e2fafdf9] - RECEIVED message [PriceCalculated] Payload: PriceCalculated[orderId=1766594820992, valid=true, total=12.5, missingItems=[]]
+2025-12-24 17:47:02.943 [pool-3-thread-9] INFO  [com.saf.core1.ActorCell] [Actor:client-1766594820992-a62ef640-7d39-4191-854a-169d37a85c6c] - RECEIVED message [AcknowledgeOrder] Payload: OrderAcknowledgement[orderId=1766594820992, status=PENDING_STOCK, message=Commande validée. Vérification du stock en cours., estimatedTotal=12.5, receipt=null]
+2025-12-24 17:47:02.956 [pool-3-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-adee870b-c20f-47de-a9db-46e7e2fafdf9] - RECEIVED message [StockResult] Payload: StockResult[orderId=1766594820992, available=true, missingItems=[]]
+2025-12-24 17:47:02.958 [pool-3-thread-2] INFO  [com.saf.core1.ActorCell] [Actor:treasury-c13ef19f-e9d4-4d89-b7fa-e8345cc538ad] - RECEIVED message [RecordPayment] Payload: 12.5
+2025-12-24 17:47:02.958 [pool-3-thread-3] INFO  [com.saf.core1.ActorCell] [Actor:receipt-aa7028bf-6f47-4b75-a1ad-369ecde5da45] - RECEIVED message [GenerateReceipt] Payload: OrderRequest[clientName=Alice, tableNumber=T1, instructions=no onions, items=[OrderItem[dishName=burger, quantity=1]]]
+2025-12-24 17:47:03.072 [pool-3-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-adee870b-c20f-47de-a9db-46e7e2fafdf9] - RECEIVED message [ReceiptReady] Payload: ReceiptDocument[orderId=1766594820992, clientName=Alice, tableNumber=T1, total=12.5, items=[OrderItem[dishName=burger, quantity=1]], issuedAt=2025-12-24T16:47:02.960427542Z, content==== SAF RESTAURANT RECEIPT ===
+Client: Alice
+Table: T1
+Total: 12.5 €
+Items:
+- burger x 1
+]
+2025-12-24 17:47:03.078 [pool-3-thread-9] INFO  [com.saf.core1.ActorCell] [Actor:client-1766594820992-a62ef640-7d39-4191-854a-169d37a85c6c] - RECEIVED message [AcknowledgeOrder] Payload: OrderAcknowledgement[orderId=1766594820992, status=COMPLETED, message=Commande servie et ticket généré., estimatedTotal=12.5, receipt==== SAF RESTAURANT RECEIPT ===
+Client: Alice
+Table: T1
+Total: 12.5 €
+Items:
+- burger x 1
+]
+2025-12-24 17:47:03.323 [main] INFO  [c.s.r.RestaurantInventoryIntegrationTest] [Actor:] - Starting RestaurantInventoryIntegrationTest using Java 21.0.7 with PID 224785 (started by cytech in /home/cytech/Restaurant-SAF/saf-restaurant)
+2025-12-24 17:47:03.323 [main] INFO  [c.s.r.RestaurantInventoryIntegrationTest] [Actor:] - No active profile set, falling back to 1 default profile: "default"
+2025-12-24 17:47:04.542 [main] INFO  [com.zaxxer.hikari.HikariDataSource] [Actor:] - HikariPool-2 - Starting...
+2025-12-24 17:47:04.545 [main] INFO  [com.zaxxer.hikari.pool.HikariPool] [Actor:] - HikariPool-2 - Added connection conn10: url=jdbc:h2:mem:restaurantdb user=SA
+2025-12-24 17:47:04.545 [main] INFO  [com.zaxxer.hikari.HikariDataSource] [Actor:] - HikariPool-2 - Start completed.
+2025-12-24 17:47:04.747 [main] INFO  [com.saf.core1.LocalActorSystem] [Actor:] - SAF ActorSystem started with 12 threads.
+2025-12-24 17:47:04.751 [main] INFO  [com.saf.core1.router.RoundRobinPool] [Actor:menu-router-4bb92497-cfde-4bb9-acae-2ef9a16ca51e] - Starting Router Pool with 3 initial workers.
+2025-12-24 17:47:05.042 [main] WARN  [o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration] [Actor:] - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-12-24 17:47:05.263 [main] WARN  [o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger] [Actor:] - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-12-24 17:47:05.291 [pool-4-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-ef7cd8dc-946f-431a-a1f0-26403e256bd6] - RECEIVED message [PurgeStaleOrders] Payload: 1766594795291
+2025-12-24 17:47:05.292 [main] INFO  [c.s.r.RestaurantInventoryIntegrationTest] [Actor:] - Started RestaurantInventoryIntegrationTest in 2.009 seconds (process running for 10.009)
+2025-12-24 17:47:05.483 [pool-4-thread-5] INFO  [com.saf.core1.ActorCell] [Actor:client-1766594825009-0a858b82-9220-4576-9674-6fe510b5afe6] - RECEIVED message [BeginOrder] Payload: BeginOrder[]
+2025-12-24 17:47:05.484 [pool-4-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-ef7cd8dc-946f-431a-a1f0-26403e256bd6] - RECEIVED message [OrderPlaced] Payload: OrderRequest[clientName=Alice, tableNumber=T1, instructions=no onions, items=[OrderItem[dishName=burger, quantity=1]]]
+2025-12-24 17:47:05.484 [pool-4-thread-4] INFO  [c.s.r.actors.RestaurantActor] [Actor:restaurant-ef7cd8dc-946f-431a-a1f0-26403e256bd6] - Received order 1766594825009 from Alice
+2025-12-24 17:47:05.485 [pool-4-thread-1] INFO  [com.saf.core1.ActorCell] [Actor:menu-router-4bb92497-cfde-4bb9-acae-2ef9a16ca51e] - RECEIVED message [CalculatePrice] Payload: OrderRequest[clientName=Alice, tableNumber=T1, instructions=no onions, items=[OrderItem[dishName=burger, quantity=1]]]
+2025-12-24 17:47:05.486 [pool-4-thread-1] INFO  [com.saf.core1.router.RoundRobinPool] [Actor:] - Pool size is now: 3
+2025-12-24 17:47:05.486 [pool-4-thread-6] INFO  [com.saf.core1.ActorCell] [Actor:worker-0-a290f6de-88fc-4e15-b551-7e3d0ffb8104] - RECEIVED message [CalculatePrice] Payload: OrderRequest[clientName=Alice, tableNumber=T1, instructions=no onions, items=[OrderItem[dishName=burger, quantity=1]]]
+2025-12-24 17:47:05.487 [pool-4-thread-4] INFO  [com.saf.core1.ActorCell] [Actor:restaurant-ef7cd8dc-946f-431a-a1f0-26403e256bd6] - RECEIVED message [PriceCalculated] Payload: PriceCalculated[orderId=1766594825009, valid=true, total=12.5, missingItems=[]]
+2025-12-24 17:47:05.487 [pool-4-thread-5] INFO  [com.saf.core1.ActorCell] [Actor:client-1766594825009-0a858b82-9220-4576-9674-6fe510b5afe6] - RECEIVED message [AcknowledgeOrder] Payload: OrderAcknowledgement[orderId=1766594825009, status=PENDING_STOCK, message=Commande validée. Vérification du stock en cours., estimatedTotal=12.5, receipt=null]
+2025-12-24 17:47:05.494 [pool-4-thread-4] INFO  [c.s.r.client.InventoryClient] [Actor:restaurant-ef7cd8dc-946f-431a-a1f0-26403e256bd6] - Stock check request sent to inventory for order 1766594825009
+2025-12-24 17:47:05.559 [SpringApplicationShutdownHook] INFO  [com.zaxxer.hikari.HikariDataSource] [Actor:] - HikariPool-1 - Shutdown initiated...
+2025-12-24 17:47:05.564 [SpringApplicationShutdownHook] INFO  [com.zaxxer.hikari.HikariDataSource] [Actor:] - HikariPool-1 - Shutdown completed.
+2025-12-24 17:47:05.584 [SpringApplicationShutdownHook] INFO  [com.zaxxer.hikari.HikariDataSource] [Actor:] - HikariPool-2 - Shutdown initiated...
+2025-12-24 17:47:05.592 [SpringApplicationShutdownHook] INFO  [com.zaxxer.hikari.HikariDataSource] [Actor:] - HikariPool-2 - Shutdown completed.

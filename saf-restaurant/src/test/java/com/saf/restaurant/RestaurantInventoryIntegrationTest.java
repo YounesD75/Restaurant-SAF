@@ -10,19 +10,19 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.boot.test.web.server.LocalServerPort;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.MediaType;
-import org.springframework.boot.test.context.TestConfiguration;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Primary;
-import org.springframework.test.web.client.MockRestServiceServer;
+import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.RestTemplate;
 
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.springframework.test.web.client.match.MockRestRequestMatchers.requestTo;
-import static org.springframework.test.web.client.response.MockRestResponseCreators.withSuccess;
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.ArgumentMatchers.eq;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
+import org.mockito.ArgumentCaptor;
+import com.saf.restaurant.client.InventoryCheckRequest;
 
 @SpringBootTest(
         webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT,
@@ -41,22 +41,23 @@ class RestaurantInventoryIntegrationTest {
     @Autowired
     private TestRestTemplate restTemplate;
 
-    @Autowired
+    @MockBean
     private RestTemplate inventoryRestTemplate;
 
-    private MockRestServiceServer mockServer;
     private String baseUrl;
 
     @BeforeEach
     void setup() {
         baseUrl = "http://localhost:" + port;
-        mockServer = MockRestServiceServer.createServer(inventoryRestTemplate);
     }
 
     @Test
     void should_call_inventory_after_order_is_placed() {
-        mockServer.expect(requestTo("http://localhost/api/inventory/check"))
-                .andRespond(withSuccess("{}", MediaType.APPLICATION_JSON));
+        when(inventoryRestTemplate.postForEntity(
+                eq("http://localhost/api/inventory/check"),
+                any(InventoryCheckRequest.class),
+                eq(Void.class))
+        ).thenReturn(ResponseEntity.ok().build());
 
         OrderRequest order = new OrderRequest(
                 "Alice",
@@ -73,15 +74,16 @@ class RestaurantInventoryIntegrationTest {
 
         assertThat(ack).isNotNull();
         assertThat(ack.status()).isEqualTo(OrderStatus.PENDING_STOCK);
-        mockServer.verify();
-    }
 
-    @TestConfiguration
-    static class TestRestTemplateConfig {
-        @Bean
-        @Primary
-        RestTemplate plainRestTemplate() {
-            return new RestTemplate();
-        }
+        ArgumentCaptor<InventoryCheckRequest> payloadCaptor =
+                ArgumentCaptor.forClass(InventoryCheckRequest.class);
+        verify(inventoryRestTemplate).postForEntity(
+                eq("http://localhost/api/inventory/check"),
+                payloadCaptor.capture(),
+                eq(Void.class)
+        );
+        InventoryCheckRequest payload = payloadCaptor.getValue();
+        assertThat(payload).isNotNull();
+        assertThat(payload.items()).isNotEmpty();
     }
 }

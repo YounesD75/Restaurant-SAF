@@ -47,7 +47,7 @@
 
             <dependency>
                 <groupId>com.saf</groupId>
-                <artifactId>saf-framework-core</artifactId>
+                <artifactId>saf-core1</artifactId>
                 <version>${project.version}</version>
             </dependency>
             

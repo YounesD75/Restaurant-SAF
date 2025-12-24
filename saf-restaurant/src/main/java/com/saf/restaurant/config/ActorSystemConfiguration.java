@@ -29,23 +29,20 @@ public class ActorSystemConfiguration {
         return new LocalActorSystem(threads);
     }
 
-    // --- 1. LE MENU (SCALABLE) ---
+    // --- 1. MENU (ROUTER) ---
     @Bean(name = "menuActorRef")
     public ActorRef menuActorRef(LocalActorSystem system) {
-        // Liste factice pour l'exemple (à remplacer par une vraie source si besoin)
         List<MenuItem> initialMenu = List.of(
-            new MenuItem("Pizza", BigDecimal.valueOf(12.50)),
-            new MenuItem("Burger", BigDecimal.valueOf(15.00)),
-            new MenuItem("Salade", BigDecimal.valueOf(10.00))
+            new MenuItem("1", "Pizza Margherita", BigDecimal.valueOf(12.50), "Tomate, Mozza, Basilic"),
+            new MenuItem("2", "Burger Classique", BigDecimal.valueOf(15.00), "Boeuf, Cheddar, Oignons"),
+            new MenuItem("3", "Salade César", BigDecimal.valueOf(10.00), "Poulet, Parmesan, Croutons")
         );
 
-        // La recette pour créer UN MenuActor
         Supplier<Actor> menuFactory = () -> new MenuActor(initialMenu);
 
-        // ICI LA SCALABILITÉ : On ne crée pas un acteur, mais un POOL de 3 acteurs
         return system.spawn(
             "menu-router",
-            () -> new RoundRobinPool(menuFactory, 3), // 3 workers initiaux
+            () -> new RoundRobinPool(menuFactory, 3),
             SupervisionStrategy.RESTART
         );
     }
@@ -66,23 +63,31 @@ public class ActorSystemConfiguration {
             SupervisionStrategy.RESTART);
     }
 
-    // --- 4. LE RESTAURANT (L'ORCHESTRATEUR) ---
+    // --- 4. RESTAURANT ---
     @Bean
     public ActorRef restaurantActorRef(LocalActorSystem system,
-                                       ActorRef menuActorRef, // Spring injecte le Router ici !
+                                       ActorRef menuActorRef,
                                        ActorRef treasuryActorRef,
                                        ActorRef receiptActorRef) {
         return system.spawn("restaurant",
-                // Le RestaurantActor croit parler à un seul MenuActor, mais il parle au Router
                 () -> new RestaurantActor(menuActorRef, treasuryActorRef, receiptActorRef),
                 SupervisionStrategy.RESTART);
     }
 
-    // --- 5. LE REGISTRE (Mise à jour) ---
+    // --- 5. REGISTRE (Mise à jour pour inclure Treasury et Receipt) ---
     @Bean
-    public RestaurantActorRegistry restaurantActorRegistry(ActorRef restaurantActorRef, 
-                                                           ActorRef menuActorRef) {
-        // On passe les références déjà créées au registre
-        return new RestaurantActorRegistry(restaurantActorRef, menuActorRef);
+    public RestaurantActorRegistry restaurantActorRegistry(LocalActorSystem system, 
+                                                           ActorRef restaurantActorRef, 
+                                                           ActorRef menuActorRef,
+                                                           ActorRef treasuryActorRef, // Injecté
+                                                           ActorRef receiptActorRef) { // Injecté
+        // On passe TOUS les acteurs au registre
+        return new RestaurantActorRegistry(
+            system, 
+            restaurantActorRef, 
+            menuActorRef, 
+            treasuryActorRef, 
+            receiptActorRef
+        );
     }
 }

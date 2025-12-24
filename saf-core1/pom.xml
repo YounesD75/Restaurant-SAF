@@ -14,9 +14,7 @@
     <packaging>jar</packaging>
     <name>saf-core1</name>
 
-    <!-- Keep this minimal so every service can depend on it without pulling extra stuff -->
     <dependencies>
-        <!-- (optional) test libs if you have tests in saf-core1 -->
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter</artifactId>
@@ -26,6 +24,12 @@
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>2.0.9</version>
         </dependency>
     </dependencies>
 

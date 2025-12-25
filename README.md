@@ -40,6 +40,12 @@ sudo -u postgres psql -c "CREATE DATABASE saf_restaurant;"
 sudo -u postgres psql -c "CREATE DATABASE inventory_db;"
 sudo -u postgres psql -c "ALTER USER postgres WITH PASSWORD 'postgres';"
 ```
+```powershell
+Start-Service postgresql-x64-16
+psql -U postgres -c "CREATE DATABASE saf_restaurant;"
+psql -U postgres -c "CREATE DATABASE inventory_db;"
+psql -U postgres -c "ALTER USER postgres WITH PASSWORD 'postgres';"
+```
 
 Build des modules (sans tests):
 ```bash

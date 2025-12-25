@@ -1,7 +1,19 @@
-import axios from "axios";
+import { orderAxios } from './axiosConfig';
 
-const BASE = "http://localhost:8081/api/orders";
+export const orderApi = {
+  // Passer une commande
+  create: (data) => orderAxios.post('/orders', data),
 
-export const getOrders = () => axios.get(BASE);
-export const updateOrderStatus = (id, status) =>
-  axios.patch(`${BASE}/${id}/status?status=${status}`);
+  // Voir les reçus (commandes validées)
+  getReceipts: () => orderAxios.get('/receipts'),
+
+  // Détail d’un reçu
+  getReceiptByOrderId: (orderId) =>
+    orderAxios.get(`/receipts/${orderId}`),
+
+  // Menu
+  getMenu: () => orderAxios.get('/menu'),
+
+  // Trésorerie
+  getTreasury: () => orderAxios.get('/treasury'),
+};
